@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 522727216}
   - component: {fileID: 522727215}
   - component: {fileID: 522727214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,6 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 148565958}
+  pickDistance: 5
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  lengthOfLineRenderer: 20
 --- !u!54 &522727215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -532,7 +536,7 @@ GameObject:
   - component: {fileID: 835081567}
   - component: {fileID: 835081566}
   - component: {fileID: 835081565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,6 +556,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 148565958}
+  pickDistance: 5
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  lengthOfLineRenderer: 20
 --- !u!54 &835081566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -672,7 +680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061438629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.572, z: 0.53}
+  m_LocalPosition: {x: 0, y: 4.07, z: 0.18}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1596008919}
@@ -741,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5298e55ecd1eb4187234fd4fb64d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 50
   playerBody: {fileID: 1596008919}
 --- !u!114 &1061438635
 MonoBehaviour:
@@ -1355,7 +1363,7 @@ GameObject:
   - component: {fileID: 1990338748}
   - component: {fileID: 1990338747}
   - component: {fileID: 1990338746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,6 +1383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 148565958}
+  pickDistance: 5
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  lengthOfLineRenderer: 20
 --- !u!54 &1990338747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1556,7 +1568,7 @@ GameObject:
   - component: {fileID: 2015866205}
   - component: {fileID: 2015866204}
   - component: {fileID: 2015866203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,6 +1588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 148565958}
+  pickDistance: 5
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  lengthOfLineRenderer: 20
 --- !u!54 &2015866204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3501,6 +3517,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 148565958}
+  pickDistance: 5
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  lengthOfLineRenderer: 20
 --- !u!54 &1113703404328677057
 Rigidbody:
   m_ObjectHideFlags: 0

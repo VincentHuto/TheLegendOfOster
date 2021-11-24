@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+
+    //Attach this script to any object you want to be able to be picked up
     public Transform theDest;
+    //Idk 5 seems to be a good sweet spot for most objects
+    public float pickDistance = 5;
 
     void OnMouseDown()
     {
-        GetComponent<BoxCollider>().enabled = false;
-        GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = theDest.position;
-        this.transform.parent = GameObject.Find("ObjectHeld").transform;
+
+        float distance = Vector3.Distance(this.transform.position, GameObject.Find("ObjectHeld").transform.position);
+        if(distance < pickDistance)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<Rigidbody>().useGravity = false;
+            this.transform.position = theDest.position;
+            this.transform.parent = GameObject.Find("ObjectHeld").transform;
+        }
 
     }
     void OnMouseUp()
     {
-        this.transform.parent =null;
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<BoxCollider>().enabled = true;
-
+        float distance = Vector3.Distance(this.transform.position, GameObject.Find("ObjectHeld").transform.position);
+        if (distance < pickDistance)
+        {
+            this.transform.parent = null;
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<BoxCollider>().enabled = true;
+        }
     }
 }
