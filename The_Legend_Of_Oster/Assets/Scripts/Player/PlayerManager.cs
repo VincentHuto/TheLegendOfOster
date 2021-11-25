@@ -34,8 +34,9 @@ using UnityEngine;
             float delta = Time.deltaTime;
             isInteracting = anim.GetBool("isInteracting");
             anim.SetBool("isInAir",isInAir);
-            
-            inputHandler.TickInput(delta);
+            anim.SetBool("isGrounded", isGrounded);
+
+        inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);

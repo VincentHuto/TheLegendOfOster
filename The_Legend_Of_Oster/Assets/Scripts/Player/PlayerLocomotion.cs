@@ -41,7 +41,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
     [SerializeField]
-    float fallingSpeed = 45;
+    float fallingSpeed = 250;
 
     void Start()
     {
@@ -170,7 +170,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             //Adds a push when you fall so you dont get stuck on the ledge
             rigidbody.AddForce(-Vector3.up * fallingSpeed);
-            rigidbody.AddForce(moveDirection * fallingSpeed / 5f);
+            rigidbody.AddForce(moveDirection * fallingSpeed / 7f);
         }
 
         Vector3 dir = moveDirection;
@@ -256,7 +256,7 @@ public class PlayerLocomotion : MonoBehaviour
                 myTransform.rotation = jumpRotation;
                 if (playerManager.isGrounded)
                 {
-                    rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
                 }
             }
 }
