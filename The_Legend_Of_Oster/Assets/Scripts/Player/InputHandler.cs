@@ -19,10 +19,16 @@ public class InputHandler : MonoBehaviour
     public float rollInputTimer;
 
     PlayerControls inputActions;
+    PlayerLocomotion playerLocomotion;
 
     Vector2 movementInput;
     Vector2 cameraInput;
 
+
+    public void Awake()
+    {
+        playerLocomotion = GetComponent<PlayerLocomotion>();
+    }
 
     public void OnEnable()
     {
@@ -31,6 +37,10 @@ public class InputHandler : MonoBehaviour
             inputActions = new PlayerControls();
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+
+
+
         }
         inputActions.Enable();
     }
@@ -40,13 +50,13 @@ public class InputHandler : MonoBehaviour
         inputActions.Disable();
     }
 
-    public void TickInput(float delta)
+    public void HandleAllInputs(float delta)
     {
         MoveInput(delta);
         HandleRollInput(delta);
         HandleJumpInput();
     }
-
+ 
     private void MoveInput(float delta)
     {
         horizontal = movementInput.x;
@@ -78,7 +88,12 @@ public class InputHandler : MonoBehaviour
 
     private void HandleJumpInput()
     {
-        inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+        if (jump_Input)
+        {
+            jump_Input = false;
+            playerLocomotion.HandleJumping();
+        }
+
     }
 
 }

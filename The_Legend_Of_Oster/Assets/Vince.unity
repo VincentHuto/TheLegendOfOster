@@ -1285,9 +1285,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595505302}
+  - component: {fileID: 595505305}
   - component: {fileID: 595505303}
   - component: {fileID: 595505304}
-  - component: {fileID: 595505305}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -5965,8 +5965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
-  jumpForce: 50
-  gravityModifier: 1
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
@@ -5979,7 +5977,9 @@ MonoBehaviour:
   walkingSpeed: 1
   sprintSpeed: 7
   rotationSpeed: 10
-  fallingSpeed: 250
+  fallingSpeed: 150
+  jumpHeight: 3
+  gravityIntensity: -9.8
 --- !u!114 &4921238004521826632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6018,6 +6018,7 @@ MonoBehaviour:
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
+  isJumping: 0
 --- !u!54 &4921238004521826634
 Rigidbody:
   m_ObjectHideFlags: 0

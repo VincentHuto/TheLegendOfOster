@@ -10,9 +10,6 @@ public class PlayerLocomotion : MonoBehaviour
     InputHandler inputHandler;
     public Vector3 moveDirection;
 
-    public float jumpForce = 50;
-    public float gravityModifier = 1;
-
     [HideInInspector]
     public Transform myTransform;
     [HideInInspector]
@@ -42,6 +39,10 @@ public class PlayerLocomotion : MonoBehaviour
     float rotationSpeed = 10;
     [SerializeField]
     float fallingSpeed = 250;
+    [SerializeField]
+    float jumpHeight = 3;
+    [SerializeField]
+    float gravityIntensity = -15;
 
     void Start()
     {
@@ -52,8 +53,6 @@ public class PlayerLocomotion : MonoBehaviour
         cameraObject = Camera.main.transform;
         myTransform = transform;
         animatorHandler.Initialize();
-
-        Physics.gravity *= gravityModifier;
 
         playerManager.isGrounded = true;
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
@@ -90,6 +89,9 @@ public class PlayerLocomotion : MonoBehaviour
             return;
 
         if (playerManager.isInteracting)
+            return;
+
+        if(playerManager.isJumping)
             return;
 
         moveDirection = cameraObject.forward * inputHandler.vertical;
@@ -239,6 +241,22 @@ public class PlayerLocomotion : MonoBehaviour
 
     }
 
+
+
+    public void HandleJumping()
+    {
+        if (playerManager.isGrounded)
+        {
+            animatorHandler.anim.SetBool("isJumping", true);
+            animatorHandler.PlayTargetAnimation("Jump",false);
+
+            float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+            Vector3 playerVelocity = moveDirection;
+            playerVelocity.y = jumpingVelocity;
+            rigidbody.velocity = playerVelocity;
+        }
+
+    }
     #endregion
 
 }
