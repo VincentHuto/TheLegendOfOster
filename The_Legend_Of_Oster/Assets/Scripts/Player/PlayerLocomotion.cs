@@ -10,7 +10,7 @@ public class PlayerLocomotion : MonoBehaviour
     InputHandler inputHandler;
     public Vector3 moveDirection;
 
-    public float jumpForce =50;
+    public float jumpForce = 50;
     public float gravityModifier = 1;
 
     [HideInInspector]
@@ -239,27 +239,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     }
 
-    public void HandleJumping()
-    {
-        if (playerManager.isInteracting)
-            return;
+    #endregion
 
-        if (inputHandler.jump_Input)
-        {
-            if (inputHandler.moveAmount > 0)
-            {
-                moveDirection = cameraObject.forward * inputHandler.vertical;
-                moveDirection += cameraObject.right * inputHandler.horizontal;
-                animatorHandler.PlayTargetAnimation("Jump", true);
-                moveDirection.y = 0;
-                Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
-                myTransform.rotation = jumpRotation;
-                if (playerManager.isGrounded)
-                {
-                    rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
-                }
-            }
-}
-        #endregion
-    }
 }

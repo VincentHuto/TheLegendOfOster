@@ -40,7 +40,6 @@ using UnityEngine;
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-            playerLocomotion.HandleJumping();
 
         }
         private void FixedUpdate()
@@ -58,7 +57,6 @@ using UnityEngine;
         {
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
-            inputHandler.jump_Input = false;
 
             if (isInAir)
             {
