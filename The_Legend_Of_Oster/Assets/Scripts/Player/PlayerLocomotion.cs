@@ -20,9 +20,9 @@ public class PlayerLocomotion : MonoBehaviour
 
     [Header("Ground & Air Detection Stats")]
     [SerializeField]
-    float groundDetectionRayStartPoint = 0.8f;
+    float groundDetectionRayStartPoint = 0.6f;
     [SerializeField]
-    float minimumDistanceNeededToBeginFall = 1f;
+    float minimumDistanceNeededToBeginFall = 1.5f;
     [SerializeField]
     float groundDirectionRayDistance = 0.2f;
     LayerMask ignoreForGroundCheck;

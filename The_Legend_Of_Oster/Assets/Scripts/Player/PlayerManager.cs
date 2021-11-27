@@ -53,11 +53,16 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        //Makes sure the button only triggers once even if you accidently misclick or hold down the button
         inputHandler.rollFlag = false;
         inputHandler.sprintFlag = false;
+        inputHandler.rb_Input = false;
+        inputHandler.rt_Input = false;
+        inputHandler.lb_Input = false;
+        inputHandler.lt_Input = false;
         isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", isGrounded);
-
+        
 
         if (isInAir)
         {
