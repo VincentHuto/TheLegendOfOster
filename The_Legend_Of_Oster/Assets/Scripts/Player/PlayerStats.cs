@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int healthLevel = 10;
-    public int maxHealth;
-    public int currentHealth;
+    public int level = 10;
+    public int maxHealth,currentHealth;
+    public int maxStamina, currentStamina;
+    public int maxBreath, currentBreath;
 
     public HealthBar healthbar;
+    public StaminaBar staminaBar;
+    public BreathBar breathBar;
 
     AnimatorHandler animatorHandler;
 
@@ -19,16 +22,36 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        maxHealth = SetMaxHealthFromHealthLevel();
+        maxHealth = SetMaxHealthFromLevel();
+        maxStamina = SetMaxStaminaFromLevel();
+        maxBreath = SetMaxBreathFromLevel();
         currentHealth = maxHealth;
+        currentStamina = maxStamina;
+        currentBreath = maxBreath;
         healthbar.SetMaxHealth(maxHealth);
+        staminaBar.SetMaxStamina(maxStamina);
+        breathBar.SetMaxBreath(maxBreath);
+
     }
 
-    private int SetMaxHealthFromHealthLevel()
+    private int SetMaxHealthFromLevel()
     {
-        maxHealth = healthLevel * 10;
+        maxHealth = level * 10;
         return maxHealth;
     }
+
+    private int SetMaxStaminaFromLevel()
+    {
+        maxStamina = level * 5;
+        return maxStamina;
+    }
+
+    private int SetMaxBreathFromLevel()
+    {
+        maxBreath = level * 15;
+        return maxBreath;
+    }
+
 
     public void TakeDamage(int damage)
     {
