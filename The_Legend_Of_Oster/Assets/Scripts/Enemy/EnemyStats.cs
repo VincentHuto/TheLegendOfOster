@@ -51,7 +51,6 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
-        Debug.Log("I SHOULD BE TAKING DAMAGE: " + currentHealth);
         
         anim.Play("Damage_1");
 
