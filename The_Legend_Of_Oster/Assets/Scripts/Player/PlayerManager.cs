@@ -9,13 +9,8 @@ public class PlayerManager : MonoBehaviour
     CameraHandler cameraHandler;
     PlayerLocomotion playerLocomotion;
 
-    public bool isInteracting;
-
     [Header("Player Flags")]
-    public bool isSprinting;
-    public bool isInAir;
-    public bool isGrounded;
-    public bool isJumping;
+    public bool isSprinting, isInteracting, isInAir, isGrounded, isJumping;
 
     private void Awake()
     {

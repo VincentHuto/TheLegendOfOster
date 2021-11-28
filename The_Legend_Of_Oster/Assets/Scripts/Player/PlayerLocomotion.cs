@@ -8,15 +8,14 @@ public class PlayerLocomotion : MonoBehaviour
     PlayerManager playerManager;
     Transform cameraObject;
     InputHandler inputHandler;
-    public Vector3 moveDirection;
+    public new Rigidbody rigidbody;
+    public GameObject normalCamera;
+    public Vector3 moveDirection, normalVector, targetPosition;
 
     [HideInInspector]
     public Transform myTransform;
     [HideInInspector]
     public AnimatorHandler animatorHandler;
-
-    public new Rigidbody rigidbody;
-    public GameObject normalCamera;
 
     [Header("Ground & Air Detection Stats")]
     [SerializeField]
@@ -43,6 +42,8 @@ public class PlayerLocomotion : MonoBehaviour
     float jumpHeight = 3;
     [SerializeField]
     float gravityIntensity = -15;
+    [SerializeField]
+    float pushoffStrength = 10f;
 
     void Start()
     {
@@ -59,8 +60,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     }
     #region Movement
-    Vector3 normalVector;
-    Vector3 targetPosition;
 
     private void HandleRotation(float delta)
     {
@@ -172,7 +171,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             //Adds a push when you fall so you dont get stuck on the ledge
             rigidbody.AddForce(-Vector3.up * fallingSpeed);
-            rigidbody.AddForce(moveDirection * fallingSpeed / 7f);
+            rigidbody.AddForce(moveDirection * fallingSpeed / pushoffStrength);
         }
 
         Vector3 dir = moveDirection;
@@ -240,8 +239,6 @@ public class PlayerLocomotion : MonoBehaviour
         }
 
     }
-
-
 
     public void HandleJumping()
     {

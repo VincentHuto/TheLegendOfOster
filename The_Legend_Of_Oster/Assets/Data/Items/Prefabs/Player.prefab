@@ -4792,7 +4792,7 @@ GameObject:
   - component: {fileID: 4921238004521826637}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4868,11 +4868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf76eb40fabfe244843df26e69f3f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  myTransform: {fileID: 0}
-  animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
+  moveDirection: {x: 0, y: 0, z: 0}
+  normalVector: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  myTransform: {fileID: 0}
+  animatorHandler: {fileID: 0}
   groundDetectionRayStartPoint: 0.6
   minimumDistanceNeededToBeginFall: 1.5
   groundDirectionRayDistance: 0.2
@@ -4884,6 +4886,7 @@ MonoBehaviour:
   fallingSpeed: 150
   jumpHeight: 3
   gravityIntensity: -9.8
+  pushoffStrength: 10
 --- !u!114 &8943621431874948028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4896,8 +4899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920e953866f0cf046a40cef45d5d4098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteracting: 0
   isSprinting: 0
+  isInteracting: 0
   isInAir: 0
   isGrounded: 0
   isJumping: 0
@@ -4914,7 +4917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 0ef77ae1655fa29439642ad689bf6573, type: 2}
-  leftWeapon: {fileID: 11400000, guid: 0ef77ae1655fa29439642ad689bf6573, type: 2}
+  leftWeapon: {fileID: 11400000, guid: 93101af189bf32042ac94e84aea82d21, type: 2}
 --- !u!114 &4921238004521826636
 MonoBehaviour:
   m_ObjectHideFlags: 0

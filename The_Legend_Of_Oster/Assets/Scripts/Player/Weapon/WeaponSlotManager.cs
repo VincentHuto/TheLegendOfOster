@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WeaponSlotManager : MonoBehaviour
 {
-    WeaponHolderSlot leftHandSlot;
-    WeaponHolderSlot rightHandSlot;
+    WeaponHolderSlot leftHandSlot, rightHandSlot;
+    DamageCollider leftDamageCollider, rightDamageCollider;
 
     private void Awake()
     {
@@ -28,10 +28,37 @@ public class WeaponSlotManager : MonoBehaviour
         if (isLeft)
         {
             leftHandSlot.LoadWeaponModel(weaponItem);
+            LoadLeftWeaponDamageCollider();
         }
         else
         {
             rightHandSlot.LoadWeaponModel(weaponItem);
+            LoadRightWeaponDamageCollider();
         }
     }
+    public void LoadLeftWeaponDamageCollider()
+    {
+        leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+    }
+    public void LoadRightWeaponDamageCollider()
+    {
+        rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+    }
+    public void OpenLeftDamageCollider()
+    {
+        leftDamageCollider.EnableDamageCollider();
+    }
+    public void OpenRightDamageCollider()
+    {
+        rightDamageCollider.EnableDamageCollider();
+    }
+    public void CloseLeftDamageCollider()
+    {
+        leftDamageCollider.DisableDamageCollider();
+    }
+    public void CloseRightDamageCollider()
+    {
+        rightDamageCollider.DisableDamageCollider();
+    }
 }
+

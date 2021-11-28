@@ -6,8 +6,7 @@ public class PlayerInventory : MonoBehaviour
 {
     WeaponSlotManager weaponSlotManager;
 
-    public WeaponItem rightWeapon;
-    public WeaponItem leftWeapon;
+    public WeaponItem rightWeapon, leftWeapon;
 
     private void Awake()
     {

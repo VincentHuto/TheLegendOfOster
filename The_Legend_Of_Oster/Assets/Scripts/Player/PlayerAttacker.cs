@@ -15,12 +15,18 @@ public class PlayerAttacker : MonoBehaviour
 
     public void HandleLightAttack(WeaponItem weapon)
     {
-        animatorHandler.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
+        if (weapon != null && !weapon.isUnarmed)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
+        }
     }
 
     public void HandleHeavyAttack(WeaponItem weapon)
     {
-        animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_1, true);
+        if (weapon != null && !weapon.isUnarmed)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_1, true);
+        }
 
     }
 }

@@ -8,8 +8,7 @@ public class AnimatorHandler : MonoBehaviour
     public Animator anim;
     InputHandler inputHandler;
     PlayerLocomotion playerLocomotion;
-    int vertical;
-    int horizontal;
+    int vertical, horizontal;
     public bool canRotate;
 
     public void Initialize()

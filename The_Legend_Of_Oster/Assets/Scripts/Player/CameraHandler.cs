@@ -7,10 +7,7 @@ public class CameraHandler : MonoBehaviour
 
     InputHandler inputHandler;
 
-    public Transform targetTransform;
-    public Transform cameraTransform;
-    public Transform cameraPivotTransform;
-    private Transform myTransform;
+    public Transform targetTransform, cameraTransform, cameraPivotTransform, myTransform;
     private Vector3 cameraTransformPosition;
     public LayerMask ignoreLayers;
     private Vector3 cameraFollowVelocity = Vector3.zero;
@@ -19,10 +16,7 @@ public class CameraHandler : MonoBehaviour
     public float followSpeed = 0.1f;
     public float pivotSpeed = 0.03f;
 
-    private float targetPosition;
-    private float defaultPosition;
-    private float lookAngle;
-    private float pivotAngle;
+    private float targetPosition, defaultPosition, lookAngle, pivotAngle;
     public float minimumPivot = -35;
     public float maximumPivot = 35;
 
