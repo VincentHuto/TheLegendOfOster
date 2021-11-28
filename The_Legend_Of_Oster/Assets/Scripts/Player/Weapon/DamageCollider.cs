@@ -28,15 +28,17 @@ public class DamageCollider : MonoBehaviour
     {
         if(colllision.tag == "Player")
         {
-           PlayerStats playerStats =  colllision.GetComponent<PlayerStats>();
+           PlayerStats playerStats =  colllision.GetComponentInParent<PlayerStats>();
             if(playerStats != null)
             {
                 playerStats.TakeDamage(currentWeaponDamage);
             }
         }
+        //TAG THE COLLIDER AS ENEMY NOT THE PREFAB, SAME AS PLAYER
         if(colllision.tag == "Enemy")
         {
-            EnemyStats enemyStats = colllision.GetComponent<EnemyStats>();
+            EnemyStats enemyStats = colllision.GetComponentInParent<EnemyStats>();
+            Debug.Log("t");
             if (enemyStats != null)
             {
                 enemyStats.TakeDamage(currentWeaponDamage);
