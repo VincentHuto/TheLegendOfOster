@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     PlayerLocomotion playerLocomotion;
 
     [Header("Player Flags")]
-    public bool isSprinting, isInteracting, isInAir, isGrounded, isJumping;
+    public bool isSprinting, isInteracting, isInAir, isGrounded, isJumping, canDoCombo;
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         float delta = Time.deltaTime;
         isInteracting = anim.GetBool("isInteracting");
+        canDoCombo = anim.GetBool("canDoCombo");
         anim.SetBool("isInAir", isInAir);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isJumping", isJumping);

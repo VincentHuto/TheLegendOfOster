@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input;
 
-    public bool rollFlag,sprintFlag;
+    public bool rollFlag,sprintFlag,comboFlag;
     public float rollInputTimer;
 
     PlayerControls inputActions;
@@ -107,7 +107,20 @@ public class InputHandler : MonoBehaviour
         //RB handles the right hands light attack
         if(rb_Input)
         {
-            playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+            if (playerManager.canDoCombo)
+            {
+                comboFlag = true;
+                playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
+                comboFlag = false;
+            }
+            else
+            {
+                if (playerManager.isInteracting)
+                    return;
+                if (playerManager.canDoCombo)
+                    return;
+                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+            }
         }
 
         //RT handles the right hands heavy attack
@@ -119,7 +132,20 @@ public class InputHandler : MonoBehaviour
         //LB handles the left hands light attack
         if (lb_Input)
         {
-            playerAttacker.HandleLightAttack(playerInventory.leftWeapon);
+            if (playerManager.canDoCombo)
+            {
+                comboFlag = true;
+                playerAttacker.HandleWeaponCombo(playerInventory.leftWeapon);
+                comboFlag = false;
+            }
+            else
+            {
+                if (playerManager.isInteracting)
+                    return;
+                if (playerManager.canDoCombo)
+                    return;
+                playerAttacker.HandleLightAttack(playerInventory.leftWeapon);
+            }
         }
 
         //LT handles the left hands heavy attack
