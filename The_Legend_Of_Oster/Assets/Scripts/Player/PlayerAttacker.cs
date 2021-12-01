@@ -21,31 +21,48 @@ public class PlayerAttacker : MonoBehaviour
         if (inputHandler.comboFlag)
         {
             animatorHandler.anim.SetBool("canDoCombo", false);
-            if (lastAttack == weapon.OH_Light_Attack_1)
+            if (lastAttack == weapon.OH_Right_Light_Attack_1)
             {
-                animatorHandler.PlayTargetAnimation("OH_Light_Attack_2", true);
+                animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
+            }
+            if (lastAttack == weapon.OH_Left_Light_Attack_1)
+            {
+                animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
             }
         }
-
-
     }
 
-    public void HandleLightAttack(WeaponItem weapon)
+    public void HandleLightAttack(WeaponItem weapon, bool isLeft)
     {
         if (weapon != null && !weapon.isUnarmed)
         {
-            animatorHandler.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
-            lastAttack = weapon.OH_Light_Attack_1;
+            if (isLeft)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OH_Left_Light_Attack_1, true);
+                lastAttack = weapon.OH_Right_Light_Attack_1;
+            }
+            else
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OH_Right_Light_Attack_1, true);
+                lastAttack = weapon.OH_Right_Light_Attack_1;
+            }
         }
     }
 
-    public void HandleHeavyAttack(WeaponItem weapon)
+    public void HandleHeavyAttack(WeaponItem weapon, bool isLeft)
     {
         if (weapon != null && !weapon.isUnarmed)
         {
-            animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_1, true);
-            lastAttack = weapon.OH_Heavy_Attack_1;
-
+            if (isLeft)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OH_Left_Heavy_Attack_1, true);
+                lastAttack = weapon.OH_Right_Heavy_Attack_1;
+            }
+            else
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OH_Right_Heavy_Attack_1, true);
+                lastAttack = weapon.OH_Right_Heavy_Attack_1;
+            }
         }
 
     }

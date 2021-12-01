@@ -119,14 +119,14 @@ public class InputHandler : MonoBehaviour
                     return;
                 if (playerManager.canDoCombo)
                     return;
-                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon,false);
             }
         }
 
         //RT handles the right hands heavy attack
         if (rt_Input)
         {
-            playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon,false);
         }
 
         //LB handles the left hands light attack
@@ -144,14 +144,14 @@ public class InputHandler : MonoBehaviour
                     return;
                 if (playerManager.canDoCombo)
                     return;
-                playerAttacker.HandleLightAttack(playerInventory.leftWeapon);
+                playerAttacker.HandleLightAttack(playerInventory.leftWeapon,true);
             }
         }
 
         //LT handles the left hands heavy attack
         if (lt_Input)
         {
-            playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon);
+            playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon,true);
         }
 
     }
