@@ -1,3 +1,4 @@
+using Assets.Scripts.Player.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,11 @@ public class PlayerStats : MonoBehaviour
     public float maxStamina, currentStamina;
     public float staminaRegenMult;
     public float maxBreath, currentBreath;
-
+    public string text;
     public HealthBar healthbar;
     public StaminaBar staminaBar;
     public BreathBar breathBar;
+    public LevelText levelText;
 
     AnimatorHandler animatorHandler;
     PlayerManager playerManager;
@@ -21,9 +23,11 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        levelText = GetComponentInChildren<LevelText>();
         maxHealth = SetMaxHealthFromLevel();
         maxStamina = SetMaxStaminaFromLevel();
         maxBreath = SetMaxBreathFromLevel();
+        text = SetTextFromLevel();
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         currentBreath = maxBreath;
@@ -39,7 +43,14 @@ public class PlayerStats : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
         staminaBar.SetMaxStamina(maxStamina);
         breathBar.SetMaxBreath(maxBreath);
+        levelText.SetText(text);
 
+    }
+
+    private string SetTextFromLevel()
+    {
+        text = "Level: " + level.ToString();
+        return text;
     }
 
     private float SetMaxHealthFromLevel()
