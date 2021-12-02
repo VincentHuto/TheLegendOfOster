@@ -23,10 +23,12 @@ public class PlayerAttacker : MonoBehaviour
             animatorHandler.anim.SetBool("canDoCombo", false);
             if (lastAttack == weapon.OH_Right_Light_Attack_1)
             {
+                Debug.Log("fcf");
                 animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
             }
             if (lastAttack == weapon.OH_Left_Light_Attack_1)
             {
+                Debug.Log("222fcf");
                 animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
             }
         }
@@ -39,7 +41,7 @@ public class PlayerAttacker : MonoBehaviour
             if (isLeft)
             {
                 animatorHandler.PlayTargetAnimation(weapon.OH_Left_Light_Attack_1, true);
-                lastAttack = weapon.OH_Right_Light_Attack_1;
+                lastAttack = weapon.OH_Left_Light_Attack_1;
             }
             else
             {
@@ -56,7 +58,7 @@ public class PlayerAttacker : MonoBehaviour
             if (isLeft)
             {
                 animatorHandler.PlayTargetAnimation(weapon.OH_Left_Heavy_Attack_1, true);
-                lastAttack = weapon.OH_Right_Heavy_Attack_1;
+                lastAttack = weapon.OH_Left_Heavy_Attack_1;
             }
             else
             {

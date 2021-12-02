@@ -20,7 +20,6 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
-
     void Update()
     {
         float delta = Time.deltaTime;
@@ -56,6 +55,10 @@ public class PlayerManager : MonoBehaviour
         inputHandler.rt_Input = false;
         inputHandler.lb_Input = false;
         inputHandler.lt_Input = false;
+        inputHandler.d_Pad_Up = false;
+        inputHandler.d_Pad_Down = false;
+        inputHandler.d_Pad_Right = false;
+        inputHandler.d_Pad_Left = false;
         isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", isGrounded);
         
@@ -65,6 +68,5 @@ public class PlayerManager : MonoBehaviour
             playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
         }
     }
-
 
 }

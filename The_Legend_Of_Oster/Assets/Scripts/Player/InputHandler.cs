@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public float horizontal, vertical, moveAmount, mouseX, mouseY;
+    public float horizontal, vertical, moveAmount, mouseX, mouseY, rollInputTimer;
 
-    public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input;
+    public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
+        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right;
 
     public bool rollFlag,sprintFlag,comboFlag;
-    public float rollInputTimer;
 
     PlayerControls inputActions;
     PlayerLocomotion playerLocomotion;
@@ -53,6 +53,7 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);
         HandleAttackInput(delta);
         HandleJumpInput();
+        HandleQuickSlotInput();
     }
  
     private void HandleMoveInput(float delta)
@@ -156,4 +157,21 @@ public class InputHandler : MonoBehaviour
 
     }
 
+    private void HandleQuickSlotInput()
+    {
+
+        inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
+        inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+
+        if (d_Pad_Right)
+        {
+            playerInventory.ChangeRightWeapon();
+        }
+        else if (d_Pad_Left)
+        {
+            playerInventory.ChangeLeftWeapon();
+        }
+
+
+    }
 }
