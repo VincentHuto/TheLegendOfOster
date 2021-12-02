@@ -45,10 +45,13 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float pushoffStrength = 10f;
 
+    PlayerStats playerStats;
+
     void Start()
     {
         playerManager = GetComponent<PlayerManager>();
         rigidbody = GetComponent<Rigidbody>();
+        playerStats = GetComponent<PlayerStats>();
         inputHandler = GetComponent<InputHandler>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
         cameraObject = Camera.main.transform;
@@ -100,11 +103,15 @@ public class PlayerLocomotion : MonoBehaviour
 
         float speed = movementSpeed;
 
-        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5)
+        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5 && playerStats.currentStamina > 0)
         {
             speed = sprintSpeed;
             playerManager.isSprinting = true;
             moveDirection *= speed;
+                
+            playerStats.currentStamina -= 0.05f;
+            playerStats.staminaBar.SetCurrentStamina(playerStats.currentStamina);
+            playerStats.BeginStaminaRegen();
         }
         else
         {
