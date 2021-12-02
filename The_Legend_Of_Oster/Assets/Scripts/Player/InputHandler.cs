@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public float horizontal, vertical, moveAmount, mouseX, mouseY;
+    public float horizontal, vertical, moveAmount, mouseX, mouseY, rollInputTimer;
 
-    public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input;
+    public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
+        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right;
 
-    public bool rollFlag,sprintFlag,comboFlag;
-    public float rollInputTimer;
+    public bool rollFlag, sprintFlag, comboFlag;
 
     PlayerControls inputActions;
     PlayerLocomotion playerLocomotion;
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
     PlayerManager playerManager;
-
+    PlayerStats playerStats;
     Vector2 movementInput;
     Vector2 cameraInput;
 
@@ -28,6 +28,7 @@ public class InputHandler : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     public void OnEnable()
@@ -53,8 +54,9 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);
         HandleAttackInput(delta);
         HandleJumpInput();
+        HandleQuickSlotInput();
     }
- 
+
     private void HandleMoveInput(float delta)
     {
         horizontal = movementInput.x;
@@ -74,7 +76,7 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            if (rollInputTimer > 0 &&  rollInputTimer < 0.5f)
+            if (rollInputTimer > 0 && rollInputTimer < 0.5f)
             {
                 sprintFlag = false;
                 rollFlag = true;
@@ -96,7 +98,6 @@ public class InputHandler : MonoBehaviour
         }
 
     }
-
     private void HandleAttackInput(float delta)
     {
         inputActions.PlayerActions.RB.performed += i => rb_Input = true;
@@ -105,7 +106,7 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.LT.performed += i => lt_Input = true;
 
         //RB handles the right hands light attack
-        if(rb_Input)
+        if (rb_Input)
         {
             if (playerManager.canDoCombo)
             {
@@ -119,14 +120,14 @@ public class InputHandler : MonoBehaviour
                     return;
                 if (playerManager.canDoCombo)
                     return;
-                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon, false);
             }
         }
 
         //RT handles the right hands heavy attack
         if (rt_Input)
         {
-            playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon, false);
         }
 
         //LB handles the left hands light attack
@@ -144,16 +145,32 @@ public class InputHandler : MonoBehaviour
                     return;
                 if (playerManager.canDoCombo)
                     return;
-                playerAttacker.HandleLightAttack(playerInventory.leftWeapon);
+                playerAttacker.HandleLightAttack(playerInventory.leftWeapon, true);
             }
         }
 
         //LT handles the left hands heavy attack
         if (lt_Input)
         {
-            playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon);
+            playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon, true);
         }
 
     }
+    private void HandleQuickSlotInput()
+    {
 
+        inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
+        inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+
+        if (d_Pad_Right)
+        {
+            playerInventory.ChangeRightWeapon();
+        }
+        else if (d_Pad_Left)
+        {
+            playerInventory.ChangeLeftWeapon();
+        }
+
+
+    }
 }

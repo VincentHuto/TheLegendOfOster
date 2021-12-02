@@ -11,13 +11,13 @@ public class BreathBar : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
-    public void SetMaxBreath(int maxBreath)
+    public void SetMaxBreath(float maxBreath)
     {
         slider.maxValue = maxBreath;
         slider.value = maxBreath;
     }
 
-    public void SetCurrentBreath(int currentBreath)
+    public void SetCurrentBreath(float currentBreath)
     {
         slider.value = currentBreath;
     }
