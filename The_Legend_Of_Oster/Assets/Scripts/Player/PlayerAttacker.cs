@@ -7,13 +7,16 @@ public class PlayerAttacker : MonoBehaviour
 
     AnimatorHandler animatorHandler;
     InputHandler inputHandler;
+    WeaponSlotManager weaponSlotManager;
+    PlayerStats playerStats;
     public string lastAttack;
 
     private void Awake()
     {
+        playerStats = GetComponentInChildren<PlayerStats>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
         inputHandler = GetComponentInChildren<InputHandler>();
-
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
     }
 
     public void HandleWeaponCombo(WeaponItem weapon)
@@ -23,12 +26,10 @@ public class PlayerAttacker : MonoBehaviour
             animatorHandler.anim.SetBool("canDoCombo", false);
             if (lastAttack == weapon.OH_Right_Light_Attack_1)
             {
-                Debug.Log("fcf");
                 animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
             }
             if (lastAttack == weapon.OH_Left_Light_Attack_1)
             {
-                Debug.Log("222fcf");
                 animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
             }
         }
@@ -38,15 +39,20 @@ public class PlayerAttacker : MonoBehaviour
     {
         if (weapon != null && !weapon.isUnarmed)
         {
-            if (isLeft)
+            if (playerStats.currentStamina > weapon.GetWeaponStaminaCost(false))
             {
-                animatorHandler.PlayTargetAnimation(weapon.OH_Left_Light_Attack_1, true);
-                lastAttack = weapon.OH_Left_Light_Attack_1;
-            }
-            else
-            {
-                animatorHandler.PlayTargetAnimation(weapon.OH_Right_Light_Attack_1, true);
-                lastAttack = weapon.OH_Right_Light_Attack_1;
+                if (isLeft)
+                {
+                    weaponSlotManager.attackingWeapon = weapon;
+                    animatorHandler.PlayTargetAnimation(weapon.OH_Left_Light_Attack_1, true);
+                    lastAttack = weapon.OH_Left_Light_Attack_1;
+                }
+                else
+                {
+                    weaponSlotManager.attackingWeapon = weapon;
+                    animatorHandler.PlayTargetAnimation(weapon.OH_Right_Light_Attack_1, true);
+                    lastAttack = weapon.OH_Right_Light_Attack_1;
+                }
             }
         }
     }
@@ -55,16 +61,22 @@ public class PlayerAttacker : MonoBehaviour
     {
         if (weapon != null && !weapon.isUnarmed)
         {
-            if (isLeft)
+            if (playerStats.currentStamina > weapon.GetWeaponStaminaCost(true))
             {
-                animatorHandler.PlayTargetAnimation(weapon.OH_Left_Heavy_Attack_1, true);
-                lastAttack = weapon.OH_Left_Heavy_Attack_1;
+                if (isLeft)
+                {
+                    weaponSlotManager.attackingWeapon = weapon;
+                    animatorHandler.PlayTargetAnimation(weapon.OH_Left_Heavy_Attack_1, true);
+                    lastAttack = weapon.OH_Left_Heavy_Attack_1;
+                }
+                else
+                {
+                    weaponSlotManager.attackingWeapon = weapon;
+                    animatorHandler.PlayTargetAnimation(weapon.OH_Right_Heavy_Attack_1, true);
+                    lastAttack = weapon.OH_Right_Heavy_Attack_1;
+                }
             }
-            else
-            {
-                animatorHandler.PlayTargetAnimation(weapon.OH_Right_Heavy_Attack_1, true);
-                lastAttack = weapon.OH_Right_Heavy_Attack_1;
-            }
+
         }
 
     }
