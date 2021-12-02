@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public int level = 10;
-    public float maxHealth,currentHealth;
+    public float maxHealth, currentHealth;
     public float maxStamina, currentStamina;
     public float staminaRegenMult;
     public float maxBreath, currentBreath;
@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
     public BreathBar breathBar;
 
     AnimatorHandler animatorHandler;
-
+    PlayerManager playerManager;
     private WaitForSeconds regenTicks = new WaitForSeconds(0.1f);
     private Coroutine regen;
 
@@ -29,6 +29,8 @@ public class PlayerStats : MonoBehaviour
         currentBreath = maxBreath;
         staminaRegenMult = level * 0.05f;
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerManager = GetComponent<PlayerManager>();
+
     }
 
     void Start()
@@ -76,19 +78,26 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeStaminaDamage(float damage)
     {
-        if (regen != null)
-        {
-            StopCoroutine(regen);
-        }
-        regen = StartCoroutine(StaminaRegen());
+        BeginStaminaRegen();
 
         currentStamina = currentStamina - damage;
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
+    public void BeginStaminaRegen()
+    {
+        if (regen != null)
+        {
+            StopCoroutine(regen);
+        }
+        regen = StartCoroutine(StaminaRegen());
+    }
+
     private IEnumerator StaminaRegen()
     {
+
         yield return new WaitForSeconds(2);
+
 
         while (currentStamina < maxStamina)
         {
