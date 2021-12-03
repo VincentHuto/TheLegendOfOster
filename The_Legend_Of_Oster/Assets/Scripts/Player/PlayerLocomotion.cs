@@ -45,10 +45,13 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float pushoffStrength = 10f;
 
+    PlayerStats playerStats;
+
     void Start()
     {
         playerManager = GetComponent<PlayerManager>();
         rigidbody = GetComponent<Rigidbody>();
+        playerStats = GetComponent<PlayerStats>();
         inputHandler = GetComponent<InputHandler>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
         cameraObject = Camera.main.transform;
@@ -90,7 +93,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isInteracting)
             return;
 
-        if(playerManager.isJumping)
+        if (playerManager.isJumping)
             return;
 
         moveDirection = cameraObject.forward * inputHandler.vertical;
@@ -100,11 +103,15 @@ public class PlayerLocomotion : MonoBehaviour
 
         float speed = movementSpeed;
 
-        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5)
+        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5 && playerStats.currentStamina > 0)
         {
             speed = sprintSpeed;
             playerManager.isSprinting = true;
             moveDirection *= speed;
+
+            playerStats.currentStamina -= 0.05f;
+            playerStats.staminaBar.SetCurrentStamina(playerStats.currentStamina);
+            playerStats.BeginStaminaRegen();
         }
         else
         {
@@ -135,22 +142,25 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (animatorHandler.anim.GetBool("isInteracting"))
             return;
-
         if (inputHandler.rollFlag)
         {
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
+            if (playerStats.currentStamina > 0)
+            {
+                if (inputHandler.moveAmount > 0)
+                {
 
-            if (inputHandler.moveAmount > 0)
-            {
-                animatorHandler.PlayTargetAnimation("Rolling", true);
-                moveDirection.y = 0;
-                Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
-                myTransform.rotation = rollRotation;
-            }
-            else
-            {
-                animatorHandler.PlayTargetAnimation("Backstep", true);
+                    animatorHandler.PlayTargetAnimation("Rolling", true);
+                    moveDirection.y = 0;
+                    Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
+                    myTransform.rotation = rollRotation;
+
+                }
+                else
+                {
+                    animatorHandler.PlayTargetAnimation("Backstep", true);
+                }
             }
         }
     }
@@ -180,7 +190,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         targetPosition = myTransform.position;
 
-        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+        //        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
         if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, ignoreForGroundCheck))
         {
             normalVector = hit.normal;
@@ -245,7 +255,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isGrounded)
         {
             animatorHandler.anim.SetBool("isJumping", true);
-            animatorHandler.PlayTargetAnimation("Jump",false);
+            animatorHandler.PlayTargetAnimation("Jump", false);
 
             float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
             Vector3 playerVelocity = moveDirection;
