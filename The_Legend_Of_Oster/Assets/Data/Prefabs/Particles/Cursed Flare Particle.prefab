@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6722041330833987367
+--- !u!1 &1079262316755301120
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6722041330833987366}
-  - component: {fileID: 6722041330833987352}
-  - component: {fileID: 6722041330833987353}
+  - component: {fileID: 1079262316755301121}
+  - component: {fileID: 1079262316755301183}
+  - component: {fileID: 1079262316755301182}
   m_Layer: 0
-  m_Name: Cursed Particle
+  m_Name: Cursed Flare Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6722041330833987366
+--- !u!4 &1079262316755301121
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6722041330833987367}
+  m_GameObject: {fileID: 1079262316755301120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalPosition: {x: 3.412, y: 0.18, z: 17.683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!198 &6722041330833987352
+--- !u!198 &1079262316755301183
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6722041330833987367}
+  m_GameObject: {fileID: 1079262316755301120}
   serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
@@ -601,7 +601,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 10000
-    size3D: 0
+    size3D: 1
     rotation3D: 1
     gravityModifier:
       serializedVersion: 2
@@ -4757,14 +4757,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &6722041330833987353
+--- !u!199 &1079262316755301182
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6722041330833987367}
+  m_GameObject: {fileID: 1079262316755301120}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
