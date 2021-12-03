@@ -1325,7 +1325,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ccd7398f5a36c5448bee1f8029c280c, type: 3}
   - {fileID: 8300000, guid: d9d2314e887064147abb10b908e2ef6e, type: 3}
   - {fileID: 8300000, guid: 2906099ab62725946a1547730cf78a1b, type: 3}
-  asrc: {fileID: 0}
+  asrc: {fileID: 6157365774849476474}
 --- !u!82 &6157365774849476474
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1347,9 +1347,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1382,7 +1382,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.817
       inSlope: 0
       outSlope: 0
       tangentMode: 0
