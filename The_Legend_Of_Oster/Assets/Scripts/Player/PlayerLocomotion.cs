@@ -93,7 +93,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isInteracting)
             return;
 
-        if(playerManager.isJumping)
+        if (playerManager.isJumping)
             return;
 
         moveDirection = cameraObject.forward * inputHandler.vertical;
@@ -108,7 +108,7 @@ public class PlayerLocomotion : MonoBehaviour
             speed = sprintSpeed;
             playerManager.isSprinting = true;
             moveDirection *= speed;
-                
+
             playerStats.currentStamina -= 0.05f;
             playerStats.staminaBar.SetCurrentStamina(playerStats.currentStamina);
             playerStats.BeginStaminaRegen();
@@ -142,22 +142,25 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (animatorHandler.anim.GetBool("isInteracting"))
             return;
-
         if (inputHandler.rollFlag)
         {
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
+            if (playerStats.currentStamina > 0)
+            {
+                if (inputHandler.moveAmount > 0)
+                {
 
-            if (inputHandler.moveAmount > 0)
-            {
-                animatorHandler.PlayTargetAnimation("Rolling", true);
-                moveDirection.y = 0;
-                Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
-                myTransform.rotation = rollRotation;
-            }
-            else
-            {
-                animatorHandler.PlayTargetAnimation("Backstep", true);
+                    animatorHandler.PlayTargetAnimation("Rolling", true);
+                    moveDirection.y = 0;
+                    Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
+                    myTransform.rotation = rollRotation;
+
+                }
+                else
+                {
+                    animatorHandler.PlayTargetAnimation("Backstep", true);
+                }
             }
         }
     }
@@ -187,7 +190,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         targetPosition = myTransform.position;
 
-        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+        //        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
         if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, ignoreForGroundCheck))
         {
             normalVector = hit.normal;
@@ -252,7 +255,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isGrounded)
         {
             animatorHandler.anim.SetBool("isJumping", true);
-            animatorHandler.PlayTargetAnimation("Jump",false);
+            animatorHandler.PlayTargetAnimation("Jump", false);
 
             float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
             Vector3 playerVelocity = moveDirection;
