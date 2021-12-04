@@ -38,28 +38,21 @@ public class PlayerManager : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isJumping", isJumping);
         inputHandler.HandleAllInputs(delta);
-        playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleRollingAndSprinting(delta);
-        playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         CheckForInteractableObject();
     }
 
     private void FixedUpdate()
     {
         float delta = Time.fixedDeltaTime;
-
-        if (cameraHandler != null)
-        {
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-        }
+        playerLocomotion.HandleMovement(delta);
+        playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
     }
 
     private void LateUpdate()
     {
         //Makes sure the button only triggers once even if you accidently misclick or hold down the button
         inputHandler.rollFlag = false;
-        inputHandler.sprintFlag = false;
         inputHandler.rb_Input = false;
         inputHandler.rt_Input = false;
         inputHandler.lb_Input = false;
@@ -69,9 +62,17 @@ public class PlayerManager : MonoBehaviour
         inputHandler.d_Pad_Right = false;
         inputHandler.d_Pad_Left = false;
         inputHandler.pickup_Input = false;
+        inputHandler.inv_Input = false;
         isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", isGrounded);
-        
+
+        float delta = Time.fixedDeltaTime;
+
+        if (cameraHandler != null)
+        {
+            cameraHandler.FollowTarget(delta);
+            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
+        }
 
         if (isInAir)
         {

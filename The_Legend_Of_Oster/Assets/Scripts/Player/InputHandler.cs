@@ -8,9 +8,9 @@ public class InputHandler : MonoBehaviour
     public float horizontal, vertical, moveAmount, mouseX, mouseY, rollInputTimer;
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
-        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input;
+        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input,inv_Input;
 
-    public bool rollFlag, sprintFlag, comboFlag;
+    public bool rollFlag, sprintFlag, comboFlag,invFlag;
 
     PlayerControls inputActions;
     PlayerLocomotion playerLocomotion;
@@ -18,6 +18,7 @@ public class InputHandler : MonoBehaviour
     PlayerInventory playerInventory;
     PlayerManager playerManager;
     PlayerStats playerStats;
+    UIManager uIManager;
     Vector2 movementInput;
     Vector2 cameraInput;
 
@@ -29,6 +30,8 @@ public class InputHandler : MonoBehaviour
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
+        uIManager = FindObjectOfType<UIManager>();
+
     }
 
     public void OnEnable()
@@ -39,6 +42,16 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
             inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+            inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+            inputActions.PlayerActions.LB.performed += i => lb_Input = true;
+            inputActions.PlayerActions.LT.performed += i => lt_Input = true;
+            inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
+            inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+            inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
+            inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
+
+
         }
         inputActions.Enable();
     }
@@ -55,7 +68,7 @@ public class InputHandler : MonoBehaviour
         HandleAttackInput(delta);
         HandleJumpInput();
         HandleQuickSlotInput();
-        HandleInteractionInput();
+        HandleInventoryInput();
     }
 
     private void HandleMoveInput(float delta)
@@ -69,11 +82,11 @@ public class InputHandler : MonoBehaviour
     private void HandleRollInput(float delta)
     {
         b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+        sprintFlag = b_Input;
 
         if (b_Input)
         {
             rollInputTimer += delta;
-            sprintFlag = true;
         }
         else
         {
@@ -101,10 +114,7 @@ public class InputHandler : MonoBehaviour
     }
     private void HandleAttackInput(float delta)
     {
-        inputActions.PlayerActions.RB.performed += i => rb_Input = true;
-        inputActions.PlayerActions.RT.performed += i => rt_Input = true;
-        inputActions.PlayerActions.LB.performed += i => lb_Input = true;
-        inputActions.PlayerActions.LT.performed += i => lt_Input = true;
+     
 
         //RB handles the right hands light attack
         if (rb_Input)
@@ -160,9 +170,6 @@ public class InputHandler : MonoBehaviour
     private void HandleQuickSlotInput()
     {
 
-        inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
-        inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
-
         if (d_Pad_Right)
         {
             playerInventory.ChangeRightWeapon();
@@ -174,10 +181,25 @@ public class InputHandler : MonoBehaviour
 
 
     }
-
-    private void HandleInteractionInput()
+ 
+    private void HandleInventoryInput()
     {
-        inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
+        if (inv_Input)
+        {
+            invFlag = !invFlag;
 
+            if (invFlag)
+            {
+                uIManager.OpenSelectWindow();
+                uIManager.UpdateUI();
+                //uIManager.hudWindow.SetActive(false);
+            }
+            else
+            {
+                uIManager.CloseSelectWindow();
+                uIManager.CloseAllInventoryWindows();
+                uIManager.hudWindow.SetActive(true);
+            }
+        }
     }
 }
