@@ -14,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
     public int currentLeftWeaponIndex = 0;
 
     public List<WeaponItem> weaponsInventory;
+    public List<KeyItem> keyItemsInventory;
 
     private void Awake()
     {

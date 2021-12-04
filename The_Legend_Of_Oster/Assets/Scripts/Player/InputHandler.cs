@@ -192,7 +192,6 @@ public class InputHandler : MonoBehaviour
             {
                 uIManager.OpenSelectWindow();
                 uIManager.UpdateUI();
-                //uIManager.hudWindow.SetActive(false);
             }
             else
             {
