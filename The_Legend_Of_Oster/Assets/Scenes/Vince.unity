@@ -6613,6 +6613,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4059326194282676835, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
   m_PrefabInstance: {fileID: 3306052807941914865}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564132435231752851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564132435231752849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7ab39630576bc4b9601a57c7528f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWeaponFx: {fileID: 0}
+  leftWeaponFX: {fileID: 0}
+  currentParticleFX: {fileID: 0}
 --- !u!1001 &2064948586858337078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6697,6 +6712,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 392584419}
+    - target: {fileID: 1180268879, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180268879, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180268879, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 566
+      objectReference: {fileID: 0}
     - target: {fileID: 1235916627, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -6729,6 +6756,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1909694768}
+    - target: {fileID: 546432694206273229, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bbc2a688f84187c4893baff559a34a04, type: 3}
     - target: {fileID: 751755016671333371, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6777,6 +6808,22 @@ PrefabInstance:
       propertyPath: keyItemInventorySlotsParent
       value: 
       objectReference: {fileID: 1707083458}
+    - target: {fileID: 4127662599716933463, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_Name
+      value: Select Key Items
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236488570876448301, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236488570876448301, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236488570876448301, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 566
+      objectReference: {fileID: 0}
     - target: {fileID: 8599043917235245321, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: m_RootOrder
       value: 3

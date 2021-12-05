@@ -18,6 +18,7 @@ public class InputHandler : MonoBehaviour
     PlayerInventory playerInventory;
     PlayerManager playerManager;
     PlayerStats playerStats;
+    PlayerEffectsManager playerEffectsManager;
     UIManager uIManager;
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -31,6 +32,7 @@ public class InputHandler : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         uIManager = FindObjectOfType<UIManager>();
+        playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
 
     }
 

@@ -9,12 +9,14 @@ public class WeaponSlotManager : MonoBehaviour
     Animator animator;
     QuickSlotsUI quickSlotsUI;
     PlayerStats playerStats;
+    PlayerEffectsManager playerEffectsManager;
     public WeaponItem attackingWeapon;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
         playerStats = GetComponentInParent<PlayerStats>();
+        playerEffectsManager = GetComponent<PlayerEffectsManager>();
 
         WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
         foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -85,10 +87,13 @@ public class WeaponSlotManager : MonoBehaviour
     public void LoadLeftWeaponDamageCollider()
     {
         leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        playerEffectsManager.leftWeaponFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
     }
     public void LoadRightWeaponDamageCollider()
     {
         rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        playerEffectsManager.rightWeaponFx = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
+
     }
     public void OpenLeftDamageCollider()
     {
