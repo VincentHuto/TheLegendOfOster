@@ -6785,6 +6785,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &442186522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 991175473, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+  m_PrefabInstance: {fileID: 2517100252494742057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &473194804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7026,6 +7031,11 @@ Transform:
   m_Father: {fileID: 1774783693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &522916702 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 757065060, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+  m_PrefabInstance: {fileID: 2517100252494742057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &550554500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8762,7 +8772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014176296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.976, y: -0.73, z: -22.746}
+  m_LocalPosition: {x: -8.976, y: -0.76, z: -22.746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 194851999}
@@ -12814,6 +12824,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1909694768}
+    - target: {fileID: 751755016671333371, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751755016671333371, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751755016671333371, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2074867204836181433, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 42.1939
@@ -12942,6 +12964,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3306052807071867883, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306052807071867883, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306052807071867883, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963426807033753411, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: keyItemInventorySlotPrefab
+      value: 
+      objectReference: {fileID: 442186522}
+    - target: {fileID: 3963426807033753411, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
+      propertyPath: keyItemInventorySlotsParent
+      value: 
+      objectReference: {fileID: 522916702}
     - target: {fileID: 4921238004521826637, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: staminaRegenMult
       value: 0
