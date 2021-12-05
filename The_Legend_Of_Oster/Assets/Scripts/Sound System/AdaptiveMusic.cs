@@ -10,15 +10,18 @@ public class AdaptiveMusic : MonoBehaviour
     [SerializeField] AudioClip highIntensity_clip;
     public int m_intensity;
     MusicState state;
-    
+    AudioSource music2D;
     public enum MusicState
     {
         Inside, Outside, Combat
     }
 
-    void Start()
+    private void Awake()
     {
-        state = MusicState.Inside;   
+        state = MusicState.Inside;
+        music2D = GetComponent<AudioSource>();
+        music2D.clip = lowIntensity_clip;
+        music2D.Play();
     }
 
     void TransitionTo(AudioClip c)
@@ -35,6 +38,10 @@ public class AdaptiveMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F1))
+            m_intensity = 1;
+
+        if (Input.GetKeyDown(KeyCode.Tilde))
+            m_intensity = 0;
     }
 }
