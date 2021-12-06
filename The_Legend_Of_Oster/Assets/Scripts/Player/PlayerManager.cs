@@ -47,6 +47,11 @@ public class PlayerManager : MonoBehaviour
         float delta = Time.fixedDeltaTime;
         playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+        if (cameraHandler != null)
+        {
+            cameraHandler.FollowTarget(delta);
+            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
+        }
     }
 
     private void LateUpdate()
@@ -68,11 +73,7 @@ public class PlayerManager : MonoBehaviour
 
         float delta = Time.fixedDeltaTime;
 
-        if (cameraHandler != null)
-        {
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-        }
+    
 
         if (isInAir)
         {
