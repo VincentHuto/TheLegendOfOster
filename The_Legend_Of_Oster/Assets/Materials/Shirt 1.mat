@@ -9,13 +9,14 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Shirt 1
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: FINALPASS VIGNETTE_MASKED _DETAIL_MULX2 _EMISSION _METALLICGLOSSMAP
-    _NORMALMAP _SPECGLOSSMAP
+  m_ShaderKeywords: FINALPASS VIGNETTE_MASKED _ALPHABLEND_ON _DETAIL_MULX2 _EMISSION
+    _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -105,7 +106,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c0264675a41c58142ac2cd8e1e2c60d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -648,7 +649,7 @@ Material:
     - _DistortionStrengthAudioLinkBand: 0
     - _DitherGradient: 0.1
     - _DitheringEnabled: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _Emission1CenterOutAddAudioLinkwidth: 1
     - _Emission1CenterOutAudioLinkWidth: 1
     - _EmissionBaseColorAsMap: 0
@@ -780,7 +781,7 @@ Material:
     - _GlitterSpeed: 10
     - _GlitterTextureRotation: 0
     - _GlitterUseSurfaceColor: 0
-    - _GlossMapScale: 0.582
+    - _GlossMapScale: 0.532
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _IgnoreFog: 0
@@ -875,7 +876,7 @@ Material:
     - _MetallicTintMapUV: 0
     - _Mirror: 0
     - _MirrorTextureUV: 0
-    - _Mode: 0
+    - _Mode: 2
     - _ModelAngleMax: 90
     - _ModelAngleMin: 45
     - _OcclusionStrength: 1
@@ -1036,7 +1037,7 @@ Material:
     - _SpecularToonStart1: 0.95
     - _SpecularType: 1
     - _SpecularType1: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _SssBumpBlur: 0.7
     - _SssScale: 1
     - _StencilCompareFunction: 8
@@ -1073,7 +1074,7 @@ Material:
     - _VertexRoundingEnabled: 0
     - _VertexUnwrap: 0
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _commentIfZero_EnableOutlinePass: 0
     - _glitterFrequencyLinearEmissive: 20
     - footer_discord: 0
