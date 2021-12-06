@@ -3835,11 +3835,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b02321b68b91f3489b7c47e4555e966, type: 3}
---- !u!1 &991175473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 991175473, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
-  m_PrefabInstance: {fileID: 3306052807941914865}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1115471337
 Mesh:
   m_ObjectHideFlags: 0
@@ -4960,11 +4955,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2331291078892032058, guid: f8b66d21c4888cb4ca6211a407440d9c, type: 3}
   m_PrefabInstance: {fileID: 559335615}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1707083458 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1707083458, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
-  m_PrefabInstance: {fileID: 3306052807941914865}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1774783692
 GameObject:
@@ -6627,6 +6617,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeaponFx: {fileID: 0}
   leftWeaponFX: {fileID: 0}
+  isPoisoned: 0
+  poisonBuildup: 0
+  poisonAmount: 100
+  defaultPoisonAmount: 0
   currentParticleFX: {fileID: 0}
 --- !u!1001 &2064948586858337078
 PrefabInstance:
@@ -6800,14 +6794,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3963426807033753411, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
-      propertyPath: keyItemInventorySlotPrefab
-      value: 
-      objectReference: {fileID: 991175473}
-    - target: {fileID: 3963426807033753411, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
-      propertyPath: keyItemInventorySlotsParent
-      value: 
-      objectReference: {fileID: 1707083458}
     - target: {fileID: 4127662599716933463, guid: 37ba2d7ad92a35648a15c1e4066d78c0, type: 3}
       propertyPath: m_Name
       value: Select Key Items
