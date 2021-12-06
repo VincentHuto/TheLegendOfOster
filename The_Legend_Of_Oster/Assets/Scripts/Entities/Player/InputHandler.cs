@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
         d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
-        lockOn_Input;
+        lockOn_Input, right_Stick_Right_Input,right_Stick_Left_Input;
 
     public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
@@ -22,6 +22,7 @@ public class InputHandler : MonoBehaviour
     PlayerEffectsManager playerEffectsManager;
     UIManager uIManager;
     CameraHandler cameraHandler;
+
     Vector2 movementInput;
     Vector2 cameraInput;
 
@@ -56,7 +57,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
             inputActions.PlayerActions.LockOn.performed += i => lockOn_Input = true;
-
+            inputActions.PlayerActions.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
+            inputActions.PlayerActions.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
         }
         inputActions.Enable();
     }
@@ -213,7 +215,6 @@ public class InputHandler : MonoBehaviour
     {
         if (lockOn_Input && lockOnFlag == false)
         {
-            cameraHandler.ClearLockOnTargets();
             lockOn_Input = false;
             cameraHandler.HandleLockOn();
             if (cameraHandler.nearestLockOnTarget != null)
@@ -227,6 +228,26 @@ public class InputHandler : MonoBehaviour
             lockOn_Input = false;
             lockOnFlag = false;
             cameraHandler.ClearLockOnTargets();
+        }
+
+        if (lockOnFlag && right_Stick_Left_Input)
+        {
+            right_Stick_Left_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.leftLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+            }
+        }
+
+        if (lockOnFlag && right_Stick_Right_Input)
+        {
+            right_Stick_Right_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.rightLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+            }
         }
     }
 }

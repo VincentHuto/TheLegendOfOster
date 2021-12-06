@@ -28,6 +28,8 @@ public class CameraHandler : MonoBehaviour
 
     List<CharacterManager> availableTargets = new List<CharacterManager>();
     public Transform nearestLockOnTarget;
+    public Transform leftLockTarget;
+    public Transform rightLockTarget;
     public float maximumLockOnDistance = 30;
 
     private void Awake()
@@ -115,17 +117,17 @@ public class CameraHandler : MonoBehaviour
     public void HandleLockOn()
     {
         float shortestDistance = Mathf.Infinity;
+        float shortestDistanceOfLeftTarget = Mathf.Infinity;
+        float shortestDistanceOfRightTarget = Mathf.Infinity;
 
         Collider[] colliders = Physics.OverlapSphere(targetTransform.position, 26);
 
         for (int i = 0; i < colliders.Length; i++)
         {
-
             CharacterManager character = colliders[i].GetComponentInParent<CharacterManager>();
 
             if (character != null)
             {
-
                 Vector3 lockTargetDirection = character.transform.position - targetTransform.position;
                 float distanceFromTarget = Vector3.Distance(targetTransform.position, character.transform.position);
                 float viewableAngle = Vector3.Angle(lockTargetDirection, cameraTransform.forward);
@@ -139,16 +141,33 @@ public class CameraHandler : MonoBehaviour
             }
         }
 
-
         for (int k = 0; k < availableTargets.Count; k++)
         {
-
             float distanceFromTarget = Vector3.Distance(targetTransform.position, availableTargets[k].transform.position);
 
             if (distanceFromTarget < shortestDistance)
             {
                 shortestDistance = distanceFromTarget;
                 nearestLockOnTarget = availableTargets[k].lockOnTransform;
+            }
+
+            if (inputHandler.lockOnFlag)
+            {
+                Vector3 relativeEnemyPosition = currentLockOnTarget.InverseTransformPoint(availableTargets[k].transform.position);
+                var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
+                var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
+
+                if (relativeEnemyPosition.x > 0.00 && distanceFromLeftTarget < shortestDistanceOfLeftTarget)
+                {
+                    shortestDistanceOfLeftTarget = distanceFromLeftTarget;
+                    leftLockTarget = availableTargets[k].lockOnTransform;
+                }
+
+                if (relativeEnemyPosition.x < 0.00 && distanceFromRightTarget < shortestDistanceOfRightTarget)
+                {
+                    shortestDistanceOfRightTarget = distanceFromRightTarget;
+                    rightLockTarget = availableTargets[k].lockOnTransform;
+                }
             }
         }
     }
