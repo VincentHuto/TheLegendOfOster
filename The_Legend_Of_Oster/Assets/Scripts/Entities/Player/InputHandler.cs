@@ -8,9 +8,10 @@ public class InputHandler : MonoBehaviour
     public float horizontal, vertical, moveAmount, mouseX, mouseY, rollInputTimer;
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
-        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input,inv_Input;
+        d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
+        lockOn_Input, right_Stick_Right_Input,right_Stick_Left_Input;
 
-    public bool rollFlag, sprintFlag, comboFlag,invFlag;
+    public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
     PlayerControls inputActions;
     PlayerLocomotion playerLocomotion;
@@ -20,6 +21,8 @@ public class InputHandler : MonoBehaviour
     PlayerStats playerStats;
     PlayerEffectsManager playerEffectsManager;
     UIManager uIManager;
+    CameraHandler cameraHandler;
+
     Vector2 movementInput;
     Vector2 cameraInput;
 
@@ -33,6 +36,7 @@ public class InputHandler : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         uIManager = FindObjectOfType<UIManager>();
         playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
+        cameraHandler = FindObjectOfType<CameraHandler>();
 
     }
 
@@ -52,8 +56,9 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
-
-
+            inputActions.PlayerActions.LockOn.performed += i => lockOn_Input = true;
+            inputActions.PlayerActions.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
+            inputActions.PlayerActions.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
         }
         inputActions.Enable();
     }
@@ -71,6 +76,8 @@ public class InputHandler : MonoBehaviour
         HandleJumpInput();
         HandleQuickSlotInput();
         HandleInventoryInput();
+        HandleLockOnInput();
+
     }
 
     private void HandleMoveInput(float delta)
@@ -116,7 +123,7 @@ public class InputHandler : MonoBehaviour
     }
     private void HandleAttackInput(float delta)
     {
-     
+
 
         //RB handles the right hands light attack
         if (rb_Input)
@@ -183,7 +190,7 @@ public class InputHandler : MonoBehaviour
 
 
     }
- 
+
     private void HandleInventoryInput()
     {
         if (inv_Input)
@@ -200,6 +207,46 @@ public class InputHandler : MonoBehaviour
                 uIManager.CloseSelectWindow();
                 uIManager.CloseAllInventoryWindows();
                 uIManager.hudWindow.SetActive(true);
+            }
+        }
+    }
+
+    private void HandleLockOnInput()
+    {
+        if (lockOn_Input && lockOnFlag == false)
+        {
+            lockOn_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.nearestLockOnTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
+                lockOnFlag = true;
+            }
+        }
+        else if (lockOn_Input && lockOnFlag)
+        {
+            lockOn_Input = false;
+            lockOnFlag = false;
+            cameraHandler.ClearLockOnTargets();
+        }
+
+        if (lockOnFlag && right_Stick_Left_Input)
+        {
+            right_Stick_Left_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.leftLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+            }
+        }
+
+        if (lockOnFlag && right_Stick_Right_Input)
+        {
+            right_Stick_Right_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.rightLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
             }
         }
     }

@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyStats : CharacterStats
 {
-    public int level = 10;
-    public int maxHealth, currentHealth;
-    public int maxStamina, currentStamina;
-    public int maxBreath, currentBreath;
-
 
     Animator anim;
 
@@ -29,19 +24,19 @@ public class EnemyStats : MonoBehaviour
 
     }
 
-    private int SetMaxHealthFromLevel()
+    private float SetMaxHealthFromLevel()
     {
         maxHealth = level * 10;
         return maxHealth;
     }
 
-    private int SetMaxStaminaFromLevel()
+    private float SetMaxStaminaFromLevel()
     {
         maxStamina = level * 5;
         return maxStamina;
     }
 
-    private int SetMaxBreathFromLevel()
+    private float SetMaxBreathFromLevel()
     {
         maxBreath = level * 15;
         return maxBreath;

@@ -3,13 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
-    public int level = 10;
-    public float maxHealth, currentHealth;
-    public float maxStamina, currentStamina;
     public float staminaRegenMult;
-    public float maxBreath, currentBreath;
     public string text;
     public HealthBar healthbar;
     public StaminaBar staminaBar;
