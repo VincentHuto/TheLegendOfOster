@@ -1622,8 +1622,12 @@ MonoBehaviour:
   cameraSphereRadius: 0.2
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
+  lockedPivotPosition: 3.54
+  unlockedPivotPosition: 2.63
   currentLockOnTarget: {fileID: 0}
   nearestLockOnTarget: {fileID: 0}
+  leftLockTarget: {fileID: 0}
+  rightLockTarget: {fileID: 0}
   maximumLockOnDistance: 30
 --- !u!1 &916249051631603380
 GameObject:
@@ -5765,7 +5769,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 145f5cad55da03745b8f69ae064f4aa4, type: 2}
+  - {fileID: 2100000, guid: e35006afad68080439ae2e287cc61946, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9154,6 +9158,8 @@ MonoBehaviour:
   pickup_Input: 0
   inv_Input: 0
   lockOn_Input: 0
+  right_Stick_Right_Input: 0
+  right_Stick_Left_Input: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
@@ -9203,6 +9209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 3274922384395926159}
+  spriteRenderer: {fileID: 0}
   interactableUIGameObject: {fileID: 443025606464765735}
   itemInteractableGameObject: {fileID: 2402210990439872026}
   isSprinting: 0
