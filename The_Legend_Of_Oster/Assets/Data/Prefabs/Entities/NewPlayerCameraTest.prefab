@@ -1623,7 +1623,10 @@ MonoBehaviour:
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
   currentLockOnTarget: {fileID: 0}
+  currentTargetCharacter: {fileID: 0}
   nearestLockOnTarget: {fileID: 0}
+  leftLockTarget: {fileID: 0}
+  rightLockTarget: {fileID: 0}
   maximumLockOnDistance: 30
 --- !u!1 &916249051631603380
 GameObject:
@@ -9154,6 +9157,8 @@ MonoBehaviour:
   pickup_Input: 0
   inv_Input: 0
   lockOn_Input: 0
+  right_Stick_Right_Input: 0
+  right_Stick_Left_Input: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
@@ -9203,6 +9208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 3274922384395926159}
+  spriteRenderer: {fileID: 0}
   interactableUIGameObject: {fileID: 443025606464765735}
   itemInteractableGameObject: {fileID: 2402210990439872026}
   isSprinting: 0

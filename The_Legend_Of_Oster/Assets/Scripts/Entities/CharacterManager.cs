@@ -6,4 +6,8 @@ using UnityEngine;
     public class CharacterManager : MonoBehaviour
     {
         public Transform lockOnTransform;
+        public SpriteRenderer spriteRenderer;
+
+        
+
     }
