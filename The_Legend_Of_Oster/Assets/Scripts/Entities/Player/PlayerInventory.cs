@@ -15,6 +15,7 @@ public class PlayerInventory : MonoBehaviour
 
     public List<WeaponItem> weaponsInventory;
     public List<KeyItem> keyItemsInventory;
+    public List<CraftingItem> craftingItemInventory;
 
     private void Awake()
     {
