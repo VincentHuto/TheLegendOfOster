@@ -12,21 +12,25 @@ public class InventorySlot : MonoBehaviour
     public UIManager uIManager;
     public InputHandler inputHandler;
     public Image icon;
-    public Item item;
+    public ItemStack item;
+    public Text count;
 
     public virtual void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
         uIManager = FindObjectOfType<UIManager>();
         inputHandler = FindObjectOfType<InputHandler>();
+        Debug.Log(count.text);
+
     }
 
-    public void AddItem(Item newItem)
+    public void AddItem(ItemStack newItem)
     {
         item = newItem;
-        icon.sprite = newItem.itemIcon;
+        icon.sprite = newItem.itemType.itemIcon;
         icon.enabled = true;
         gameObject.SetActive(true);
+   
     }
 
     public void ClearInventorySlot()

@@ -19,65 +19,84 @@ public class PlayerAttacker : MonoBehaviour
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
     }
 
-    public void HandleWeaponCombo(WeaponItem weapon)
+    public void HandleWeaponCombo(WeaponItemStack weapon)
     {
-        if (inputHandler.comboFlag)
+        if (weapon.itemType is WeaponItem)
         {
-            animatorHandler.anim.SetBool("canDoCombo", false);
-            if (lastAttack == weapon.OH_Right_Light_Attack_1)
-            {
-                animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
-            }
-            if (lastAttack == weapon.OH_Left_Light_Attack_1)
-            {
-                animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
-            }
-        }
-    }
+            WeaponItem weaponItem = (WeaponItem)weapon.itemType;
 
-    public void HandleLightAttack(WeaponItem weapon, bool isLeft)
-    {
-        if (weapon != null && !weapon.isUnarmed)
-        {
-            if (playerStats.currentStamina > weapon.GetWeaponStaminaCost(false))
+            if (inputHandler.comboFlag)
             {
-                if (isLeft)
+                animatorHandler.anim.SetBool("canDoCombo", false);
+                if (lastAttack == weaponItem.OH_Right_Light_Attack_1)
                 {
-                    weaponSlotManager.attackingWeapon = weapon;
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Left_Light_Attack_1, true);
-                    lastAttack = weapon.OH_Left_Light_Attack_1;
+                    animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
                 }
-                else
+                if (lastAttack == weaponItem.OH_Left_Light_Attack_1)
                 {
-                    weaponSlotManager.attackingWeapon = weapon;
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Right_Light_Attack_1, true);
-                    lastAttack = weapon.OH_Right_Light_Attack_1;
+                    animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
                 }
             }
         }
     }
 
-    public void HandleHeavyAttack(WeaponItem weapon, bool isLeft)
+    public void HandleLightAttack(WeaponItemStack weapon, bool isLeft)
     {
-        if (weapon != null && !weapon.isUnarmed)
+        if (weapon.itemType is WeaponItem)
         {
-            if (playerStats.currentStamina > weapon.GetWeaponStaminaCost(true))
+            WeaponItem weaponItem = (WeaponItem)weapon.itemType;
+
+            if (weapon != null && !weaponItem.isUnarmed)
             {
-                if (isLeft)
+
+
+                if (playerStats.currentStamina > weaponItem.GetWeaponStaminaCost(false))
                 {
-                    weaponSlotManager.attackingWeapon = weapon;
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Left_Heavy_Attack_1, true);
-                    lastAttack = weapon.OH_Left_Heavy_Attack_1;
-                }
-                else
-                {
-                    weaponSlotManager.attackingWeapon = weapon;
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Right_Heavy_Attack_1, true);
-                    lastAttack = weapon.OH_Right_Heavy_Attack_1;
+                    if (isLeft)
+                    {
+                        weaponSlotManager.attackingWeapon = weaponItem;
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_1, true);
+                        lastAttack = weaponItem.OH_Left_Light_Attack_1;
+                    }
+                    else
+                    {
+                        weaponSlotManager.attackingWeapon = weaponItem;
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
+                        lastAttack = weaponItem.OH_Right_Light_Attack_1;
+                    }
                 }
             }
-
         }
+    }
 
+    public void HandleHeavyAttack(WeaponItemStack weapon, bool isLeft)
+    {
+        if (weapon.itemType is WeaponItem)
+        {
+            WeaponItem weaponItem = (WeaponItem)weapon.itemType;
+
+            if (weapon != null && !weaponItem.isUnarmed)
+            {
+                Debug.Log("HEAVY" + weaponItem.GetWeaponStaminaCost(true) + playerStats.currentStamina);
+
+                if (playerStats.currentStamina > weaponItem.GetWeaponStaminaCost(true))
+                {
+
+                    if (isLeft)
+                    {
+                        weaponSlotManager.attackingWeapon = weaponItem;
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
+                        lastAttack = weaponItem.OH_Left_Heavy_Attack_1;
+                    }
+                    else
+                    {
+                        weaponSlotManager.attackingWeapon = weaponItem;
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
+                        lastAttack = weaponItem.OH_Right_Heavy_Attack_1;
+                    }
+                }
+
+            }
+        }
     }
 }

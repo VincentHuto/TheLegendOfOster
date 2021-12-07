@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PickUpItem : Interactable
 {
-    public Item item;
+    public ItemStack stack;
 
     public override void Interact(PlayerManager playerManager)
     {
@@ -28,27 +28,28 @@ public class PickUpItem : Interactable
         playerLocomotion.rigidbody.velocity = Vector3.zero; //Stops the player from moving whilst picking up item
         animatorHandler.PlayTargetAnimation("Pick Up Item", true); //Plays the animation of looting the item
 
-        if (item is WeaponItem)
+        if (stack.itemType is WeaponItem)
         {
-            playerInventory.weaponsInventory.Add((WeaponItem)item);
+            playerInventory.weaponsInventory.Add((WeaponItemStack)stack);
 
         }
-        else if (item is KeyItem)
+        else if (stack.itemType is KeyItem)
         {
-            playerInventory.keyItemsInventory.Add((KeyItem)item);
+            playerInventory.keyItemsInventory.Add((KeyItemStack)stack);
 
         }
-        else if (item is CraftingItem)
+        else if (stack.itemType is CraftingItem)
         {
-            playerInventory.craftingItemInventory.Add((CraftingItem)item);
+            playerInventory.AddToCraftingStack((CraftingItemStack)stack);
         }
         else
         {
 
         }
-        playerManager.itemInteractableGameObject.GetComponentInChildren<Text>().text = item.itemName;
-        playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = item.itemIcon.texture;
+        playerManager.itemInteractableGameObject.GetComponentInChildren<Text>().text = stack.itemType.itemName;
+        playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = stack.itemType.itemIcon.texture;
         playerManager.itemInteractableGameObject.SetActive(true);
         Destroy(gameObject);
     }
+
 }

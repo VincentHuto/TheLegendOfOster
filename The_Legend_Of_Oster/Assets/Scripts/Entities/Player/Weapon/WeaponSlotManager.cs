@@ -31,37 +31,40 @@ public class WeaponSlotManager : MonoBehaviour
             }
         }
     }
-    public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
+    public void LoadWeaponOnSlot(WeaponItemStack weaponItem, bool isLeft)
     {
-
-        if (isLeft)
+        if (weaponItem.itemType is WeaponItem)
         {
-            leftHandSlot.LoadWeaponModel(weaponItem);
-            LoadLeftWeaponDamageCollider();
-            quickSlotsUI.UpdateWeaponQuickSlotsUI(isLeft, weaponItem);
-            if (weaponItem != null)
+            WeaponItem weapon = (WeaponItem)weaponItem.itemType;
+            if (isLeft)
             {
-                animator.CrossFade(weaponItem.left_Hand_Idle, 0.2f);
+                leftHandSlot.LoadWeaponModel(weaponItem);
+                LoadLeftWeaponDamageCollider();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(isLeft, weaponItem);
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weapon.left_Hand_Idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Left Arm Empty", 0.2f);
+                }
+
             }
             else
             {
-                animator.CrossFade("Left Arm Empty", 0.2f);
-            }
+                rightHandSlot.LoadWeaponModel(weaponItem);
+                LoadRightWeaponDamageCollider();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(isLeft, weaponItem);
 
-        }
-        else
-        {
-            rightHandSlot.LoadWeaponModel(weaponItem);
-            LoadRightWeaponDamageCollider();
-            quickSlotsUI.UpdateWeaponQuickSlotsUI(isLeft, weaponItem);
-
-            if (weaponItem != null)
-            {
-                animator.CrossFade(weaponItem.right_Hand_Idle, 0.2f);
-            }
-            else
-            {
-                animator.CrossFade("Right Arm Empty", 0.2f);
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weapon.right_Hand_Idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Right Arm Empty", 0.2f);
+                }
             }
         }
     }

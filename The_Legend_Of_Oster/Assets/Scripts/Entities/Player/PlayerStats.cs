@@ -57,7 +57,7 @@ public class PlayerStats : CharacterStats
 
     private float SetMaxStaminaFromLevel()
     {
-        maxStamina = level * 5;
+        maxStamina = level * 10;
         return maxStamina;
     }
 

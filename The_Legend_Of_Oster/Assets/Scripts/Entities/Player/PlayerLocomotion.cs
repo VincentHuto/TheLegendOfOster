@@ -164,14 +164,19 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
         rigidbody.velocity = projectedVelocity;
 
-        if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
-        {
-            animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
-        }
-        else
-        {
-            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
-        }
+
+        //Commented out for now becasue of the walking back not having sort animator value
+        /*   if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
+           {
+               animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
+           }
+           else
+           {
+               animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+           }
+   */
+
+        animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 
         if (animatorHandler.canRotate)
         {

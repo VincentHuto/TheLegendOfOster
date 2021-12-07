@@ -19,28 +19,28 @@ public class WeaponInventorySlot : InventorySlot
         if (uIManager.rightHandSlot01Selected)
         {
             playerInventory.weaponsInventory.Add(playerInventory.weaponsInRightHandSlots[0]);
-            playerInventory.weaponsInRightHandSlots[0] = (WeaponItem)item;
-            playerInventory.weaponsInventory.Remove((WeaponItem)item);
+            playerInventory.weaponsInRightHandSlots[0] = (WeaponItemStack)item;
+            playerInventory.weaponsInventory.Remove((WeaponItemStack)item);
         }
         else if (uIManager.rightHandSlot02Selected)
         {
             playerInventory.weaponsInventory.Add(playerInventory.weaponsInRightHandSlots[1]);
-            playerInventory.weaponsInRightHandSlots[1] = (WeaponItem)item;
-            playerInventory.weaponsInventory.Remove((WeaponItem)item);
+            playerInventory.weaponsInRightHandSlots[1] = (WeaponItemStack)item;
+            playerInventory.weaponsInventory.Remove((WeaponItemStack)item);
 
         }
         else if (uIManager.leftHandSlot01Selected)
         {
             playerInventory.weaponsInventory.Add(playerInventory.weaponsInLeftHandSlots[0]);
-            playerInventory.weaponsInLeftHandSlots[0] = (WeaponItem)item;
-            playerInventory.weaponsInventory.Remove((WeaponItem)item);
+            playerInventory.weaponsInLeftHandSlots[0] = (WeaponItemStack)item;
+            playerInventory.weaponsInventory.Remove((WeaponItemStack)item);
 
         }
         else if (uIManager.leftHandSlot02Selected)
         {
             playerInventory.weaponsInventory.Add(playerInventory.weaponsInLeftHandSlots[1]);
-            playerInventory.weaponsInLeftHandSlots[1] = (WeaponItem)item;
-            playerInventory.weaponsInventory.Remove((WeaponItem)item);
+            playerInventory.weaponsInLeftHandSlots[1] = (WeaponItemStack)item;
+            playerInventory.weaponsInventory.Remove((WeaponItemStack)item);
 
         }
         else

@@ -7,7 +7,7 @@ public class HandEquipmentSlotUI : MonoBehaviour
 {
     UIManager uIManager;
     public Image icon;
-    WeaponItem weapon;
+    WeaponItemStack weapon;
 
     public bool rightHandSlot01, rightHandSlot02;
     public bool leftHandSlot01, leftHandSlot02;
@@ -17,10 +17,10 @@ public class HandEquipmentSlotUI : MonoBehaviour
         uIManager = FindObjectOfType<UIManager>();
     }
 
-    public void AddItem(WeaponItem weaponItem)
+    public void AddItem(WeaponItemStack weaponItem)
     {
         weapon = weaponItem;
-        icon.sprite = weaponItem.itemIcon;
+        icon.sprite = weaponItem.itemType.itemIcon;
         icon.enabled = true;
         gameObject.SetActive(true);
     }

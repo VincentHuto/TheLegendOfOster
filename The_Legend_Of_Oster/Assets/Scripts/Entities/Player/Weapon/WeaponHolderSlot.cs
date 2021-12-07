@@ -24,7 +24,7 @@ public class WeaponHolderSlot : MonoBehaviour
         }
     }
 
-    public void LoadWeaponModel(WeaponItem weaponItem)
+    public void LoadWeaponModel(WeaponItemStack weaponItem)
     {
         UnloadWeaponAndDestroy();
 
@@ -34,23 +34,28 @@ public class WeaponHolderSlot : MonoBehaviour
             return;
         }
 
-        GameObject model = Instantiate(weaponItem.modelPrefab) as GameObject;
-        if (model != null)
+        if (weaponItem.itemType is WeaponItem)
         {
-            if (parentOverride != null)
-            {
-                model.transform.parent = parentOverride;
-            }
-            else
-            {
-                model.transform.parent = transform;
-            }
+            WeaponItem weapon = (WeaponItem)weaponItem.itemType;
 
-            model.transform.localPosition = Vector3.zero;
-            model.transform.localRotation = Quaternion.identity;
-            model.transform.localScale = Vector3.one;
+            GameObject model = Instantiate(weapon.modelPrefab) as GameObject;
+            if (model != null)
+            {
+                if (parentOverride != null)
+                {
+                    model.transform.parent = parentOverride;
+                }
+                else
+                {
+                    model.transform.parent = transform;
+                }
+
+                model.transform.localPosition = Vector3.zero;
+                model.transform.localRotation = Quaternion.identity;
+                model.transform.localScale = Vector3.one;
+            }
+            currentWeaponModel = model;
+
         }
-
-        currentWeaponModel = model;
     }
 }

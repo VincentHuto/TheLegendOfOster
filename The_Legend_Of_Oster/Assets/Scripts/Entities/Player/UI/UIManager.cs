@@ -49,6 +49,8 @@ public class UIManager : MonoBehaviour
                     weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
                 }
                 weaponInventorySlots[i].AddItem(playerInventory.weaponsInventory[i]);
+                weaponInventorySlots[i].count.text = playerInventory.weaponsInventory[i].currentSize.ToString();
+
             }
             else
             {
@@ -66,6 +68,10 @@ public class UIManager : MonoBehaviour
                     keyItemInventorySlots = keyItemInventorySlotsParent.GetComponentsInChildren<KeyItemInventorySlot>();
                 }
                 keyItemInventorySlots[i].AddItem(playerInventory.keyItemsInventory[i]);
+
+                keyItemInventorySlots[i].count.gameObject.SetActive(true);
+                keyItemInventorySlots[i].count.text = playerInventory.keyItemsInventory[i].currentSize.ToString();
+
             }
             else
             {
@@ -83,7 +89,9 @@ public class UIManager : MonoBehaviour
                     Instantiate(craftingInventorySlotPrefab, craftingItemInventorySlotsParent);
                     craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
                 }
+
                 craftingItemInventorySlots[i].AddItem(playerInventory.craftingItemInventory[i]);
+                craftingItemInventorySlots[i].count.text = playerInventory.craftingItemInventory[i].currentSize.ToString();
             }
             else
             {

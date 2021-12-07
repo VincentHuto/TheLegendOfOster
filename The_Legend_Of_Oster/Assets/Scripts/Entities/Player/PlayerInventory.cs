@@ -6,16 +6,16 @@ public class PlayerInventory : MonoBehaviour
 {
     WeaponSlotManager weaponSlotManager;
 
-    public WeaponItem rightWeapon, leftWeapon, unarmedWeapon;
-    public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
-    public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
+    public WeaponItemStack rightWeapon, leftWeapon, unarmedWeapon;
+    public WeaponItemStack[] weaponsInRightHandSlots = new WeaponItemStack[1];
+    public WeaponItemStack[] weaponsInLeftHandSlots = new WeaponItemStack[1];
 
     public int currentRightWeaponIndex = 0;
     public int currentLeftWeaponIndex = 0;
 
-    public List<WeaponItem> weaponsInventory;
-    public List<KeyItem> keyItemsInventory;
-    public List<CraftingItem> craftingItemInventory;
+    public List<WeaponItemStack> weaponsInventory;
+    public List<KeyItemStack> keyItemsInventory;
+    public List<CraftingItemStack> craftingItemInventory;
 
     private void Awake()
     {
@@ -30,6 +30,23 @@ public class PlayerInventory : MonoBehaviour
         weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
 
     }
+
+    public void AddToCraftingStack(CraftingItemStack itemToAdd)
+    {
+        foreach (CraftingItemStack i in craftingItemInventory)
+        {
+            if (i.itemType == itemToAdd && itemToAdd.currentSize < i.itemType.stacksTo)
+            {
+
+                i.currentSize += itemToAdd.currentSize;
+            }
+            else
+            {
+                craftingItemInventory.Add(itemToAdd);
+            }
+        }
+    }
+
     public void ChangeRightWeapon()
     {
         currentRightWeaponIndex = currentRightWeaponIndex + 1;
