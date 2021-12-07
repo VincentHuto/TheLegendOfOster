@@ -66,7 +66,7 @@ ModelImporter:
     - 0.01
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -75,12 +75,12 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 0
     bakeAxisConversion: 0
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
@@ -89,10 +89,10 @@ ModelImporter:
     secondaryUVAngleDistortion: 9
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 75
-    secondaryUVMarginMethod: 1
+    secondaryUVMarginMethod: 0
     secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
-    secondaryUVPackMargin: 4
+    secondaryUVMinObjectScale: 0.5
+    secondaryUVPackMargin: 8
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -101,9 +101,9 @@ ModelImporter:
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
+    normalSmoothingSource: 1
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
