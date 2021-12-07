@@ -9,26 +9,30 @@ public class UIManager : MonoBehaviour
     public EquipmentWindowUI equipmentWindowUI;
 
     [Header("UI Windows")]
-    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow, keyItemInventoryWindow;
+    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow, keyItemInventoryWindow,craftingItemInventoryWindow;
 
     [Header("Equipment Window Slot Selected")]
-    public bool rightHandSlot01Selected;
-    public bool rightHandSlot02Selected;
+    public bool rightHandSlot01Selected, rightHandSlot02Selected;
     public bool leftHandSlot01Selected, leftHandSlot02Selected;
 
     [Header("Weapon Inventory")]
     public GameObject weaponInventorySlotPrefab;
     public GameObject keyItemInventorySlotPrefab;
+    public GameObject craftingInventorySlotPrefab;
+
     public Transform weaponInventorySlotsParent;
     public Transform keyItemInventorySlotsParent;
+    public Transform craftingItemInventorySlotsParent;
     WeaponInventorySlot[] weaponInventorySlots;
     KeyItemInventorySlot[] keyItemInventorySlots;
+    CraftingItemInventorySlot[] craftingItemInventorySlots;
 
 
     private void Start()
     {
         weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
         keyItemInventorySlots = keyItemInventorySlotsParent.GetComponentsInChildren<KeyItemInventorySlot>();
+        craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
         equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
     }
 
@@ -68,6 +72,24 @@ public class UIManager : MonoBehaviour
                 keyItemInventorySlots[i].ClearInventorySlot();
             }
         }
+
+        //Update Crafting inventory
+        for (int i = 0; i < craftingItemInventorySlots.Length; i++)
+        {
+            if (i < playerInventory.craftingItemInventory.Count)
+            {
+                if (craftingItemInventorySlots.Length < playerInventory.craftingItemInventory.Count)
+                {
+                    Instantiate(craftingInventorySlotPrefab, craftingItemInventorySlotsParent);
+                    craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
+                }
+                craftingItemInventorySlots[i].AddItem(playerInventory.craftingItemInventory[i]);
+            }
+            else
+            {
+                craftingItemInventorySlots[i].ClearInventorySlot();
+            }
+        }
     }
 
     public void OpenSelectWindow()
@@ -85,6 +107,7 @@ public class UIManager : MonoBehaviour
         weaponInventoryWindow.SetActive(false);
         equipmentWindow.SetActive(false);
         keyItemInventoryWindow.SetActive(false);
+        craftingItemInventoryWindow.SetActive(false);
     }
 
     public void ResetAllSelectedSlots()

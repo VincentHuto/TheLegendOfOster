@@ -18,4 +18,5 @@ public class Interactable : MonoBehaviour
       //  Debug.Log("You interacted with an object");
 
     }
+
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6127640656130025528}
   - component: {fileID: 6127640656130025529}
   - component: {fileID: 6127640656130025531}
-  - component: {fileID: 6127640656130025526}
+  - component: {fileID: 7871878372024617091}
   m_Layer: 0
   m_Name: Key Item
   m_TagString: Interactable
@@ -62,7 +62,7 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.2
   frequency: 0.5
---- !u!114 &6127640656130025526
+--- !u!114 &7871878372024617091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,11 +71,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6127640656130025527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91761a00ce424f4449e7eb675eb6bacf, type: 3}
+  m_Script: {fileID: 11500000, guid: bf8906223fb3efc4382c63fba695e7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.6
-  interactionText: Pick Up Key Item
+  interactionText: Pick Up Map
   item: {fileID: 11400000, guid: bce11e3d3800d6f42a636bb49e221c10, type: 2}
 --- !u!1001 &1442747050311901419
 PrefabInstance:

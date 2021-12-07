@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9216423158384994504}
   - component: {fileID: 9216423158384994505}
-  - component: {fileID: 9216423158384994502}
   - component: {fileID: 9216423158384994507}
+  - component: {fileID: 8590861295344069230}
   m_Layer: 0
   m_Name: Item
   m_TagString: Interactable
@@ -47,21 +47,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9216423158384994502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216423158384994503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6b6c6addfc63e46978d402e97fa370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0.6
-  interactionText: Test
-  weapon: {fileID: 11400000, guid: 93101af189bf32042ac94e84aea82d21, type: 2}
 --- !u!114 &9216423158384994507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +62,21 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.2
   frequency: 0.5
+--- !u!114 &8590861295344069230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216423158384994503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8906223fb3efc4382c63fba695e7ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.6
+  interactionText: Pick Up Recorder
+  item: {fileID: 11400000, guid: 0ee6c8b8ec9ff83408c2b066e9fa6c98, type: 2}
 --- !u!1001 &9216423159598316495
 PrefabInstance:
   m_ObjectHideFlags: 0
