@@ -6,13 +6,19 @@ public class PlayerAudioAgent : MonoBehaviour
 {
     enum Material
     {
+        unsure,
         dirt,
-        grass
+        grass,
+        wood,
+        stone
     }
 
     public AudioSource playerSource;
     public AudioClip[] fs;
     public float fs_volscale = 0f;
+    Color raycol;
+    [SerializeField] float hcomp;
+    [SerializeField] float raylen;
     [SerializeField] Material steppingOn;
     Animator anim;
     int fs_idx= 0;
@@ -21,6 +27,7 @@ public class PlayerAudioAgent : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        raycol = Color.white;
     }
     public void PlayFS()
     {
@@ -32,9 +39,9 @@ public class PlayerAudioAgent : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 position = anim.transform.position;
-        position.y += 2; // compensate height
-        Debug.DrawRay(position, Vector3.down, Color.green);
-        if (Physics.Raycast(position, Vector3.down, out hit, 5f))
+        position.y += hcomp; // compensate height
+        Debug.DrawRay(position, Vector3.down, raycol, raylen);
+        if (Physics.Raycast(position, Vector3.down, out hit, raylen))
         {
             //Debug.Log(hit.transform.name);
             string groundtag = hit.transform.tag;
@@ -42,10 +49,47 @@ public class PlayerAudioAgent : MonoBehaviour
             switch (groundtag)
             {
                 case "dirt":
-                    Debug.Log("On Dirt!");
+                    if (steppingOn.ToString() == "dirt")
+                        break;
+                    else
+                        Debug.Log("On Dirt!");
+
+                    raycol = Color.black;
+                    steppingOn = Material.dirt;
                     break;
                 case "grass":
-                    Debug.Log("On Grass!");
+                    if (steppingOn.ToString() == "grass")
+                        break;
+                    else
+                        Debug.Log("On Grass!");
+                        
+                    raycol = Color.green;
+                    steppingOn = Material.grass;
+                    break;
+                case "wood":
+                    if (steppingOn.ToString() == "wood")
+                        break;
+                    else
+                        Debug.Log("On Wood!");
+
+                    raycol = Color.yellow;
+                    steppingOn = Material.wood;
+                    break;
+
+                case "stone":
+                    if (steppingOn.ToString() == "stone")
+                        break;
+                    else
+                        Debug.Log("On Stone!");
+                    raycol = Color.blue;
+                    steppingOn = Material.stone;
+                    break;
+
+                default:
+                    if (steppingOn.ToString() != "unsure")
+                        Debug.Log("Unsure..");
+                    raycol = Color.white;
+                    steppingOn = Material.unsure;
                     break;
             }
 
