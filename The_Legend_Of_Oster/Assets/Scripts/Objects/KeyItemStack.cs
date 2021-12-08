@@ -5,4 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemStack/KeyItemStack")]
 public class KeyItemStack : ItemStack
 {
+
 }
+
