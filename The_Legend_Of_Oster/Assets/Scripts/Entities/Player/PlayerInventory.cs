@@ -33,19 +33,44 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddToCraftingStack(CraftingItemStack itemToAdd)
     {
-        foreach (CraftingItemStack i in craftingItemInventory)
-        {
-            if (i.itemType == itemToAdd && itemToAdd.currentSize < i.itemType.stacksTo)
-            {
 
-                i.currentSize += itemToAdd.currentSize;
-            }
-            else
+        if (craftingItemInventory.Count <= 0)
+        {
+            craftingItemInventory.Add((CraftingItemStack)itemToAdd.GetCopy());
+        }
+        else
+        {
+
+            for (int i = craftingItemInventory.Count - 1; i >= 0; i--)
             {
-                craftingItemInventory.Add(itemToAdd);
+                CraftingItemStack craft = craftingItemInventory[i];
+                if (craft.itemType == itemToAdd.itemType && itemToAdd.currentSize < craft.itemType.stacksTo)
+                {
+                    craft.currentSize += itemToAdd.currentSize;
+                }
+                else
+                {
+                    craftingItemInventory.Add((CraftingItemStack)itemToAdd.GetCopy());
+                }
             }
         }
+
+        /*   foreach (CraftingItemStack i in craftingItemInventory)
+           {
+               if (i.itemType == itemToAdd && itemToAdd.currentSize < i.itemType.stacksTo)
+               {
+                   Debug.Log("INCREMENTING STACK");
+                   i.currentSize += itemToAdd.currentSize;
+               }
+               else
+               {
+                   Debug.Log("CREATING NEW STACK");
+                   craftingItemInventory.Add(itemToAdd);
+               }
+           }*/
     }
+
+
 
     public void ChangeRightWeapon()
     {

@@ -20,8 +20,6 @@ public class InventorySlot : MonoBehaviour
         playerInventory = FindObjectOfType<PlayerInventory>();
         uIManager = FindObjectOfType<UIManager>();
         inputHandler = FindObjectOfType<InputHandler>();
-        Debug.Log(count.text);
-
     }
 
     public void AddItem(ItemStack newItem)

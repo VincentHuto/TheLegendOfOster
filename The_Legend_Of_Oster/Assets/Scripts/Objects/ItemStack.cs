@@ -8,4 +8,10 @@ public class ItemStack : ScriptableObject
 {
     public Item itemType;
     public int currentSize;
+
+
+    public virtual ItemStack GetCopy()
+    {
+        return Instantiate(this);
+    }
 }

@@ -30,17 +30,19 @@ public class PickUpItem : Interactable
 
         if (stack.itemType is WeaponItem)
         {
-            playerInventory.weaponsInventory.Add((WeaponItemStack)stack);
+            playerInventory.weaponsInventory.Add(Instantiate((WeaponItemStack)stack));
 
         }
         else if (stack.itemType is KeyItem)
         {
-            playerInventory.keyItemsInventory.Add((KeyItemStack)stack);
+            playerInventory.keyItemsInventory.Add(Instantiate((KeyItemStack)stack));
 
         }
         else if (stack.itemType is CraftingItem)
         {
+
             playerInventory.AddToCraftingStack((CraftingItemStack)stack);
+
         }
         else
         {
