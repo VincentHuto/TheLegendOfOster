@@ -35,8 +35,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Bush_Leaves_01
   m_Shader: {fileID: 14002, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION EFFECT_SUBSURFACE _ALPHATEST_ON
-    _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON _WINDQUALITY_FAST
+  m_ShaderKeywords: EFFECT_BUMP EFFECT_EXTRA_TEX EFFECT_HUE_VARIATION EFFECT_SUBSURFACE
+    _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON _WINDQUALITY_FAST
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 705e51c85e72f1a4194bbd4f5bc8c00f, type: 3}
+        m_Texture: {fileID: 2800000, guid: aded3d8bdb52eb744964762b45920654, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -87,11 +87,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ExtraTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0cd62273cab4ce24bade5b72b2e02127, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6fdc524da8d34e04c88515936ef0b903, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71c08610deb243144888703479205c12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -111,7 +111,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
-        m_Texture: {fileID: 2800000, guid: 6fdc524da8d34e04c88515936ef0b903, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cd62273cab4ce24bade5b72b2e02127, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -215,7 +215,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}

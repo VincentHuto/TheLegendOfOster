@@ -40,7 +40,7 @@ public class PickUpItem : Interactable
         }
         else if (stack.itemType is CraftingItem)
         {
-            playerInventory.AddToCraftingStack((CraftingItemStack)stack);
+            playerInventory.AddToCraftingStack(((CraftingItemStack)stack).GetCopy());
         }
         else
         {
