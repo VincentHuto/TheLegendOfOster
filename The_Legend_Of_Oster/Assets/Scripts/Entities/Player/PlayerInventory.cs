@@ -40,13 +40,30 @@ public class PlayerInventory : MonoBehaviour
         }
         else
         {
-
             for (int i = craftingItemInventory.Count - 1; i >= 0; i--)
             {
                 CraftingItemStack craft = craftingItemInventory[i];
-                if (craft.itemType == itemToAdd.itemType && itemToAdd.currentSize < craft.itemType.stacksTo)
+
+                if (craft.IsFull())
                 {
-                    craft.currentSize += itemToAdd.currentSize;
+                    break;
+                }
+                else
+
+                if (craft.itemType == itemToAdd.itemType && !craft.IsFull())
+                {
+                    if (craft.currentSize + itemToAdd.currentSize > craft.itemType.stacksTo)
+                    {
+                        int difference = (itemToAdd.currentSize + craft.currentSize) - craft.itemType.stacksTo;
+                        craft.currentSize = craft.itemType.stacksTo;
+                        CraftingItemStack diffStack = (CraftingItemStack)itemToAdd.GetCopy();
+                        diffStack.currentSize = difference;
+                        craftingItemInventory.Add(diffStack);
+                    }
+                    else
+                    {
+                        craft.currentSize += itemToAdd.currentSize;
+                    }
                 }
                 else
                 {
