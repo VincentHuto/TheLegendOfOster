@@ -6,5 +6,10 @@ using UnityEngine;
 public class KeyItemStack : ItemStack
 {
 
+    public KeyItemStack GetCopy()
+    {
+        return Instantiate(this);
+    }
+
 }
 
