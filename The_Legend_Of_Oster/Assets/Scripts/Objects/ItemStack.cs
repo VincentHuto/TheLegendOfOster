@@ -9,9 +9,9 @@ public class ItemStack : ScriptableObject
     public Item itemType;
     public int currentSize;
 
-
-    public virtual ItemStack GetCopy()
+    public bool IsFull()
     {
-        return Instantiate(this);
+        return currentSize >= itemType.stacksTo;
     }
+
 }
