@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
                     craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
                 }
 
-                craftingItemInventorySlots[i].AddItem(Instantiate(playerInventory.craftingItemInventory[i]));
+                craftingItemInventorySlots[i].AddItem(playerInventory.craftingItemInventory[i].GetCopy());
                 craftingItemInventorySlots[i].count.text = playerInventory.craftingItemInventory[i].currentSize.ToString();
             }
             else
