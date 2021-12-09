@@ -4,7 +4,7 @@ using UnityEngine;
 //NF
 public class PlayerAudioAgent : MonoBehaviour
 {
-    enum Material
+    enum GroundMaterial
     {
         unsure,
         dirt,
@@ -14,14 +14,17 @@ public class PlayerAudioAgent : MonoBehaviour
     }
 
     public AudioSource playerSource;
-    public AudioClip[] fs;
-    public float fs_volscale = 0f;
+    public AudioClip[] fs_grass;
+    public AudioClip[] fs_stone;
+    public AudioClip[] fs_wood;
+    public float fs_volscale;
+
     Color raycol;
-    [SerializeField] float hcomp;
-    [SerializeField] float raylen;
-    [SerializeField] Material steppingOn;
+    [SerializeField] float hcomp; // Height compensation for the raycast origin point
+    [SerializeField] float raylen; // length of the raycast
+    [SerializeField] GroundMaterial steppingOn;
     Animator anim;
-    int fs_idx= 0;
+    
     
 
     void Start()
@@ -31,9 +34,29 @@ public class PlayerAudioAgent : MonoBehaviour
     }
     public void PlayFS()
     {
-        fs_idx = Random.Range(0, fs.Length );
-        playerSource.PlayOneShot(fs[fs_idx], fs_volscale);
-        Debug.Log("Played FS " + fs_idx);
+        // only invoked via animation
+        AudioClip[] fs; // reference variable for the correct list of footstepts which are stored in this class variables per each material
+        int fs_idx = 0;
+        switch (steppingOn)
+        {
+
+            case GroundMaterial.grass:
+                fs = fs_grass;
+                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                break;
+            case GroundMaterial.wood:
+                fs = fs_wood;
+                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                break;
+
+            default:
+                fs = fs_stone;
+                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                break;
+        }
+
+            playerSource.PlayOneShot(fs[fs_idx], fs_volscale);
+            Debug.Log("Played FS " + fs_idx);
     }
     void FixedUpdate()
     {
@@ -55,7 +78,7 @@ public class PlayerAudioAgent : MonoBehaviour
                         Debug.Log("On Dirt!");
 
                     raycol = Color.black;
-                    steppingOn = Material.dirt;
+                    steppingOn = GroundMaterial.dirt;
                     break;
                 case "grass":
                     if (steppingOn.ToString() == "grass")
@@ -64,7 +87,7 @@ public class PlayerAudioAgent : MonoBehaviour
                         Debug.Log("On Grass!");
                         
                     raycol = Color.green;
-                    steppingOn = Material.grass;
+                    steppingOn = GroundMaterial.grass;
                     break;
                 case "wood":
                     if (steppingOn.ToString() == "wood")
@@ -73,7 +96,7 @@ public class PlayerAudioAgent : MonoBehaviour
                         Debug.Log("On Wood!");
 
                     raycol = Color.yellow;
-                    steppingOn = Material.wood;
+                    steppingOn = GroundMaterial.wood;
                     break;
 
                 case "stone":
@@ -82,14 +105,14 @@ public class PlayerAudioAgent : MonoBehaviour
                     else
                         Debug.Log("On Stone!");
                     raycol = Color.blue;
-                    steppingOn = Material.stone;
+                    steppingOn = GroundMaterial.stone;
                     break;
 
                 default:
                     if (steppingOn.ToString() != "unsure")
                         Debug.Log("Unsure..");
                     raycol = Color.white;
-                    steppingOn = Material.unsure;
+                    steppingOn = GroundMaterial.unsure;
                     break;
             }
 
