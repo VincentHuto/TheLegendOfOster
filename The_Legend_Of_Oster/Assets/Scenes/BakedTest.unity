@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 7606c20d9b4e3414494bc56f6b355ecc, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: f9d81a9cf870b0c449ad7707b2fd84ec, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -515,8 +515,8 @@ Light:
     m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -608,8 +608,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -637,7 +637,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -734,12 +734,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2380190930153116844, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380190930153116844, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2428272678913825451, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_CastShadows
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717841936934001289, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_Name
@@ -793,6 +797,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4066009246047651505, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725142070711271609, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5725142070711271609, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -803,10 +815,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6474816279654626791, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_CastShadows
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912344458140581084, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912344458140581084, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540848570134607682, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940950775010616736, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7940950775010616736, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
@@ -819,11 +843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287677797414475892, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_CastShadows
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036677027465340870, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
       propertyPath: m_CastShadows
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56d1167aa8897b428b68db7243a467c, type: 3}
@@ -999,8 +1023,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -1028,7 +1052,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1197,6 +1221,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5919120523113157439, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919120523113157439, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919120523113157439, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6197989691116397881, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1252,6 +1288,18 @@ PrefabInstance:
     - target: {fileID: 6721761419298537347, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
       propertyPath: m_Name
       value: NewPlayerCameraTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478941599575964463, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478941599575964463, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478941599575964463, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb378e49e38721144bbdc3c6ff3b721d, type: 3}
