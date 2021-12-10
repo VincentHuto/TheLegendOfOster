@@ -2072,15 +2072,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSource: {fileID: 1189630466044731494}
-  fs:
-  - {fileID: 8300000, guid: 682430ebd9801a24f86161063b674c25, type: 3}
-  - {fileID: 8300000, guid: 9fc38d3760eef814b9b561143a77851f, type: 3}
-  - {fileID: 8300000, guid: e925eacae2746894d988036e7287c096, type: 3}
-  - {fileID: 8300000, guid: cbafebeb001b3ef4f90c7f2cf2f5a931, type: 3}
-  - {fileID: 8300000, guid: 75f297e7a077b6b409b7ace7d4d5d4d0, type: 3}
+  fs_grass:
+  - {fileID: 8300000, guid: 2cd08369305db5947be3afd7d277e90d, type: 3}
+  - {fileID: 8300000, guid: e1aba36341c9d5b4b9827293b1772cb7, type: 3}
+  - {fileID: 8300000, guid: a5cd9466db63f3143ae3712e6750d7bf, type: 3}
+  - {fileID: 8300000, guid: 004bdd4a118caa046b61e24adf0615f1, type: 3}
+  - {fileID: 8300000, guid: 6feeddc1f8f84eb4fa9f7134ba63b8e4, type: 3}
+  - {fileID: 8300000, guid: 48b802048c58cae4eb2368885c531db2, type: 3}
+  - {fileID: 8300000, guid: b96493840cdf1a542957195b142586db, type: 3}
+  - {fileID: 8300000, guid: 077c74cfc97cf4343938fd512f4b35bf, type: 3}
+  - {fileID: 8300000, guid: aed825afe50e9024ea004ac5ebc25337, type: 3}
+  - {fileID: 8300000, guid: 9d696301271ad3d4a977ce1f61577c7a, type: 3}
+  fs_stone:
+  - {fileID: 8300000, guid: 2389f804f3d523c49b59b0abc9d47fbb, type: 3}
+  - {fileID: 8300000, guid: 5b295a2de45f0954aab4a11774868579, type: 3}
+  - {fileID: 8300000, guid: 00aa305bc367ed340ba6b52f617459e4, type: 3}
+  - {fileID: 8300000, guid: 6ff96b0ae4c72c440aa914f99a5471d3, type: 3}
+  - {fileID: 8300000, guid: f0e5d4bf3bb9f41438fffa79ad70c823, type: 3}
+  - {fileID: 8300000, guid: 42a41e51bc947404d8bca3a519cb8299, type: 3}
+  - {fileID: 8300000, guid: f0970a1eb9add7b47aabfe5f71b47374, type: 3}
+  - {fileID: 8300000, guid: 533ba7264c0cc1345bede64ee5b0753f, type: 3}
+  - {fileID: 8300000, guid: 0c50b1cbea1e4cb4f97ca8671fc8e6d3, type: 3}
+  - {fileID: 8300000, guid: d23ea84d0ff7893428c8218595e6daa6, type: 3}
+  fs_wood:
+  - {fileID: 8300000, guid: 3c91b55ec5df5e640ba17bba7588f7f1, type: 3}
+  - {fileID: 8300000, guid: 196bb5c3789ce9f48adc69336b87e468, type: 3}
+  - {fileID: 8300000, guid: 00e04a3ea1a3ee84b8eb2de2d66debc4, type: 3}
+  - {fileID: 8300000, guid: 32db9610884b5de43912e3b6318955e4, type: 3}
+  - {fileID: 8300000, guid: a38d669e745734842a686f5ecc0fba4e, type: 3}
+  - {fileID: 8300000, guid: 61525bec4e588da48abfb22574270e88, type: 3}
+  - {fileID: 8300000, guid: 1d3b5bec6e01ab94896b4a72a297e5a0, type: 3}
+  - {fileID: 8300000, guid: 015783b0247f9cb43894088eb96a7ffb, type: 3}
+  - {fileID: 8300000, guid: 65f7729b639d4d94584eb74bf09a6760, type: 3}
+  - {fileID: 8300000, guid: 3733337729a65fc4dbef251309f79a0e, type: 3}
+  fs_dirt:
+  - {fileID: 8300000, guid: b3803750148fc0d47b0c33c0ed5d32e0, type: 3}
+  - {fileID: 8300000, guid: c2a53ffcb5f9eab44824b4d732ee6863, type: 3}
+  - {fileID: 8300000, guid: de1fff1c9e411eb44ae03ef8e7b72ff1, type: 3}
+  - {fileID: 8300000, guid: eb65b26b8b8121147b3305c3afc3d742, type: 3}
+  - {fileID: 8300000, guid: eca1eba0cf44a484d8291895cdc4eff7, type: 3}
+  - {fileID: 8300000, guid: 628f38cb7e76b824dbf7174ec9e503e0, type: 3}
+  - {fileID: 8300000, guid: 3d4dac66794f62c4baafb2e5e44256b7, type: 3}
+  - {fileID: 8300000, guid: d866b3b06d315f441be52313ead564f4, type: 3}
+  - {fileID: 8300000, guid: 9ad268ad668a1f84a8e251a3194de025, type: 3}
+  - {fileID: 8300000, guid: 9ec028b14becfb344a7f31a468d30713, type: 3}
   fs_volscale: 1
-  hcomp: 0
-  raylen: 0
+  hcomp: 1
+  raylen: 1
   steppingOn: 0
 --- !u!82 &1189630466044731494
 AudioSource:
@@ -2091,7 +2129,7 @@ AudioSource:
   m_GameObject: {fileID: 1802497038758491728}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7396783058493501191, guid: 4318d646eee3f7943903666961cbdc86, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2101,11 +2139,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

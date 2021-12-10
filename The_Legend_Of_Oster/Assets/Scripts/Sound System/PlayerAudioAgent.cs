@@ -17,6 +17,7 @@ public class PlayerAudioAgent : MonoBehaviour
     public AudioClip[] fs_grass;
     public AudioClip[] fs_stone;
     public AudioClip[] fs_wood;
+    public AudioClip[] fs_dirt;
     public float fs_volscale;
 
     Color raycol;
@@ -35,27 +36,37 @@ public class PlayerAudioAgent : MonoBehaviour
     public void PlayFS()
     {
         // only invoked via animation
-        AudioClip[] fs; // reference variable for the correct list of footstepts which are stored in this class variables per each material
+        AudioClip[] fsarr; // reference variable for the correct list of footstepts which are stored in this class variables per each material
         int fs_idx = 0;
         switch (steppingOn)
         {
 
             case GroundMaterial.grass:
-                fs = fs_grass;
-                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                fsarr = fs_grass;
+                fs_idx = UnityEngine.Random.Range(0, fsarr.Length); // after setting fs dataset to the correct one, pick a random fs
                 break;
             case GroundMaterial.wood:
-                fs = fs_wood;
-                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                fsarr = fs_wood;
+                fs_idx = UnityEngine.Random.Range(0, fsarr.Length); // after setting fs dataset to the correct one, pick a random fs
+                break;
+
+            case GroundMaterial.dirt:
+                fsarr = fs_dirt; 
+                fs_idx = UnityEngine.Random.Range(0, fsarr.Length); // after setting fs dataset to the correct one, pick a random fs
+                break;
+
+            case GroundMaterial.stone:
+                fsarr = fs_stone;
+                fs_idx = UnityEngine.Random.Range(0, fsarr.Length); // after setting fs dataset to the correct one, pick a random fs
                 break;
 
             default:
-                fs = fs_stone;
-                fs_idx = UnityEngine.Random.Range(0, fs.Length); // after setting fs dataset to the correct one, pick a random fs
+                fsarr = fs_stone;
+                fs_idx = UnityEngine.Random.Range(0, fsarr.Length); // after setting fs dataset to the correct one, pick a random fs
                 break;
         }
 
-            playerSource.PlayOneShot(fs[fs_idx], fs_volscale);
+            playerSource.PlayOneShot(fsarr[fs_idx], fs_volscale);
             Debug.Log("Played FS " + fs_idx);
     }
     void FixedUpdate()
