@@ -63,6 +63,7 @@ public class PlayerAttacker : MonoBehaviour
                         weaponSlotManager.attackingWeapon = weaponItem;
                         animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
                         lastAttack = weaponItem.OH_Right_Light_Attack_1;
+                        
                     }
                 }
             }
