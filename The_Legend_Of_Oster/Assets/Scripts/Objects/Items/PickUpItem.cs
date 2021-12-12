@@ -19,14 +19,14 @@ public class PickUpItem : Interactable
 
         PlayerInventory playerInventory;
         PlayerLocomotion playerLocomotion;
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager playerAnimatorManager;
 
         playerInventory = playerManager.GetComponent<PlayerInventory>();
         playerLocomotion = playerManager.GetComponent<PlayerLocomotion>();
-        animatorHandler = playerManager.GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = playerManager.GetComponentInChildren<PlayerAnimatorManager>();
 
         playerLocomotion.rigidbody.velocity = Vector3.zero; //Stops the player from moving whilst picking up item
-        animatorHandler.PlayTargetAnimation("Pick Up Item", true); //Plays the animation of looting the item
+        playerAnimatorManager.PlayTargetAnimation("Pick Up Item", true); //Plays the animation of looting the item
 
         if (stack.itemType is WeaponItem)
         {

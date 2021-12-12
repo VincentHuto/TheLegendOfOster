@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    public class CharacterManager : MonoBehaviour
-    {
-        public Transform lockOnTransform;
-        public SpriteRenderer spriteRenderer;
+public class CharacterManager : MonoBehaviour
+{
+    public Transform lockOnTransform;
+    public SpriteRenderer spriteRenderer;
 
-        
+    public int pendingCriticalDamage;
 
-    }
+
+
+}

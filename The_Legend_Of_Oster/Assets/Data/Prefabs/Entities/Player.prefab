@@ -1946,7 +1946,6 @@ GameObject:
   - component: {fileID: 1802497038758491730}
   - component: {fileID: 1802497038758491743}
   - component: {fileID: 1802497038758491741}
-  - component: {fileID: 1372277570916777086}
   - component: {fileID: 5195752265262817668}
   - component: {fileID: 823921264400273072}
   - component: {fileID: 1189630466044731494}
@@ -2001,6 +2000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a1254cd966b6f4f9fd4efcc3a31ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftDamageCollider: {fileID: 0}
+  rightDamageCollider: {fileID: 0}
   attackingWeapon: {fileID: 0}
 --- !u!95 &1802497038758491741
 Animator:
@@ -2021,25 +2022,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1372277570916777086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802497038758491728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7ab39630576bc4b9601a57c7528f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightWeaponFx: {fileID: 0}
-  leftWeaponFX: {fileID: 0}
-  isPoisoned: 0
-  poisonBuildup: 0
-  poisonAmount: 100
-  defaultPoisonAmount: 0
-  currentParticleFX: {fileID: 0}
 --- !u!114 &5195752265262817668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9816,6 +9798,7 @@ MonoBehaviour:
   lockOn_Input: 0
   right_Stick_Right_Input: 0
   right_Stick_Left_Input: 0
+  x_Input: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
@@ -9839,7 +9822,7 @@ MonoBehaviour:
   normalVector: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
-  animatorHandler: {fileID: 0}
+  playerAnimatorManager: {fileID: 0}
   groundDetectionRayStartPoint: 0.5
   minimumDistanceNeededToBeginFall: 1.5
   groundDirectionRayDistance: 0.2
@@ -9866,6 +9849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 3274922384395926159}
   spriteRenderer: {fileID: 1685489352677637365}
+  pendingCriticalDamage: 0
   interactableUIGameObject: {fileID: 443025606464765735}
   itemInteractableGameObject: {fileID: 2402210990439872026}
   isSprinting: 0

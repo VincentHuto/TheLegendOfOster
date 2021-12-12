@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttacker : MonoBehaviour
 {
 
-    AnimatorHandler animatorHandler;
+    PlayerAnimatorManager playerAnimatorManager;
     InputHandler inputHandler;
     WeaponSlotManager weaponSlotManager;
     PlayerStats playerStats;
@@ -14,7 +14,7 @@ public class PlayerAttacker : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponentInChildren<PlayerStats>();
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         inputHandler = GetComponentInChildren<InputHandler>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
     }
@@ -27,14 +27,14 @@ public class PlayerAttacker : MonoBehaviour
 
             if (inputHandler.comboFlag)
             {
-                animatorHandler.anim.SetBool("canDoCombo", false);
+                playerAnimatorManager.anim.SetBool("canDoCombo", false);
                 if (lastAttack == weaponItem.OH_Right_Light_Attack_1)
                 {
-                    animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
+                    playerAnimatorManager.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
                 }
                 if (lastAttack == weaponItem.OH_Left_Light_Attack_1)
                 {
-                    animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
+                    playerAnimatorManager.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
                 }
             }
         }
@@ -55,13 +55,13 @@ public class PlayerAttacker : MonoBehaviour
                     if (isLeft)
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_1, true);
+                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_1, true);
                         lastAttack = weaponItem.OH_Left_Light_Attack_1;
                     }
                     else
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
+                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
                         lastAttack = weaponItem.OH_Right_Light_Attack_1;
                         
                     }
@@ -86,13 +86,13 @@ public class PlayerAttacker : MonoBehaviour
                     if (isLeft)
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
+                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
                         lastAttack = weaponItem.OH_Left_Heavy_Attack_1;
                     }
                     else
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
+                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
                         lastAttack = weaponItem.OH_Right_Heavy_Attack_1;
                     }
                 }

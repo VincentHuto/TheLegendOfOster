@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyLocomotionManager : MonoBehaviour
 {
     EnemyManager enemyManager;
+   // public Rigidbody enemyRigidBody;
+    EnemyAnimatorManager enemyAnimatorManager;
 
     public CharacterStats currentTarget;
     public LayerMask detectionLayer;
@@ -13,6 +15,16 @@ public class EnemyLocomotionManager : MonoBehaviour
     private void Awake()
     {
         enemyManager = GetComponent<EnemyManager>();
+        enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+      //  enemyRigidBody = GetComponent<Rigidbody>();
+
+
+    }
+
+    private void Start()
+    {
+        //enemyRigidBody.isKinematic = false;
+
     }
 
     public void HandleDetection()
