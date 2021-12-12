@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public EquipmentWindowUI equipmentWindowUI;
 
     [Header("UI Windows")]
-    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow, keyItemInventoryWindow,craftingItemInventoryWindow;
+    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow, keyItemInventoryWindow,craftingItemInventoryWindow,descriptionWindow;
 
     [Header("Equipment Window Slot Selected")]
     public bool rightHandSlot01Selected, rightHandSlot02Selected;
@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
                     craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
                 }
 
-                craftingItemInventorySlots[i].AddItem(Instantiate(playerInventory.craftingItemInventory[i]));
+                craftingItemInventorySlots[i].AddItem(playerInventory.craftingItemInventory[i].GetCopy());
                 craftingItemInventorySlots[i].count.text = playerInventory.craftingItemInventory[i].currentSize.ToString();
             }
             else
@@ -119,6 +119,9 @@ public class UIManager : MonoBehaviour
         equipmentWindow.SetActive(false);
         keyItemInventoryWindow.SetActive(false);
         craftingItemInventoryWindow.SetActive(false);
+        descriptionWindow.SetActive(false);
+
+
     }
 
     public void ResetAllSelectedSlots()

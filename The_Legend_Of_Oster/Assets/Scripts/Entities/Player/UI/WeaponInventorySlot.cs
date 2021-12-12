@@ -54,6 +54,7 @@ public class WeaponInventorySlot : InventorySlot
         uIManager.equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
         uIManager.ResetAllSelectedSlots();
         uIManager.hudWindow.SetActive(true);
+        uIManager.descriptionWindow.SetActive(false);
         inputHandler.invFlag = false;
 
 

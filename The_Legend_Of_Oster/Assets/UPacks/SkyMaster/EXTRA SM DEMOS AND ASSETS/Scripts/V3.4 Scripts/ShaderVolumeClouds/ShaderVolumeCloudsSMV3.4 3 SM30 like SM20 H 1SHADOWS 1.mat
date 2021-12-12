@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShaderVolumeCloudsSMV3.4 3 SM30 like SM20 H 1SHADOWS 1
+  m_Shader: {fileID: 4800000, guid: d46699f963e3e1a4fa975c3d0c795c75, type: 3}
+  m_ShaderKeywords: CV_DEPTHBLEND_OFF CV_HORIZONBLEND_OFF CV_LIGHTING_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 2800000, guid: 5a1bedf7284966f4e827a213e4c46e5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap:
+        m_Texture: {fileID: 2800000, guid: 1c8481fcc3152ea4d8315a8bc2a0da51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap1:
+        m_Texture: {fileID: 2800000, guid: b03970cdaa98d8c43a6b24adec04f4b6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1b8d4b9ce7a0f6240ba2a27c672117ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaintMap:
+        m_Texture: {fileID: 2800000, guid: 6c93f72df53d12245bc2ab09ce1de36f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap:
+        m_Texture: {fileID: 2800000, guid: 5ab1f4d515f82fe46b685c62a42c4729, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap1:
+        m_Texture: {fileID: 2800000, guid: d365d36f30dee7f4f8e7990e30da8e75, type: 3}
+        m_Scale: {x: 0.31, y: 0.15}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Thickness: 1
+    - _Alpha: 0.42
+    - _AlphaCut: -5.56
+    - _AmbientFactor: 1
+    - _CloudCover: 0.5
+    - _CloudDensity: 1
+    - _CloudSharpness: 0.8
+    - _CloudSize: 1
+    - _ColorDiff: 0.14
+    - _ColorDiffOffset: -0.49
+    - _Coverage: 0.44
+    - _CoverageOffset: -0.31
+    - _CutHeight: 233.67
+    - _Cutoff: 0.952
+    - _Density: 0.00025
+    - _DepthBlendMul: 2.29
+    - _DepthBlendMult: 2
+    - _DepthColor: 0
+    - _DepthIntensity: 0.1
+    - _DetailL: 0
+    - _Dithering: 1280
+    - _EdgeBlend: 0.11
+    - _EdgeFactor: 0.51
+    - _FogFactor: 6.79
+    - _FogUnity: 0
+    - _Forward: 0
+    - _HorizonFactor: 4.81
+    - _IndirectContribution: 1
+    - _MipLevel: 0
+    - _Mode: 0
+    - _Normalized: 1.086
+    - _ObjectSpaceMapping: 0
+    - _Speed: 23
+    - _SpeedSecondLayer: 23.88
+    - _Tiling: 4651.16
+    - _TimeMult: 0.1
+    - _TimeMultSecondLayer: 4
+    - _TranspOffset: -3.34
+    - _Transparency: 3.94
+    - _TransparencyThres: -1.69
+    - _Velocity1: 22
+    - _Velocity2: 6
+    - _ditherTiling: 1
+    - _shadowAlpha: 0.75
+    - _shadowSharpness: 1
+    - pointLightPower: 1
+    m_Colors:
+    - _Ambient: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.3534673, g: 0.5399116, b: 0.50106907, a: 0.81180966}
+    - _CloudNormalsDirection: {r: 1, g: -1, b: 1, a: 0}
+    - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Control: {r: 0.16911763, g: 0.1144031, b: 0.1144031, a: 1}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
+    - _FogColor: {r: 0.99264705, g: 0.79371494, b: 0.61310554, a: 1}
+    - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
+    - _Shading: {r: 0.27681658, g: 0.29418916, b: 0.4705882, a: 0.172}
+    - _ShadowColor: {r: 0, g: 0.23245643, b: 0.77205884, a: 0.609}
+    - _SunColor: {r: 0.3897059, g: 0.10029196, b: 0.10029196, a: 0.666}
+    - _SunDir: {r: 0, g: 1, b: 0, a: 0}
+    - _Velocity1: {r: 22, g: -1.8, b: 0, a: 0}
+    - _Velocity2: {r: 19, g: 7.3, b: 11.46, a: 0}
+    - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+    - pointLightColor: {r: 0, g: 0, b: 0, a: 0}
+    - pointLightPos: {r: 0, g: 0, b: 0, a: 0}

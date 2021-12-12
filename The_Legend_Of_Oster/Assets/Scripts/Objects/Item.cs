@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     [Header("Item Information")]
     public Sprite itemIcon;
     public string itemName;
+    public string itemDesc;
     public int stacksTo;
 }
 

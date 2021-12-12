@@ -31,46 +31,73 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
+    //This may be the grossest bit of code ive ever wrote,but "It just works" ~ Vince Comaroto 1:44 am 12/8/21
     public void AddToCraftingStack(CraftingItemStack itemToAdd)
     {
-
         if (craftingItemInventory.Count <= 0)
         {
             craftingItemInventory.Add((CraftingItemStack)itemToAdd.GetCopy());
+            itemToAdd.currentSize = 0;
+            return;
         }
         else
         {
-
             for (int i = craftingItemInventory.Count - 1; i >= 0; i--)
             {
                 CraftingItemStack craft = craftingItemInventory[i];
-                if (craft.itemType == itemToAdd.itemType && itemToAdd.currentSize < craft.itemType.stacksTo)
+                if (!craft.IsFull())
                 {
-                    craft.currentSize += itemToAdd.currentSize;
+                    if (craft.itemType == itemToAdd.itemType)
+                    {
+                        if (craft.currentSize + itemToAdd.currentSize > craft.itemType.stacksTo)
+                        {
+                            int difference = (itemToAdd.currentSize + craft.currentSize) - craft.itemType.stacksTo;
+                            craft.currentSize = craft.itemType.stacksTo;
+                            CraftingItemStack diffStack = (CraftingItemStack)itemToAdd.GetCopy();
+                            diffStack.currentSize = difference;
+                            craftingItemInventory.Add(diffStack);
+                            return;
+                        }
+                        else
+                        {
+                            craft.currentSize += itemToAdd.currentSize;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < craftingItemInventory.Count; j++)
+                        {
+                            if (craftingItemInventory[j].itemType == itemToAdd.itemType)
+                            {
+                                if (craftingItemInventory[j].currentSize + itemToAdd.currentSize > craftingItemInventory[j].itemType.stacksTo)
+                                {
+                                    int difference = (itemToAdd.currentSize + craftingItemInventory[j].currentSize) - craftingItemInventory[j].itemType.stacksTo;
+                                    craftingItemInventory[j].currentSize = craftingItemInventory[j].itemType.stacksTo;
+                                    CraftingItemStack diffStack = (CraftingItemStack)itemToAdd.GetCopy();
+                                    diffStack.currentSize = difference;
+                                    craftingItemInventory.Add(diffStack);
+                                    return;
+                                }
+                                else
+                                {
+                                    craftingItemInventory[j].currentSize += itemToAdd.currentSize;
+                                    return;
+                                }
+                            }
+                        }
+                        craftingItemInventory.Add((CraftingItemStack)itemToAdd.GetCopy());
+                        return;
+                    }
                 }
                 else
                 {
                     craftingItemInventory.Add((CraftingItemStack)itemToAdd.GetCopy());
+                    return;
                 }
             }
         }
-
-        /*   foreach (CraftingItemStack i in craftingItemInventory)
-           {
-               if (i.itemType == itemToAdd && itemToAdd.currentSize < i.itemType.stacksTo)
-               {
-                   Debug.Log("INCREMENTING STACK");
-                   i.currentSize += itemToAdd.currentSize;
-               }
-               else
-               {
-                   Debug.Log("CREATING NEW STACK");
-                   craftingItemInventory.Add(itemToAdd);
-               }
-           }*/
     }
-
-
 
     public void ChangeRightWeapon()
     {

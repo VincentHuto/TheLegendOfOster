@@ -15,11 +15,11 @@ public class MusicTrigger : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !triggerSong.Equals(MusicManager.clip))
         {
             
             Debug.Log("Switching song to " + triggerName);
-            StartCoroutine(MusicManager.FadeToSong(triggerSong, MusicManager.musicsource, MusicManager.fadeTime, MusicManager.maxVol));
+            MusicManager.FadeToSong(triggerSong, MusicManager.fadeTime, MusicManager.maxVol);
         }
     }
 }

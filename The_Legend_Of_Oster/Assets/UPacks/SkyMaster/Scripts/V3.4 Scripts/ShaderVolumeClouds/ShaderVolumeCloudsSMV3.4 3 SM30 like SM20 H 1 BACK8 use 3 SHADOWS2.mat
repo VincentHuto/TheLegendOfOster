@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShaderVolumeCloudsSMV3.4 3 SM30 like SM20 H 1 BACK8 use 3 SHADOWS2
+  m_Shader: {fileID: 4800000, guid: d46699f963e3e1a4fa975c3d0c795c75, type: 3}
+  m_ShaderKeywords: CV_DEPTHBLEND_OFF CV_HORIZONBLEND_OFF CV_LIGHTING_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CloudMap:
+        m_Texture: {fileID: 2800000, guid: 1c8481fcc3152ea4d8315a8bc2a0da51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap1:
+        m_Texture: {fileID: 2800000, guid: 2f72804083408ae41b57b46b545b3aca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaintMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Thickness: -0.1
+    - _ColorDiff: 2.71
+    - _ColorDiffOffset: 0.73
+    - _Coverage: -1.38
+    - _CoverageOffset: 0.94
+    - _CutHeight: -206.51
+    - _CutHeight2: 1285
+    - _Cutoff: 0.424
+    - _Density: 0.00154
+    - _FogFactor: 1
+    - _FogUnity: 1
+    - _HorizonFactor: 0.081
+    - _TranspOffset: 7.29
+    - _Transparency: 0.02
+    - pointLightPower: 0
+    m_Colors:
+    - _Color: {r: 0.043137256, g: 0.043137256, b: 0.043137256, a: 1}
+    - _Control: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
+    - _FogColor: {r: 0.76862746, g: 0.85882354, b: 0.91764706, a: 1}
+    - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
+    - _ShadowColor: {r: 0.23921564, g: 0.23921564, b: 0.31764704, a: 0.91764706}
+    - _SunColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 0.91764706}
+    - _Velocity1: {r: 2, g: 0.0000027122762, b: 0, a: 0.08326749}
+    - _Velocity2: {r: 5, g: 0.000012579637, b: 0, a: 2}
+    - pointLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - pointLightPos: {r: -910.0289, g: 761.4708, b: 6297606.5, a: 0}

@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShaderVolumeCloudsSMV3.4 3 SM30 VORTEX Shader Only Mode
+  m_Shader: {fileID: 4800000, guid: 56d752e2a123ce443a80e6c73e25f045, type: 3}
+  m_ShaderKeywords: CV_DEPTHBLEND_OFF CV_HORIZONBLEND_OFF CV_LIGHTING_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 2800000, guid: 5a1bedf7284966f4e827a213e4c46e5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap:
+        m_Texture: {fileID: 2800000, guid: 1c8481fcc3152ea4d8315a8bc2a0da51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap1:
+        m_Texture: {fileID: 2800000, guid: 2f72804083408ae41b57b46b545b3aca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 55f5c739e5711f841b02183ae8d0298c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaintMap:
+        m_Texture: {fileID: 2800000, guid: 43b6244cf3c3ecb4599ba7e50e594f59, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap:
+        m_Texture: {fileID: 2800000, guid: 5ab1f4d515f82fe46b685c62a42c4729, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap1:
+        m_Texture: {fileID: 2800000, guid: d365d36f30dee7f4f8e7990e30da8e75, type: 3}
+        m_Scale: {x: 0.31, y: 0.15}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - ExposureBias: 0.42
+    - Thickness: 6
+    - _Alpha: 0.42
+    - _AlphaCut: -5.56
+    - _AmbientFactor: 1
+    - _CloudCover: 0.5
+    - _CloudDensity: 1
+    - _CloudSharpness: 0.8
+    - _CloudSize: 1
+    - _ColorDiff: 1
+    - _ColorDiffOffset: 0.35
+    - _Coverage: 6.52
+    - _CoverageOffset: 4
+    - _CullMode: 0
+    - _CutHeight: 500
+    - _CutHeight2: 1222
+    - _Cutoff: 0.403
+    - _Density: 0.00005
+    - _DepthBlendMul: 2.29
+    - _DepthBlendMult: 2
+    - _DepthColor: 0
+    - _DepthIntensity: 0.1
+    - _DetailL: 0
+    - _Dithering: 1280
+    - _EdgeBlend: 0.11
+    - _EdgeFactor: 0.51
+    - _FogFactor: 0.12
+    - _FogUnity: 1
+    - _Forward: 0
+    - _HorizonFactor: 0.01
+    - _IndirectContribution: 1
+    - _MipLevel: 0
+    - _Mode: 0
+    - _Normalized: 1.086
+    - _ObjectSpaceMapping: 0
+    - _Speed: 23
+    - _SpeedSecondLayer: 23.88
+    - _Tiling: 4651.16
+    - _TimeMult: 0.1
+    - _TimeMultSecondLayer: 4
+    - _TranspOffset: 11.31
+    - _Transparency: 0.51
+    - _TransparencyOffset: 0
+    - _TransparencyThres: -1.69
+    - _Velocity1: 22
+    - _Velocity2: 6
+    - _ditherTiling: 1
+    - _shadowAlpha: 0.75
+    - _shadowSharpness: 1
+    - fogPower: 0.01
+    - fogPowerExp: 1
+    - fog_depth: 1
+    - mieCoefficient: 0.6
+    - mieDirectionalG: 0.8
+    - pointLightPower: 0
+    - reileigh: 0.3
+    m_Colors:
+    - K: {r: 0.9, g: 0.5, b: 0.5, a: 1}
+    - KA: {r: 0.9, g: 0.5, b: 0.5, a: 1}
+    - _Ambient: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.11784035, g: 0.11784035, b: 0.11784035, a: 0.8585514}
+    - _Brightness: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudNormalsDirection: {r: 1, g: -1, b: 1, a: 0}
+    - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.63529414}
+    - _Control: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0.5803922}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
+    - _FogColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+    - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
+    - _Shading: {r: 0.27681658, g: 0.29418916, b: 0.4705882, a: 0.172}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 0.69803923}
+    - _SunColor: {r: 0.36792448, g: 0.36792448, b: 0.36792448, a: 0.69411767}
+    - _SunColor2: {r: 0.95, g: 0.95, b: 0.95, a: 0.8}
+    - _SunDir: {r: 0, g: 1, b: 0, a: 0}
+    - _Velocity1: {r: 8, g: 0, b: 0, a: 0.05}
+    - _Velocity2: {r: 22, g: 0, b: 0, a: 2}
+    - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+    - lambda: {r: 1, g: 1, b: 1, a: 1}
+    - localLight: {r: 86, g: 10, b: 2, a: 1.06}
+    - localLightFreq: {r: 5, g: 2, b: 3, a: 1}
+    - localLightPos: {r: 374.36, g: -1000, b: 11111, a: 0.78}
+    - localLightPosRange: {r: -0.8, g: -0.8, b: 0.82, a: 1}
+    - pointLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - pointLightPos: {r: -1655.3737, g: 690.0187, b: -1121.822, a: 0}
+    - sunPosition: {r: 0.2, g: 1, b: 0.2, a: -2}
+    - vortexControl: {r: -2.5, g: -0.15, b: 1.55, a: 10.84}
+    - vortexPosRadius: {r: 0, g: 0, b: 10000, a: 1}
