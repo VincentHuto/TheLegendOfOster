@@ -17,9 +17,11 @@ public class InputHandler : MonoBehaviour
     PlayerLocomotion playerLocomotion;
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
+    WeaponSlotManager weaponSlotManager;
     PlayerManager playerManager;
     PlayerStats playerStats;
     PlayerEffectsManager playerEffectsManager;
+    PlayerAnimatorManager playerAnimator;
     UIManager uIManager;
     CameraHandler cameraHandler;
 
@@ -35,7 +37,9 @@ public class InputHandler : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         uIManager = FindObjectOfType<UIManager>();
+        playerAnimator = GetComponentInChildren<PlayerAnimatorManager>();
         playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         cameraHandler = FindObjectOfType<CameraHandler>();
 
     }
@@ -218,6 +222,7 @@ public class InputHandler : MonoBehaviour
         if (x_Input)
         {
             x_Input = false;
+            playerInventory.currentConsumable.AtteptToConsumeItem(playerAnimator, weaponSlotManager, playerEffectsManager);
         }
     }
 

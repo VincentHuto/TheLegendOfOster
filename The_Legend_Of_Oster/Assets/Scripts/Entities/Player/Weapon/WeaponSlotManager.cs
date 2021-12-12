@@ -6,7 +6,7 @@ public class WeaponSlotManager : MonoBehaviour
 {
     PlayerInventory playerInventory;
 
-    WeaponHolderSlot leftHandSlot, rightHandSlot;
+    public WeaponHolderSlot leftHandSlot, rightHandSlot;
     public DamageCollider leftDamageCollider;
     public DamageCollider rightDamageCollider;
 
@@ -35,6 +35,13 @@ public class WeaponSlotManager : MonoBehaviour
                 rightHandSlot = weaponSlot;
             }
         }
+    }
+
+    public void LoadBothWeaponsOnSlots()
+    {
+        LoadWeaponOnSlot(playerInventory.rightWeapon,false);
+        LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+
     }
     public void LoadWeaponOnSlot(WeaponItemStack weaponItem, bool isLeft)
     {

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb0abe3797a5f741a672073955c17db, type: 3}
+  m_Name: MagicBulletHealth
+  m_EditorClassIdentifier: 
+  itemType: {fileID: 11400000, guid: bf18c3744ab1cae4a800c62451fc3955, type: 2}
+  currentSize: 10
+  itemModel: {fileID: 7130529029308745304, guid: 7d3ae71e31d9ae645a5b2e79d187a8b2, type: 3}
+  consumeAnimation: Drink
+  isInteracting: 0
+  healthFlask: 1
+  staminaFlask: 0
+  breathFlask: 0
+  healthAmount: 50
+  staminaAmount: 0
+  breathAmount: 0
+  recoveryFX: {fileID: 0}

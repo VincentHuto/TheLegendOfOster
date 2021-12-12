@@ -83,6 +83,17 @@ public class PlayerStats : CharacterStats
         }
     }
 
+    public void HealPlayer(float healAmount)
+    {
+        currentHealth = currentHealth + healAmount;
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthbar.SetCurrentHealth(currentHealth);
+    }
+
     public void TakeStaminaDamage(float damage)
     {
         BeginStaminaRegen();
