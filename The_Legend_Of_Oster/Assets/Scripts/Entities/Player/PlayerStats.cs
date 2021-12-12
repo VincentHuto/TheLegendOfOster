@@ -12,7 +12,7 @@ public class PlayerStats : CharacterStats
     public BreathBar breathBar;
     public LevelText levelText;
 
-    AnimatorHandler animatorHandler;
+    PlayerAnimatorManager playerAnimatorManager;
     PlayerManager playerManager;
     private WaitForSeconds regenTicks = new WaitForSeconds(0.1f);
     private Coroutine regen;
@@ -28,7 +28,7 @@ public class PlayerStats : CharacterStats
         currentStamina = maxStamina;
         currentBreath = maxBreath;
         staminaRegenMult = level * 0.05f;
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         playerManager = GetComponent<PlayerManager>();
 
     }
@@ -73,14 +73,25 @@ public class PlayerStats : CharacterStats
 
         healthbar.SetCurrentHealth(currentHealth);
 
-        animatorHandler.PlayTargetAnimation("Damage_1", true);
+        playerAnimatorManager.PlayTargetAnimation("Damage_1", true);
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            animatorHandler.PlayTargetAnimation("Death_1", true);
+            playerAnimatorManager.PlayTargetAnimation("Death_1", true);
             //HANDLE PLAYER DEATH
         }
+    }
+
+    public void HealPlayer(float healAmount)
+    {
+        currentHealth = currentHealth + healAmount;
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthbar.SetCurrentHealth(currentHealth);
     }
 
     public void TakeStaminaDamage(float damage)

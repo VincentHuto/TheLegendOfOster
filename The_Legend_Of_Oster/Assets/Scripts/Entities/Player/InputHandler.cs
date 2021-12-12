@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
         d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
-        lockOn_Input, right_Stick_Right_Input,right_Stick_Left_Input;
+        lockOn_Input, right_Stick_Right_Input,right_Stick_Left_Input,x_Input;
 
     public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
@@ -17,9 +17,11 @@ public class InputHandler : MonoBehaviour
     PlayerLocomotion playerLocomotion;
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
+    WeaponSlotManager weaponSlotManager;
     PlayerManager playerManager;
     PlayerStats playerStats;
     PlayerEffectsManager playerEffectsManager;
+    PlayerAnimatorManager playerAnimator;
     UIManager uIManager;
     CameraHandler cameraHandler;
 
@@ -35,7 +37,9 @@ public class InputHandler : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         uIManager = FindObjectOfType<UIManager>();
+        playerAnimator = GetComponentInChildren<PlayerAnimatorManager>();
         playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         cameraHandler = FindObjectOfType<CameraHandler>();
 
     }
@@ -52,6 +56,7 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
             inputActions.PlayerActions.LB.performed += i => lb_Input = true;
             inputActions.PlayerActions.LT.performed += i => lt_Input = true;
+            inputActions.PlayerActions.X.performed += i => x_Input = true;
             inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
             inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
@@ -77,6 +82,7 @@ public class InputHandler : MonoBehaviour
         HandleQuickSlotInput();
         HandleInventoryInput();
         HandleLockOnInput();
+        HandleUseConsumableInput();
 
     }
 
@@ -208,6 +214,15 @@ public class InputHandler : MonoBehaviour
                 uIManager.CloseAllInventoryWindows();
                 uIManager.hudWindow.SetActive(true);
             }
+        }
+    }
+
+    private void HandleUseConsumableInput()
+    {
+        if (x_Input)
+        {
+            x_Input = false;
+            playerInventory.currentConsumable.AtteptToConsumeItem(playerAnimator, weaponSlotManager, playerEffectsManager);
         }
     }
 

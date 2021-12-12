@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class WeaponSlotManager : MonoBehaviour
 {
-    WeaponHolderSlot leftHandSlot, rightHandSlot;
-    DamageCollider leftDamageCollider, rightDamageCollider;
+    PlayerInventory playerInventory;
+
+    public WeaponHolderSlot leftHandSlot, rightHandSlot;
+    public DamageCollider leftDamageCollider;
+    public DamageCollider rightDamageCollider;
+
     Animator animator;
     QuickSlotsUI quickSlotsUI;
     PlayerStats playerStats;
@@ -13,6 +17,7 @@ public class WeaponSlotManager : MonoBehaviour
     public WeaponItem attackingWeapon;
     private void Awake()
     {
+        playerInventory = GetComponentInParent<PlayerInventory>();
         animator = GetComponent<Animator>();
         quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
         playerStats = GetComponentInParent<PlayerStats>();
@@ -30,6 +35,13 @@ public class WeaponSlotManager : MonoBehaviour
                 rightHandSlot = weaponSlot;
             }
         }
+    }
+
+    public void LoadBothWeaponsOnSlots()
+    {
+        LoadWeaponOnSlot(playerInventory.rightWeapon,false);
+        LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+
     }
     public void LoadWeaponOnSlot(WeaponItemStack weaponItem, bool isLeft)
     {
@@ -90,11 +102,15 @@ public class WeaponSlotManager : MonoBehaviour
     public void LoadLeftWeaponDamageCollider()
     {
         leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+       // WeaponItem leftWeapon = (WeaponItem)playerInventory.leftWeapon.itemType;
+     //   leftDamageCollider.currentWeaponDamage = leftWeapon.baseDamage;
         playerEffectsManager.leftWeaponFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
     }
     public void LoadRightWeaponDamageCollider()
     {
         rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        //WeaponItem rightWeapon = (WeaponItem)playerInventory.rightWeapon.itemType;
+        //rightDamageCollider.currentWeaponDamage = rightWeapon.baseDamage;
         playerEffectsManager.rightWeaponFx = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
 
     }

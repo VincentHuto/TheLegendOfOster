@@ -16,7 +16,7 @@ public class PlayerLocomotion : MonoBehaviour
     [HideInInspector]
     public Transform myTransform;
     [HideInInspector]
-    public AnimatorHandler animatorHandler;
+    public PlayerAnimatorManager playerAnimatorManager;
 
     [Header("Ground & Air Detection Stats")]
     [SerializeField]
@@ -59,10 +59,10 @@ public class PlayerLocomotion : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         playerStats = GetComponent<PlayerStats>();
         inputHandler = GetComponent<InputHandler>();
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         cameraObject = Camera.main.transform;
         myTransform = transform;
-        animatorHandler.Initialize();
+        playerAnimatorManager.Initialize();
 
         playerManager.isGrounded = true;
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
@@ -168,17 +168,17 @@ public class PlayerLocomotion : MonoBehaviour
         //Commented out for now becasue of the walking back not having sort animator value
         /*   if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
            {
-               animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
+               playerAnimatorManager.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
            }
            else
            {
-               animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+               playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
            }
    */
 
-        animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+        playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 
-        if (animatorHandler.canRotate)
+        if (playerAnimatorManager.canRotate)
         {
             HandleRotation(delta);
         }
@@ -186,7 +186,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleRollingAndSprinting(float delta)
     {
-        if (animatorHandler.anim.GetBool("isInteracting"))
+        if (playerAnimatorManager.anim.GetBool("isInteracting"))
             return;
 
         if (inputHandler.rollFlag)
@@ -196,14 +196,14 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (inputHandler.moveAmount > 0)
             {
-                animatorHandler.PlayTargetAnimation("Rolling", true);
+                playerAnimatorManager.PlayTargetAnimation("Rolling", true);
                 moveDirection.y = 0;
                 Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                 myTransform.rotation = rollRotation;
             }
             else
             {
-                animatorHandler.PlayTargetAnimation("Backstep", true);
+                playerAnimatorManager.PlayTargetAnimation("Backstep", true);
             }
         }
     }
@@ -246,12 +246,12 @@ public class PlayerLocomotion : MonoBehaviour
                 if (inAirTimer > 0.5f)
                 {
                     //Debug.Log("You were in the air for " + inAirTimer);
-                    animatorHandler.PlayTargetAnimation("Land", true);
+                    playerAnimatorManager.PlayTargetAnimation("Land", true);
                     inAirTimer = 0;
                 }
                 else
                 {
-                    animatorHandler.PlayTargetAnimation("Movement", false);
+                    playerAnimatorManager.PlayTargetAnimation("Movement", false);
                     inAirTimer = 0;
                 }
 
@@ -269,7 +269,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 if (playerManager.isInteracting == false)
                 {
-                    animatorHandler.PlayTargetAnimation("Falling", true);
+                    playerAnimatorManager.PlayTargetAnimation("Falling", true);
                 }
 
                 Vector3 vel = rigidbody.velocity;
@@ -297,8 +297,8 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (playerManager.isGrounded)
         {
-            animatorHandler.anim.SetBool("isJumping", true);
-            animatorHandler.PlayTargetAnimation("Jump", false);
+            playerAnimatorManager.anim.SetBool("isJumping", true);
+            playerAnimatorManager.PlayTargetAnimation("Jump", false);
 
             float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
             Vector3 playerVelocity = moveDirection;
