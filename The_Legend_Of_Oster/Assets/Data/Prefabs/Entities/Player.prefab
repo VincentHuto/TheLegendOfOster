@@ -2001,6 +2001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a1254cd966b6f4f9fd4efcc3a31ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftDamageCollider: {fileID: 0}
+  rightDamageCollider: {fileID: 0}
   attackingWeapon: {fileID: 0}
 --- !u!95 &1802497038758491741
 Animator:
@@ -9816,6 +9818,7 @@ MonoBehaviour:
   lockOn_Input: 0
   right_Stick_Right_Input: 0
   right_Stick_Left_Input: 0
+  x_Input: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
@@ -9839,7 +9842,7 @@ MonoBehaviour:
   normalVector: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
-  animatorHandler: {fileID: 0}
+  playerAnimatorManager: {fileID: 0}
   groundDetectionRayStartPoint: 0.5
   minimumDistanceNeededToBeginFall: 1.5
   groundDirectionRayDistance: 0.2
@@ -9866,6 +9869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 3274922384395926159}
   spriteRenderer: {fileID: 1685489352677637365}
+  pendingCriticalDamage: 0
   interactableUIGameObject: {fileID: 443025606464765735}
   itemInteractableGameObject: {fileID: 2402210990439872026}
   isSprinting: 0
