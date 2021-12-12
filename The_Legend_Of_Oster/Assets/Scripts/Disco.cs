@@ -12,3 +12,4 @@ public class Disco : MonoBehaviour
         transform.Rotate(Vector3.forward);
     }
 }
+    //HI
