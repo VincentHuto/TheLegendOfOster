@@ -5,12 +5,13 @@ using UnityEngine;
 public class ObjectPointer : MonoBehaviour
 {
     [SerializeField] string targetTag;
+    public int range = 10;
     public bool point;
     GameObject[] objs;
     GameObject closestObj;
     private void Start()
     {
-       objs = GameObject.FindGameObjectsWithTag(targetTag);
+        objs = GameObject.FindGameObjectsWithTag(targetTag);
     }
     // Update is called once per frame
     void Update()
@@ -18,7 +19,11 @@ public class ObjectPointer : MonoBehaviour
         if (point)
         {
             FindClosestObjectWithTag();
-            this.transform.LookAt(closestObj.transform);
+
+            if (closestObj != null)
+            {
+                this.transform.LookAt(closestObj.transform);
+            }
         }
     }
 
@@ -28,14 +33,15 @@ public class ObjectPointer : MonoBehaviour
         //Array is empty, just return.
         if (closestObj == null && objs.Length > 0)
             closestObj = objs[0];
-        else if(objs.Length <= 0)
+        else if (objs.Length <= 0)
             return;
 
         for (int i = 0; i < objs.Length; i++)
         {
-            if(Vector3.Distance(this.transform.position, objs[i].transform.position) < Vector3.Distance(this.transform.position, closestObj.transform.position))
+            float distToCheck = Vector3.Distance(this.transform.position, objs[i].transform.position);
+            float distToCurrent = Vector3.Distance(this.transform.position, closestObj.transform.position);
+            if ((distToCheck < distToCurrent))
             {
-                //Then the new object is closer
                 closestObj = objs[i];
             }
         }
