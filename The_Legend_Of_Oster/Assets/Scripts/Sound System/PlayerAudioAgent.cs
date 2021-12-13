@@ -67,7 +67,7 @@ public class PlayerAudioAgent : MonoBehaviour
         }
 
             playerSource.PlayOneShot(fsarr[fs_idx], fs_volscale);
-            Debug.Log("Played FS " + fs_idx);
+         //   Debug.Log("Played FS " + fs_idx);
     }
     void FixedUpdate()
     {

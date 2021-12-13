@@ -11,7 +11,7 @@ public class PlayerStats : CharacterStats
     public StaminaBar staminaBar;
     public BreathBar breathBar;
     public LevelText levelText;
-
+    
     PlayerAnimatorManager playerAnimatorManager;
     PlayerManager playerManager;
     private WaitForSeconds regenTicks = new WaitForSeconds(0.1f);
@@ -83,7 +83,7 @@ public class PlayerStats : CharacterStats
         }
     }
 
-    public void HealPlayer(float healAmount)
+    public void HealPlayerHealth(float healAmount)
     {
         currentHealth = currentHealth + healAmount;
 
@@ -111,6 +111,17 @@ public class PlayerStats : CharacterStats
         regen = StartCoroutine(StaminaRegen());
     }
 
+    public void HealPlayerStamina(float healAmount)
+    {
+        currentStamina = currentStamina + healAmount;
+
+        if (currentStamina > maxStamina)
+        {
+            currentStamina = maxStamina;
+        }
+        staminaBar.SetCurrentStamina(currentStamina);
+    }
+
     private IEnumerator StaminaRegen()
     {
 
@@ -126,4 +137,17 @@ public class PlayerStats : CharacterStats
 
         regen = null;
     }
+
+
+    public void HealPlayerBreath(float healAmount)
+    {
+        currentBreath = currentBreath + healAmount;
+
+        if (currentBreath > maxBreath)
+        {
+            currentBreath = maxBreath;
+        }
+        breathBar.SetCurrentBreath(currentBreath);
+    }
+
 }

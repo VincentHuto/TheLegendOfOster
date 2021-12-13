@@ -81,6 +81,11 @@ public class WeaponSlotManager : MonoBehaviour
         }
     }
     //All these functions are to be used on animation events
+    public void DrainStaminaJump()
+    {
+        playerStats.TakeStaminaDamage(playerStats.maxStamina * 0.05f);
+    }
+
     public void DrainStaminaRoll()
     {
         playerStats.TakeStaminaDamage(playerStats.maxStamina * 0.05f);
