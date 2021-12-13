@@ -8,21 +8,50 @@ public class PlayerEffectsManager : CharacterEffectsManager
     public GameObject instantiatedFXModel;
     PlayerStats playerStats;
     WeaponSlotManager weaponSlotManager;
-    public float healAmount;
+    PlayerInventory playerInventory;
+    public float healthAmount, staminaAmount, breathAmount;
     protected override void Awake()
     {
         base.Awake();
         playerStats = GetComponentInParent<PlayerStats>();
         weaponSlotManager = GetComponent<WeaponSlotManager>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
     }
 
     public void HealPlayerFromEffect()
     {
+        if(playerInventory.currentConsumable is FlaskItem flask)
+        {
+           // Debug.Log("IS FLASK: " + flask.name);
+            if (flask.healthFlask)
+            {
+                playerStats.HealPlayerHealth(healthAmount);
+            }
+            else if (flask.staminaFlask)
+            {
+                playerStats.HealPlayerStamina(staminaAmount);
 
-        playerStats.HealPlayer(healAmount);
+            }
+            else if (flask.breathFlask)
+            {
+                playerStats.HealPlayerBreath(breathAmount);
+            }
+            else
+            {
+                Debug.Log("Unknown Flask Type");
+            }
+        }
+        else
+        {
+
+        }
+
+        DestroyAndReload();
+    }
+    public void DestroyAndReload()
+    {
         GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
         Destroy(instantiatedFXModel.gameObject);
         weaponSlotManager.LoadBothWeaponsOnSlots();
     }
-
 }
