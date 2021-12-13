@@ -8,6 +8,7 @@ public class FlaskItem : ConsumableItem
 {
     [Header("Flask type")]
     public bool healthFlask, staminaFlask, breathFlask;
+    [Header("Heal Amounts")]
     public int healthAmount, staminaAmount, breathAmount;
     [Header("Recovery FX")]
     public GameObject recoveryFX;

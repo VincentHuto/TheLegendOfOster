@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eb0abe3797a5f741a672073955c17db, type: 3}
-  m_Name: MagicBulletHealth
+  m_Name: MagicBulletBreath
   m_EditorClassIdentifier: 
   itemType: {fileID: 11400000, guid: f80c27735eb895547a57cb3c55c06649, type: 2}
   currentSize: 10
-  itemModel: {fileID: 7130529029308745304, guid: 7d3ae71e31d9ae645a5b2e79d187a8b2, type: 3}
+  itemModel: {fileID: 8923461970937958503, guid: bf37f9b4d7c593446acde7a4dc049c02, type: 3}
   consumeAnimation: Drink
   isInteracting: 0
-  healthFlask: 1
+  healthFlask: 0
   staminaFlask: 0
-  breathFlask: 0
-  healthAmount: 50
+  breathFlask: 1
+  healthAmount: 0
   staminaAmount: 0
-  breathAmount: 0
-  recoveryFX: {fileID: 7273237712203535535, guid: 9a14836d55977ed45ba259e49895cf9e, type: 3}
+  breathAmount: 50
+  recoveryFX: {fileID: 814686883686076591, guid: fd2c005315458364aa3ab1bab2e6809f, type: 3}

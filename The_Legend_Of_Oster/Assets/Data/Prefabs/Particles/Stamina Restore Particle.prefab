@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7273237712203535535
+--- !u!1 &4527034145977920420
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7273237712203535534}
-  - component: {fileID: 7273237712203535504}
-  - component: {fileID: 7273237712203535505}
+  - component: {fileID: 4527034145977920421}
+  - component: {fileID: 4527034145977920411}
+  - component: {fileID: 4527034145977920410}
   m_Layer: 0
-  m_Name: Heal Particle
+  m_Name: Stamina Restore Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7273237712203535534
+--- !u!4 &4527034145977920421
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7273237712203535535}
+  m_GameObject: {fileID: 4527034145977920420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.842, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &7273237712203535504
+--- !u!198 &4527034145977920411
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7273237712203535535}
+  m_GameObject: {fileID: 4527034145977920420}
   serializedVersion: 7
   lengthInSec: 1
   simulationSpeed: 1
@@ -225,7 +225,7 @@ ParticleSystem:
       maxColor: {r: 0.978503, g: 1, b: 0.3443396, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.6226415, g: 0.022321178, b: 0, a: 1}
+        key0: {r: 0.0055172443, g: 1, b: 0, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1321,8 +1321,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.6226415, g: 0.022321178, b: 0, a: 1}
-        key1: {r: 1, g: 0.49803925, b: 0, a: 0.39607844}
+        key0: {r: 0.0055172443, g: 1, b: 0, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 1, g: 1, b: 1, a: 0.39607847}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1338,7 +1338,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 32382
+        atime1: 65535
         atime2: 59753
         atime3: 0
         atime4: 0
@@ -1347,7 +1347,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 0.24434566, g: 0, b: 1, a: 1}
@@ -4019,8 +4019,8 @@ ParticleSystem:
       maxColor: {r: 0.7122642, g: 1, b: 0.96163523, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.49922678, b: 0, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.39607844}
+        key0: {r: 0.0018128833, g: 0.46226418, b: 0, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0.39607847}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4036,7 +4036,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 32382
+        atime1: 65535
         atime2: 59753
         atime3: 0
         atime4: 0
@@ -4045,7 +4045,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4135,8 +4135,8 @@ ParticleSystem:
       maxColor: {r: 0.7176471, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.49922678, b: 0, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.39607844}
+        key0: {r: 0.120016016, g: 0.2924528, b: 0.120016016, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0.7137255, g: 1, b: 0.9607843, a: 0.39607847}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4152,7 +4152,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 32382
+        atime1: 65535
         atime2: 59753
         atime3: 0
         atime4: 0
@@ -4161,7 +4161,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4757,14 +4757,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &7273237712203535505
+--- !u!199 &4527034145977920410
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7273237712203535535}
+  m_GameObject: {fileID: 4527034145977920420}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
