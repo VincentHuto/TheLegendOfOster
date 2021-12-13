@@ -9,7 +9,7 @@ public class PlayerEffectsManager : CharacterEffectsManager
     PlayerStats playerStats;
     WeaponSlotManager weaponSlotManager;
     PlayerInventory playerInventory;
-    public float healAmount;
+    public float healthAmount, staminaAmount, breathAmount;
     protected override void Awake()
     {
         base.Awake();
@@ -25,21 +25,25 @@ public class PlayerEffectsManager : CharacterEffectsManager
             Debug.Log("IS FLASK: " + flask.name);
             if (flask.healthFlask)
             {
-                playerStats.HealPlayerHealth(healAmount);
+                playerStats.HealPlayerHealth(healthAmount);
             }
             else if (flask.staminaFlask)
             {
-                playerStats.HealPlayerStamina(healAmount);
+                playerStats.HealPlayerStamina(staminaAmount);
 
             }
             else if (flask.breathFlask)
             {
-                playerStats.HealPlayerBreath(healAmount);
+                playerStats.HealPlayerBreath(breathAmount);
             }
             else
             {
-
+                Debug.Log("Unknown Flask Type");
             }
+        }
+        else
+        {
+
         }
 
         DestroyAndReload();

@@ -18,7 +18,9 @@ public class FlaskItem : ConsumableItem
         base.AtteptToConsumeItem(playerAnimatorManager, weaponSlotManager, playerEffectsManager);
         GameObject flask = Instantiate(itemModel, weaponSlotManager.leftHandSlot.transform);
         playerEffectsManager.currentParticleFX = recoveryFX;
-        playerEffectsManager.healAmount = healthAmount;
+        playerEffectsManager.healthAmount = healthAmount;
+        playerEffectsManager.staminaAmount = staminaAmount;
+        playerEffectsManager.breathAmount = breathAmount;
         playerEffectsManager.instantiatedFXModel = flask;
         weaponSlotManager.leftHandSlot.UnloadWeapon();
     }
