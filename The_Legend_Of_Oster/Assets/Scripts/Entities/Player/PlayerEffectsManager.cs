@@ -18,16 +18,11 @@ public class PlayerEffectsManager : CharacterEffectsManager
 
     public void HealPlayerFromEffect()
     {
-        Debug.Log("FEWFJNIWEFJWEF");
-        Debug.Log(instantiatedFXModel);
-        Debug.Log(instantiatedFXModel);
 
         playerStats.HealPlayer(healAmount);
         GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
         Destroy(instantiatedFXModel.gameObject);
         weaponSlotManager.LoadBothWeaponsOnSlots();
-        Destroy(healParticles.gameObject);
-    
     }
 
 }
