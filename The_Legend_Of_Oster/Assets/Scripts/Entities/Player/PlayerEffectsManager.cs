@@ -22,7 +22,7 @@ public class PlayerEffectsManager : CharacterEffectsManager
     {
         if(playerInventory.currentConsumable is FlaskItem flask)
         {
-            Debug.Log("IS FLASK: " + flask.name);
+           // Debug.Log("IS FLASK: " + flask.name);
             if (flask.healthFlask)
             {
                 playerStats.HealPlayerHealth(healthAmount);

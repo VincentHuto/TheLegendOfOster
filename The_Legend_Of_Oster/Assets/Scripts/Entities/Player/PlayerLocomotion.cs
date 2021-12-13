@@ -141,7 +141,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         float speed = movementSpeed;
 
-        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5)
+        if (playerStats.currentStamina >0 && inputHandler.sprintFlag && inputHandler.moveAmount > 0.5)
         {
             speed = sprintSpeed;
             playerManager.isSprinting = true;
