@@ -9,6 +9,7 @@ public class PlayerLocomotion : MonoBehaviour
     PlayerManager playerManager;
     Transform cameraObject;
     InputHandler inputHandler;
+    PlayerStats playerStats;
     public new Rigidbody rigidbody;
     public GameObject normalCamera;
     public Vector3 moveDirection, normalVector, targetPosition;
@@ -46,7 +47,6 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float pushoffStrength = 10f;
 
-    PlayerStats playerStats;
 
     private void Awake()
     {
@@ -146,6 +146,7 @@ public class PlayerLocomotion : MonoBehaviour
             speed = sprintSpeed;
             playerManager.isSprinting = true;
             moveDirection *= speed;
+            playerStats.TakeStaminaDamage(0.25f);
         }
         else
         {
@@ -163,18 +164,6 @@ public class PlayerLocomotion : MonoBehaviour
 
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
         rigidbody.velocity = projectedVelocity;
-
-
-        //Commented out for now becasue of the walking back not having sort animator value
-        /*   if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
-           {
-               playerAnimatorManager.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
-           }
-           else
-           {
-               playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
-           }
-   */
 
         playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 

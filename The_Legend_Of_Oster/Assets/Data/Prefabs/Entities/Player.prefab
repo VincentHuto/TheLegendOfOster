@@ -2000,6 +2000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a1254cd966b6f4f9fd4efcc3a31ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHandSlot: {fileID: 0}
+  rightHandSlot: {fileID: 0}
   leftDamageCollider: {fileID: 0}
   rightDamageCollider: {fileID: 0}
   attackingWeapon: {fileID: 0}
@@ -2041,6 +2043,10 @@ MonoBehaviour:
   poisonAmount: 100
   defaultPoisonAmount: 0
   currentParticleFX: {fileID: 0}
+  instantiatedFXModel: {fileID: 0}
+  healthAmount: 0
+  staminaAmount: 0
+  breathAmount: 0
 --- !u!114 &823921264400273072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9879,6 +9885,7 @@ MonoBehaviour:
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
+  currentConsumable: {fileID: 11400000, guid: 5251dd7beb1188f4a8b8d9f9f933d13e, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
   weaponsInventory:
