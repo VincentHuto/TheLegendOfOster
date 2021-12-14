@@ -43,7 +43,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI()
     {
-
         //Update Weapon inventory
         for (int i = 0; i < weaponInventorySlots.Length; i++)
         {
@@ -56,7 +55,6 @@ public class UIManager : MonoBehaviour
                 }
                 weaponInventorySlots[i].AddItem(playerInventory.weaponsInventory[i]);
                 weaponInventorySlots[i].count.text = playerInventory.weaponsInventory[i].currentSize.ToString();
-
             }
             else
             {
@@ -84,8 +82,6 @@ public class UIManager : MonoBehaviour
                 keyItemInventorySlots[i].ClearInventorySlot();
             }
         }
-
-
         //Update Crafting inventory
         for (int i = 0; i < craftingItemInventorySlots.Length; i++)
         {
@@ -106,7 +102,6 @@ public class UIManager : MonoBehaviour
                 craftingItemInventorySlots[i].ClearInventorySlot();
             }
         }
-
     }
 
     public void OpenSelectWindow()

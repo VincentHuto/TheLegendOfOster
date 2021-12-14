@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class QuickSlotsUI : MonoBehaviour
 {
     public Image leftWeaponIcon, rightWeaponIcon;
+    public Image bottomConsumableIcon;
 
     public void UpdateWeaponQuickSlotsUI(bool isLeft, WeaponItemStack weapon)
     {
@@ -34,6 +35,20 @@ public class QuickSlotsUI : MonoBehaviour
                 leftWeaponIcon.sprite = null;
                 leftWeaponIcon.enabled = false;
             }
+        }
+    }
+
+    public void UpdateConsumableQuickSlotsUi(ConsumableItemStack consumableItem)
+    {
+        if (consumableItem.itemType.itemIcon != null)
+        {
+            bottomConsumableIcon.sprite = consumableItem.itemType.itemIcon;
+            bottomConsumableIcon.enabled = true;
+        }
+        else
+        {
+            bottomConsumableIcon.sprite = null;
+            bottomConsumableIcon.enabled = false;
         }
     }
 }
