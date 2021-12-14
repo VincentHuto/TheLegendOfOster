@@ -13,7 +13,7 @@ public class MusicManager : MonoBehaviour
     public static float maxVol;
     public static AudioClip clip;
     int idx = 0;
-    // Start is called before the first frame update
+    // REQUIREMENTS: 1 Audio source
     void Awake()
     {
         musicsource = GetComponent<AudioSource>();
