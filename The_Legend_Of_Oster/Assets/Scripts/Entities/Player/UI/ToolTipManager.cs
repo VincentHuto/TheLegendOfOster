@@ -57,7 +57,6 @@ public class ToolTipManager : MonoBehaviour
             ItemStack hoveredStack = eventTrigger.gameObject.GetComponent<InventorySlot>().item;
             descImage.sprite = hoveredStack.itemType.itemIcon;
             descText.text = hoveredStack.itemType.name + "\n" + hoveredStack.itemType.itemDesc;
-
         }
     }
     public void ExitUI()

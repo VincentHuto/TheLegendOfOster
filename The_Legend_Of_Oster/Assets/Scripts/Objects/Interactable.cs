@@ -6,7 +6,14 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 0.6f;
     public string interactionText;
-  private void OnDrawGizmosSelected()
+    public UIManager uIManager;
+
+    public void Awake()
+    {
+        uIManager = FindObjectOfType<UIManager>();
+    }
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, radius);
