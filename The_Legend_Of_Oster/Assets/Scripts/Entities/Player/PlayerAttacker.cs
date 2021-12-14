@@ -78,8 +78,6 @@ public class PlayerAttacker : MonoBehaviour
 
             if (weapon != null && !weaponItem.isUnarmed)
             {
-                Debug.Log("HEAVY" + weaponItem.GetWeaponStaminaCost(true) + playerStats.currentStamina);
-
                 if (playerStats.currentStamina > weaponItem.GetWeaponStaminaCost(true))
                 {
 

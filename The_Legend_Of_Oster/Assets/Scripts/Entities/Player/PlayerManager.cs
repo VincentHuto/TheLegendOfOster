@@ -10,6 +10,7 @@ public class PlayerManager : CharacterManager
     PlayerLocomotion playerLocomotion;
     InteractableUI interactableUI;
     public GameObject interactableUIGameObject,itemInteractableGameObject;
+    UIManager uiManager;
 
     [Header("Player Flags")]
     public bool isSprinting, isInteracting, isInAir, isGrounded, isJumping, canDoCombo;
@@ -17,7 +18,7 @@ public class PlayerManager : CharacterManager
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
-
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Start()
@@ -92,8 +93,21 @@ public class PlayerManager : CharacterManager
                 {
                     string interactableText = interactable.interactionText;
                     interactableUI.interactionText.text = interactableText;
-                    interactableUIGameObject.SetActive(true);
-
+                    if (!uiManager.IsBlenderOpen)
+                    {
+                        if (!isInteracting)
+                        {
+                            interactableUIGameObject.SetActive(true);
+                        }
+                        else
+                        {
+                            interactableUIGameObject.SetActive(false);
+                        }
+                    }
+                    else
+                    {
+                        interactableUIGameObject.SetActive(false);
+                    }
                     if (inputHandler.pickup_Input)
                     {
                         hit.collider.GetComponent < Interactable>().Interact(this);
@@ -103,13 +117,20 @@ public class PlayerManager : CharacterManager
         }
         else
         {
-            if(interactableUIGameObject != null)
+            if (uiManager.IsBlenderOpen)
+            {
+                uiManager.CloseBlenderWindow();
+            }
+
+
+            if (interactableUIGameObject != null)
             {
                 interactableUIGameObject.SetActive(false);
             }
             if(itemInteractableGameObject != null && inputHandler.pickup_Input == true)
             {
                 itemInteractableGameObject.SetActive(false);
+
             }
         }
     }

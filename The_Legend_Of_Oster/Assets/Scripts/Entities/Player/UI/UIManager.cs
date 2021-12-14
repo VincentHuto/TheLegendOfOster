@@ -9,7 +9,10 @@ public class UIManager : MonoBehaviour
     public EquipmentWindowUI equipmentWindowUI;
 
     [Header("UI Windows")]
-    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow, keyItemInventoryWindow,craftingItemInventoryWindow,descriptionWindow;
+    public GameObject selectWindow, hudWindow, weaponInventoryWindow, equipmentWindow,
+        keyItemInventoryWindow, craftingItemInventoryWindow, descriptionWindow, blenderWindow;
+
+    public bool IsBlenderOpen = false;
 
     [Header("Equipment Window Slot Selected")]
     public bool rightHandSlot01Selected, rightHandSlot02Selected;
@@ -19,6 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject weaponInventorySlotPrefab;
     public GameObject keyItemInventorySlotPrefab;
     public GameObject craftingInventorySlotPrefab;
+    public GameObject recipeSlotPrefab;
 
     public Transform weaponInventorySlotsParent;
     public Transform keyItemInventorySlotsParent;
@@ -34,6 +38,7 @@ public class UIManager : MonoBehaviour
         keyItemInventorySlots = keyItemInventorySlotsParent.GetComponentsInChildren<KeyItemInventorySlot>();
         craftingItemInventorySlots = craftingItemInventorySlotsParent.GetComponentsInChildren<CraftingItemInventorySlot>();
         equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+        blenderWindow.SetActive(false);
     }
 
     public void UpdateUI()
@@ -101,15 +106,36 @@ public class UIManager : MonoBehaviour
                 craftingItemInventorySlots[i].ClearInventorySlot();
             }
         }
+
     }
 
     public void OpenSelectWindow()
     {
-        selectWindow.SetActive(true);
+        if (!IsBlenderOpen)
+            selectWindow.SetActive(true);
     }
     public void CloseSelectWindow()
     {
-        selectWindow.SetActive(false);
+        if (!IsBlenderOpen)
+            selectWindow.SetActive(false);
+    }
+
+
+    public void OpenBlenderWindow()
+    {
+        UpdateUI();
+        IsBlenderOpen = true;
+        blenderWindow.SetActive(true);
+        craftingItemInventoryWindow.SetActive(true);
+        hudWindow.SetActive(false);
+    }
+    public void CloseBlenderWindow()
+    {
+        UpdateUI();
+        IsBlenderOpen = false;
+        blenderWindow.SetActive(false);
+        craftingItemInventoryWindow.SetActive(false);
+        hudWindow.SetActive(true);
     }
 
     public void CloseAllInventoryWindows()
@@ -120,7 +146,8 @@ public class UIManager : MonoBehaviour
         keyItemInventoryWindow.SetActive(false);
         craftingItemInventoryWindow.SetActive(false);
         descriptionWindow.SetActive(false);
-
+        blenderWindow.SetActive(false);
+        IsBlenderOpen = false;
 
     }
 
