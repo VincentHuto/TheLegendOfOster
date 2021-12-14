@@ -34,10 +34,9 @@ public class EnemyManager : CharacterManager
         {
             enemyLocomotionManager.HandleDetection();
         }
-      /*  else
+        else
         {
             enemyLocomotionManager.HandleMoveToTarget();
-        }*/
+        }
     }
 }
-
