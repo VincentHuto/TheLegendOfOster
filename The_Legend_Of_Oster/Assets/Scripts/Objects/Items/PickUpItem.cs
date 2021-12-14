@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PickUpItem : Interactable
 {
     public ItemStack stack;
+    private Coroutine pickingUp;
+    private WaitForSeconds pickUpTicks = new WaitForSeconds(2f);
 
     public override void Interact(PlayerManager playerManager)
     {
@@ -14,8 +16,19 @@ public class PickUpItem : Interactable
         PickUp(playerManager);
     }
 
-    public virtual void PickUp(PlayerManager playerManager)
+    public void PickUp(PlayerManager playerManager)
     {
+        if (pickingUp != null)
+        {
+            StopCoroutine(pickingUp);
+        }
+        pickingUp = StartCoroutine(StartPickingUp(playerManager));
+
+    }
+
+    public IEnumerator StartPickingUp(PlayerManager playerManager)
+    {
+
 
         PlayerInventory playerInventory;
         PlayerLocomotion playerLocomotion;
@@ -49,7 +62,12 @@ public class PickUpItem : Interactable
         playerManager.itemInteractableGameObject.GetComponentInChildren<Text>().text = stack.itemType.itemName;
         playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = stack.itemType.itemIcon.texture;
         playerManager.itemInteractableGameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        playerManager.itemInteractableGameObject.SetActive(false);
+        playerManager.interactableUIGameObject.SetActive(false);
+        pickingUp = null;
     }
 
 }
