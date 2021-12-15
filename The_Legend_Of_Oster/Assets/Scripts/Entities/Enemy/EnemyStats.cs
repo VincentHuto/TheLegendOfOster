@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyStats : CharacterStats
 {
 
-    Animator anim;
-
+    EnemyAnimatorManager anim;
+    public UIEnemyHealthBar enemyHealthBar;
     private void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<EnemyAnimatorManager>();
     }
 
     void Start()
@@ -18,10 +18,9 @@ public class EnemyStats : CharacterStats
         maxStamina = SetMaxStaminaFromLevel();
         maxBreath = SetMaxBreathFromLevel();
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(maxHealth);
         currentStamina = maxStamina;
         currentBreath = maxBreath;
- 
-
     }
 
     private float SetMaxHealthFromLevel()
@@ -46,13 +45,14 @@ public class EnemyStats : CharacterStats
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
-        
-        anim.Play("Damage_1");
+        enemyHealthBar.SetHealth(currentHealth);
+
+        anim.PlayTargetAnimation("Damage_1",true);
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            anim.Play("Death_1");
+            anim.PlayTargetAnimation("Death_1", true);
             //HANDLE ENEMY DEATH
         }
     }

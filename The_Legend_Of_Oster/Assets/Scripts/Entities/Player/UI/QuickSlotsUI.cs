@@ -7,6 +7,7 @@ public class QuickSlotsUI : MonoBehaviour
 {
     public Image leftWeaponIcon, rightWeaponIcon;
     public Image bottomConsumableIcon;
+    public Text bottomConsumableText;
 
     public void UpdateWeaponQuickSlotsUI(bool isLeft, WeaponItemStack weapon)
     {
@@ -44,11 +45,16 @@ public class QuickSlotsUI : MonoBehaviour
         {
             bottomConsumableIcon.sprite = consumableItem.itemType.itemIcon;
             bottomConsumableIcon.enabled = true;
+
+            bottomConsumableText.text = consumableItem.name;
+            bottomConsumableText.enabled = true;
+
         }
         else
         {
             bottomConsumableIcon.sprite = null;
             bottomConsumableIcon.enabled = false;
+            bottomConsumableText.enabled = false;
         }
     }
 }
