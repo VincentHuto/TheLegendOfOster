@@ -826,7 +826,7 @@ Rigidbody:
   m_GameObject: {fileID: 8090586380121225321}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.42
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -844,7 +844,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 107.822, y: 6.942, z: 121.794}
+  m_ConnectedAnchor: {x: 107.822, y: 6.9382486, z: 121.794}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 0.3
@@ -940,7 +940,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
