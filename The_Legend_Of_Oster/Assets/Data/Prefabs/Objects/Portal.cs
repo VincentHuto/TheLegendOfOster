@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     [SerializeField] string nextLevel;
+    bool loading = false;
     
     public void LoadLevel()
     {
@@ -13,8 +14,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !loading)
         {
+            loading = true;
             LoadLevel();
         }
     }
