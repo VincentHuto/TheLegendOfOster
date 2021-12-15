@@ -5,15 +5,18 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     WeaponSlotManager weaponSlotManager;
+    QuickSlotsUI quickSlotsUI;
 
     public WeaponItemStack rightWeapon, leftWeapon, unarmedWeapon;
     public WeaponItemStack[] weaponsInRightHandSlots = new WeaponItemStack[1];
     public WeaponItemStack[] weaponsInLeftHandSlots = new WeaponItemStack[1];
-    public ConsumableItem currentConsumable;
+    public ConsumableItemStack currentConsumable,unarmedConsumable;
+    public ConsumableItemStack[] consumableInQuickSlots = new ConsumableItemStack[2];
 
 
     public int currentRightWeaponIndex = 0;
     public int currentLeftWeaponIndex = 0;
+    public int currentConsumableIndex = 0;
 
     public List<WeaponItemStack> weaponsInventory;
     public List<KeyItemStack> keyItemsInventory;
@@ -22,14 +25,19 @@ public class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        quickSlotsUI = GetComponentInChildren<QuickSlotsUI>();
     }
 
     private void Start()
     {
         rightWeapon = weaponsInRightHandSlots[0];
         leftWeapon = weaponsInLeftHandSlots[0];
+        currentConsumable = consumableInQuickSlots[0];
+
         weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
         weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
+        quickSlotsUI.UpdateConsumableQuickSlotsUi(currentConsumable);
+
 
     }
 
@@ -132,7 +140,6 @@ public class PlayerInventory : MonoBehaviour
             weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
         }
     }
-
     public void ChangeLeftWeapon()
     {
         currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
@@ -163,5 +170,38 @@ public class PlayerInventory : MonoBehaviour
             leftWeapon = unarmedWeapon;
             weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
         }
+    }
+
+    public void ChangeCurrentConsumable()
+    {
+        currentConsumableIndex = currentConsumableIndex + 1;
+
+        if (currentConsumableIndex == 0 && consumableInQuickSlots[0] != null)
+        {
+            currentConsumable = consumableInQuickSlots[currentConsumableIndex];
+            //   weaponSlotManager.LoadWeaponOnSlot(consumableInQuickSlots[currentConsumableIndex], true);
+        }
+        else if (currentConsumableIndex == 0 && consumableInQuickSlots[0] == null)
+        {
+            currentConsumableIndex = currentConsumableIndex + 1;
+        }
+
+        else if (currentConsumableIndex == 1 && consumableInQuickSlots[1] != null)
+        {
+            currentConsumable = consumableInQuickSlots[currentConsumableIndex];
+            //  weaponSlotManager.LoadWeaponOnSlot(consumableInQuickSlots[currentConsumableIndex], true);
+        }
+        else if (currentConsumableIndex == 1 && consumableInQuickSlots[1] == null)
+        {
+            currentConsumableIndex = currentConsumableIndex + 1;
+        }
+
+        if (currentConsumableIndex > consumableInQuickSlots.Length - 1)
+        {
+            currentConsumableIndex = -1;
+            currentConsumable = unarmedConsumable;
+            //  weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
+        }
+        quickSlotsUI.UpdateConsumableQuickSlotsUi(currentConsumable);
     }
 }

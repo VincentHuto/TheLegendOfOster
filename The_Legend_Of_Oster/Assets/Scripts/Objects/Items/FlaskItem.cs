@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Items/Consumables/Flask")]
-public class FlaskItem : ConsumableItem
+public class FlaskItem : ConsumableItemStack
 {
     [Header("Flask type")]
     public bool healthFlask, staminaFlask, breathFlask;

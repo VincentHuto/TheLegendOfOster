@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConsumableItem : ItemStack
+public class ConsumableItemStack : ItemStack
 {
     [Header("Item Model")]
     public GameObject itemModel;
@@ -25,6 +26,4 @@ public class ConsumableItem : ItemStack
         }
 
     }
-
-
 }

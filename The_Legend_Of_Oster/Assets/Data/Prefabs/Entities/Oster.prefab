@@ -1,5 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &912446059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912446060}
+  - component: {fileID: 912446063}
+  - component: {fileID: 912446062}
+  - component: {fileID: 912446061}
+  m_Layer: 5
+  m_Name: Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &912446060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912446059}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8063336740094460725}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &912446063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912446059}
+  m_CullTransparentMesh: 1
+--- !u!114 &912446062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912446059}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &912446061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912446059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 3
+  m_AspectRatio: 1
 --- !u!1 &82866089637200602
 GameObject:
   m_ObjectHideFlags: 0
@@ -15854,7 +15944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8063336739619345678}
   - component: {fileID: 8063336739619345673}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ColliderHolder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -16554,6 +16644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftWeaponIcon: {fileID: 5691742894172353725}
   rightWeaponIcon: {fileID: 5691742895825252069}
+  bottomConsumableIcon: {fileID: 912446062}
 --- !u!1 &8063336739925224455
 GameObject:
   m_ObjectHideFlags: 0
@@ -16973,7 +17064,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 912446060}
   m_Father: {fileID: 8063336739899710778}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19852,9 +19944,14 @@ MonoBehaviour:
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
-  currentConsumable: {fileID: 11400000, guid: 5251dd7beb1188f4a8b8d9f9f933d13e, type: 2}
+  currentConsumable: {fileID: 11400000, guid: 00000489448149c44b4282b2f10c1f19, type: 2}
+  unarmedConsumable: {fileID: 11400000, guid: 00000489448149c44b4282b2f10c1f19, type: 2}
+  consumableInQuickSlots:
+  - {fileID: 11400000, guid: 382e8bb13cc4d4645b3016019e622d4b, type: 2}
+  - {fileID: 11400000, guid: 5251dd7beb1188f4a8b8d9f9f933d13e, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
+  currentConsumableIndex: 0
   weaponsInventory:
   - {fileID: 11400000, guid: 0aa6cdebbea3a5344bf06e90442d0592, type: 2}
   keyItemsInventory: []

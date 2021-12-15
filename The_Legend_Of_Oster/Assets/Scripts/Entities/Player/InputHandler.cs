@@ -59,6 +59,7 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.X.performed += i => x_Input = true;
             inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
             inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+            inputActions.PlayerActions.DPadDown.performed += i => d_Pad_Down = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
             inputActions.PlayerActions.LockOn.performed += i => lockOn_Input = true;
@@ -192,11 +193,14 @@ public class InputHandler : MonoBehaviour
         else if (d_Pad_Left)
         {
             playerInventory.ChangeLeftWeapon();
+        }else if (d_Pad_Down)
+        {
+            playerInventory.ChangeCurrentConsumable();
+
         }
 
 
     }
-
     private void HandleInventoryInput()
     {
         if (inv_Input)
@@ -216,7 +220,6 @@ public class InputHandler : MonoBehaviour
             }
         }
     }
-
     private void HandleUseConsumableInput()
     {
         if (x_Input)
@@ -225,7 +228,6 @@ public class InputHandler : MonoBehaviour
             playerInventory.currentConsumable.AtteptToConsumeItem(playerAnimator, weaponSlotManager, playerEffectsManager);
         }
     }
-
     private void HandleLockOnInput()
     {
         if (lockOn_Input && lockOnFlag == false)
