@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
                     Instantiate(keyItemInventorySlotPrefab, keyItemInventorySlotsParent);
                     keyItemInventorySlots = keyItemInventorySlotsParent.GetComponentsInChildren<KeyItemInventorySlot>();
                 }
-                keyItemInventorySlots[i].AddItem(playerInventory.keyItemsInventory[i]);
+                keyItemInventorySlots[i].AddItem(playerInventory.keyItemsInventory[i].GetCopy());
 
                 keyItemInventorySlots[i].count.gameObject.SetActive(true);
                 keyItemInventorySlots[i].count.text = playerInventory.keyItemsInventory[i].currentSize.ToString();
