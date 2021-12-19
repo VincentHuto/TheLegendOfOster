@@ -106,6 +106,17 @@ public class PlayerAnimatorManager : AnimatorManager
 
     }
 
+    public void EnableIsInvulnerable()
+    {
+        anim.SetBool("IsInvulnerable", true);
+    }
+
+    public void DisableIsInvulnerable()
+    {
+        anim.SetBool("IsInvulnerable", false);
+
+    }
+
     private void OnAnimatorMove()
     {
         if (playerManager.isInteracting == false)

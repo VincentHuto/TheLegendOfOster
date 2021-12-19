@@ -14,8 +14,8 @@ public class PlayerStats : CharacterStats
     
     PlayerAnimatorManager playerAnimatorManager;
     PlayerManager playerManager;
-    private WaitForSeconds regenTicks = new WaitForSeconds(0.1f);
-    private Coroutine regen;
+    public float staminaRegenerationAmount = 1;
+    public float staminaRegenTimer = 0;
 
     private void Awake()
     {
@@ -69,6 +69,9 @@ public class PlayerStats : CharacterStats
 
     public void TakeDamage(float damage)
     {
+        if (playerManager.isInvulnerable)
+            return;
+
         if (isDead)
             return;
 
@@ -100,19 +103,26 @@ public class PlayerStats : CharacterStats
 
     public void TakeStaminaDamage(float damage)
     {
-        BeginStaminaRegen();
-
         currentStamina = currentStamina - damage;
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
-    public void BeginStaminaRegen()
+    public void RegenerateStamina()
     {
-        if (regen != null)
+        if (playerManager.isInteracting)
         {
-            StopCoroutine(regen);
+            staminaRegenTimer = 0;
         }
-        regen = StartCoroutine(StaminaRegen());
+        else
+        {
+            staminaRegenTimer += Time.deltaTime;
+
+            if (currentStamina < maxStamina && staminaRegenTimer > 1f)
+            {
+                currentStamina += staminaRegenerationAmount * Time.deltaTime;
+                staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
+            }
+        }
     }
 
     public void HealPlayerStamina(float healAmount)
@@ -124,22 +134,6 @@ public class PlayerStats : CharacterStats
             currentStamina = maxStamina;
         }
         staminaBar.SetCurrentStamina(currentStamina);
-    }
-
-    private IEnumerator StaminaRegen()
-    {
-
-        yield return new WaitForSeconds(2);
-
-
-        while (currentStamina < maxStamina)
-        {
-            currentStamina += maxStamina / 50 * staminaRegenMult;
-            staminaBar.SetCurrentStamina(currentStamina);
-            yield return regenTicks;
-        }
-
-        regen = null;
     }
 
 

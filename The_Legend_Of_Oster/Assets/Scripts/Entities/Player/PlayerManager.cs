@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerManager : CharacterManager
 {
     InputHandler inputHandler;
-    Animator anim;
+    Animator anim;        
+    PlayerStats playerStats;
     CameraHandler cameraHandler;
     PlayerLocomotion playerLocomotion;
     InteractableUI interactableUI;
@@ -14,7 +15,8 @@ public class PlayerManager : CharacterManager
 
     [Header("Player Flags")]
     public bool isSprinting, isInteracting, isInAir, isGrounded,
-        isJumping, canDoCombo, isUsingRightHand, isUsingLeftHand;
+        isJumping, canDoCombo, isUsingRightHand, isUsingLeftHand,
+        isInvulnerable;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class PlayerManager : CharacterManager
 
     private void Start()
     {
+        playerStats = GetComponent<PlayerStats>();
         inputHandler = GetComponent<InputHandler>();
         anim = GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
@@ -39,10 +42,12 @@ public class PlayerManager : CharacterManager
         anim.SetBool("isInAir", isInAir);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isJumping", isJumping);
+        isInvulnerable = anim.GetBool("isInvulnerable");
         isUsingRightHand = anim.GetBool("isUsingRightHand");
         isUsingLeftHand = anim.GetBool("isUsingLeftHand");
         inputHandler.HandleAllInputs(delta);
         playerLocomotion.HandleRollingAndSprinting(delta);
+        playerStats.RegenerateStamina();
         CheckForInteractableObject();
     }
 
