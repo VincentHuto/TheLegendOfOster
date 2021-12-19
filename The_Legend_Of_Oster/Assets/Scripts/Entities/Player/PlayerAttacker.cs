@@ -157,8 +157,14 @@ public class PlayerAttacker : MonoBehaviour
         {
             if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
             {
-                //CHECK FOR FP
-                playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                if (playerStats.currentBreath >= playerInventory.currentSpell.breathCost)
+                {
+                    playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                }
+                else
+                {
+                    animatorHandler.PlayTargetAnimation("Shrug", true);
+                }
             }
         }
     }
@@ -190,8 +196,14 @@ public class PlayerAttacker : MonoBehaviour
         {
             if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
             {
-                //CHECK FOR FP
-                playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                if (playerStats.currentBreath >= playerInventory.currentSpell.breathCost)
+                {
+                    playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                }
+                else
+                {
+                    animatorHandler.PlayTargetAnimation("Shrug", true);
+                }
             }
         }
     }
