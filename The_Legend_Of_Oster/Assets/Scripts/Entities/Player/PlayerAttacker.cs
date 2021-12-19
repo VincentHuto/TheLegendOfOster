@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour
 {
-
-    PlayerAnimatorManager playerAnimatorManager;
+    PlayerManager playerManager;
+    PlayerInventory playerInventory;
+    AnimatorManager animatorHandler;
     InputHandler inputHandler;
     WeaponSlotManager weaponSlotManager;
     PlayerStats playerStats;
@@ -14,7 +15,9 @@ public class PlayerAttacker : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponentInChildren<PlayerStats>();
-        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
+        playerManager = GetComponentInParent<PlayerManager>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
+        animatorHandler = GetComponentInChildren<AnimatorManager>();
         inputHandler = GetComponentInChildren<InputHandler>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
     }
@@ -27,14 +30,14 @@ public class PlayerAttacker : MonoBehaviour
 
             if (inputHandler.comboFlag)
             {
-                playerAnimatorManager.anim.SetBool("canDoCombo", false);
+                animatorHandler.anim.SetBool("canDoCombo", false);
                 if (lastAttack == weaponItem.OH_Right_Light_Attack_1)
                 {
-                    playerAnimatorManager.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
+                    animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
                 }
                 if (lastAttack == weaponItem.OH_Left_Light_Attack_1)
                 {
-                    playerAnimatorManager.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
+                    animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
                 }
             }
         }
@@ -55,15 +58,15 @@ public class PlayerAttacker : MonoBehaviour
                     if (isLeft)
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_1, true);
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_1, true);
                         lastAttack = weaponItem.OH_Left_Light_Attack_1;
                     }
                     else
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_1, true);
                         lastAttack = weaponItem.OH_Right_Light_Attack_1;
-                        
+
                     }
                 }
             }
@@ -84,13 +87,13 @@ public class PlayerAttacker : MonoBehaviour
                     if (isLeft)
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
                         lastAttack = weaponItem.OH_Left_Heavy_Attack_1;
                     }
                     else
                     {
                         weaponSlotManager.attackingWeapon = weaponItem;
-                        playerAnimatorManager.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
+                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
                         lastAttack = weaponItem.OH_Right_Heavy_Attack_1;
                     }
                 }
@@ -98,4 +101,53 @@ public class PlayerAttacker : MonoBehaviour
             }
         }
     }
+
+
+    public void HandleRBAction()
+    {
+        if (((WeaponItem)playerInventory.rightWeapon.itemType).isMeleeWeapon)
+        {
+            PerformRBMeleeAction();
+        }
+        else if ((((WeaponItem)playerInventory.rightWeapon.itemType)).isSpellCaster 
+            || (((WeaponItem)playerInventory.rightWeapon.itemType)).isFaithCaster 
+            || (((WeaponItem)playerInventory.rightWeapon.itemType)).isPyroCaster)
+        {
+            PerformRBMagicAction((((WeaponItem)playerInventory.rightWeapon.itemType)));
+        }
+    }
+
+    private void PerformRBMeleeAction()
+    {
+        if (playerManager.canDoCombo)
+        {
+            inputHandler.comboFlag = true;
+            HandleWeaponCombo(playerInventory.rightWeapon);
+            inputHandler.comboFlag = false;
+        }
+        else
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
+
+            animatorHandler.anim.SetBool("isUsingRightHand", true);
+            HandleLightAttack(playerInventory.rightWeapon, false);
+        }
+    }
+
+    private void PerformRBMagicAction(WeaponItem weapon)
+    {
+        if (weapon.isFaithCaster)
+        {
+            if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
+            {
+                //CHECK FOR FP
+                //ATTEMPT TO CAST SPELL
+            }
+        }
+    }
+
 }

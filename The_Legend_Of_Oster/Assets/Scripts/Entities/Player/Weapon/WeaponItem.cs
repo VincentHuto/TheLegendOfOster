@@ -8,9 +8,12 @@ public class WeaponItem : Item
     public GameObject modelPrefab;
     public bool isUnarmed;
 
-  //  [Header("Damage")]
-  //  public int baseDamage =25;
-    //public int criticalDamageMultiplier = 4;
+    [Header("Weapon Type")]
+    public bool isSpellCaster;
+    public bool isFaithCaster;
+    public bool isPyroCaster;
+    public bool isMeleeWeapon;
+
 
     [Header("Stamina Costs")]
     public float baseStamina;

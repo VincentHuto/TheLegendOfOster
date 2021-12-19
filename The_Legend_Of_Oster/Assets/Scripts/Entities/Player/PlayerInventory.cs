@@ -6,6 +6,7 @@ public class PlayerInventory : MonoBehaviour
 {
     WeaponSlotManager weaponSlotManager;
     QuickSlotsUI quickSlotsUI;
+    public SpellItem currentSpell;
 
     public WeaponItemStack rightWeapon, leftWeapon, unarmedWeapon;
     public WeaponItemStack[] weaponsInRightHandSlots = new WeaponItemStack[1];

@@ -20293,6 +20293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11a2b0807138c646acf7249e7da76c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSpell: {fileID: 0}
   rightWeapon: {fileID: 0}
   leftWeapon: {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
   unarmedWeapon: {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
@@ -20353,6 +20354,8 @@ MonoBehaviour:
   staminaBar: {fileID: 8063336741316003880}
   breathBar: {fileID: 8063336739269811382}
   levelText: {fileID: 8063336739728503713}
+  staminaRegenerationAmount: 1
+  staminaRegenTimer: 0
 --- !u!1 &8510265992245652307
 GameObject:
   m_ObjectHideFlags: 0
