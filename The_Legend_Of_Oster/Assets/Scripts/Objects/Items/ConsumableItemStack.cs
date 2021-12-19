@@ -13,7 +13,7 @@ public class ConsumableItemStack : ItemStack
     public bool isInteracting;
 
 
-    public virtual void AtteptToConsumeItem(PlayerAnimatorManager playerAnimatorManager,WeaponSlotManager weaponSlotManager, PlayerEffectsManager playerEffectsManager)
+    public virtual void AtteptToConsumeItem(AnimatorManager playerAnimatorManager,WeaponSlotManager weaponSlotManager, PlayerEffectsManager playerEffectsManager)
     {
         if (currentSize > 0)
         {

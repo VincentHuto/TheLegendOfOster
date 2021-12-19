@@ -22,7 +22,7 @@ public class EnemyAudio : MonoBehaviour
             tick += Time.deltaTime;
         else
         {
-            Debug.Log("Playing enemy idle");
+          //  Debug.Log("Playing enemy idle");
             AudioClip chosen = badsounds[Random.Range(0, badsounds.Length)];
             tick = 0; // reset timer
             asrc.PlayOneShot(chosen);

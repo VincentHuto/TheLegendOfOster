@@ -48,6 +48,9 @@ public class PlayerLocomotion : MonoBehaviour
     float pushoffStrength = 10f;
 
 
+    public CapsuleCollider characterCollider;
+    public CapsuleCollider characterCollisionBlockerCollider;
+
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
@@ -65,6 +68,8 @@ public class PlayerLocomotion : MonoBehaviour
         playerAnimatorManager.Initialize();
         playerManager.isGrounded = true;
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+        Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
+
 
     }
     #region Movement

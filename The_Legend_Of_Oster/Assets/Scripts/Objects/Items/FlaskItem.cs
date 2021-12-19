@@ -13,7 +13,7 @@ public class FlaskItem : ConsumableItemStack
     [Header("Recovery FX")]
     public GameObject recoveryFX;
 
-    public override void AtteptToConsumeItem(PlayerAnimatorManager playerAnimatorManager, WeaponSlotManager weaponSlotManager, PlayerEffectsManager playerEffectsManager)
+    public override void AtteptToConsumeItem(AnimatorManager playerAnimatorManager, WeaponSlotManager weaponSlotManager, PlayerEffectsManager playerEffectsManager)
     {
         base.AtteptToConsumeItem(playerAnimatorManager, weaponSlotManager, playerEffectsManager);
         GameObject flask = Instantiate(itemModel, weaponSlotManager.leftHandSlot.transform);

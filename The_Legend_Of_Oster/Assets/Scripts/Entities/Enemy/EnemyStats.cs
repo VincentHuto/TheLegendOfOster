@@ -44,16 +44,19 @@ public class EnemyStats : CharacterStats
 
     public void TakeDamage(int damage)
     {
+        if (isDead)
+            return;
+
         currentHealth = currentHealth - damage;
         enemyHealthBar.SetHealth(currentHealth);
 
-        anim.PlayTargetAnimation("Damage_1",true);
+        anim.PlayTargetAnimation("Damage_1", true);
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             anim.PlayTargetAnimation("Death_1", true);
-            //HANDLE ENEMY DEATH
+            isDead = true;
         }
     }
 }

@@ -1,21 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyManager : CharacterManager
 {
+
     EnemyLocomotionManager enemyLocomotionManager;
     EnemyAnimatorManager enemyAnimationManager;
-
+    EnemyStats enemyStats;
+    public State currentState;
+    public CharacterStats currentTarget;
     public bool isPreformingAction;
+    public  NavMeshAgent navmeshAgent;
+    public Rigidbody enemyRigidBody;
+    public bool isInteracting;
 
-    public EnemyAttackAction[] enemyAttacks;
-    public EnemyAttackAction currentAttack;
+    [SerializeField]
+    public float rotationSpeed = 15;
+    public float maxAttackRange = 1.5f;
 
     [Header("Enemy Flags")]
     public bool isInAir, isGrounded;
     int vertical, horizontal;
     public bool canRotate;
+
+    public Vector3 moveDirection, normalVector, targetPosition;
+
+    [Header("Ground & Air Detection Stats")]
+    [SerializeField]
+    public float groundDetectionRayStartPoint = 0.6f;
+    [SerializeField]
+    public float minimumDistanceNeededToBeginFall = 1.5f;
+    [SerializeField]
+    public float groundDirectionRayDistance = 0.2f;
+    public LayerMask ignoreForGroundCheck;
+    public float inAirTimer;
+
+    [Header("Movement Stats")]
+    [SerializeField]
+    public float movementSpeed = 5;
+    [SerializeField]
+    public float walkingSpeed = 1;
+    [SerializeField]
+    public float sprintSpeed = 7;
+    [SerializeField]
+    public float fallingSpeed = 250;
+    [SerializeField]
+    public float jumpHeight = 3;
+    [SerializeField]
+    public float gravityIntensity = -15;
+    [SerializeField]
+    public float pushoffStrength = 10f;
+
+    [HideInInspector]
+    public Transform myTransform;
 
     [Header("A.I Settings")]
     public float detectionRadius = 20;
@@ -23,9 +63,6 @@ public class EnemyManager : CharacterManager
     public float maximumDetectionAngle = 50;
     public float minimumDetectionAngle = -50;
     public float currentRecoveryTime = 0;
-
-
-
 
     public void Initialize()
     {
@@ -37,22 +74,133 @@ public class EnemyManager : CharacterManager
     {
         enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
         enemyAnimationManager = GetComponentInChildren<EnemyAnimatorManager>();
+        enemyStats = GetComponent<EnemyStats>();
+        navmeshAgent = GetComponentInChildren<NavMeshAgent>();
+        enemyRigidBody = GetComponent<Rigidbody>();
+        Initialize();
+    }
+
+    private void Start()
+    {
+        myTransform = transform;
+        navmeshAgent.enabled = false;
+        enemyRigidBody.isKinematic = false;
+        isGrounded = true;
+        ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
     }
 
     private void Update()
     {
         HandleRecoveryTimer();
+        isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
+
     }
 
     private void FixedUpdate()
     {
-        HandleCurrentAction();
+        HandleStateMachine();
+        float time = Time.deltaTime;
+        HandleFalling(time, moveDirection);
+
+    }
+
+    public void HandleFalling(float delta, Vector3 moveDirection)
+    {
+        isGrounded = false;
+        RaycastHit hit;
+        Vector3 origin = myTransform.position;
+        origin.y += groundDetectionRayStartPoint;
+
+        if (Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
+        {
+            moveDirection = Vector3.zero;
+        }
+
+        if (isInAir)
+        {
+            //Adds a push when you fall so you dont get stuck on the ledge
+            enemyRigidBody.AddForce(-Vector3.up * fallingSpeed);
+            enemyRigidBody.AddForce(moveDirection * fallingSpeed / pushoffStrength);
+        }
+
+        Vector3 dir = moveDirection;
+        dir.Normalize();
+        origin = origin + dir * groundDirectionRayDistance;
+
+        targetPosition = myTransform.position;
+
+        //        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+        if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, ignoreForGroundCheck))
+        {
+            normalVector = hit.normal;
+            Vector3 tp = hit.point;
+            isGrounded = true;
+            targetPosition.y = tp.y;
+
+            if (isInAir)
+            {
+                if (inAirTimer > 0.5f)
+                {
+                    //Debug.Log("You were in the air for " + inAirTimer);
+                    enemyAnimationManager.PlayTargetAnimation("Land", true);
+                    inAirTimer = 0;
+                }
+                else
+                {
+                    enemyAnimationManager.PlayTargetAnimation("Movement", false);
+                    inAirTimer = 0;
+                }
+
+                isInAir = false;
+            }
+        }
+        else
+        {
+            if (isGrounded)
+            {
+                isGrounded = false;
+            }
+
+            if (isInAir == false)
+            {
+                if (isPreformingAction == false)
+                {
+                    enemyAnimationManager.PlayTargetAnimation("Falling", true);
+                }
+
+                Vector3 vel = GetComponent<Rigidbody>().velocity;
+                vel.Normalize();
+                GetComponent<Rigidbody>().velocity = vel * (movementSpeed / 2);
+                isInAir = true;
+            }
+        }
+
+        if (isGrounded)
+        {
+            if (isPreformingAction)
+            {
+                myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
+            }
+            else
+            {
+                myTransform.position = targetPosition;
+            }
+        }
     }
 
 
-    private void HandleCurrentAction()
+    private void HandleStateMachine()
     {
-        if (enemyLocomotionManager.currentTarget != null)
+        if(currentState != null)
+        {
+            State nextState = currentState.Tick(this,enemyStats,enemyAnimationManager);
+            if(nextState != null)
+            {
+                SwitchToNextState(nextState);
+            }
+        }
+
+    /*    if (enemyLocomotionManager.currentTarget != null)
         {
             enemyLocomotionManager.distanceFromTarget =
                 Vector3.Distance(enemyLocomotionManager.currentTarget.transform.position, transform.position);
@@ -68,7 +216,12 @@ public class EnemyManager : CharacterManager
         else if (enemyLocomotionManager.distanceFromTarget <= enemyLocomotionManager.stoppingDistance)
         {
             AttackTarget();
-        }
+        }*/
+    }
+
+    private void SwitchToNextState(State nextState)
+    {
+        currentState = nextState;
     }
 
     private void HandleRecoveryTimer()
@@ -88,71 +241,6 @@ public class EnemyManager : CharacterManager
     }
 
 
-    private void AttackTarget()
-    {
-        if (isPreformingAction)
-            return;
-
-        if (currentAttack == null)
-        {
-            GetNewAttack();
-        }
-        else
-        {
-            isPreformingAction = true;
-            currentRecoveryTime = currentAttack.recoveryTime;
-            enemyAnimationManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
-            currentAttack = null;
-        }
-    }
-    private void GetNewAttack()
-    {
-        Vector3 targetsDirection = enemyLocomotionManager.currentTarget.transform.position - transform.position;
-        float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
-        enemyLocomotionManager.distanceFromTarget = Vector3.Distance(enemyLocomotionManager.currentTarget.transform.position, transform.position);
-
-        int maxScore = 0;
-
-        for (int i = 0; i < enemyAttacks.Length; i++)
-        {
-            EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-            if (enemyLocomotionManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-                && enemyLocomotionManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
-            {
-                if (viewableAngle <= enemyAttackAction.maximumAttackAngle
-                    && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-                {
-                    maxScore += enemyAttackAction.attackScore;
-                }
-            }
-        }
-
-        int randomValue = Random.Range(0, maxScore);
-        int temporaryScore = 0;
-
-        for (int i = 0; i < enemyAttacks.Length; i++)
-        {
-            EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-            if (enemyLocomotionManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-                && enemyLocomotionManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
-            {
-                if (viewableAngle <= enemyAttackAction.maximumAttackAngle
-                    && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-                {
-                    if (currentAttack != null)
-                        return;
-
-                    temporaryScore += enemyAttackAction.attackScore;
-
-                    if (temporaryScore > randomValue)
-                    {
-                        currentAttack = enemyAttackAction;
-                    }
-                }
-            }
-        }
-    }
+  
 }
 

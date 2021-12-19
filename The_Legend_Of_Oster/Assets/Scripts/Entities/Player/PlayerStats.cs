@@ -69,6 +69,9 @@ public class PlayerStats : CharacterStats
 
     public void TakeDamage(float damage)
     {
+        if (isDead)
+            return;
+
         currentHealth = currentHealth - damage;
 
         healthbar.SetCurrentHealth(currentHealth);
@@ -79,6 +82,7 @@ public class PlayerStats : CharacterStats
         {
             currentHealth = 0;
             playerAnimatorManager.PlayTargetAnimation("Death_1", true);
+            isDead = true;
             //HANDLE PLAYER DEATH
         }
     }
