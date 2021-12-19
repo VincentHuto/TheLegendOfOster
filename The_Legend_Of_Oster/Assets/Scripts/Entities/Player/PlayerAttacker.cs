@@ -14,12 +14,12 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Awake()
     {
-        playerStats = GetComponentInChildren<PlayerStats>();
+        playerStats = GetComponentInParent<PlayerStats>();
         playerManager = GetComponentInParent<PlayerManager>();
         playerInventory = GetComponentInParent<PlayerInventory>();
-        animatorHandler = GetComponentInChildren<AnimatorManager>();
-        inputHandler = GetComponentInChildren<InputHandler>();
-        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        animatorHandler = GetComponent<AnimatorManager>();
+        inputHandler = GetComponentInParent<InputHandler>();
+        weaponSlotManager = GetComponent<WeaponSlotManager>();
     }
 
     public void HandleWeaponCombo(WeaponItemStack weapon)
@@ -102,7 +102,6 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
-
     public void HandleRBAction()
     {
         if (((WeaponItem)playerInventory.rightWeapon.itemType).isMeleeWeapon)
@@ -115,8 +114,22 @@ public class PlayerAttacker : MonoBehaviour
         {
             PerformRBMagicAction((((WeaponItem)playerInventory.rightWeapon.itemType)));
         }
+
     }
 
+    public void HandleLBAction()
+    {
+        if (((WeaponItem)playerInventory.leftWeapon.itemType).isMeleeWeapon)
+        {
+            PerformLBMeleeAction();
+        }
+        else if ((((WeaponItem)playerInventory.leftWeapon.itemType)).isSpellCaster
+            || (((WeaponItem)playerInventory.leftWeapon.itemType)).isFaithCaster
+            || (((WeaponItem)playerInventory.leftWeapon.itemType)).isPyroCaster)
+        {
+            PerformLBMagicAction((((WeaponItem)playerInventory.leftWeapon.itemType)));
+        }
+    }
     private void PerformRBMeleeAction()
     {
         if (playerManager.canDoCombo)
@@ -134,7 +147,7 @@ public class PlayerAttacker : MonoBehaviour
                 return;
 
             animatorHandler.anim.SetBool("isUsingRightHand", true);
-            HandleLightAttack(playerInventory.rightWeapon, false);
+            HandleLightAttack(playerInventory.rightWeapon,false);
         }
     }
 
@@ -145,9 +158,48 @@ public class PlayerAttacker : MonoBehaviour
             if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
             {
                 //CHECK FOR FP
-                //ATTEMPT TO CAST SPELL
+                playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
             }
         }
     }
+
+    private void PerformLBMeleeAction()
+    {
+        if (playerManager.canDoCombo)
+        {
+            inputHandler.comboFlag = true;
+            HandleWeaponCombo(playerInventory.leftWeapon);
+            inputHandler.comboFlag = false;
+        }
+        else
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
+
+            animatorHandler.anim.SetBool("isUsingLeftHand", true);
+            HandleLightAttack(playerInventory.leftWeapon, true);
+        }
+    }
+
+    private void PerformLBMagicAction(WeaponItem weapon)
+    {
+        if (weapon.isFaithCaster)
+        {
+            if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
+            {
+                //CHECK FOR FP
+                playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+            }
+        }
+    }
+
+    private void SuccessfullyCastSpell()
+    {
+        playerInventory.currentSpell.SuccessfullyCastSpell(animatorHandler, playerStats);
+    }
+
 
 }

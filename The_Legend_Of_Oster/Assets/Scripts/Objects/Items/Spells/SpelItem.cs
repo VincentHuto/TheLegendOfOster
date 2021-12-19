@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellItem : MonoBehaviour
+public class SpellItem : Item
 {
     public GameObject spellWarmUpFX;
     public GameObject spellCastFX;
     public string spellAnimation;
+
+    [Header("Spell Cost")]
+    public int breathCost;
 
     [Header("Spell Type")]
     public bool isFaithSpell;
@@ -17,13 +20,15 @@ public class SpellItem : MonoBehaviour
     [TextArea]
     public string spellDescription;
 
-    public virtual void AttemptToCastSpell()
+    public virtual void AttemptToCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
     {
         Debug.Log("You attempt to cast a spell!");
     }
 
-    public virtual void SuccessfullyCastSpell()
+    public virtual void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
     {
         Debug.Log("You successfully cast a spell!");
+        playerStats.TakeBreathDamage(breathCost);
+
     }
 }

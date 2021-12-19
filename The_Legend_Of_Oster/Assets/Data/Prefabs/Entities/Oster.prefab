@@ -17490,6 +17490,7 @@ GameObject:
   - component: {fileID: 2926375790337094568}
   - component: {fileID: 2926375790337094571}
   - component: {fileID: 2926375790337094570}
+  - component: {fileID: 8063336740303308014}
   m_Layer: 11
   m_Name: Player Model
   m_TagString: Untagged
@@ -17745,6 +17746,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8063336740303308014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063336740193166529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc430ca4ef4d7744b1436ca91dcc8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastAttack: 
 --- !u!1 &8063336740281552025
 GameObject:
   m_ObjectHideFlags: 0
@@ -20137,7 +20151,6 @@ GameObject:
   - component: {fileID: 4960420367079767561}
   - component: {fileID: 4960420367079767566}
   - component: {fileID: 4960420367079767567}
-  - component: {fileID: 4960420367079767564}
   - component: {fileID: 4960420367079767565}
   m_Layer: 11
   m_Name: Oster
@@ -20315,19 +20328,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0aa6cdebbea3a5344bf06e90442d0592, type: 2}
   keyItemsInventory: []
   craftingItemInventory: []
---- !u!114 &4960420367079767564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8419310352217347703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc430ca4ef4d7744b1436ca91dcc8cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastAttack: 
 --- !u!114 &4960420367079767565
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
         d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
-        lockOn_Input, right_Stick_Right_Input,right_Stick_Left_Input,x_Input;
+        lockOn_Input, right_Stick_Right_Input, right_Stick_Left_Input, x_Input;
 
     public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
@@ -33,7 +33,7 @@ public class InputHandler : MonoBehaviour
     {
         playerManager = GetComponent<PlayerManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
-        playerAttacker = GetComponent<PlayerAttacker>();
+        playerAttacker = GetComponentInChildren<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         uIManager = FindObjectOfType<UIManager>();
@@ -130,65 +130,28 @@ public class InputHandler : MonoBehaviour
     }
     private void HandleAttackInput(float delta)
     {
-
-
-        //RB handles the right hands light attack
         if (rb_Input)
         {
-            if (playerManager.canDoCombo)
-            {
-                comboFlag = true;
-                animatorManager.anim.SetBool("isUsingRightHand", true);
-                playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
-                comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-                if (playerManager.canDoCombo)
-                    return;
-                animatorManager.anim.SetBool("isUsingRightHand", true);
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon, false);
-            }
+            playerAttacker.HandleRBAction();
         }
 
-        //RT handles the right hands heavy attack
         if (rt_Input)
         {
-            animatorManager.anim.SetBool("isUsingRightHand", true);
             playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon, false);
         }
 
-        //LB handles the left hands light attack
         if (lb_Input)
         {
-            if (playerManager.canDoCombo)
-            {
-                comboFlag = true;
-                animatorManager.anim.SetBool("isUsingLeftHand", true);
-                playerAttacker.HandleWeaponCombo(playerInventory.leftWeapon);
-                comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-                if (playerManager.canDoCombo)
-                    return;
-                animatorManager.anim.SetBool("isUsingLeftHand", true);
-                playerAttacker.HandleLightAttack(playerInventory.leftWeapon, true);
-            }
+            playerAttacker.HandleLBAction();
         }
 
-        //LT handles the left hands heavy attack
         if (lt_Input)
         {
-            animatorManager.anim.SetBool("isUsingLeftHand", true);
             playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon, true);
         }
 
     }
+
     private void HandleQuickSlotInput()
     {
 
@@ -199,7 +162,8 @@ public class InputHandler : MonoBehaviour
         else if (d_Pad_Left)
         {
             playerInventory.ChangeLeftWeapon();
-        }else if (d_Pad_Down)
+        }
+        else if (d_Pad_Down)
         {
             playerInventory.ChangeCurrentConsumable();
 

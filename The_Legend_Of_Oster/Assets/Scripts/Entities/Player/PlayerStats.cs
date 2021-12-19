@@ -136,6 +136,12 @@ public class PlayerStats : CharacterStats
         staminaBar.SetCurrentStamina(currentStamina);
     }
 
+    public void TakeBreathDamage(float damage)
+    {
+        currentBreath = currentBreath - damage;
+        breathBar.SetCurrentBreath(currentBreath);
+    }
+
 
     public void HealPlayerBreath(float healAmount)
     {
