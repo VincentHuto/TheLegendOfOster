@@ -7,8 +7,10 @@ public class EnemyFadeAndRemove : MonoBehaviour
 
     public SkinnedMeshRenderer[] skinnedMeshRenderers;
     public List<Material> enemyMaterials;
-    public float spawnTime;
-    public EnemyStats enemyStats;
+    public float deathDelay = 2.5f;
+     EnemyStats enemyStats;
+    [Header("Particle FX")]
+    public GameObject deathFX;
 
     void Start()
     {
@@ -18,15 +20,16 @@ public class EnemyFadeAndRemove : MonoBehaviour
         {
             enemyMaterials.Add(skinnedMeshRenderers[i].material);
         }
-        spawnTime = Time.time;
     }
 
     void Update()
     {
         if (enemyStats.isDead && enemyMaterials[0] != null)
         {
+            deathFX.gameObject.SetActive(true);
             if (enemyMaterials[0].color.a <= 0)
             {
+                deathFX.gameObject.SetActive(false);
                 Destroy(gameObject);
             }
             else
@@ -36,7 +39,7 @@ public class EnemyFadeAndRemove : MonoBehaviour
                     if (mat.color.a >= 0)
                     {
                         Color newColor = mat.color;
-                        newColor.a -= Time.deltaTime;
+                        newColor.a -= Time.deltaTime/deathDelay;
                         mat.color = newColor;
                     }
                 });
