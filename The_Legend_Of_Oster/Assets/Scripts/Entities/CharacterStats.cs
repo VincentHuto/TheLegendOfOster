@@ -11,4 +11,20 @@ public class CharacterStats : MonoBehaviour
     public float maxBreath, currentBreath;
     public bool isDead;
 
+
+    public virtual void TakeDamage(float damage)
+    {
+
+        if (isDead)
+            return;
+
+        currentHealth = currentHealth - damage;
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            isDead = true;
+        }
+    }
+
 }

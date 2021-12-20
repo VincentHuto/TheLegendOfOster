@@ -24,6 +24,10 @@ public class ObjectPointer : MonoBehaviour
             {
                 this.transform.LookAt(closestObj.transform);
             }
+            else
+            {
+                closestObj = gameObject;
+            }
         }
     }
 

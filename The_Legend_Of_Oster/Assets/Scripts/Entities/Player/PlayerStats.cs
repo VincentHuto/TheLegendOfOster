@@ -67,15 +67,13 @@ public class PlayerStats : CharacterStats
         return maxBreath;
     }
 
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         if (playerManager.isInvulnerable)
             return;
 
-        if (isDead)
-            return;
+        base.TakeDamage(damage);
 
-        currentHealth = currentHealth - damage;
 
         healthbar.SetCurrentHealth(currentHealth);
 
@@ -83,10 +81,7 @@ public class PlayerStats : CharacterStats
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
             playerAnimatorManager.PlayTargetAnimation("Death_1", true);
-            isDead = true;
-            //HANDLE PLAYER DEATH
         }
     }
 

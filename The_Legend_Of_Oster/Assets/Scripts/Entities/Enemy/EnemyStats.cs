@@ -23,6 +23,12 @@ public class EnemyStats : CharacterStats
         currentBreath = maxBreath;
     }
 
+    private void LateUpdate()
+    {
+  
+
+    }
+
     private float SetMaxHealthFromLevel()
     {
         maxHealth = level * 10;
@@ -42,21 +48,17 @@ public class EnemyStats : CharacterStats
     }
 
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
-        if (isDead)
-            return;
+        base.TakeDamage(damage);
 
-        currentHealth = currentHealth - damage;
         enemyHealthBar.SetHealth(currentHealth);
 
         anim.PlayTargetAnimation("Damage_1", true);
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
             anim.PlayTargetAnimation("Death_1", true);
-            isDead = true;
         }
     }
 }
