@@ -116,6 +116,9 @@ public class PlayerStats : CharacterStats
             {
                 currentStamina += staminaRegenerationAmount * Time.deltaTime;
                 staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
+            }else if(currentStamina >= maxStamina)
+            {
+                staminaRegenTimer = 0;
             }
         }
     }
