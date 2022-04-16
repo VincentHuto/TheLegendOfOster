@@ -102,6 +102,8 @@ public class InputHandler : MonoBehaviour
 
         if (b_Input)
         {
+            Debug.Log("Test");
+
             rollInputTimer += delta;
         }
         else
