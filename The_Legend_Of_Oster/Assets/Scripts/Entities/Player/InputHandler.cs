@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
         d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
-        lockOn_Input, right_Stick_Right_Input, right_Stick_Left_Input, x_Input;
+        lockOnInput, right_Stick_Right_Input, right_Stick_Left_Input, x_Input;
 
     public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
@@ -51,6 +51,8 @@ public class InputHandler : MonoBehaviour
             inputActions = new PlayerControls();
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            inputActions.PlayerActions.Roll.performed += i => b_Input = true;
+            inputActions.PlayerActions.Roll.canceled += i => b_Input = false;
             inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
             inputActions.PlayerActions.RB.performed += i => rb_Input = true;
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
@@ -62,7 +64,7 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.DPadDown.performed += i => d_Pad_Down = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
-            inputActions.PlayerActions.LockOn.performed += i => lockOn_Input = true;
+            inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             inputActions.PlayerActions.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
             inputActions.PlayerActions.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
         }
@@ -97,18 +99,27 @@ public class InputHandler : MonoBehaviour
     }
     private void HandleRollInput(float delta)
     {
-        b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
-        sprintFlag = b_Input;
-
         if (b_Input)
         {
             rollInputTimer += delta;
+
+            if (playerStats.currentStamina <= 0)
+            {
+                b_Input = false;
+                sprintFlag = false;
+            }
+
+            if (moveAmount > 0.5f && playerStats.currentStamina > 0)
+            {
+                sprintFlag = true;
+            }
         }
         else
         {
+            sprintFlag = false;
+
             if (rollInputTimer > 0 && rollInputTimer < 0.5f)
             {
-                sprintFlag = false;
                 rollFlag = true;
             }
 
@@ -200,24 +211,22 @@ public class InputHandler : MonoBehaviour
     }
     private void HandleLockOnInput()
     {
-        if (lockOn_Input && lockOnFlag == false)
+        if (lockOnInput && lockOnFlag == false)
         {
-            lockOn_Input = false;
+
+            lockOnInput = false;
             cameraHandler.HandleLockOn();
             if (cameraHandler.nearestLockOnTarget != null)
             {
                 cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
-                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
                 lockOnFlag = true;
             }
         }
-        else if (lockOn_Input && lockOnFlag)
+        else if (lockOnInput && lockOnFlag)
         {
-            lockOn_Input = false;
+            lockOnInput = false;
             lockOnFlag = false;
-            cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
             cameraHandler.ClearLockOnTargets();
-
         }
 
         if (lockOnFlag && right_Stick_Left_Input)
@@ -226,10 +235,7 @@ public class InputHandler : MonoBehaviour
             cameraHandler.HandleLockOn();
             if (cameraHandler.leftLockTarget != null)
             {
-                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
                 cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
-                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
-
             }
         }
 
@@ -239,12 +245,12 @@ public class InputHandler : MonoBehaviour
             cameraHandler.HandleLockOn();
             if (cameraHandler.rightLockTarget != null)
             {
-                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
                 cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
-                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
-
             }
         }
+
         cameraHandler.SetCameraHeight();
     }
+
+
 }
