@@ -49,6 +49,11 @@ public class PlayerManager : CharacterManager
         playerLocomotion.HandleRollingAndSprinting(delta);
         playerStats.RegenerateStamina();
         CheckForInteractableObject();
+        if (cameraHandler != null)
+        {
+            cameraHandler.FollowTarget(delta);
+            cameraHandler.HandleCameraRotation();
+        }
     }
 
     private void FixedUpdate()
@@ -56,11 +61,7 @@ public class PlayerManager : CharacterManager
         float delta = Time.fixedDeltaTime;
         playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-        if (cameraHandler != null)
-        {
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation();
-        }
+     
     }
 
     private void LateUpdate()
