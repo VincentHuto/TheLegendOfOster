@@ -597,7 +597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f55782d48a6ecd488265c3896d7c9ee, type: 2}
+  - {fileID: 2100000, guid: db093ee2ee8f49e41a955d797e2f20be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19659,6 +19659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -19732,6 +19733,12 @@ MonoBehaviour:
   pivotSpeed: 0.03
   minimumPivot: -35
   maximumPivot: 35
+  upAndDownLookSpeed: 150
+  upAndDownAimingLookSpeed: 25
+  leftAndRightLookSpeed: 150
+  leftAndRightAimingLookSpeed: 25
+  minimumLookUpAngle: -35
+  maximumLookUpAngle: 35
   cameraSphereRadius: 0.2
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
@@ -20497,7 +20504,7 @@ MonoBehaviour:
   d_Pad_Right: 0
   pickup_Input: 0
   inv_Input: 0
-  lockOn_Input: 0
+  lockOnInput: 0
   right_Stick_Right_Input: 0
   right_Stick_Left_Input: 0
   x_Input: 0

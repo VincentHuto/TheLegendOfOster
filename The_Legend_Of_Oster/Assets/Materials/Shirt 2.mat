@@ -1,21 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2594261357892169821
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shirt 2
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: FINALPASS VIGNETTE_MASKED _DETAIL_MULX2 _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
-    _SUNDISK_SIMPLE
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ValidKeywords:
+  - _DETAIL_MULX2
+  - _NORMALMAP
+  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_InvalidKeywords:
+  - FINALPASS
+  - VIGNETTE_MASKED
+  - _SUNDISK_SIMPLE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -58,6 +78,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BackFaceTexture:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: a6d6984545cde4a4f9317b17d6dca225, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlueTexture:
@@ -424,6 +448,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - DSGI: 0
     - Instancing: 0
@@ -434,6 +471,7 @@ Material:
     - _2ndShadeMapMask_Inverse: 0
     - _2nd_ShadeMapUV: 0
     - _AOStrength: 1
+    - _AlphaClip: 0
     - _AlphaMod: 0
     - _AlphaPremultiply: 0
     - _AlphaToMask: 0
@@ -525,12 +563,15 @@ Material:
     - _BackFaceTextureUV: 0
     - _BaseColor_Step: 0.5
     - _BaseShade_Feather: 0.0001
+    - _Blend: 0
     - _BlendOp: 0
     - _BlendOpAlpha: 0
     - _BumpMapUV: 0
     - _BumpScale: 0
     - _CameraAngleMax: 90
     - _CameraAngleMin: 45
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _Clearcoat: 1
     - _ClearcoatAnisotropy: 0
     - _ClearcoatEnableReflections: 1
@@ -598,6 +639,7 @@ Material:
     - _DecalTiled1: 0
     - _DecalTiled2: 0
     - _DecalTiled3: 0
+    - _DetailAlbedoMapScale: 1
     - _DetailBrightness: 1
     - _DetailEnabled: 1
     - _DetailMaskUV: 0
@@ -723,6 +765,7 @@ Material:
     - _EnableSSS: 0
     - _EnableSpecular: 0
     - _EnableSpecular1: 0
+    - _EnvironmentReflections: 1
     - _FlipbookAdd: 0
     - _FlipbookAlphaControlsFinalAlpha: 0
     - _FlipbookColorReplaces: 0
@@ -937,6 +980,7 @@ Material:
     - _PathingColorMapUV: 0
     - _PathingMapUV: 0
     - _PatreonHelpBox: 0
+    - _QueueOffset: 0
     - _RGBAlpha_UV: 0
     - _RGBBlendMultiplicative: 0
     - _RGBBlue_UV: 0
@@ -946,6 +990,7 @@ Material:
     - _RGBNormalBlend: 0
     - _RGBRed_UV: 0
     - _RGBUseVertexColors: 0
+    - _ReceiveShadows: 1
     - _RgbNormalAScale: 0
     - _RgbNormalAUV: 0
     - _RgbNormalBScale: 0
@@ -991,7 +1036,7 @@ Material:
     - _ShadowMixWidthMod: 0.5
     - _ShadowOffset: 0
     - _ShadowStrength: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessFrom: 1
     - _SmoothnessFrom1: 1
     - _SmoothnessMaskUV: 0
@@ -1047,6 +1092,7 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFailOp: 0
+    - _Surface: 0
     - _TextEnabled: 0
     - _TextFPSEmissionStrength: 0
     - _TextFPSEnabled: 0
@@ -1073,6 +1119,7 @@ Material:
     - _VertexRoundingDivision: 500
     - _VertexRoundingEnabled: 0
     - _VertexUnwrap: 0
+    - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
     - _commentIfZero_EnableOutlinePass: 0
@@ -1358,6 +1405,7 @@ Material:
     - _BRDFSpecularMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _BackFaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _BackFacePanning: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.5, g: 0, b: 0.3272481, a: 1}
     - _BlueColor: {r: 1, g: 1, b: 1, a: 1}
     - _BumpMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearcoatMapPan: {r: 0, g: 0, b: 0, a: 0}

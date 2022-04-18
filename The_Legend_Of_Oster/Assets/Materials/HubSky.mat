@@ -2,22 +2,33 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HubSky
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: FINALPASS VIGNETTE_MASKED _ALPHABLEND_ON _DETAIL_MULX2 _METALLICGLOSSMAP
-    _NORMALMAP _SPECGLOSSMAP
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ValidKeywords:
+  - _DETAIL_MULX2
+  - _METALLICSPECGLOSSMAP
+  - _SPECGLOSSMAP
+  - _SPECULAR_SETUP
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords:
+  - FINALPASS
+  - VIGNETTE_MASKED
+  - _ALPHABLEND_ON
+  - _METALLICGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -59,6 +70,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BackFaceTexture:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: a6d6984545cde4a4f9317b17d6dca225, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlueTexture:
@@ -425,6 +440,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - DSGI: 0
     - Instancing: 0
@@ -435,6 +463,7 @@ Material:
     - _2ndShadeMapMask_Inverse: 0
     - _2nd_ShadeMapUV: 0
     - _AOStrength: 1
+    - _AlphaClip: 0
     - _AlphaMod: 0
     - _AlphaPremultiply: 0
     - _AlphaToMask: 0
@@ -526,12 +555,15 @@ Material:
     - _BackFaceTextureUV: 0
     - _BaseColor_Step: 0.5
     - _BaseShade_Feather: 0.0001
+    - _Blend: 0
     - _BlendOp: 0
     - _BlendOpAlpha: 0
     - _BumpMapUV: 0
     - _BumpScale: 0
     - _CameraAngleMax: 90
     - _CameraAngleMin: 45
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _Clearcoat: 1
     - _ClearcoatAnisotropy: 0
     - _ClearcoatEnableReflections: 1
@@ -599,6 +631,7 @@ Material:
     - _DecalTiled1: 0
     - _DecalTiled2: 0
     - _DecalTiled3: 0
+    - _DetailAlbedoMapScale: 1
     - _DetailBrightness: 1
     - _DetailEnabled: 1
     - _DetailMaskUV: 0
@@ -723,6 +756,7 @@ Material:
     - _EnableSSS: 0
     - _EnableSpecular: 0
     - _EnableSpecular1: 0
+    - _EnvironmentReflections: 1
     - _FlipbookAdd: 0
     - _FlipbookAlphaControlsFinalAlpha: 0
     - _FlipbookColorReplaces: 0
@@ -937,6 +971,7 @@ Material:
     - _PathingColorMapUV: 0
     - _PathingMapUV: 0
     - _PatreonHelpBox: 0
+    - _QueueOffset: 0
     - _RGBAlpha_UV: 0
     - _RGBBlendMultiplicative: 0
     - _RGBBlue_UV: 0
@@ -946,6 +981,7 @@ Material:
     - _RGBNormalBlend: 0
     - _RGBRed_UV: 0
     - _RGBUseVertexColors: 0
+    - _ReceiveShadows: 1
     - _RgbNormalAScale: 0
     - _RgbNormalAUV: 0
     - _RgbNormalBScale: 0
@@ -1047,6 +1083,7 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFailOp: 0
+    - _Surface: 1
     - _TextEnabled: 0
     - _TextFPSEmissionStrength: 0
     - _TextFPSEnabled: 0
@@ -1073,6 +1110,7 @@ Material:
     - _VertexRoundingDivision: 500
     - _VertexRoundingEnabled: 0
     - _VertexUnwrap: 0
+    - _WorkflowMode: 0
     - _ZTest: 4
     - _ZWrite: 0
     - _commentIfZero_EnableOutlinePass: 0
@@ -1358,6 +1396,7 @@ Material:
     - _BRDFSpecularMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _BackFaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _BackFacePanning: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
     - _BlueColor: {r: 1, g: 1, b: 1, a: 1}
     - _BumpMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearcoatMapPan: {r: 0, g: 0, b: 0, a: 0}
@@ -1519,3 +1558,16 @@ Material:
     - _VertexManipulationLocalTranslation: {r: 0, g: 0, b: 0, a: 1}
     - _VertexManipulationWorldTranslation: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &5925597710278714576
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
