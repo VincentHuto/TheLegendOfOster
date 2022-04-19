@@ -267,7 +267,7 @@ public class PlayerLocomotion : MonoBehaviour
 
                 Vector3 vel = rigidbody.velocity;
                 vel.Normalize();
-                rigidbody.velocity = vel * (movementSpeed / 2);
+              //  rigidbody.velocity = vel * (movementSpeed / 2);
                 playerManager.isInAir = true;
             }
         }
