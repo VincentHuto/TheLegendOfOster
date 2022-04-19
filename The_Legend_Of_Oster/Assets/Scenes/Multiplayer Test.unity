@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 38ec630cac7b7b44b96d8f90bb2293d5, type: 2}
 --- !u!1 &26192503
 GameObject:
   m_ObjectHideFlags: 0
@@ -13335,13 +13335,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26192503}
-  m_LocalRotation: {x: 0, y: 0, z: 0.028093407, w: 0.9996053}
-  m_LocalPosition: {x: 334.2, y: 4.2, z: 648.7}
+  m_LocalRotation: {x: -0, y: -0, z: 0.028093407, w: 0.9996053}
+  m_LocalPosition: {x: -81.839966, y: -9.090329, z: 12.132263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1120738812}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &225248961
 PrefabInstance:
@@ -13454,7 +13454,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-34560
+  m_Name: pb_Mesh137362
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13853,6 +13853,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25415703808116531, guid: bef82852a2406e142ab8d832b305f161, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2305882114637391188, guid: bef82852a2406e142ab8d832b305f161, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14029,10 +14033,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 25a47de54c1c0a84d88f2555242bcc4b, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 492
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -14254,6 +14258,39 @@ Transform:
   - {fileID: 1934342867}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1120738811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120738812}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120738812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120738811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 416.03998, y: 13.290329, z: 636.56775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 26192509}
+  - {fileID: 1445707281}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445707275
 GameObject:
@@ -16135,13 +16172,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445707275}
-  m_LocalRotation: {x: 0, y: 0, z: 0.042077944, w: 0.99911433}
-  m_LocalPosition: {x: 330.9, y: 34.54, z: 689.6308}
-  m_LocalScale: {x: 0.72, y: 0.21, z: 0.21}
+  m_LocalRotation: {x: -0, y: -0, z: 0.042077944, w: 0.99911433}
+  m_LocalPosition: {x: -85.139984, y: 21.249672, z: 53.06305}
+  m_LocalScale: {x: 0.7200001, y: 0.21000002, z: 0.21}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1120738812}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1907002855
 GameObject:
@@ -16440,7 +16477,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-56264
+  m_Name: pb_Mesh137446
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
