@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: InfiniGRASS DAISY
   m_Shader: {fileID: 4800000, guid: 6f9682bc5354bdc46830137e95cc7ce1, type: 3}
-  m_ShaderKeywords: _ALPHABLEND_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHABLEND_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -88,11 +90,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AO: 2.4
     - _BaseColorYShift: 1
     - _BaseLight: 0
-    - _BulgeScale: 0.2
+    - _BulgeScale: 0
     - _BulgeScale_copy: 0.02
     - _BulgeShape: 0
     - _BumpScale: 1
@@ -139,7 +142,7 @@ Material:
     - _GlowColor: {r: 0.75735295, g: 0.41001523, b: 0.41001523, a: 0.9764706}
     - _HeightControlPoints: {r: 0, g: 1, b: 1, a: 1}
     - _InteractAmpFreqRad: {r: 7.93, g: 38.75, b: -0.04, a: 1}
-    - _InteractPos: {r: 123.27, g: 0.73, b: -8.68, a: 0}
+    - _InteractPos: {r: 92.1, g: 30.5, b: -94.23, a: 0}
     - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
     - _InteractSpeed: {r: -4.268595e-15, g: 0, b: -2.4394122e-14, a: 0}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
@@ -152,3 +155,4 @@ Material:
     - _WaveAndDistance: {r: 12, g: 3.6, b: 1, a: 1}
     - _WaveControl1: {r: 0.04, g: 1, b: 2.15, a: 0.03}
     - _WavingTint: {r: 0.7, g: 0.6, b: 0.5, a: 0}
+  m_BuildTextureStacks: []

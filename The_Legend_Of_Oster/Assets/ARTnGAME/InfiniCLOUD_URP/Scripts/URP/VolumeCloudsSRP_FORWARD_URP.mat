@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6001270351578964239
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VolumeCloudsSRP_FORWARD_URP
+  m_Shader: {fileID: 4800000, guid: 48baafe2860bd3c448ce01f1efafb83b, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ALLOW_IN_CLOUDS
+  - FOG_EXP2
+  - RANDOM_JITTER_BLUE
+  - RANDOM_UNIT_SPHERE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_212D1414:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6D2CA402:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudTexP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorBuffer:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InteractTexture:
+        m_Texture: {fileID: 2800000, guid: 861f1f6c92c07724cb5e3c3aa1f78525, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex1:
+        m_Texture: {fileID: 11760204, guid: b6d6f79c2d3ef3241a9948dd089967d1, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2:
+        m_Texture: {fileID: 11728776, guid: 4676a0d39df38b84cad914e1e3eadeda, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3DCE9C57_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_867AC6D7_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_E7F984EC_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ClearSkyFac: 1.4
+    - FogSky: 1
+    - Vector1_1D56E6ED: 2.8
+    - Vector1_5F062B86: 0.066
+    - Vector1_8C73B3EF: 1
+    - Vector1_EE2BE012: 0.91
+    - _AlphaClip: 0
+    - _Altitude0: 1500
+    - _Altitude1: 2800
+    - _AtmosphereThickness: -0.24
+    - _BackShade: 0.09
+    - _Blend: 0.5
+    - _BumpScale: 1
+    - _Close: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Delta: 0.00096
+    - _DeltaX: 0.002
+    - _DeltaY: 0.002
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _Exposure: 21
+    - _Extinct: 0.05
+    - _FadeThreshold: 0.94
+    - _Far: 111111
+    - _FarDist: 141111
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _HGCoeff: -0.06
+    - _HorizonYAdjust: -4737
+    - _HorizonZAdjust: 1
+    - _Metallic: 0
+    - _NearZCutoff: 1111
+    - _NoiseAmp1: 14.1
+    - _NoiseAmp2: 4.7
+    - _NoiseBias: -8.05
+    - _NoiseFreq1: 4.82
+    - _NoiseFreq2: 37
+    - _OcclusionStrength: 1
+    - _Poseterize: 1
+    - _PosterizationCount: 5
+    - _QueueOffset: 0
+    - _Raw: 0
+    - _ReceiveShadows: 1
+    - _SampleCount0: 1
+    - _SampleCount1: 70
+    - _SampleCountL: 5
+    - _Scatter: 0.5
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SunSize: 47.3
+    - _Surface: 0
+    - _UndersideCurveFactor: 1.3
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _alphaFactor: 3.2
+    - _fastest: 0
+    - _invertRay: 1
+    - _invertX: 0
+    - _mobileFactor: 1
+    - turbidity: 1
+    - varianceAltitude1: 0
+    m_Colors:
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BlurRadius4: {r: 0.078125, g: 0.078125, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GroundColor: {r: 3.88, g: 2.33, b: 1, a: 0}
+    - _InteractTextureAtr: {r: 0.84, g: 0.967, b: -4.56, a: 1}
+    - _InteractTextureOffset: {r: 2484.16, g: 1061.36, b: 0, a: 0}
+    - _InteractTexturePos: {r: 0.01, g: 1, b: -1222, a: -1222}
+    - _LocalLightColor: {r: 0, g: 0, b: 0, a: 0}
+    - _LocalLightPos: {r: 3863, g: 2412, b: -6116, a: 48130000}
+    - _Scroll1: {r: 0, g: 0, b: 0, a: 0}
+    - _Scroll2: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyTint: {r: 1, g: 0.7, b: 0.7, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SunColor: {r: 1, g: 0.9882353, b: 0.8235294, a: 1}
+    - _SunPosition: {r: 0.43062064, g: 0.45916912, b: 19.831146, a: 0.75}
+    - _SunThreshold: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+    - _TintColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+    - _WorldSpaceCameraPosC: {r: 239.38402, g: 144.99124, b: 754.053, a: 0}
+    - v3LightDir: {r: -0.5656835, g: -0.003490773, b: 0.8246152, a: 1}
+    - v3LightDirFOG: {r: -0.027921505, g: -0.050226077, b: 0.9983476, a: 1}
+  m_BuildTextureStacks: []

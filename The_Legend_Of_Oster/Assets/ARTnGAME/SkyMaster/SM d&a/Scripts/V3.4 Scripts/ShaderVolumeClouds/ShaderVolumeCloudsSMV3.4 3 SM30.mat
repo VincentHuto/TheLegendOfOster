@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ShaderVolumeCloudsSMV3.4 3 SM30
+  m_Shader: {fileID: 4800000, guid: a87f9db2eaecd08408f265b542dd8182, type: 3}
+  m_ShaderKeywords: CV_DEPTHBLEND_OFF CV_HORIZONBLEND_OFF CV_LIGHTING_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 2800000, guid: 5a1bedf7284966f4e827a213e4c46e5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap:
+        m_Texture: {fileID: 2800000, guid: effb8e0f5b35a08439c984fca521487f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap1:
+        m_Texture: {fileID: 2800000, guid: 8c3da4a046153e84293dde78b951fb45, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 55f5c739e5711f841b02183ae8d0298c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap:
+        m_Texture: {fileID: 2800000, guid: 5ab1f4d515f82fe46b685c62a42c4729, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNormalMap1:
+        m_Texture: {fileID: 2800000, guid: d365d36f30dee7f4f8e7990e30da8e75, type: 3}
+        m_Scale: {x: 0.31, y: 0.15}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0.42
+    - _AlphaCut: -5.56
+    - _AmbientFactor: 1
+    - _CloudCover: 0.5
+    - _CloudDensity: 1
+    - _CloudSharpness: 0.8
+    - _CloudSize: 1
+    - _ColorDiff: -0.63
+    - _Coverage: -0.29
+    - _CutHeight: 459.7
+    - _Cutoff: 0.5
+    - _Density: 0.0001
+    - _DepthBlendMul: 2.29
+    - _DepthBlendMult: 2
+    - _DepthColor: 0
+    - _DepthIntensity: 0.1
+    - _DetailL: 0
+    - _Dithering: 1280
+    - _EdgeBlend: 0.11
+    - _EdgeFactor: 0.51
+    - _FogFactor: 3.14
+    - _FogUnity: 1
+    - _Forward: 0
+    - _HorizonFactor: 0.05
+    - _IndirectContribution: 1
+    - _MipLevel: 0
+    - _Mode: 0
+    - _Normalized: 1.086
+    - _ObjectSpaceMapping: 0
+    - _Speed: 23
+    - _SpeedSecondLayer: 23.88
+    - _Tiling: 4651.16
+    - _TimeMult: 0.1
+    - _TimeMultSecondLayer: 4
+    - _Transparency: 0.5
+    - _TransparencyThres: -1.69
+    - _Velocity1: 22
+    - _Velocity2: 11
+    - _ditherTiling: 1
+    - _shadowAlpha: 0.75
+    - _shadowSharpness: 1
+    m_Colors:
+    - _Ambient: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.45588237, g: 0.4525303, b: 0.4525303, a: 0.603}
+    - _CloudNormalsDirection: {r: 1, g: -1, b: 1, a: 0}
+    - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.70242214, g: 0.7532872, b: 0.85294116, a: 1}
+    - _Control: {r: 0.1544118, g: 0.036332183, b: 0.036332183, a: 1}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
+    - _FogColor: {r: 0.48918685, g: 0.5176888, b: 0.5735294, a: 0.841}
+    - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
+    - _Shading: {r: 0.27681658, g: 0.29418916, b: 0.4705882, a: 0.172}
+    - _ShadowColor: {r: 0.37629756, g: 0.3766436, b: 0.42647058, a: 0.222}
+    - _SunColor: {r: 0.8308824, g: 0.7820069, b: 0.7820069, a: 0.384}
+    - _SunDir: {r: 0, g: 1, b: 0, a: 0}
+    - _Velocity1: {r: 1, g: 23, b: 0, a: 0}
+    - _Velocity2: {r: 1, g: 22, b: 0, a: 0}
+    - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+    - c: {r: 0.97794116, g: 0.66873914, b: 0.66873914, a: 0.628}

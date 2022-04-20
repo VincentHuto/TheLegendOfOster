@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6001270351578964239
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FullVolumeCloudsSRP_FORWARD_URP
+  m_Shader: {fileID: 4800000, guid: 6c321c69c6d2e614f9b59022053d24a1, type: 3}
+  m_ShaderKeywords: ALLOW_IN_CLOUDS FOG_EXP2 RANDOM_JITTER_BLUE RANDOM_UNIT_SPHERE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_212D1414:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6D2CA402:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudTexP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorBuffer:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InteractTexture:
+        m_Texture: {fileID: 2800000, guid: 8034f877ef030f349ab31957981eb9ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex1:
+        m_Texture: {fileID: 11728776, guid: 4676a0d39df38b84cad914e1e3eadeda, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2:
+        m_Texture: {fileID: 11760204, guid: b6d6f79c2d3ef3241a9948dd089967d1, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3DCE9C57_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_867AC6D7_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_E7F984EC_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - ClearSkyFac: 1.01
+    - FogSky: 0
+    - Vector1_1D56E6ED: 2.8
+    - Vector1_5F062B86: 0.066
+    - Vector1_8C73B3EF: 1
+    - Vector1_EE2BE012: 0.91
+    - _AlphaClip: 0
+    - _Altitude0: 2500
+    - _Altitude1: 4200
+    - _AtmosphereThickness: 1.39
+    - _BackShade: 0.45
+    - _Blend: 0.5
+    - _BumpScale: 1
+    - _Close: 0
+    - _Coverage: 0
+    - _CoverageA: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Delta: 0.00096
+    - _DeltaX: 0.002
+    - _DeltaY: 0.002
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _Exposure: 1
+    - _Extinct: 0.025
+    - _FadeThreshold: 0
+    - _Far: 11111
+    - _FarDist: 12000
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _HGCoeff: 0.05
+    - _HorizonYAdjust: 3300
+    - _HorizonZAdjust: 1
+    - _Metallic: 0
+    - _NearZCutoff: 1
+    - _NoiseAmp1: -5
+    - _NoiseAmp2: 1.95
+    - _NoiseBias: 1.32
+    - _NoiseFreq1: 3
+    - _NoiseFreq2: 25
+    - _OcclusionStrength: 1
+    - _Poseterize: 1
+    - _PosterizationCount: 5
+    - _QueueOffset: 0
+    - _Raw: 0
+    - _ReceiveShadows: 1
+    - _SampleCount0: 95
+    - _SampleCount1: 85
+    - _SampleCountL: 6
+    - _Scatter: 0.83
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SunSize: 1.2
+    - _Surface: 0
+    - _TemporalGain: 1
+    - _TemporalResponse: 1
+    - _UndersideCurveFactor: 0.2
+    - _WeatherScale: 0.0000025000002
+    - _WindSpeed: 1098
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _alphaFactor: 0.5
+    - _fastest: 0
+    - _invertRay: 1
+    - _invertX: 0
+    - _mobileFactor: 1
+    - cameraScale: 90
+    - controlBackAlphaPower: 1
+    - controlCloudAlphaPower: 0.001
+    - controlCloudEdgeOffset: 1
+    - depthDilation: -25
+    - extendFarPlaneAboveClouds: 8
+    - turbidity: 1
+    - varianceAltitude1: -0.15
+    m_Colors:
+    - YCutHeightDepthScale: {r: 0, g: 1, b: 0, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BlurRadius4: {r: 0.078125, g: 0.078125, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _CoverageWindOffset: {r: 205284.03, g: 200462.23, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GroundColor: {r: 0.509434, g: 0.29630992, b: 0.24270204, a: 0}
+    - _InteractTextureAtr: {r: 0.34, g: 0.991, b: 0, a: 1}
+    - _InteractTextureOffset: {r: 2557.5, g: 1111, b: 0, a: 0}
+    - _InteractTexturePos: {r: 1, g: 1, b: -1222, a: -1222}
+    - _LocalLightColor: {r: 0, g: 0, b: 0, a: 0}
+    - _LocalLightPos: {r: 11504.971, g: 71565.78, b: -199376.47, a: 0.35135022}
+    - _Scroll1: {r: 0, g: 0, b: 0, a: 0}
+    - _Scroll2: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyTint: {r: 0.75471586, g: 0.5262067, b: 0.42363775, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SunColor: {r: 0.75471586, g: 0.5262067, b: 0.42363775, a: 1}
+    - _SunPosition: {r: 0.43062064, g: 0.45916912, b: 19.831146, a: 0.75}
+    - _SunThreshold: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+    - _TintColor: {r: 0.9339623, g: 0.3216002, b: 0.3216002, a: 1}
+    - _WindDirection: {r: 0.92454606, g: -0.25, b: -0.38107038, a: 0}
+    - _WindOffset: {r: 1765.4114, g: -477.37268, b: -727.65027, a: 0}
+    - _WorldSpaceCameraPosC: {r: 201.6, g: 32.09, b: -588.4, a: 0}
+    - controlCloudEdgeA: {r: 1, g: 1, b: 1, a: 1}
+    - specialFX: {r: 0, g: 0, b: 0, a: 0}
+    - v3LightDir: {r: 0.73861843, g: 0.6243083, b: 0.25432688, a: 0}
+    - v3LightDirFOG: {r: 0.23407333, g: 0.39552346, b: 0.8881279, a: 1}

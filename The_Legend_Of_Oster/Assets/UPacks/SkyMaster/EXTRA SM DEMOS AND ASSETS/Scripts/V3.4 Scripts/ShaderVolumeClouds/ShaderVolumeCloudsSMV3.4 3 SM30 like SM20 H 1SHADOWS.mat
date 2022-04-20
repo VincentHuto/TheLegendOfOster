@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShaderVolumeCloudsSMV3.4 3 SM30 like SM20 H 1SHADOWS
-  m_Shader: {fileID: 4800000, guid: f172cc543cc507249b24641614532b25, type: 3}
+  m_Shader: {fileID: 4800000, guid: d46699f963e3e1a4fa975c3d0c795c75, type: 3}
   m_ShaderKeywords: CV_DEPTHBLEND_OFF CV_HORIZONBLEND_OFF CV_LIGHTING_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 0.31, y: 0.15}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Thickness: -5.3
+    - Thickness: 1
     - _Alpha: 0.42
     - _AlphaCut: -5.56
     - _AmbientFactor: 1
@@ -62,8 +62,9 @@ Material:
     - _CloudSize: 1
     - _ColorDiff: 0.14
     - _ColorDiffOffset: -0.49
-    - _Coverage: 0.43
+    - _Coverage: 0.44
     - _CoverageOffset: -0.31
+    - _CullMode: 2
     - _CutHeight: 233.67
     - _Cutoff: 0.952
     - _Density: 0.00025
@@ -90,7 +91,7 @@ Material:
     - _TimeMult: 0.1
     - _TimeMultSecondLayer: 4
     - _TranspOffset: -3.34
-    - _Transparency: -1.4
+    - _Transparency: 3.94
     - _TransparencyThres: -1.69
     - _Velocity1: 22
     - _Velocity2: 6
@@ -105,28 +106,15 @@ Material:
     - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Control: {r: 0.16911763, g: 0.1144031, b: 0.1144031, a: 1}
-    - _EdgeFactors: {r: 0, g: 0, b: 0, a: 0}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
     - _FogColor: {r: 0.99264705, g: 0.79371494, b: 0.61310554, a: 1}
     - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
     - _Shading: {r: 0.27681658, g: 0.29418916, b: 0.4705882, a: 0.172}
-    - _ShadowColor: {r: 0.02616589, g: 0.05223419, b: 0.11320752, a: 0.609}
+    - _ShadowColor: {r: 0, g: 0.23245643, b: 0.77205884, a: 0.609}
     - _SunColor: {r: 0.3897059, g: 0.10029196, b: 0.10029196, a: 0.666}
     - _SunDir: {r: 0, g: 1, b: 0, a: 0}
-    - _Velocity1: {r: 5, g: 5, b: 0, a: 0}
-    - _Velocity2: {r: 5, g: 5, b: 0, a: 0}
+    - _Velocity1: {r: 22, g: -1.8, b: 0, a: 0}
+    - _Velocity2: {r: 19, g: 7.3, b: 11.46, a: 0}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
     - pointLightColor: {r: 0, g: 0, b: 0, a: 0}
     - pointLightPos: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &6744516839332833758
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2

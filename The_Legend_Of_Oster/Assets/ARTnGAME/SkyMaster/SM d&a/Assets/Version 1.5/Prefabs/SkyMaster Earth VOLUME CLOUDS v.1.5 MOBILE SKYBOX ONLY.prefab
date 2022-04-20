@@ -1,0 +1,1808 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400006}
+  - component: {fileID: 2000000}
+  - component: {fileID: 9200000}
+  - component: {fileID: 12400000}
+  - component: {fileID: 8100000}
+  - component: {fileID: 8200000}
+  - component: {fileID: 11400004}
+  - component: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_LocalRotation: {x: -0.20958981, y: -0.016211387, z: -0.003475421, w: 0.97764885}
+  m_LocalPosition: {x: 0, y: 7.87, z: -0.33258542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400008}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2000000
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19166474, g: 0.30196637, b: 0.4745098, a: 1}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.7
+  far clip plane: 8750
+  field of view: 60
+  orthographic: 0
+  orthographic size: 100
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!92 &9200000
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+--- !u!124 &12400000
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+--- !u!81 &8100000
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fda28468150cd1b42b182a78ee0d10a0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.89
+  m_Pitch: 0.34
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a46701d7e110b4ab30bcc6f4a23d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sun_time_start: 8
+  SKYMASTER_OBJ: {fileID: 100030}
+  SUN: {fileID: 100016}
+  TREES: {fileID: 0}
+  HUD_ON: 1
+  enable_controls: 1
+  Clouds_top: {fileID: 0}
+  Clouds_bottom: {fileID: 0}
+  Flat_Clouds_top: {fileID: 0}
+  Flat_Clouds_bottom: {fileID: 0}
+  Cloud_Dome: {fileID: 0}
+  Cloud_Rays: {fileID: 0}
+  Cloud_Static: {fileID: 0}
+  Tornado1: {fileID: 0}
+  Tornado2: {fileID: 0}
+  Butterflies: {fileID: 0}
+  FreezeEffect: {fileID: 0}
+  LightningStorm: {fileID: 0}
+  Auto_Season_Cycle: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c237acc7ec0a0b448915f6f31c369d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 2
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
+  Menabled: 1
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400008}
+  - component: {fileID: 11400006}
+  m_Layer: 0
+  m_Name: First Person Controller with GI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.541706, y: 1.541706, z: 1.541706}
+  m_Children:
+  - {fileID: 400006}
+  m_Father: {fileID: 400024}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c237acc7ec0a0b448915f6f31c369d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 1
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
+  Menabled: 1
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400016}
+  m_Layer: 0
+  m_Name: Sun Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400028}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400010}
+  - component: {fileID: 3300002}
+  - component: {fileID: 13500000}
+  - component: {fileID: 2300002}
+  m_Layer: 9
+  m_Name: SunBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 400018}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3300002
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &13500000
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2300002
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &100014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400012}
+  - component: {fileID: 10800000}
+  m_Layer: 0
+  m_Name: MoonLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_LocalRotation: {x: 0.02565966, y: -0.99908775, z: 0.012326026, w: 0.031833004}
+  m_LocalPosition: {x: -2018002, y: 1074049.6, z: 26538614}
+  m_LocalScale: {x: 1920000, y: 1920000.4, z: 1919999.9}
+  m_Children: []
+  m_Father: {fileID: 400018}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &10800000
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 0
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 1}
+  m_Intensity: 0.48452914
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294966527
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &100016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400018}
+  - component: {fileID: 10800002}
+  m_Layer: 0
+  m_Name: Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100016}
+  m_LocalRotation: {x: 0.000000007450581, y: 0.10461303, z: -0.9945131, w: -0.00000004284084}
+  m_LocalPosition: {x: -0.0003673349, y: 2484.8855, z: -11680.702}
+  m_LocalScale: {x: 0.0002, y: 0.0002, z: 0.00028469402}
+  m_Children:
+  - {fileID: 400012}
+  - {fileID: 400010}
+  m_Father: {fileID: 400028}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &10800002
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100016}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.933, g: 0.596, b: 0.443, a: 1}
+  m_Intensity: 0.67
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0.75
+    m_Bias: 0.4
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294966527
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &100018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400014}
+  - component: {fileID: 10800004}
+  m_Layer: 0
+  m_Name: MoonLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400020}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &10800004
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100018}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 1}
+  m_Intensity: 0.0000015292511
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294966527
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &100020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400020}
+  - component: {fileID: 3300004}
+  - component: {fileID: 13500002}
+  - component: {fileID: 2300004}
+  m_Layer: 8
+  m_Name: MoonBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100020}
+  m_LocalRotation: {x: 0.028848566, y: -0.9948952, z: -0.09225944, w: 0.028973846}
+  m_LocalPosition: {x: -570, y: -1380, z: 5744.6694}
+  m_LocalScale: {x: 584, y: 584, z: 584}
+  m_Children:
+  - {fileID: 400014}
+  m_Father: {fileID: 400028}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3300004
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100020}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &13500002
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2300004
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100020}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 20c1d21d933205a4496e6e4c7f34b87f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &100024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400024}
+  m_Layer: 0
+  m_Name: '[Character]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 62.676235, y: 10006, z: 107.30596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400008}
+  m_Father: {fileID: 400030}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400028}
+  m_Layer: 0
+  m_Name: 0 Sun System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100026}
+  m_LocalRotation: {x: 0.99426097, y: -0.0054279473, z: 0.08698662, w: 0.062041182}
+  m_LocalPosition: {x: 676.7367, y: 10414.368, z: 1678.4932}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400020}
+  - {fileID: 400018}
+  - {fileID: 400016}
+  m_Father: {fileID: 400030}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400026}
+  - component: {fileID: 18200000}
+  m_Layer: 0
+  m_Name: 0_WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100028}
+  m_LocalRotation: {x: -0, y: 0.59318334, z: -0, w: 0.8050675}
+  m_LocalPosition: {x: 16.080675, y: 10022.141, z: 143.16774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400030}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!182 &18200000
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 1
+  m_WindTurbulence: -0.2
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
+--- !u!1 &100030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400030}
+  - component: {fileID: 11400012}
+  m_Layer: 0
+  m_Name: SkyMaster Earth VOLUME CLOUDS v.1.5 MOBILE SKYBOX ONLY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400028}
+  - {fileID: 400026}
+  - {fileID: 400024}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4fedf056c8cb24aa4e48d0684e2013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instaChangeSkyColor: 0
+  instaKillParticles: 0
+  volumeClouds: {fileID: 0}
+  fogMode: 3
+  disableSunAtNight: 0
+  gradAffectsFog: 1
+  White_cutoffOffset: 5
+  VolShaderClouds: {fileID: 0}
+  VolShaderCloudsH: {fileID: 0}
+  SunFollowHero: 0
+  VolLightingH: {fileID: 0}
+  VolLightingDefH: {fileID: 0}
+  WeatherSeverity: 10
+  Time_zone: 0
+  MaxSunElevation: 0
+  gradSkyColor: {r: 0, g: 0, b: 0, a: 0}
+  calcColorTime: 0.91249996
+  UseGradients: 0
+  SkyColorGrad:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  SkyTintGrad:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  FogColorPow: 1.7
+  FogWaterPow: 1.4
+  FexposureC:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  FscaleDiffC:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.001
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.001
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 0.001
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.001
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  FSunGC:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.95
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.99
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 0.99
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.95
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  FSunringC:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  VolCloudGradients: 0
+  VolCloudLitGrad:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  VolCloudShadGrad:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  VolCloudFogGrad:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  VolCloudTransp: 0.7
+  gradCloudLitColor: {r: 0, g: 0, b: 0, a: 0}
+  gradCloudShadeColor: {r: 0, g: 0, b: 0, a: 0}
+  gradCloudFogColor: {r: 0, g: 0, b: 0, a: 0}
+  VcloudSunIntensity: 0
+  VcloudLightDiff: 0
+  VcloudFog: 0
+  IntensityDiff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.4
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.374
+      value: 0.293
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6
+      value: 0.2766
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.757
+      value: 0.278
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.798
+      value: 0.2713
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8495
+      value: 0.2752
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.887
+      value: 0.249
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.944
+      value: 0.28
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.4
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  IntensityFog:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.75
+      value: 10
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.883
+      value: 10.91
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  IntensitySun:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.186
+      value: 0.148
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.71
+      value: 0.13
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.84
+      value: 0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9
+      value: 0.13
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Lerp_sky_rot: 0
+  LatLonMoonPos: 0
+  AutoMoonLighting: 0
+  MoonCenterObj: {fileID: 0}
+  StarsFollowMoon: 0
+  AutoMoonFade: 0
+  MoonColor: {r: 0.9, g: 0.9, b: 0.9, a: 0.9}
+  MoonAmbientColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  MinMaxEclMoonTransp: {x: 0.2, y: 0.9, z: 0.1}
+  MoonSunLight: 0.02
+  MoonCoverage: 0.377
+  MoonSize: 1
+  StarsMaterial: {fileID: 0}
+  StarsColor: {r: 0.9, g: 0.9, b: 0.9, a: 0.9}
+  MinMaxStarsTransp: {x: 0.5, y: 1}
+  StarsIntensity: 1.4
+  MoonPlaneRot: 0
+  onEclipse: 0
+  DawnAppearSpeed: 1
+  StarsPFadeSpeed: 0.5
+  StarsPMaxGlow: 0.8
+  AutoSunPosition: 0
+  RotateNorth: 0
+  Latitude: 15
+  Longitude: 45
+  NightTimeMax: 22.4
+  NightAngleMax: 0
+  SkyColorationOffset: 0
+  divideSnowTerrain: 14
+  VFogsPerVWeather: 
+  AmplifyWind: 1
+  WorldScale: 20
+  prevWorldScale: 20
+  MoonPhases: 0
+  max_moon_intensity: 0.25
+  MoonPhasesMat: {fileID: 0}
+  ScreenRainDrops: 0
+  RainDropsPlane: {fileID: 0}
+  ScreenRainDropsMat: {fileID: 0}
+  ScreenFreezeFX: 0
+  FreezeInwards: 0
+  MaxDropSpeed: 6
+  MaxWater: 1
+  MaxRefract: 4.5
+  FreezeSpeed: 0.2
+  water: {fileID: 0}
+  RainDistAboveHero: 10
+  SunSystem: {fileID: 100026}
+  currentWeather:
+    SkyManager: {fileID: 0}
+    currentState: 0
+    Season: 0
+    FadedOut: 0
+    FadingOut: 0
+    StartTime: 0
+    FadeInTime: 10
+    seed: 0
+    FadeOutTime: 10
+    state_start_time: 0
+    CloudDomeL1Mat: {fileID: 0}
+    CloudDomeL2Mat: {fileID: 0}
+    SnowMat: {fileID: 0}
+    SnowMatTerrain: {fileID: 0}
+    windMode: 0
+    SnowParticle: []
+    RainParticle: []
+    RefractRainParticle: []
+    RainParticleRate: 
+    RainParticleMax: 
+    RainParticleReset: 
+    RainTransp: []
+    SnowParticleRate: 
+    SnowParticleMax: 
+    SnowParticleReset: 
+    SnowTransp: []
+    ParticleClouds: []
+    CloudParticleRate: 
+    CloudParticleMax: 
+    CloudParticleReset: 
+    CloudTranspMax: []
+    VolumeCloud: {fileID: 0}
+    VolumeScript: {fileID: 0}
+    Snow: 0
+    SnowCoverageVariable: 
+    Rain: 0
+    Refractive_Rain: 0
+    Volume_Rain: 0
+    has_fog: 0
+    has_volume_fog: 0
+    volume_fog_peset: 0
+    prevSeverity: 0
+  prevWeather:
+    SkyManager: {fileID: 0}
+    currentState: 0
+    Season: 0
+    FadedOut: 0
+    FadingOut: 0
+    StartTime: 0
+    FadeInTime: 10
+    seed: 0
+    FadeOutTime: 10
+    state_start_time: 0
+    CloudDomeL1Mat: {fileID: 0}
+    CloudDomeL2Mat: {fileID: 0}
+    SnowMat: {fileID: 0}
+    SnowMatTerrain: {fileID: 0}
+    windMode: 0
+    SnowParticle: []
+    RainParticle: []
+    RefractRainParticle: []
+    RainParticleRate: 
+    RainParticleMax: 
+    RainParticleReset: 
+    RainTransp: []
+    SnowParticleRate: 
+    SnowParticleMax: 
+    SnowParticleReset: 
+    SnowTransp: []
+    ParticleClouds: []
+    CloudParticleRate: 
+    CloudParticleMax: 
+    CloudParticleReset: 
+    CloudTranspMax: []
+    VolumeCloud: {fileID: 0}
+    VolumeScript: {fileID: 0}
+    Snow: 0
+    SnowCoverageVariable: 
+    Rain: 0
+    Refractive_Rain: 0
+    Volume_Rain: 0
+    has_fog: 0
+    has_volume_fog: 0
+    volume_fog_peset: 0
+    prevSeverity: 0
+  currentWeatherName: 0
+  windZone: {fileID: 0}
+  WeatherEvents: []
+  VolCloudsHorScale: 1000
+  VolCloudHeight: 650
+  VCloudCoverFac: 1
+  VCloudSizeFac: 1
+  VCloudCSizeFac: 1
+  VCloudXZOffset: {x: 0, y: 0}
+  WindBasedOffsetFactor: 1
+  VCloudCenter: {fileID: 0}
+  VCloudCustomSize: 0
+  DefinePlanetScale: 0
+  PlanetScale: 10000
+  MapCenter: {fileID: 0}
+  SkyDomeSystem: {fileID: 0}
+  CloudDomeL1: {fileID: 0}
+  CloudDomeL2: {fileID: 0}
+  Dusk_L1_dome_color: {r: 0.9019608, g: 0.83137256, b: 0.8862745, a: 0.68235296}
+  Dusk_L2_dome_color: {r: 0.3529412, g: 0.21176471, b: 0.10980392, a: 0.68235296}
+  Dawn_L1_dome_color: {r: 0.98039216, g: 0.74509805, b: 0.6666667, a: 0.78431374}
+  Dawn_L2_dome_color: {r: 0.39215687, g: 0.019607844, b: 0.019607844, a: 0.78431374}
+  Day_L1_dome_color: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
+  Day_L2_dome_color: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 0.72156864}
+  Night_L1_dome_color: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 1}
+  Night_L2_dome_color: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 0.72156864}
+  Dark_storm_L2CA: {r: 0.19607843, g: 0.15686275, b: 0.15686275, a: 0.8392157}
+  StarDome: {fileID: 0}
+  CloudDomeL1Mat: {fileID: 0}
+  CloudDomeL2Mat: {fileID: 0}
+  L1CloudCoverOffset: 0
+  L1CloudDensOffset: 0
+  L1CloudSize: 1
+  L1Ambience: 1
+  L12SpeedOffset: 1
+  SnowMat: {fileID: 0}
+  SnowMatTerrain: {fileID: 0}
+  SnowCoverage: 0
+  SnowCoverageTerrain: 0
+  SnowCoverageRate: 0.1
+  SnowTerrainRate: 0.0001
+  SnowTerrRateFactor: 1
+  MaxSnowCoverage: 1
+  SnowCoverageVariable: _SnowCoverage
+  HeavyStormVolumeClouds: {fileID: 0}
+  DustyStormVolumeClouds: {fileID: 0}
+  DayClearVolumeClouds: {fileID: 0}
+  SnowStormVolumeClouds: {fileID: 0}
+  SnowVolumeClouds: {fileID: 0}
+  RainStormVolumeClouds: {fileID: 0}
+  RainVolumeClouds: {fileID: 0}
+  PinkVolumeClouds: {fileID: 0}
+  LightningVolumeClouds: {fileID: 0}
+  Max_sun_intensity: 0.67
+  Min_sun_intensity: 0.01
+  To_max_intensity_speed: 0.5
+  To_min_intensity_speed: 1.5
+  Ortho_cam: 0
+  Ortho_factor: -0.46
+  Shift_dawn: 0
+  Rot_Sun_X: 0
+  Rot_Sun_Y: 170
+  Rot_Sun_Z: 180
+  Moon_glow: 0.03
+  Horizon_adj: 110
+  HorizonY: -60
+  GroundColor: {r: 0, g: 0, b: 0, a: 1}
+  Unity5: 0
+  Mobile: 0
+  Volume_fog_max_part: 150
+  Snow_cloud_max_part: 1000
+  Lightning_cloud_max_part: 1000
+  Real_cloud_max_part: 400
+  Storm_cloud_max_part: 100
+  Flat_cloud_max_part: 700
+  Refract_Rain_max_part: 300
+  Snow_max_part: 1200
+  SunObj: {fileID: 100012}
+  SunObj2: {fileID: 0}
+  DualSunsFactors: {x: 0.3, y: 0.3, z: 18}
+  alter_sun: 0
+  MoonObj: {fileID: 100020}
+  Hero: {fileID: 400008}
+  Tag_based_player: 0
+  Player_tag: Player
+  Weather: 0
+  On_demand: 0
+  skyMat: {fileID: 2100000, guid: ef04eca183bef634a923b79478f412ff, type: 2}
+  skyboxMat: {fileID: 2100000, guid: a00d82edab8e14f448b47fe8c65f7703, type: 2}
+  cloud_upMaterial: {fileID: 2100000, guid: 5a99c75a05618f44b9d382ff4e1554a9, type: 2}
+  cloud_downMaterial: {fileID: 2100000, guid: 0922b13d3cfc77d41a22bad0791c289a, type: 2}
+  flat_cloud_upMaterial: {fileID: 2100000, guid: 6eff681cc5a6c0b4eade96bbb73dae62,
+    type: 2}
+  flat_cloud_downMaterial: {fileID: 2100000, guid: b7644b01e9b9ad840964998e30e81c99,
+    type: 2}
+  cloud_dome_downMaterial: {fileID: 2100000, guid: 7ff5d7eaf30ace3409920d1961889542,
+    type: 2}
+  star_dome_Material: {fileID: 2100000, guid: 169494ab625021441b9ce5175fa2ae4c, type: 2}
+  real_cloud_upMaterial: {fileID: 2100000, guid: 63e07c7d5002a9843ab8fb3a258c2846,
+    type: 2}
+  real_cloud_downMaterial: {fileID: 2100000, guid: 0626c0850aa9b5c4990ff919ac7bf168,
+    type: 2}
+  Surround_Clouds_Mat: {fileID: 2100000, guid: 4d1b75e79328c5544a25ec66349e67a1, type: 2}
+  Sun_Ray_Cloud: {fileID: 0}
+  Upper_Dynamic_Cloud: {fileID: 0}
+  Lower_Dynamic_Cloud: {fileID: 0}
+  Upper_Cloud_Bed: {fileID: 0}
+  Lower_Cloud_Bed: {fileID: 0}
+  Upper_Cloud_Real: {fileID: 0}
+  Lower_Cloud_Real: {fileID: 0}
+  Upper_Static_Cloud: {fileID: 0}
+  Lower_Static_Cloud: {fileID: 0}
+  Cloud_Dome: {fileID: 0}
+  Surround_Clouds: {fileID: 0}
+  Surround_Clouds_Heavy: {fileID: 0}
+  SnowStorm_OBJ: {fileID: 0}
+  SnowStorm: 0
+  FallingLeaves_OBJ: []
+  Butterfly_OBJ: {fileID: 0}
+  Tornado_OBJs: []
+  Butterfly3D_OBJ: []
+  Ice_Spread_OBJ: {fileID: 0}
+  Ice_System_OBJ: {fileID: 0}
+  Lightning_System_OBJ: {fileID: 0}
+  Lightning_OBJ: {fileID: 0}
+  Star_particles_OBJ: {fileID: 0}
+  Volcano_OBJ: []
+  VolumeFog_OBJ: {fileID: 0}
+  Rain_Heavy: {fileID: 0}
+  Rain_Mild: {fileID: 0}
+  Use_fog: 0
+  VolumeRain_Heavy: {fileID: 0}
+  VolumeRain_Mild: {fileID: 0}
+  RefractRain_Heavy: {fileID: 0}
+  RefractRain_Mild: {fileID: 0}
+  Fog_local: 1
+  Snow_local: 1
+  Mild_rain_local: 1
+  Heavy_rain_local: 1
+  Butterflies_local: 1
+  m_fExposure: 2.3293812
+  m_fWaveLength: {x: 0.4286, y: 0.5, z: 0.8}
+  m_ESun: 24.093128
+  m_Kr: 0.0037326869
+  m_Km: 0.0044
+  m_g: -0.943123
+  scale_dif: 0.06
+  AltScale: 0
+  OuterRadiusScaleOverInner: 1
+  m_fSamples: 2.0953372
+  m_fRayleighScaleDepth: 0.52
+  m_Coloration: 0.110441215
+  m_TintColor: {r: 0.1609457, g: 0.04693332, b: 0.08224537, a: 1}
+  USE_ORK: 0
+  USE_SKYCUBE: 0
+  USE_SKYBOX: 0
+  Terrain_controller: {fileID: 0}
+  Mesh_Terrain_controller: {fileID: 0}
+  Mesh_terrain: {fileID: 0}
+  Unity_terrain: {fileID: 0}
+  LegacySeasonalFX: 0
+  Seasonal_change_auto: 0
+  Season: 1
+  Seasonal: 0
+  Seasonal_prev: 0
+  Horizontal_factor: 0
+  Horizontal_factor_prev: 0
+  Sun_ring_factor: 0
+  Sun_halo_factor: 0
+  Sun_eclipse_factor: 0
+  Glob_scale: 1
+  Fog_Density_Speed: 0.5
+  Fog_Density_Mult: 1
+  Autumn_fog_day: {r: 0.4, g: 0.314, b: 0.4, a: 1}
+  Autumn_fog_dusk: {r: 0.4, g: 0.314, b: 0.4, a: 1}
+  Autumn_fog_day_density: 0.01
+  Autumn_fog_dusk_density: 0.02
+  Autumn_fog_night: {r: 0.04, g: 0.0314, b: 0.04, a: 1}
+  Autumn_fog_night_density: 0.01
+  Winter_fog_day: {r: 0.23529412, g: 0.27450982, b: 0.29411766, a: 1}
+  Winter_fog_dusk: {r: 0.45, g: 0.3514, b: 0.45, a: 1}
+  Winter_fog_day_density: 0.02
+  Winter_fog_dusk_density: 0.03
+  Winter_fog_night: {r: 0.045, g: 0.03514, b: 0.045, a: 1}
+  Winter_fog_night_density: 0.02
+  Summer_fog_day: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  Summer_fog_dusk: {r: 0.2, g: 0.1, b: 0.2, a: 1}
+  Summer_fog_day_density: 0.01
+  Summer_fog_dusk_density: 0.02
+  Summer_fog_night: {r: 0.02, g: 0.01, b: 0.02, a: 1}
+  Summer_fog_night_density: 0.01
+  Spring_fog_day: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  Spring_fog_dusk: {r: 0.1, g: 0.06, b: 0.1, a: 1}
+  Spring_fog_day_density: 0.001
+  Spring_fog_dusk_density: 0.002
+  Spring_fog_night: {r: 0.01, g: 0.06, b: 0.01, a: 1}
+  Spring_fog_night_density: 0.001
+  Tree_Summer_Col: {r: 1, g: 0.69, b: 0.035, a: 1}
+  Terrain_Summer_Col: {r: 0.11, g: 0.12, b: 0.015, a: 1}
+  Grass_Summer_Col: {r: 1, g: 0.71, b: 0.004, a: 1}
+  Tree_Spring_Col: {r: 0.52, g: 0.773, b: 0.27, a: 1}
+  Terrain_Spring_Col: {r: 0.17, g: 0.247, b: 0, a: 1}
+  Grass_Spring_Col: {r: 0.243, g: 0.27, b: 0.157, a: 1}
+  Tree_Winter_Col: {r: 0.028, g: 0.028, b: 0.028, a: 1}
+  Terrain_Winter_Col: {r: 0.678, g: 0.678, b: 0.678, a: 1}
+  Grass_Winter_Col: {r: 0.028, g: 0.028, b: 0.028, a: 1}
+  Tree_Autumn_Col: {r: 0.866, g: 0.03, b: 0.105, a: 1}
+  Terrain_Autumn_Col: {r: 0.27, g: 0.055, b: 0.04, a: 1}
+  Grass_Autumn_Col: {r: 0.63, g: 0.055, b: 0.004, a: 1}
+  Dusk_cloud_color: {r: 1, g: 0.4, b: 0.2, a: 0.5}
+  Dusk_real_cloud_col_dn: {r: 1, g: 0.61, b: 0.55, a: 0.17}
+  Dusk_real_cloud_col_up: {r: 0.855, g: 0.384, b: 0.384, a: 0.192}
+  Dusk_surround_cloud_col: {r: 0.921, g: 0.47, b: 0.57, a: 0.51}
+  Night_surround_cloud_col: {r: 0.494, g: 0.533, b: 1, a: 0}
+  Dusk_cloud_dome_color: {r: 1, g: 0.7, b: 0.596, a: 0.5}
+  Night_Color: {r: 0, g: 0, b: 0, a: 0.1}
+  Night_deep_Color: {r: 0, g: 0, b: 0, a: 0.05}
+  Night_black_Color: {r: 0, g: 0, b: 0, a: 0}
+  Night_lum_Color: {r: 0.05, g: 0.05, b: 0.05, a: 0.7}
+  Storm_cloud_Color: {r: 0.1, g: 0.1, b: 0.1, a: 0.5}
+  Day_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  Day_Sun_Color: {r: 0.933, g: 0.933, b: 0.933, a: 1}
+  Day_Ambient_Color: {r: 0.41176468, g: 0.41176468, b: 0.41176468, a: 1}
+  Day_Tint_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  Day_surround_cloud_col: {r: 0.11, g: 0.1, b: 0.1, a: 0.6}
+  Dusk_Sun_Color: {r: 0.933, g: 0.596, b: 0.443, a: 1}
+  Dusk_Ambient_Color: {r: 0.33088237, g: 0.30692193, b: 0.31009316, a: 0.89411765}
+  Dusk_Tint_Color: {r: 0.386, g: 0, b: 0, a: 0}
+  Dawn_Sun_Color: {r: 0.933, g: 0.933, b: 0.933, a: 1}
+  Dawn_Ambient_Color: {r: 0.33088237, g: 0.2955122, b: 0.2955122, a: 1}
+  Dawn_Tint_Color: {r: 0.2, g: 0.05, b: 0.1, a: 0}
+  Night_Sun_Color: {r: 0.81, g: 0.81, b: 0.81, a: 1}
+  Night_Ambient_Color: {r: -0.014705896, g: -0.014705896, b: -0.014705896, a: 0}
+  Night_Tint_Color: {r: 0.014705896, g: 0.014705896, b: 0.014705896, a: 0}
+  Cam_follow_factor: 0
+  Cam_offset: {x: 0, y: 0, z: 0}
+  SunTarget: {fileID: 100010}
+  Current_Time: 21.9
+  Current_Day: 38
+  Current_Month: 12
+  days_per_month: 2
+  Auto_Cycle_Sky: 1
+  SUN_LIGHT: {fileID: 100016}
+  SUPPORT_LIGHT: {fileID: 100014}
+  MOON_LIGHT: {fileID: 100018}
+  SPEED: 1
+  Preset: 0
+  stopRainIfUnderWater: 0
+  Test_Cubemap: {fileID: 0}
+  CUBE_Mat: {fileID: 2100000, guid: 78c4fc2e729de44448725664c5de3463, type: 2}
+  SkyboxLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  ReflectSkybox: 1
+  ReflectEvery: 0.4
+  AssignCubeMapMats: []
+  ReflectCamfarClip: 6700
+  updateSkyAmbient: 0
+  AmbientUpdateEvery: 5
+  AmbientIntensity: 1.3
+  Update_mat_every: 0.1
+  LimitSunUpdateRate: 0
+  Update_sun_every: 0.01

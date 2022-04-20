@@ -1,0 +1,280 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &198994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 470436}
+  - component: {fileID: 2044190}
+  - component: {fileID: 11415582}
+  m_Layer: 0
+  m_Name: VOLUME FOG GRADIENT HOLDER PREFAB - Preset 12 - Snow v3.2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &470436
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.684425, y: 330.8724, z: 387.47757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2044190
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198994}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!114 &11415582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d26261b6d05a9f4daf3edd3543ecdbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFog: 1
+  useRadialDistance: 1
+  heightFog: 1
+  height: 721
+  heightDensity: 0.25
+  startDistance: 1
+  DistGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0.9647059, g: 0.91764706, b: 0.91764706, a: 1}
+    key2: {r: 0.9372549, g: 0.8509804, b: 0.8509804, a: 0}
+    key3: {r: 0.9137255, g: 0.79607844, b: 0.79607844, a: 0}
+    key4: {r: 0.8901961, g: 0.7372549, b: 0.7372549, a: 0}
+    key5: {r: 0.8627451, g: 0.6666667, b: 0.6666667, a: 0}
+    key6: {r: 0.83137256, g: 0.5921569, b: 0.5921569, a: 0}
+    key7: {r: 0.78039217, g: 0.4509804, b: 0.4509804, a: 0}
+    ctime0: 0
+    ctime1: 9696
+    ctime2: 17464
+    ctime3: 24181
+    ctime4: 31249
+    ctime5: 39660
+    ctime6: 48596
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  GradientBounds: {x: 0, y: 20900}
+  luminance: 1
+  lumFac: 0.2
+  ScatterFac: 60
+  TurbFac: 3.7
+  HorizFac: -14.7
+  turbidity: 14111
+  reileigh: 411
+  mieCoefficient: 0.7
+  mieDirectionalG: 1.24
+  bias: 0.05
+  contrast: 1.91
+  Sun: {fileID: 0}
+  FogSky: 1
+  TintColor: {x: 68, y: 562, z: 345}
+  ClearSkyFac: 9
+  fogShader: {fileID: 4800000, guid: f4b1c12dd38ff25489cf85d9574882e0, type: 3}
+  SkyManager: {fileID: 0}
+  gradientResolution: 256
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key2.rgba
+      value: 14277103
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime3
+      value: 24181
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key3.rgba
+      value: 13356009
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime2
+      value: 17464
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key1.rgba
+      value: 4293585654
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime1
+      value: 9696
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key0.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.m_NumColorKeys
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: height
+      value: 721
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: heightDensity
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GradientBounds.y
+      value: 20900
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: luminance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lumFac
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ScatterFac
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TurbFac
+      value: 3.70000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HorizFac
+      value: -14.6999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reileigh
+      value: 411
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mieCoefficient
+      value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mieDirectionalG
+      value: 1.24000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bias
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: contrast
+      value: 1.90999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TintColor.x
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TintColor.y
+      value: 562
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ClearSkyFac
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key4.rgba
+      value: 12369123
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key5.rgba
+      value: 11184860
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime4
+      value: 31249
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key6.rgba
+      value: 9934804
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime5
+      value: 39660
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.key7.rgba
+      value: 7566279
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime6
+      value: 48596
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DistGradient.ctime7
+      value: 65535
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 198994}
+  m_IsPrefabParent: 1

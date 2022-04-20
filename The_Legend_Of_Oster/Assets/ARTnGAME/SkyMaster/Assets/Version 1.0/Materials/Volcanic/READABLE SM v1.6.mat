@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: READABLE SM v1.6
+  m_Shader: {fileID: 34, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Control:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 2800000, guid: 5e0c3993d7f506b45920659e7fd6332b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: bb5c2011d4659474dbf3755583ff79de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normals:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _Alpha: 0.25
+    - _BulgeScale: 0.2
+    - _BulgeShape: 5
+    - _CloudCover: 0.875
+    - _CloudDensity: 0.37499997
+    - _CloudSharpness: 0.99
+    - _Cutoff: 0.3
+    - _Divisions: 0.5639098
+    - _FogFar: 3
+    - _FogHeightFade: 0.83982146
+    - _FogMaxHeight: 0
+    - _FogMinHeight: -1
+    - _FogNear: 1
+    - _GlowIntensity: 1.2
+    - _Influence: 15
+    - _InvFade: 1
+    - _Outline: 0.005
+    - _Parallax: 0.02
+    - _Power: 0.5
+    - _ShadowStrength: 1
+    - _Shininess: 0.935814
+    - _TranslucencyViewDependency: 0.7
+    - _WaveHeight: 0.08
+    - _xSpeed: 1
+    - _ySpeed: 1
+    m_Colors:
+    - _Ambient: {r: 0.9485294, g: 0.8994676, b: 0.8994676, a: 0.7372549}
+    - _CloudSpeed: {r: 0.111, g: 0.01034, b: 4.12, a: -1.08}
+    - _Color: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0.31764707}
+    - _DiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmisColor: {r: 0.8455882, g: 0.841386, b: 0.8251775, a: 0.7764706}
+    - _Emission: {r: 0.057570703, g: 0.0463996, b: 0.07352942, a: 0.2509804}
+    - _FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _FresnelColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GlowColor: {r: 1, g: 0.2391481, b: 0.1102941, a: 1}
+    - _MainCol: {r: 1, g: 1, b: 1, a: 0.5}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.25, g: 0.23362069, b: 0.23362069, a: 0.89411765}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SunDir: {r: 3.52, g: -0.02, b: 0.85, a: 0}
+    - _TintColor: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 0.7372549}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
+--- !u!1002 &2100001
+EditorExtensionImpl:
+  serializedVersion: 6

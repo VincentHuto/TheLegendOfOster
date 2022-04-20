@@ -4,7 +4,6 @@ cloud shader variables for groups of clouds. The system requires a windzone to b
 referenced in the "WindZone" slot and a Directional Light to be referenced as sun in 
 the "Sun" slot of the script.
 
-TUTORIAL VIDEO: https://www.youtube.com/watch?v=RB_q95eVjvE
 
 CLOUD PLANES GROUP:
 Each cloud group consists of a collection of planes or domes stacked one on top

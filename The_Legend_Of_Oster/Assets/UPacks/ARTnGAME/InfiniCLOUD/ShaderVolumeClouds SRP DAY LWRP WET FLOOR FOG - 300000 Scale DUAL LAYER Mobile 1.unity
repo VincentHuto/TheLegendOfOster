@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6830,7 +6830,6 @@ GameObject:
   m_Component:
   - component: {fileID: 257025421}
   - component: {fileID: 257025420}
-  - component: {fileID: 257025422}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -6913,18 +6912,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 100.06, y: -385.6, z: 90}
---- !u!114 &257025422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257025419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &259617604
 GameObject:
   m_ObjectHideFlags: 0
@@ -34765,8 +34752,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1316396276}
   - component: {fileID: 1316396279}
-  - component: {fileID: 1316396278}
-  - component: {fileID: 1316396277}
   m_Layer: 0
   m_Name: End Light
   m_TagString: Untagged
@@ -34788,30 +34773,6 @@ Transform:
   m_Father: {fileID: 2033891189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1316396277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316396275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1316396278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316396275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1316396279
 Light:
   m_ObjectHideFlags: 0
@@ -57322,7 +57283,6 @@ GameObject:
   - component: {fileID: 2033891194}
   - component: {fileID: 2033891193}
   - component: {fileID: 2033891192}
-  - component: {fileID: 2033891191}
   - component: {fileID: 2033891190}
   m_Layer: 0
   m_Name: Lightning Emitter
@@ -57503,18 +57463,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &2033891191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033891188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21699cfb836ebe4191b1363b604cfe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &2033891192
 SphereCollider:
   m_ObjectHideFlags: 0

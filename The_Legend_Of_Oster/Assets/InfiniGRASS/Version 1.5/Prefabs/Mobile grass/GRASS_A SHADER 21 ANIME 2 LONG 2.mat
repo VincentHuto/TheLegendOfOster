@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GRASS_A SHADER 21 ANIME 2 LONG 2
   m_Shader: {fileID: 4800000, guid: fd1e13f642074de4fa19cad30b88dff1, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -67,6 +68,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - PixelSnap: 0
     - V_CW_Label_Albedo: 0
@@ -79,7 +81,7 @@ Material:
     - _BaseColorYShift: 1
     - _BaseLight: 0.35
     - _Blend: 0
-    - _BulgeScale: 0.2
+    - _BulgeScale: 0
     - _BulgeScale_copy: 1
     - _BulgeShape: 8.61
     - _BumpScale: 1
@@ -168,7 +170,7 @@ Material:
     - _ImageTexCoords9: {r: 0, g: 0, b: 0, a: 0}
     - _InstanceData: {r: 0, g: 0, b: 0, a: 0}
     - _InteractAmpFreqRad: {r: 1, g: 1, b: 1, a: 1}
-    - _InteractPos: {r: 123.27, g: 0.73, b: -8.68, a: 0}
+    - _InteractPos: {r: 92.1, g: 30.5, b: -94.23, a: 0}
     - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
     - _InteractSpeed: {r: -3e-45, g: 0, b: -3e-45, a: 0}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
@@ -191,3 +193,4 @@ Material:
     - _WaveAndDistance: {r: 12, g: 3.6, b: 1, a: 1}
     - _WaveControl1: {r: 1.01, g: 0, b: 0, a: 0}
     - _WavingTint: {r: 0.7, g: 0.6, b: 0.5, a: 0}
+  m_BuildTextureStacks: []

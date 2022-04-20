@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PLANET A 1
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorRamp:
+        m_Texture: {fileID: 2800000, guid: 4b8d081e9d114c7f1100f5ab44295342, type: 3}
+        m_Scale: {x: -2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: bf7b69418ab19044b9d3ec01c32c2ebf, type: 3}
+        m_Scale: {x: 0.2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0.2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Bump_strenght: 0
+    - HorizonY: -0.06
+    - Horizon_adj: 9.922778
+    - Motion_f: 16
+    - Out_color_f1: 2
+    - Out_color_f2: 1.58
+    - _BumpScale: 1
+    - _Coloration: 0
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissionScaleUI: 11.32
+    - _Glossiness: 0.157
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    - fCameraHeight: 0
+    - fCameraHeight2: 0
+    - fExposure: 1.6
+    - fInnerRadius: 10000
+    - fInnerRadius2: 100000000
+    - fKm4PI: 0.005026548
+    - fKmESun: 0.000664
+    - fKr4PI: 0.10694811
+    - fKrESun: 0.014127694
+    - fOuterRadius: 10250
+    - fOuterRadius2: 105062500
+    - fSamples: 0.02
+    - fScale: 0.004
+    - fScaleDepth: 0.06
+    - fScaleOverScaleDepth: 0.13333334
+    - g: -0.9990211
+    - g2: 0.9980432
+    m_Colors:
+    - GroundColor: {r: 0.17056286, g: 0.21022138, b: 0.22794116, a: 0.36862746}
+    - _Color: {r: 1, g: 0.6143774, b: 0.05862069, a: 1}
+    - _EmissionColor: {r: 11.32, g: 10.807385, b: 10.578344, a: 11.32}
+    - _EmissionColorUI: {r: 1, g: 0.954716, b: 0.93448275, a: 1}
+    - _Obliqueness: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0, g: 0, b: 0, a: 0}
+    - v3CameraPos: {r: -0.0000038146973, g: -9689.996, b: 3.708313, a: 0}
+    - v3InvWavelength: {r: 32.136818, g: 74.831474, b: 123.45677, a: 0}
+    - v3LightDir: {r: -0.14804147, g: 0.27562538, b: 0.949797, a: 0}
+    - v3LightDirMoon: {r: 0.29173028, g: 0.4311351, b: 0.8538243, a: 0}

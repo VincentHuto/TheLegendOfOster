@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: ceb24c20344e91b4fa9c311c24a9c7be
+timeCreated: 1476536644
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - VolCloudsPREFAB: {fileID: 122644, guid: ade685a98828a674797ab761d5d6bb1f, type: 2}
+  - VolLightingPREFAB: {fileID: 174520, guid: 83e515a481a1bb94e807f2398b2dafe6, type: 2}
+  - DepthCameraPREFAB: {fileID: 158716, guid: d930df873b94ddc43b28e619f4ee9e29, type: 2}
+  - snowMESH: {instanceID: 0}
+  - ABOMB_Prefab: {fileID: 105948, guid: 0318b7b4e15dd0b41879d167bd185996, type: 2}
+  - ASTEROIDS_Prefab: {fileID: 185248, guid: acb198610f1b8cd448b26d04be441229, type: 2}
+  - FREEZE_EFFECT_Prefab: {fileID: 145012, guid: 7cc9f20de3ea4274eba1b71f3a31199e,
+      type: 2}
+  - AURORA_Prefab: {fileID: 104698, guid: 206ee11cb203ab548b03d11f97dd59fc, type: 2}
+  - CHAIN_LIGHTNING_Prefab: {fileID: 119242, guid: 0329fe38a49c0cc44bac6aaa9da53534,
+      type: 2}
+  - SAND_STORM_Prefab: {fileID: 133754, guid: c54b422e3adaf304bb82db3a653b6a4b, type: 2}
+  - VOLCANO_Prefab: {fileID: 198600, guid: c7531b2b045ea904db21852cf777bcdc, type: 2}
+  - SpecialFXOptA: {fileID: 2800000, guid: f84d9d3e399dc6249a04d5e5c812daa9, type: 3}
+  - SpecialFXOptB: {fileID: 2800000, guid: 9e6b552960509e74c8621e7d1609eae1, type: 3}
+  - SpecialFXOptC: {fileID: 2800000, guid: 9cdfa3e11a1e0d14182fe302ac389a07, type: 3}
+  - SpecialFXOptD: {fileID: 2800000, guid: ca636e38a6a01f54680b9c4424cff2bb, type: 3}
+  - SpecialFXOptE: {fileID: 2800000, guid: cf2683bdf49f630459b9b64afaf31078, type: 3}
+  - SpecialFXOptF: {fileID: 2800000, guid: 9d5867d264454184dab687df560ba4a1, type: 3}
+  - SpecialFXOptG: {fileID: 2800000, guid: 0df04e882cd18504aaab7d7259c53978, type: 3}
+  - InfiniGRASS_ICON: {fileID: 2800000, guid: 032c280d45374d34795a565873788b4e, type: 3}
+  - WaterOptA: {fileID: 2800000, guid: 7a45d4cbd3cdbb94b842230c16915164, type: 3}
+  - WaterOptB: {fileID: 2800000, guid: c3e7ac6932a41044f927b4b01657ccb3, type: 3}
+  - WaterOptC: {fileID: 2800000, guid: f066596b90bc1f64aa38daacc46f6485, type: 3}
+  - WaterOptD: {fileID: 2800000, guid: 9c7617ea03d10ad47a0ae4415d154194, type: 3}
+  - WaterOptE: {fileID: 2800000, guid: 912f5d91d3f836448a508cde1335984f, type: 3}
+  - WaterOptF: {fileID: 2800000, guid: 4fbc40be7c5f2ab4c99cb09d694fc834, type: 3}
+  - WaterOptG: {fileID: 2800000, guid: effd6a8f16b59ab42bd4ae063d7c6cd1, type: 3}
+  - WaterOptH: {fileID: 2800000, guid: af4ed8a4f1508f446a570a3b49d6ffca, type: 3}
+  - WaterOptI: {fileID: 2800000, guid: e19f8d8ca971f7c42bdf09e45ab532ad, type: 3}
+  - WaterOptJ: {fileID: 2800000, guid: c024cf77be8b844489d5c77040368b49, type: 3}
+  - UnderWaterOptA: {fileID: 2800000, guid: 2d687a4344a30914da65a744909e2c36, type: 3}
+  - UnderWaterOptB: {fileID: 2800000, guid: 899033183b06c8040964260c4890fe34, type: 3}
+  - SkyOptA: {fileID: 2800000, guid: 2e0793802ed740b47bf7603accda53a1, type: 3}
+  - SkyOptB: {fileID: 2800000, guid: c3bd7bee568dd464da08d86568c1517c, type: 3}
+  - SkyOptC: {fileID: 2800000, guid: e87fd4722e35ac943a3358ba1618292b, type: 3}
+  - MoonPhasesMat: {fileID: 2100000, guid: e85950a6912f34347b356a00c44dbe50, type: 2}
+  - ScreenRainDropsMat: {fileID: 2100000, guid: 39e7bde13f1c94b44800a6a4827268eb,
+      type: 2}
+  - RainDropsPlane: {fileID: 195810, guid: c6755575a661a00419f936e7c402c67a, type: 2}
+  - StarsMat: {fileID: 2100000, guid: 2166afc585a464742aef8bf7810c73e7, type: 2}
+  - WaterPREFAB: {fileID: 136542, guid: 4c07ea87b8199fb4a8df48240e0fef72, type: 2}
+  - WaterSamplerPREFAB: {fileID: 131346, guid: 52ff0544631916446bf6261341c229ee, type: 2}
+  - WaterTilePREFAB: {fileID: 104314, guid: 7ecdc8c9438bddc4281777a62d72a11f, type: 2}
+  - WaterTileLargePREFAB: {fileID: 110428, guid: a361871fd3711d4498e92a3d63922033,
+      type: 2}
+  - WaterMat: {fileID: 2100000, guid: 79b0dd9e039019a479f220620e818c61, type: 2}
+  - CausticsPREFAB: {fileID: 118862, guid: ab835db7d89a93848b6e37586f0a2c01, type: 2}
+  - SunSystemPREFAB: {fileID: 154346, guid: 7bc84efdd43ada84faadea490bf1fda7, type: 2}
+  - MapCenter: {instanceID: 0}
+  - MiddleTerrain: {instanceID: 0}
+  - SkyDomePREFAB: {fileID: 147150, guid: 397b6e342a5980c42b767dd393d7916c, type: 2}
+  - skyMat: {fileID: 2100000, guid: ef04eca183bef634a923b79478f412ff, type: 2}
+  - skyboxMat: {fileID: 2100000, guid: 09b68cc8b67e72147b48261598834bad, type: 2}
+  - skyMatDUAL_SUN: {fileID: 2100000, guid: 79c3cdebe6d85f745a1bbb8be536fb5a, type: 2}
+  - SampleTerrain: {fileID: 109468, guid: e8747f174318bdc4f90e8db59a17566c, type: 2}
+  - mesh_terrain: {instanceID: 0}
+  - UnityTerrain: {instanceID: 0}
+  - UnityTerrainSnowMat: {fileID: 2100000, guid: e85b421730ddec74cafba6b267442c9d,
+      type: 2}
+  - MeshTerrainSnowMat: {fileID: 2100000, guid: 29fc5216daee4c442808ad48083fa0b2,
+      type: 2}
+  - SpeedTreeSnowMat: {instanceID: 0}
+  - UnityTreePrefab: {fileID: 100000, guid: 1440c51106bb3c54fbd78dabb9ee8d85, type: 2}
+  - FogPresetGradient1_5: {fileID: 182836, guid: c477612f61a04bc42976d4dcc33ea475,
+      type: 2}
+  - FogPresetGradient6: {fileID: 198994, guid: 12a74d1a8db0b074bbac99ee7a0e6f8b, type: 2}
+  - FogPresetGradient7: {fileID: 198994, guid: 82a89cda99050354f94ef02c188cd398, type: 2}
+  - FogPresetGradient8: {fileID: 198994, guid: 494f8eff0ce956a4f98bdd9ac59e5240, type: 2}
+  - FogPresetGradient9: {fileID: 198994, guid: 5f46a0cacf4db9d4f8ad24a371c4badc, type: 2}
+  - FogPresetGradient10: {fileID: 198994, guid: 136a2800dd768774a9b6fb539b92a0b6,
+      type: 2}
+  - FogPresetGradient11: {fileID: 198994, guid: b838867f2aaac4647a8ed1e9b4d50f67,
+      type: 2}
+  - FogPresetGradient12: {fileID: 198994, guid: a49c8fcd9ca75d64bae79a765527cd7b,
+      type: 2}
+  - FogPresetGradient13: {fileID: 198994, guid: 20e88b96f9b2ce8499f371d0141036bc,
+      type: 2}
+  - FogPresetGradient14: {fileID: 198994, guid: 51a88163e5ebc8346849af4f073ae788,
+      type: 2}
+  - FogPresetGradient15: {fileID: 198994, guid: 22234078ae52a7b46a6e7472278ba8db,
+      type: 2}
+  - VSCLOUD_SETA_ICON: {fileID: 2800000, guid: 64f9ced5617f521448823a1149860db2, type: 3}
+  - VSCLOUD_SETB_ICON: {fileID: 2800000, guid: 34cb84166847a814190a90dc37127471, type: 3}
+  - VSCLOUD_SETC_ICON: {fileID: 2800000, guid: 2883812e82eb76d48b2c2c9c939826cb, type: 3}
+  - VSCLOUD_SETD_ICON: {fileID: 2800000, guid: c4b5dd47caf7f5c47b48a452511754d0, type: 3}
+  - VSCLOUD_SETE_ICON: {fileID: 2800000, guid: c160da97b14e0ea4e88424cb9cfa61e7, type: 3}
+  - VSCLOUDC_SETA_ICON: {fileID: 2800000, guid: f38ce4a74f6e36545acef1e68ad6580d,
+      type: 3}
+  - VSCLOUDC_SETB_ICON: {fileID: 2800000, guid: cba4d756a7a89c249b4c46e6113c0a18,
+      type: 3}
+  - VSCLOUDC_SETC_ICON: {fileID: 2800000, guid: b92c5e92fcd29294fb0d21dab7a0283c,
+      type: 3}
+  - VSCLOUDD_SETA_ICON: {fileID: 2800000, guid: 577abcdb5cc82534fa6f60696281a4ff,
+      type: 3}
+  - VSCLOUDD_SETB_ICON: {fileID: 2800000, guid: d05a618fb48c50446b1c804ef9bd8cd1,
+      type: 3}
+  - VSCLOUDD_SETC_ICON: {fileID: 2800000, guid: 66710f4b98802c342bc311e9db5fb328,
+      type: 3}
+  - VCLOUD_SETA_ICON: {fileID: 2800000, guid: 5fe98bb616e653d4a8e90db0555eb414, type: 3}
+  - HeavyStormVOLUME_CLOUD: {fileID: 173230, guid: 426c6493ea158704eb71076a7bd0e435,
+      type: 2}
+  - DustyStormVOLUME_CLOUD: {fileID: 119150, guid: 6647ad9ae7708fd4fadc5c745e86ff76,
+      type: 2}
+  - DayClearVOLUME_CLOUD: {fileID: 135854, guid: 04286fdc08d9d3143bc52a9e093ae822,
+      type: 2}
+  - SnowStormVOLUME_CLOUD: {instanceID: 0}
+  - SnowVOLUME_CLOUD: {instanceID: 0}
+  - RainStormVOLUME_CLOUD: {instanceID: 0}
+  - RainVOLUME_CLOUD: {instanceID: 0}
+  - PinkVOLUME_CLOUD: {instanceID: 0}
+  - LightningVOLUME_CLOUD: {instanceID: 0}
+  - VCLOUD_SETB_ICON: {fileID: 2800000, guid: 2b9ef92e4ece8d24eb37de16ef01c030, type: 3}
+  - HeavyStormVOLUME_CLOUD2: {fileID: 157036, guid: 1c4b580423c9d7b4bb72bf17aa015b6e,
+      type: 2}
+  - DustyStormVOLUME_CLOUD2: {instanceID: 0}
+  - DayClearVOLUME_CLOUD2: {fileID: 141946, guid: 82d9fd51e2b254d4d904c415ec3bbba9,
+      type: 2}
+  - SnowStormVOLUME_CLOUD2: {instanceID: 0}
+  - SnowVOLUME_CLOUD2: {instanceID: 0}
+  - RainStormVOLUME_CLOUD2: {instanceID: 0}
+  - RainVOLUME_CLOUD2: {instanceID: 0}
+  - PinkVOLUME_CLOUD2: {instanceID: 0}
+  - LightningVOLUME_CLOUD2: {instanceID: 0}
+  - VCLOUD_SETC_ICON: {fileID: 2800000, guid: a4c5915c401b2f9419b94051bb62ed4d, type: 3}
+  - HeavyStormVOLUME_CLOUD3: {fileID: 103976, guid: e8a0e214313fca34fa974d2bc8110139,
+      type: 2}
+  - DustyStormVOLUME_CLOUD3: {instanceID: 0}
+  - DayClearVOLUME_CLOUD3: {fileID: 153198, guid: 026ceb2f994677c42b8767e3dc44dda5,
+      type: 2}
+  - SnowStormVOLUME_CLOUD3: {instanceID: 0}
+  - SnowVOLUME_CLOUD3: {instanceID: 0}
+  - RainStormVOLUME_CLOUD3: {instanceID: 0}
+  - RainVOLUME_CLOUD3: {instanceID: 0}
+  - PinkVOLUME_CLOUD3: {instanceID: 0}
+  - LightningVOLUME_CLOUD3: {instanceID: 0}
+  - VCLOUD_SETD_ICON: {fileID: 2800000, guid: 67f073978924bb34ab8d09e06e52c595, type: 3}
+  - HeavyStormVOLUME_CLOUD4: {fileID: 133232, guid: 2f4f6234adca15546aa26a9d3d8b79a0,
+      type: 2}
+  - DustyStormVOLUME_CLOUD4: {instanceID: 0}
+  - DayClearVOLUME_CLOUD4: {fileID: 132416, guid: 5092b4459901b1545938b66b449035dd,
+      type: 2}
+  - SnowStormVOLUME_CLOUD4: {instanceID: 0}
+  - SnowVOLUME_CLOUD4: {instanceID: 0}
+  - RainStormVOLUME_CLOUD4: {instanceID: 0}
+  - RainVOLUME_CLOUD4: {instanceID: 0}
+  - PinkVOLUME_CLOUD4: {fileID: 137948, guid: 8df56518de4408a4487d1b0c1d1312d4, type: 2}
+  - LightningVOLUME_CLOUD4: {instanceID: 0}
+  - VolumeRain_Heavy: {fileID: 130370, guid: d027b82a59f710242a02671e4cee0a47, type: 2}
+  - VolumeRain_Mild: {fileID: 103270, guid: c2a9c51ddaca2f244a701b18f8e8f012, type: 2}
+  - RefractRain_Heavy: {fileID: 130928, guid: 013a6de57cfc52f449404a11a47ed8b5, type: 2}
+  - RefractRain_Mild: {fileID: 132944, guid: 109f1f40a5224c44eb696dbfda7df2a0, type: 2}
+  - Rain_Heavy: {fileID: 183734, guid: 506221d644a5ad34090ca633ce357255, type: 2}
+  - Rain_Mild: {fileID: 111640, guid: b6f1dc3959ff498478a406e9b65e71ca, type: 2}
+  - cloud_dome_downMaterial: {instanceID: 0}
+  - star_dome_Material: {instanceID: 0}
+  - cloud_upMaterial: {instanceID: 0}
+  - cloud_downMaterial: {instanceID: 0}
+  - flat_cloud_upMaterial: {instanceID: 0}
+  - flat_cloud_downMaterial: {instanceID: 0}
+  - real_cloud_upMaterial: {instanceID: 0}
+  - real_cloud_downMaterial: {instanceID: 0}
+  - Surround_Clouds_Mat: {instanceID: 0}
+  - Sun_Ray_CloudPREFAB: {fileID: 170298, guid: 6aec1bc5be27ff14782eaf6d1981bbe1,
+      type: 2}
+  - Cloud_DomePREFAB: {fileID: 102964, guid: cfe76b189f2273744a19e142f0454004, type: 2}
+  - Star_particlesPREFAB: {fileID: 169966, guid: d77f2cb3f700cbc439c01901c5c65471,
+      type: 2}
+  - Star_domePREFAB: {fileID: 106068, guid: bf067225fd225db49b9e5fd04196e562, type: 2}
+  - Cloud_Domev22PREFAB1: {fileID: 196236, guid: f9ae8a2d9437cc943970366542154256,
+      type: 2}
+  - Cloud_Domev22PREFAB2: {fileID: 178930, guid: bbdf56d64e3a60e4b94185b01ae2acb6,
+      type: 2}
+  - Upper_Dynamic_CloudPREFAB: {fileID: 118296, guid: 04878320cf4035a4296c297d4e67bcae,
+      type: 2}
+  - Lower_Dynamic_CloudPREFAB: {fileID: 128960, guid: 4dddb3157bfd0b6488a18bbbc061cd03,
+      type: 2}
+  - Upper_Cloud_BedPREFAB: {fileID: 151292, guid: 1d078705aca6f9e4f9704cd7cbad62f9,
+      type: 2}
+  - Lower_Cloud_BedPREFAB: {fileID: 124132, guid: e02272fd458154c4fa48186de2ce7396,
+      type: 2}
+  - Upper_Cloud_RealPREFAB: {fileID: 192486, guid: fbb27939ac8a84741a67ffceb59a385b,
+      type: 2}
+  - Lower_Cloud_RealPREFAB: {fileID: 113784, guid: 3cd57ed461bf5624b8c46e898af5ed68,
+      type: 2}
+  - Upper_Static_CloudPREFAB: {fileID: 105636, guid: db7c208135b70f3489e0c7951ec19770,
+      type: 2}
+  - Lower_Static_CloudPREFAB: {fileID: 105370, guid: 1dfde02b5da37c14ba8e8e7187208810,
+      type: 2}
+  - Surround_CloudsPREFAB: {fileID: 145404, guid: 8bf711e5128e18e48bfe4f1b9a960d66,
+      type: 2}
+  - Surround_Clouds_HeavyPREFAB: {fileID: 175212, guid: c544b864dbf2a114ab791ddd534e3b1d,
+      type: 2}
+  - SnowStormPREFAB: {fileID: 172264, guid: 17b576196fd9cbe499d3ce5a7c10be67, type: 2}
+  - FallingLeavesPREFAB: {fileID: 160626, guid: 84a1b05d92da1bc49a852354b9837192,
+      type: 2}
+  - ButterflyPREFAB: {fileID: 127994, guid: 9c357ba23d9f0794baeb9449d74fccac, type: 2}
+  - TornadoPREFAB: {fileID: 164190, guid: 1a3fc8c701b33e346b187bcc8afdeca7, type: 2}
+  - Butterfly3DPREFAB: {fileID: 175682, guid: 1a9d7855a929361428f0aa9ba7b91fde, type: 2}
+  - Ice_SpreadPREFAB: {fileID: 115084, guid: c85464a7f2dd63140b2faf54962bb789, type: 2}
+  - Ice_SystemPREFAB: {fileID: 159956, guid: 6893fdc1dfa0a8b469ec263d829d0698, type: 2}
+  - Lightning_SystemPREFAB: {fileID: 189030, guid: 004d03c3a556f1c41ae6943a5ef4b3b4,
+      type: 2}
+  - LightningPREFAB: {fileID: 189030, guid: 004d03c3a556f1c41ae6943a5ef4b3b4, type: 2}
+  - VolcanoPREFAB: {fileID: 128206, guid: 9e68dec92a23bf6448781f14853e0f72, type: 2}
+  - VolumeFogPREFAB: {fileID: 139178, guid: 333ace8d2bc3df348bb7954cf6d92474, type: 2}
+  - MainParticle: {instanceID: 0}
+  - MainIcon1: {fileID: 2800000, guid: f11f8d48a8f359c45a386d9a7e1f9e40, type: 3}
+  - MainIcon2: {fileID: 2800000, guid: 561f7e34655d1f94fa9f6a5fc9b6c189, type: 3}
+  - MainIcon3: {fileID: 2800000, guid: a2e48c0523bdd9641b375a250d02a05f, type: 3}
+  - MainIcon4: {fileID: 2800000, guid: 2757772b45a792e4487dd2bf6ba84e67, type: 3}
+  - MainIcon5: {fileID: 2800000, guid: ca0acc89785e15b45bd0ebff5065c480, type: 3}
+  - MainIcon6: {fileID: 2800000, guid: 7df2b1bf361513e408701e7f2f777cc4, type: 3}
+  - MainIcon7: {fileID: 2800000, guid: 0994b5ae0b451e046a168ff5b88778ca, type: 3}
+  - MainIcon8: {fileID: 2800000, guid: 638666a475287634fb3e3471967afc19, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

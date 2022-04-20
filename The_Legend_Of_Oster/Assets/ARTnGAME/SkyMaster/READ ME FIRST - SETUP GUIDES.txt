@@ -1,0 +1,200 @@
+---------- URP Beta quick instructions ----------
+
+Start by inserting the "UniversalRP-HighQuality" in Project Settings - Graphics - Scriptable Render Pipeline Settings slot. This will enable
+the pipeline where the required renderer features have been defined.
+
+The URP system includes a volume fog ("connectSunToVolumeFogURP"), sun shafts ("connectSunToSunShaftsURP") systems and three cloud types, one is shader based (InfiniCLOUD)
+and does not require any image effects or pipeline render features.
+
+The other is image effect based volume clouds in background, controlled by "connectSunToVolumeCloudsURP" script on camera.
+
+The other type is full volume with fly through and planet support, controlled by "connectSunToFullVolumeCloudsURP" script on camera. Note that this script also 
+includes the above cloud type in one script, and can choose between the two using the "CloudChoice" variable. This latest merged version does not yet support
+water reflections, so for water reflections use the "connectSunToVolumeCloudsURP" script.
+
+To get clouds working in other than demo scenes:
+
+Copy a desired effect from any demo camera (or copy camera whole). 
+
+Insert the scene directional light to the scripts (e.g. "connectSunToFullVolumeCloudsURP") from the scene 
+in the "sun" slot (and in "sun light" slot as well in full volume clouds script), also enable skybox on camera 
+when changing from background volume (0) to full volume (1) clouds, using the CloudChoice variable.
+
+Disable HDR for background volume clouds (HDR works with full volume fly through clouds)
+Use Linear color for default coloration.
+
+URP and HDRP versions are in Beta phase and further features and automation on setup are WIP.
+
+Please also refer to the following demo scene, which has all cloud types available and script (in "API EXAMPLES CONTROLLER" object) 
+with methods on how to control them in script.
+
+"Demo scene v5.1.0 MAIN DEMO and API EXAMPLE SCENE URP B 3"
+
+
+
+
+
+
+
+---------- STANDARD PIPELINE Instructions ----------
+
+For quick start, please refer to my tutorial videos in the following links:
+
+All tutorial videos:
+https://www.youtube.com/watch?v=EveE2IcXGeI&list=PLJQvoQM6t9Ge2ehO4N1kNq3jvHmVst_el
+
+The latest prefab is recommended for direct use (mainly for dekstop usage, refer to first video above).
+
+Drag the prefab named "SKY MASTER v4.2 Prefab - All systems & Volume Lighting LINEAR COLOR" in the scene
+after deleting the current directional light and camera. Then camera can be replaced by any other, as
+long as it is tagged as "MainCamera" and the one in the prefab is deleted.
+
+If there is a need to keep an existing main camera, then drag the "SKY MASTER v4.9 Prefab - Volume Clouds LINEAR COLOR - Automatic Setup"
+prefab in an existing scene and the system will auto configure all modules for this camera. 
+
+For mobile there is a dedicated scene, that will also cover all older mobile phones (SM2.0).
+Scene name is "SkyMaster 3 Mobile Water Demo with Sky v3.3" in "EXTRA SM DEMOS AND ASSETS" folder.
+
+Script reference and setup guides - manual can be downloaded from the following links:
+
+------------------ Main Setup Manual ---------------------
+https://drive.google.com/drive/folders/1o_DusjNj8O77vMY4aEbZFp1Z_15_3MV8?usp=sharing
+
+Photos based Manual: 
+https://drive.google.com/open?id=1qp3hkFWJVMntaEXGupOlgtV5FRa7OA1p
+
+Script reference: 
+https://drive.google.com/open?id=1tIpFnWzFOErDlVDLiZc99rK6qABhKPy9
+
+For any questions please contact me in my discord channel:
+https://discord.gg/X6fX6J5
+
+Or in my email:
+artengames@gmail.com
+
+
+Quick Tips:
+
+NOTE 1: Add Volumetric Gradient Fog from Camera FX ("Add Volumetric Fog" button) section BEFORE adding the new Volume Clouds (InfiniCLOUD) to camera and set it up, 
+when the step by step configuration is used.
+
+NOTE 2: Add the new Volumetric Clouds (InfiniCLOUD) to camera by inserting "InfiniCLOUD" component in the camera object. Press the buttons to setup. Use after the
+main Sky Master ULTIMATE system has been setup.
+
+NOTE 3: If game crashes (actual build of the game) in Unity 2018.2 and above, probably is a Legacy Paricle conponent left in the scene.
+Use the included converter in Assets -> Upgrade Legacy Particles, with the scene open to convert the Legacy to Shuriken and solve the issue. Also place 
+a material for Lightning before any conversionn, as a lightning line renderer must also be created for the case lightning particles existed in the scene. 
+"Lightning Mat 5" is the recommended material to use.
+
+NOTE 4: Volumetric light shadows work with 4 cascades in shadow settings in some Unity versions.
+
+NOTE 5: The system can be setup Step by step using the Configurator (SkyMaster script) or using the prefabs in the PREFABS folder
+Use the v3.4 prefabs for older systems and mobiles and the v4.2 with the new clouds for stronger systems. The new clouds are compatible
+with mobile as well (enable the WebGL option for that purpose and put the mobile factor to zero)
+
+NOTE 6: The demo scenes can be used to customize and create new prefabs, just drag all items inside the main prefab object and Apply them
+in inspector to get a new prefab.
+
+NOTE 7: You may use the WeatherRandomizerSKYMASTER and TimerSKYMASTER scripts, attach them to the skymaster object and trigger random 
+weather effects or set precision time. Those can be also used as base templates for scripting the system, they showcase how to change
+weather and time of day by setting up the proper variables.
+
+NOTE 8: Add a layer named "Background " before setting up blending of back layer in the new volume clouds (IndiniCLOUD).
+Before press "Setup Back Layer" button, after inserting the InfiniCLOUD script in the camera and after having pressed the first button
+to do the base cloud setup.
+
+NOTE 9: The folders "EXTRA SM DEMOS AND ASSETS" and "EXTRA DEMO ASSETS" from the Sky Master and GI Proxy folders may be deleted or not inserted in the
+project to get the Barebone version of Sky Master, to minimize space taken in the project.
+
+NOTE 10: Add the "Conductor" Tag in the project and in any item that would like to receive lightning in a storm.
+Add the "Flamer" and "Flammable" tags to use the special FX like propagating fire and ice.
+
+
+
+
+
+URP SPECIFIC NOTES:
+
+URP SETUP INSTRUCTIONS:
+
+The system has 4 Native URP modules, the Volumetric clouds with 3D Noise and fly through ("InfiniCLOUD_URP" folder), 
+the Volumetric clouds with 3D Noise ("InfiniCLOUD_URP" folder), the volumetric fog ("VolumeFogSRP" folder) 
+and the sun shafts ("SunShaftsSRP" folder). 
+
+The "InfiniCLOUD" folder contains the Volumetric clouds with 2D Noise system, that is implemented
+as a dome with the volumetric shader, thus is not using the native custom renderer feature to render the clouds and can be used with the 3D noise
+clouds or standalone as needed. Since the cloud dome is an object in the scene and not image effect, will appear in reflections by default.
+
+To use the URP Native modules:
+
+1. Add the sample "UniversalRP-HighQuality" pipeline from "URP Custom Renderer" -> "Settings", that implements
+the sample "ForwardRenderer" custom renderer. This renderer must have the "New Blit Volume Fog SRP", New BlitSun Shafts SRP" and
+"New Blit Volume Clouds SRP" renderer feature scripts (if all three are required). Please upgarde the pipeline to 7.3.1 version 
+before importing the package and this sample pipeline, so it can function and import properly.
+
+2. Add to the camera the "ConnectSunToSunShaftsURP",  "ConnectSunToVolumeFogURP", "ConnectSunToVolumeCloudsURP" and  "ConnectSunToFullVolumeCloudsURP" scripts 
+(or the relevant ones based on which renderer features are in the forward renderer, if choose to use only few of the three),
+and regulate the effects as needed, demo scenes with sample settings are provided for reference. Note that those scripts
+must be always on camera and enabled, even when a scene does not need the specific effect, so they can control the active renderer features. 
+To disable the effect uncheck the "Enable Shafts" for sun shafts or the "Enable Fog" checkboxes for Clouds and Fog, with the scripts enabled.
+
+3. Place the scene directional light in the "Sun" slot of the scripts. This is required for the system to get the sun light information.
+The "Sun" must be defined even when the effect is not used (checkbox disabled as described in above section).
+
+NOTE 11: If the system is used with Unity 2020.2 and above, please install the URP 10 to make it work properly.
+
+NOTE 12: 
+URP10 Spot Light shadows FIX:
+ISSUE: Volumetric lighting is not casting shadows from Spot Light in URP 10 
+FIX: In shader "VolumeFogSRP_FORWARD_URP.shader", uncomment the following line
+
+Line 57 - Uncomment to make compatible with URP10
+//#define URP10 ////////// ENABLE IF USING URP 10
+
+Should become
+#define URP10
+
+NOTE 12a: For URP11, uncomment the relevant #define URP11 and not the #define URP10  
+
+NOTE 13:
+Prefabs:
+The latest URP Beta includes two main prefabs to drag in the scene, if need to change to other camera note that must be tagged as "MainCamera" and
+also all effects and connect scripts must be copied from the prefab camera to that camera, before removing the sample prefab camera from the scene.
+An auto configurtator is WIP (like the one in Standard Pipeline that setup the system in an exsting in scene camera)
+
+The prefabs are in the followjng folder:
+Assets -> SkyMaster -> Prefabs -> URP
+SKY MASTER A (prefab with water and background volume clouds)
+SKY MASTER A3 (prefab with water and full volumetric fly through enabled volume clouds)
+
+NOTE 14:
+Full volume Clouds with Fly Trough extra blur filter:
+In ConnectSunToFullVolumeCloudsURP script on camera, the steps count can trigger a blur filter on the clouds.
+You may use this instead of in combination with the Temporal AA effect for reducing cloud noise when lower sampling is used.
+Set the steps variable to an even number, in order to enable the filter or to odd to disable it
+
+NOTE 15:
+Water refelctions control:
+The reflections resolution is set in the camera script "PlanarReflectionsSM_LWRP", in the "Resolution Multiplier" variable.
+Also in the same script can control which layers are reflected using the "Reflect Layers" variable.
+
+NOTE 16:
+Lightning:
+The lightning is enabled using the "LightningCameraVolumeCloudsSM_URP" script, it takes a reference to the skymastermanager
+to grab the current weather, so can change the status based on lightning strorm weather. Also references the fullvoluemclouds
+script in order to apply the local light to the clouds and references the Lightning prefab that does the actual lightining, 
+also a bounding box is passed to the script that defines the bounds where lightning will appear ("Lightning box prefab" slot).
+
+NOTE 17:
+Cloud shadows:
+The cloud shadows are cast by a plane using a material with the shader "URP 7.3.1 NATIVE SHADOWS GRAPH". When using URP10,
+this shader must be replaced with the "URP 7.3.1 NATIVE SHADOWS GRAPH URP10" shader in order to properly cast shadows.
+The shadows material settings automation is WIP, currently must be manually tweaked to match the clouds as shown in the demo
+materials and scenes. The shader covers all 3 clouds types, using the "Shadow Mode" variable, set to "0" for shadows of
+the shader based volume clouds, to "1" for shadows for the background volume clouds and "2" for the latest fly through full volumetric
+clouds shadows. Note that the noises and weather texture must also be setup same as in the corresponding clouds script.
+
+NOTE 18: 
+If the reflection camera does not render the skybox, toggle the "AllowHDR" checkbox in "connectSunToFullVolumetricCloudsURP" script
+when using cloud choice 1. If the volumetric clouds (cloud choice 0) do not render when camera uses HDR, check the "Fastest" checkbox
+in the "connectSunToFullVolumetricCloudsURP" script.

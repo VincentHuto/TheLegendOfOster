@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skybox-Procedural_SkyMaster Unity5 v3 SM2
+  m_Shader: {fileID: 4800000, guid: f34f096e1fdada740843b6e926fa55b1, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ColorRamp:
+        m_Texture: {fileID: 2800000, guid: a3d847e46f50ea8478314e2d83fa5335, type: 3}
+        m_Scale: {x: 1.77, y: -3.6}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Bump_strenght: 0
+    - HorizonY: -0.06
+    - Horizon_adj: 10.877824
+    - Horizon_factor: 0.1
+    - SunBlend: 66
+    - White_cutoff: 1.2
+    - _Coloration: 0
+    - fCameraHeight: 0
+    - fCameraHeight2: 0
+    - fExposure: 0.4
+    - fInnerRadius: 10000
+    - fInnerRadius2: 100000000
+    - fKm4PI: 0.005026548
+    - fKmESun: 0.000264
+    - fKr4PI: 0.081815355
+    - fKrESun: 0.0042970353
+    - fOuterRadius: 10250
+    - fOuterRadius2: 105062500
+    - fSamples: 0.02
+    - fScale: 0.004
+    - fScaleDepth: 0.001
+    - fScaleOverScaleDepth: 0.06666667
+    - flicker: 0
+    - g: -0.99899995
+    - g2: 0.9980009
+    m_Colors:
+    - DualSunsFactors: {r: 0.3, g: 0.3, b: 18, a: 1}
+    - GroundColor: {r: 0, g: 0, b: 0, a: 1}
+    - SunColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Obliqueness: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
+    - v3CameraPos: {r: -62.67624, g: -10002, b: -107.306, a: 0}
+    - v3InvWavelength: {r: 86.50684, g: 169.60461, b: 313.81125, a: 0}
+    - v3LightDir: {r: -0.08683398, g: 0.96127474, b: -0.2615544, a: 0}
+    - v3LightDirMoon: {r: 0, g: 0, b: 0, a: 0}

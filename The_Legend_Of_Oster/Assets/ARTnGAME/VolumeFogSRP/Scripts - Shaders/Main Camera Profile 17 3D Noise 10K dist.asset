@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9162019081119214854
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14251571769e7f48b2512a534f6cac2, type: 3}
+  m_Name: SunShaftsHDRP
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.5
+  resolution: 1
+  screenBlendMode: 0
+  sunTransform:
+    overrideState: 1
+    value: {x: 0, y: 0, z: 0}
+  radialBlurIterations:
+    overrideState: 1
+    value: 2
+  sunColor:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
+  sunThreshold:
+    overrideState: 1
+    value: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+  sunShaftBlurRadius:
+    overrideState: 1
+    value: 2.5
+  sunShaftIntensity:
+    overrideState: 1
+    value: 1.15
+  maxRadius:
+    overrideState: 1
+    value: 0.75
+  useDepthTexture:
+    overrideState: 1
+    value: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: Main Camera Profile 17 3D Noise 10K dist
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: 114659072990829234}
+  - {fileID: 114765809064477344}
+  - {fileID: -9162019081119214854}
+--- !u!114 &114659072990829234
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0.421
+  smoothness:
+    overrideState: 0
+    value: 0.2
+  roundness:
+    overrideState: 0
+    value: 1
+  rounded:
+    overrideState: 0
+    value: 0
+  mask:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 0
+    value: 1
+--- !u!114 &114765809064477344
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4335900db1e4a0c49b3b77f4dd91cd4c, type: 3}
+  m_Name: VolumeFogSM_SRP(Clone)
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 0
+    value: 0.5
+  _FogColor:
+    overrideState: 1
+    value: {r: 0.7169812, g: 0.62657166, b: 0.5647918, a: 0.6431373}
+  noiseTexture:
+    overrideState: 1
+    value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+    defaultState: 1
+  _startDistance:
+    overrideState: 1
+    value: -5629
+  _fogHeight:
+    overrideState: 1
+    value: 9.34
+  _fogDensity:
+    overrideState: 1
+    value: 0.0011
+  _cameraRoll:
+    overrideState: 1
+    value: 0
+  _cameraDiff:
+    overrideState: 1
+    value: {x: -0, y: 0, z: 0, w: 1}
+  _cameraTiltSign:
+    overrideState: 1
+    value: -1
+  heightDensity:
+    overrideState: 1
+    value: 1
+  noiseDensity:
+    overrideState: 1
+    value: 1
+  noiseScale:
+    overrideState: 1
+    value: 0.012
+  noiseThickness:
+    overrideState: 1
+    value: 1
+  noiseSpeed:
+    overrideState: 1
+    value: {x: 55, y: 1, z: 1}
+  occlusionDrop:
+    overrideState: 1
+    value: 0.11
+  occlusionExp:
+    overrideState: 1
+    value: -2.3
+  noise3D:
+    overrideState: 1
+    value: 1
+  startDistance:
+    overrideState: 1
+    value: 1
+  luminance:
+    overrideState: 1
+    value: 0.78
+  lumFac:
+    overrideState: 1
+    value: 0.26
+  ScatterFac:
+    overrideState: 1
+    value: 5.6
+  TurbFac:
+    overrideState: 1
+    value: 1
+  HorizFac:
+    overrideState: 1
+    value: 0.75
+  turbidity:
+    overrideState: 1
+    value: 111
+  reileigh:
+    overrideState: 1
+    value: 1
+  mieCoefficient:
+    overrideState: 1
+    value: 1
+  mieDirectionalG:
+    overrideState: 1
+    value: 0.84
+  bias:
+    overrideState: 1
+    value: 0.82
+  contrast:
+    overrideState: 1
+    value: 3.83
+  TintColor:
+    overrideState: 1
+    value: {r: 1, g: 0.75, b: 0.75, a: 1}
+  Sun:
+    overrideState: 1
+    value: {x: -0.17750674, y: 0.28736058, z: 0.94123083, w: 1}
+  FogSky:
+    overrideState: 1
+    value: 1
+  ClearSkyFac:
+    overrideState: 1
+    value: 1
+  PointL:
+    overrideState: 1
+    value: {x: 0, y: 0, z: 0, w: 0}
+  PointLParams:
+    overrideState: 1
+    value: {x: 0, y: 0, z: 0, w: 0}

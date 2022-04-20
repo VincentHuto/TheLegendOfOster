@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: Main Camera Profile 15 3D Noise
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: 114326606736852752}
+  - {fileID: 114701086321889766}
+  - {fileID: 114679546823903338}
+--- !u!114 &114326606736852752
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0.421
+  smoothness:
+    overrideState: 0
+    value: 0.2
+  roundness:
+    overrideState: 0
+    value: 1
+  rounded:
+    overrideState: 0
+    value: 0
+  mask:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 0
+    value: 1
+--- !u!114 &114679546823903338
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4335900db1e4a0c49b3b77f4dd91cd4c, type: 3}
+  m_Name: VolumeFogSM_SRP(Clone)
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 0
+    value: 0.5
+  _FogColor:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
+  noiseTexture:
+    overrideState: 1
+    value: {fileID: 2800000, guid: 41e8b07bd5f650642a234c5a20002c64, type: 3}
+    defaultState: 1
+  _startDistance:
+    overrideState: 1
+    value: 1
+  _fogHeight:
+    overrideState: 1
+    value: 62
+  _fogDensity:
+    overrideState: 1
+    value: 0.0002
+  _cameraRoll:
+    overrideState: 1
+    value: 0
+  _cameraDiff:
+    overrideState: 1
+    value: {x: 8.480011, y: 0.06999493, z: 0, w: 1}
+  _cameraTiltSign:
+    overrideState: 1
+    value: -1
+  heightDensity:
+    overrideState: 1
+    value: 2
+  noiseDensity:
+    overrideState: 1
+    value: 10
+  noiseScale:
+    overrideState: 1
+    value: 6
+  noiseThickness:
+    overrideState: 1
+    value: 3
+  noiseSpeed:
+    overrideState: 1
+    value: {x: 1, y: 1, z: 1}
+  occlusionDrop:
+    overrideState: 1
+    value: 0.0125
+  occlusionExp:
+    overrideState: 1
+    value: 3
+  noise3D:
+    overrideState: 1
+    value: 1
+  startDistance:
+    overrideState: 1
+    value: 1
+  luminance:
+    overrideState: 1
+    value: 0.15
+  lumFac:
+    overrideState: 1
+    value: 1.65
+  ScatterFac:
+    overrideState: 1
+    value: 304
+  TurbFac:
+    overrideState: 1
+    value: 4.15
+  HorizFac:
+    overrideState: 1
+    value: 1
+  turbidity:
+    overrideState: 1
+    value: 1
+  reileigh:
+    overrideState: 1
+    value: 13
+  mieCoefficient:
+    overrideState: 1
+    value: 0.0001
+  mieDirectionalG:
+    overrideState: 1
+    value: 0.85
+  bias:
+    overrideState: 1
+    value: 0.06
+  contrast:
+    overrideState: 1
+    value: 5.2
+  TintColor:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
+  Sun:
+    overrideState: 1
+    value: {x: -0.06681414, y: 0.28736058, z: 0.9554893, w: 1}
+  FogSky:
+    overrideState: 1
+    value: 1
+  ClearSkyFac:
+    overrideState: 1
+    value: 1
+  PointL:
+    overrideState: 1
+    value: {x: 0, y: 0, z: 0, w: 0}
+  PointLParams:
+    overrideState: 1
+    value: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114701086321889766
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14251571769e7f48b2512a534f6cac2, type: 3}
+  m_Name: SunShaftsHDRP(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 0
+    value: 0.5
+  resolution: 1
+  screenBlendMode: 0
+  sunTransform:
+    overrideState: 1
+    value: {x: 111, y: 11, z: 339.8}
+  radialBlurIterations:
+    overrideState: 0
+    value: 2
+  sunColor:
+    overrideState: 1
+    value: {r: 0.9716981, g: 0.45376468, b: 0.45376468, a: 1}
+  sunThreshold:
+    overrideState: 0
+    value: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+  sunShaftBlurRadius:
+    overrideState: 0
+    value: 2.5
+  sunShaftIntensity:
+    overrideState: 1
+    value: 2.82
+  maxRadius:
+    overrideState: 1
+    value: 0.75
+  useDepthTexture:
+    overrideState: 1
+    value: 0

@@ -2,15 +2,22 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LowPlants_03
   m_Shader: {fileID: 4800000, guid: 1f08ef16f99d3bd42bcbb27555cb1a97, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
-    _NORMALMAP _SPECGLOSSMAP _UVSEC_UV1
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _EMISSION
+  - _NORMALMAP
+  m_InvalidKeywords:
+  - _LIGHTMAPPING_DYNAMIC_LIGHTMAPS
+  - _LIGHTMAPPING_REALTIME
+  - _SPECGLOSSMAP
+  - _UVSEC_UV1
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -88,13 +95,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 47d205e70be7a1e41a8396a2d9e731bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaClip: 0
     - _AlphaTestRef: 0.5
     - _BaseColorYShift: 1
     - _BaseLight: 0
     - _Blend: 0
-    - _BulgeScale: 0.11
+    - _BulgeScale: 0
     - _BulgeScale_copy: 0.94
     - _BulgeShape: 1.11
     - _BumpScale: 1
@@ -151,11 +159,12 @@ Material:
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
     - _InteractAmpFreqRad: {r: 1, g: 1, b: 1, a: 1}
-    - _InteractPos: {r: -257.68732, g: 458.96796, b: 16.603426, a: 0}
+    - _InteractPos: {r: 92.1, g: 30.5, b: -94.23, a: 0}
     - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
-    - _InteractSpeed: {r: 4e-45, g: -3e-45, b: 3e-45, a: 0}
+    - _InteractSpeed: {r: 1e-45, g: -1e-45, b: 1e-45, a: 0}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
     - _SpecularColor: {r: 1, g: 0.9478968, b: 0.3066038, a: 1}
     - _TimeControl1: {r: 2, g: 0, b: 0.75, a: 0}
     - _WaveControl1: {r: 11, g: 1, b: 1, a: 0.3}
+  m_BuildTextureStacks: []

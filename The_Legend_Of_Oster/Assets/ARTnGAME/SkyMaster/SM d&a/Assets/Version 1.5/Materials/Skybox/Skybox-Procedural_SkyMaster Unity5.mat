@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skybox-Procedural_SkyMaster Unity5
+  m_Shader: {fileID: 4800000, guid: 45376ead543cb994bbed70bc229d5f31, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ColorRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Bump_strenght: 0
+    - HorizonY: -0.06
+    - Horizon_adj: 13.1536
+    - _Coloration: 0.1
+    - fCameraHeight: 0
+    - fCameraHeight2: 0
+    - fExposure: 1.6
+    - fInnerRadius: 10000
+    - fInnerRadius2: 100000000
+    - fKm4PI: 0.005026548
+    - fKmESun: 0.000664
+    - fKr4PI: 0.10694811
+    - fKrESun: 0.014127694
+    - fOuterRadius: 10250
+    - fOuterRadius2: 105062500
+    - fSamples: 0.02
+    - fScale: 0.004
+    - fScaleDepth: 0.06
+    - fScaleOverScaleDepth: 0.13333334
+    - g: -0.9990211
+    - g2: 0.9980432
+    m_Colors:
+    - GroundColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Obliqueness: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.19607843, g: 0.019607844, b: 0.05882353, a: 1}
+    - v3CameraPos: {r: -62.67624, g: -9998.635, b: -107.306, a: 0}
+    - v3InvWavelength: {r: 32.136818, g: 74.831474, b: 123.45677, a: 0}
+    - v3LightDir: {r: -0.09417986, g: 0.3271981, b: 0.9402508, a: 0}
+    - v3LightDirMoon: {r: -0.0000052744795, g: -0.31782532, b: -0.9481497, a: 0}

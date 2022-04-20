@@ -1,0 +1,34 @@
+The skybox prefab can be converted to work with Unity 5 with the below steps:
+
+1. Click on the SkyboxMat property in SkyMasterManager script of the prefab that uses the skybox, 
+to move to the material folder (or go to SkyMaster/Version1.5/Materials/Skybox folder)
+
+2. Locate the "Skybox-Procedural_SkyMaster Unity5" material and drag it to the SkyMasterManager 
+script in "SkyboxMat" parameter
+
+3. Click on the "Unity 5" toggle option in the SkyMasterManager script
+
+4. Assing "1" in the Cam_follow_factor option, this is required for the Unity 5 shader in order 
+to keep the sky steady when the camera height changes. A different number can also be used to give 
+a latency effect as the hight changes.
+
+The rest is automated and should work right away with the proper Unity 5 sky shader and settings. 
+The package in "_UNITY5 UPDATE" folder also contains a demo scene with this setup ready, for reference.
+This scene is for demo purposes.
+
+
+
+The required tags in Unity 4 are added automatically, in Unity 5 the tags must be inserted manually.
+
+List of the tags that need to go in the project
+
+Conductor (for attracting lightning)
+Flammable (for cathcing fire/ice)
+Flamer (for spreading fire/ice)
+Tornado
+SkyMasterTree (for changing color with seasons, must have two materials and one have color property, like Unity trees setup)
+Grass (for attract/repel particles only in Y axis, assing on particle system)
+Butter (for butterflies behavior)
+Freezable (for freeze effects behavior)
+
+More details on each option and the advanced particle systems can be found in the manual. 

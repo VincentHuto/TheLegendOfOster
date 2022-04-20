@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: InfiniGRASS Vertex Grass DETAILED
   m_Shader: {fileID: 4800000, guid: 1f08ef16f99d3bd42bcbb27555cb1a97, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,13 +80,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AO: 2.4
     - _AlphaClip: 0
     - _BaseColorYShift: 1
     - _BaseLight: 0.35
     - _Blend: 0
-    - _BulgeScale: 0.11
+    - _BulgeScale: 0
     - _BulgeScale_copy: 1
     - _BulgeShape: 0
     - _BumpScale: 1
@@ -143,9 +145,9 @@ Material:
     - _GlowColor: {r: 0.75735295, g: 0.41001523, b: 0.41001523, a: 0.9764706}
     - _HeightControlPoints: {r: 0.2, g: 0.3, b: 0.4, a: 0.96}
     - _InteractAmpFreqRad: {r: 1, g: 1, b: 1, a: 1}
-    - _InteractPos: {r: -257.68732, g: 458.96796, b: 16.603426, a: 0}
+    - _InteractPos: {r: 92.1, g: 30.5, b: -94.23, a: 0}
     - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
-    - _InteractSpeed: {r: 4e-45, g: -3e-45, b: 3e-45, a: 0}
+    - _InteractSpeed: {r: 0, g: -0, b: 0, a: 0}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
     - _Params1: {r: 11.86, g: 24.5, b: 19.6, a: 0}
     - _Params2: {r: 9.72, g: 18.71, b: 9.89, a: 0}
@@ -157,3 +159,4 @@ Material:
     - _WaveAndDistance: {r: 12, g: 3.6, b: 1, a: 1}
     - _WaveControl1: {r: 2.45, g: 3, b: 4, a: 0}
     - _WavingTint: {r: 0.7, g: 0.6, b: 0.5, a: 0}
+  m_BuildTextureStacks: []

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skybox-Procedural_SkyMaster Unity5 v4
+  m_Shader: {fileID: 4800000, guid: 75beeb4ec14266c4ea4fc01592ee0bde, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorRamp:
+        m_Texture: {fileID: 2800000, guid: a3d847e46f50ea8478314e2d83fa5335, type: 3}
+        m_Scale: {x: 1.77, y: -3.6}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 2800000, guid: a7608f7019ea4764994827a4bce970b6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexA:
+        m_Texture: {fileID: 2800000, guid: a794075635920054f8f52b94a772c4f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Bump_strenght: 0
+    - HorizonY: -0.06
+    - Horizon_adj: 11.055109
+    - SunBlend: 66
+    - White_cutoff: 6.2
+    - _CloudCover: 0.498
+    - _CloudDensity: 1.14
+    - _CloudSharpness: 30
+    - _Coloration: -0.15
+    - _Light: 1.4
+    - fCameraHeight: 0
+    - fCameraHeight2: 0
+    - fExposure: 0.28750077
+    - fInnerRadius: 10000
+    - fInnerRadius2: 100000000
+    - fKm4PI: 0.005026548
+    - fKmESun: 0.000664
+    - fKr4PI: 0.10694811
+    - fKrESun: 0.014127694
+    - fOuterRadius: 10250
+    - fOuterRadius2: 105062500
+    - fSamples: 0.02
+    - fScale: 0.004
+    - fScaleDepth: 0
+    - fScaleOverScaleDepth: 0.13333334
+    - flicker: 0
+    - g: -0.9
+    - g2: 0.80999994
+    m_Colors:
+    - GroundColor: {r: 0, g: 0, b: 0, a: 1}
+    - SunColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Ambient: {r: 0.7264151, g: 0.43516374, b: 0.43516374, a: 0.54509807}
+    - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.9, g: 0.9, b: 0.9, a: 0}
+    - _Obliqueness: {r: 0, g: 0, b: 0, a: 0}
+    - _SunDir: {r: 0, g: 1, b: 0, a: 0}
+    - _TintColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
+    - v3CameraPos: {r: -62.67624, g: -10002, b: -107.306, a: 0}
+    - v3InvWavelength: {r: 95.48271, g: 32.594856, b: 11.470337, a: 0}
+    - v3LightDir: {r: 0.7366875, g: 0.6265251, b: 0.25447568, a: 0}
+    - v3LightDirMoon: {r: 0, g: 0, b: 1, a: 0}

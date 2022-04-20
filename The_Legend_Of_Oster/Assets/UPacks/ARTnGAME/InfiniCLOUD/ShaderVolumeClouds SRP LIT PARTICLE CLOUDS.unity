@@ -12473,9 +12473,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &198142155
 MeshFilter:
@@ -16153,7 +16153,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261028372}
-  - component: {fileID: 261028371}
   m_Layer: 8
   m_Name: Post-process Volume
   m_TagString: Untagged
@@ -16161,18 +16160,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &261028371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261028370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &261028372
 Transform:
   m_ObjectHideFlags: 0
@@ -28458,9 +28445,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &365994806
 MeshRenderer:
@@ -40882,7 +40869,6 @@ GameObject:
   - component: {fileID: 573931265}
   - component: {fileID: 573931264}
   - component: {fileID: 573931263}
-  - component: {fileID: 573931262}
   - component: {fileID: 573931261}
   m_Layer: 0
   m_Name: Lightning Emitter
@@ -41063,89 +41049,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &573931262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573931259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21699cfb836ebe4191b1363b604cfe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  zigs: 800
-  speed: 2
-  scale: 4
-  startLight: {fileID: 725731970}
-  endLight: {fileID: 1918328002}
-  Energized: 0
-  is_parent: 1
-  current_depth: 0
-  max_depth: 0
-  max_target_count: 1
-  Random_target: 1
-  Affect_dist: 860
-  Change_target_delay: 0.5
-  Random_delay: 1
-  Delay_offset: 0.1
-  Moving_Source: 1
-  Particle_energy: 0.03
-  optimize_factor: 2
-  ParticleSize: 38
-  Branches: 1
-  Branch_Offset: {x: 0, y: -31, z: 0}
-  offset_bias: {x: 0.05, y: 0, z: 0}
-  Downward_speed: 56
-  Stop_dist: 22
-  Branch_color: {r: 1, g: 1, b: 1, a: 1}
-  Zigs_branching_divider: 1.76
-  offset_noise: 0
-  reset_noise: 0
-  Slow_on_end: 0
-  Slow_down_height: 20
-  Slow_divider: 40
-  Light_delay: {x: 0, y: 0.3}
-  line_on: 1
-  Line_delay: {x: 0.7, y: 1}
-  Vertex_count: 60
-  Deviation: 11
-  Line_width: {x: 20, y: 30}
-  min_y_disp: 10
-  line_glow_on: 1
-  Glow_color: {r: 0, g: 0, b: 1, a: 1}
-  Line_Lightning_mat: {fileID: 2100000, guid: cf872d361be193b4ba912d1486bc145a, type: 2}
-  LineBranches:
-  - {fileID: 1702307166}
-  - {fileID: 944827490}
-  - {fileID: 2000034190}
-  - {fileID: 426627342}
-  - {fileID: 792068654}
-  - {fileID: 888140418}
-  - {fileID: 280284451}
-  - {fileID: 1593656634}
-  - {fileID: 2112295737}
-  - {fileID: 1004477978}
-  LineBranchesGlow:
-  - {fileID: 316396801}
-  - {fileID: 829700191}
-  - {fileID: 1764719330}
-  - {fileID: 1013893395}
-  - {fileID: 1675822204}
-  - {fileID: 1363913639}
-  - {fileID: 655003561}
-  - {fileID: 1024600068}
-  - {fileID: 2127108595}
-  - {fileID: 571177067}
-  max_branches: 10
-  SmoothLights: 1
-  max_end_light_intensity: 1
-  max_start_light_intensity: 2
-  LightFadeSpeed: 0.8
-  LightSpeed: 70
-  LightRipple: 21
 --- !u!135 &573931263
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -61058,6 +60961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ef7f0f268fc1b49b0f39e5f01ab307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: {x: 0.04, y: 0.04}
+  randomize: 0
+  random_factor: 5
 --- !u!114 &742603713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61070,6 +60976,166 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80958dee47ddb514f95064ab61ba4888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renewHeightPercent: 99.2
+  renewFadeOutSpeed: 1
+  renewFadeInSpeed: 1
+  boxClouds: 0
+  BoxesHolder: {fileID: 0}
+  renewAboveHeight: 0
+  renewHeight: 500
+  shadows_created: 0
+  DecoupledWind: 0
+  DecoupledColor: 0
+  DifferentialMotion: 0
+  MaxDiffSpeed: 0.02
+  MaxDiffOffset: 0
+  LightShaderModifier: 0
+  minLightShaderModifier: 0
+  GlowShaderModifier: 0
+  IntensityShaderModifier: 0
+  ModifierApplicationSpeed: 0.1
+  ModifierApplMinSpeed: 0.1
+  Quad: {fileID: 0}
+  Quads: []
+  SunLight: {fileID: 0}
+  MoonLight: {fileID: 0}
+  Accumulate: 0
+  AccumPercent: 0.04
+  AccumFactor: 1
+  StabilizeRoll: 0
+  StableRollMethod2: 0
+  StableRollAllAxis: 0
+  angle1: 35
+  angle2: 18
+  NearCloudDist: 50
+  CloudBedToThisDist: 0
+  Divide_lightning: 0
+  LightningDivider: 5
+  AutoScale: 0
+  DestroyOnfadeOut: 0
+  FadeOutOnBoundary: 0
+  ScatterShaderUpdate: 0
+  ScatterMat: {fileID: 0}
+  fog_depth: 0.29
+  reileigh: 1.3
+  mieCoefficient: 1
+  mieDirectionalG: 0.1
+  ExposureBias: 0.11
+  lambda: {x: 0.00000068, y: 0.00000055, z: 0.00000045}
+  K: {x: 0.9, y: 0.5, z: 0.5}
+  VerticalForm: 0
+  YScaleDiff: 0.6
+  MaxCloudDist: {x: 10, y: 20, z: 0}
+  Yspread: 2
+  HeightTint: {r: 0, g: 0, b: 0, a: 0}
+  SmoothIn: 0
+  SmoothOut: 0
+  SmoothInSpeed: 0
+  SmoothoutSpeed: 0
+  SmoothInRate: 0.15
+  SmoothOutRate: 0.15
+  max_fade_speed: 2.5
+  max_smooth_out_time: 1
+  fade_in_time: 2.5
+  current_fadein_time: 0
+  EnableLOD: 0
+  LOD_send_height: -10000
+  ParticlesLODed: 
+  LodMaxYDiff: 240
+  LodMaxHDiff: 1700
+  LODFadeInSpeed: 5
+  LODFadeOutSpeed: 5
+  LODMinDist: 80
+  CloudWaves: 0
+  WaveFreq: 0.22
+  Moon_light: 0
+  Moon_light_color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Moon_dark_color: {r: 0.45, g: 0.45, b: 0.45, a: 0.9}
+  Override_init_color: 0
+  Override_color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Day_cycle: 0
+  SkyManager: {fileID: 0}
+  Day_base_col: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Day_sun_col: {r: 1, g: 1, b: 1, a: 1}
+  Dawn_base_col: {r: 0.60784316, g: 0.4509804, b: 0.50980395, a: 1}
+  Dawn_sun_col: {r: 0.9607843, g: 0.7647059, b: 0.8039216, a: 1}
+  Dusk_base_col: {r: 0.25882354, g: 0, b: 0.03529412, a: 1}
+  Dusk_sun_col: {r: 0.9137255, g: 0.2901961, b: 0.45882353, a: 1}
+  Night_base_col: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Night_moon_col: {r: 1, g: 1, b: 1, a: 1}
+  Add_shadows: 0
+  Use2DCheck: 0
+  max_divider: 1
+  Cloud_spread_delay: 1
+  method: 3
+  Turbulent: 0
+  Flatten_below: 0
+  ShaftCenters: []
+  SunShafts: []
+  Beam_Occlusion: 0
+  Smooth_mat_trans: 0
+  Appear_Beam_speed: 2
+  Disappear_Beam_speed: 2
+  ShaftScale: []
+  Beam_length: 300
+  Scale_beams: 0
+  Scale_on_collision: 0
+  Offset_col_factor: 1
+  Diminish_beams: 0
+  Override_sun: 0
+  Cut_height: 0
+  Restore_on_bound: 0
+  Disable_on_bound: 0
+  Bound: 9000
+  destroy_on_end: 0
+  clone_on_end: 0
+  cloned: 0
+  Centers: []
+  Centers_Init: []
+  speed: 0.5
+  multiplier: 5
+  wind: {x: 1, y: 1, z: 1}
+  Get_wind_direction: 0
+  Wind_holder: {fileID: 0}
+  Rain_holder: {fileID: 0}
+  Lightning_holder: {fileID: 0}
+  Shadow_holder: {fileID: 0}
+  max_bed_corner: 1000
+  min_bed_corner: 0
+  cloud_bed_heigh: 500
+  MainColor: {r: 0, g: 0, b: 0, a: 0}
+  SunColor: {r: 0, g: 0, b: 0, a: 0}
+  divider: 10
+  Sun_exposure: 2
+  sun_transf: {fileID: 0}
+  moon_transf: {fileID: 0}
+  UpdateInterval: 1
+  color_speed: 0.5
+  cloud_scale: 50
+  global_cloud_scale: 1000
+  Global_tint: {r: 0, g: 0, b: 0, a: 0}
+  Variant_cloud_size: 0
+  cloud_min_scale: 0.8
+  cloud_max_scale: 2
+  Sorted: 0
+  Delay_lerp: 10000
+  Sun_dist_on: 0
+  Grab_sun_color: 0
+  Grab_sun_intensity: 0
+  Grab_sun_angle: 0
+  Day_light_Intensity: 3
+  Sun_angle_influence: 0.01
+  Look_at_camera: 0
+  Beams_camera_target_offset: {x: 0, y: 0, z: 0}
+  Occlusion_sort_delay: 1
+  Debug_mode: 0
+  Use_audio: 0
+  RainSound: {fileID: 0}
+  CloudAudioSource: {fileID: 0}
+  AudiofadeSpeed: 0.025
+  MaxSoundVol: 0.1
+  CenterIDs: 
+  DecoupledCounter: 0
 --- !u!1 &745371177
 GameObject:
   m_ObjectHideFlags: 0
@@ -65640,7 +65706,6 @@ GameObject:
   - component: {fileID: 838453185}
   - component: {fileID: 838453184}
   - component: {fileID: 838453183}
-  - component: {fileID: 838453182}
   - component: {fileID: 838453181}
   m_Layer: 0
   m_Name: Lightning Emitter
@@ -65821,89 +65886,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &838453182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838453179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21699cfb836ebe4191b1363b604cfe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  zigs: 800
-  speed: 2
-  scale: 4
-  startLight: {fileID: 896424665}
-  endLight: {fileID: 1044455611}
-  Energized: 0
-  is_parent: 1
-  current_depth: 0
-  max_depth: 0
-  max_target_count: 1
-  Random_target: 1
-  Affect_dist: 860
-  Change_target_delay: 0.5
-  Random_delay: 1
-  Delay_offset: 0.1
-  Moving_Source: 1
-  Particle_energy: 0.03
-  optimize_factor: 2
-  ParticleSize: 38
-  Branches: 1
-  Branch_Offset: {x: 0, y: -31, z: 0}
-  offset_bias: {x: 0.05, y: 0, z: 0}
-  Downward_speed: 56
-  Stop_dist: 22
-  Branch_color: {r: 1, g: 1, b: 1, a: 1}
-  Zigs_branching_divider: 1.76
-  offset_noise: 0
-  reset_noise: 0
-  Slow_on_end: 0
-  Slow_down_height: 20
-  Slow_divider: 40
-  Light_delay: {x: 0, y: 0.3}
-  line_on: 1
-  Line_delay: {x: 0.7, y: 1}
-  Vertex_count: 60
-  Deviation: 11
-  Line_width: {x: 20, y: 30}
-  min_y_disp: 10
-  line_glow_on: 1
-  Glow_color: {r: 0, g: 0, b: 1, a: 1}
-  Line_Lightning_mat: {fileID: 2100000, guid: cf872d361be193b4ba912d1486bc145a, type: 2}
-  LineBranches:
-  - {fileID: 9981029}
-  - {fileID: 1120345701}
-  - {fileID: 879005196}
-  - {fileID: 798265294}
-  - {fileID: 425611286}
-  - {fileID: 1183254296}
-  - {fileID: 1526110916}
-  - {fileID: 285179899}
-  - {fileID: 919914427}
-  - {fileID: 115932749}
-  LineBranchesGlow:
-  - {fileID: 462673890}
-  - {fileID: 1060250531}
-  - {fileID: 608286574}
-  - {fileID: 705216865}
-  - {fileID: 2016024689}
-  - {fileID: 472840047}
-  - {fileID: 1229287752}
-  - {fileID: 1557158395}
-  - {fileID: 1806673137}
-  - {fileID: 1401019832}
-  max_branches: 10
-  SmoothLights: 1
-  max_end_light_intensity: 1
-  max_start_light_intensity: 2
-  LightFadeSpeed: 0.8
-  LightSpeed: 70
-  LightRipple: 21
 --- !u!135 &838453183
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -79382,9 +79364,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1042385132
 MeshFilter:
@@ -79576,8 +79558,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1044455608}
   - component: {fileID: 1044455611}
-  - component: {fileID: 1044455610}
-  - component: {fileID: 1044455609}
   m_Layer: 0
   m_Name: End Light
   m_TagString: Untagged
@@ -79599,30 +79579,6 @@ Transform:
   m_Father: {fileID: 838453180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1044455609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044455607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1044455610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044455607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1044455611
 Light:
   m_ObjectHideFlags: 0
@@ -81930,9 +81886,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1084835448
 MeshFilter:
@@ -99054,9 +99010,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1397420163
 MeshFilter:
@@ -102188,9 +102144,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1448381176
 MeshFilter:
@@ -127237,8 +127193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1918327999}
   - component: {fileID: 1918328002}
-  - component: {fileID: 1918328001}
-  - component: {fileID: 1918328000}
   m_Layer: 0
   m_Name: End Light
   m_TagString: Untagged
@@ -127260,30 +127214,6 @@ Transform:
   m_Father: {fileID: 573931260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918328000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918327998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1918328001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918327998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1918328002
 Light:
   m_ObjectHideFlags: 0
@@ -129964,9 +129894,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1965214701
 MeshFilter:
@@ -137643,7 +137573,6 @@ GameObject:
   - component: {fileID: 2110312752}
   - component: {fileID: 2110312751}
   - component: {fileID: 2110312750}
-  - component: {fileID: 2110312749}
   - component: {fileID: 2110312753}
   - component: {fileID: 2110312748}
   - component: {fileID: 2110312754}
@@ -137670,10 +137599,49 @@ MonoBehaviour:
   enableFog: 0
   allowHDR: 1
   sun: {fileID: 0}
+  reflectCamera: {fileID: 0}
+  setupForwardRenderer: 0
+  volumeFogMaterial: {fileID: 0}
+  ExtraCamerasNote: Add any extra cameras that will render the volumes here. Each
+    must have a separate forward renderer with the image effectconfigured with IsForReflections,
+    plus isForDualcameras checkboxes on and the Extra camera ID corresponding to
+    the camera position in this list.
+  extraCameras: []
+  lightCount: 3
+  blendVolumeLighting: 0.02
+  LightRaySamples: 12
+  volumeSamplingNote: Volume sampling X can be set to zero to enable the zero noise
+    mode for spot and point light volumes. Set toone to add noise and more even spread
+    of the light and may use any amount between zero and one to blend no noise region
+    with variable noise amount.
+  volumeSamplingControl: {x: 0.001, y: 1, z: 1, w: 1}
+  stepControlNote: The steps control X value can be set to a number other than zero
+    to enable the steady step volume sampling mode,the number dictates the step distance,
+    use zero to have the step depend on scene depth, this mode may create differences
+    in the volume basedon the background depth across its length.
+  stepsControl: {x: 0, y: 0, z: 1, w: 1}
+  lightNoiseControl: {x: 1, y: 0.75, z: 1, w: 1}
+  shadowsControl: {x: 500, y: 1, z: 1, w: 0}
+  lightsArray: []
   localLightA: {fileID: 0}
   localLightIntensity: 0
   localLightRadius: 0
+  PointL: {x: 0, y: 0, z: 0, w: 0}
+  PointLParams: {x: 0, y: 0, z: 0, w: 0}
+  volumesIntensityControlsNote: The main controls of the volumes intensity are the
+    LightControlA.x for the directional light and the LightControlA.y for the Spot
+    and Point lights. Note that LightControlA.x is a multiplier of intensity, and
+    the LightControlA.y is an intensity divider, thus the higher the value, the lower
+    the local lights intensity, so use a high value if the scene if very bright.
+    Ideally use a value of one as starting point to regulate the intensity lower
+    or higher by moving above or below one.
+  lightControlA: {x: 0.92, y: 0.3, z: 1, w: 1}
+  lightControlB: {x: 1, y: 1, z: 1, w: 1}
+  controlByColor: 0
+  lightA: {fileID: 0}
+  lightB: {fileID: 0}
   _FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  noise3D: 1
   noiseTexture: {fileID: 0}
   _startDistance: 301
   _fogHeight: 0.75
@@ -137686,16 +137654,15 @@ MonoBehaviour:
   noiseScale: 1
   noiseThickness: 1
   noiseSpeed: {x: 1, y: 1, z: 1}
+  startDistance: 1
   occlusionDrop: 1
   occlusionExp: 1
-  noise3D: 1
-  startDistance: 1
   luminance: 1
   lumFac: 1
   ScatterFac: 1
+  turbidity: 1
   TurbFac: 1
   HorizFac: 1
-  turbidity: 1
   reileigh: 1
   mieCoefficient: 1
   mieDirectionalG: 1
@@ -137707,8 +137674,7 @@ MonoBehaviour:
   Sun: {x: 0, y: 0, z: 0, w: 0}
   FogSky: 1
   ClearSkyFac: 1
-  PointL: {x: 0, y: 0, z: 0, w: 0}
-  PointLParams: {x: 0, y: 0, z: 0, w: 0}
+  enableSunShafts: 0
   _useRadialDistance: 0
   _fadeToSkybox: 1
   screenBlendMode: 0
@@ -137719,18 +137685,6 @@ MonoBehaviour:
   sunShaftIntensity: 1.15
   maxRadius: 0.75
   useDepthTexture: 1
---- !u!114 &2110312749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110312747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &2110312750
 AudioListener:
   m_ObjectHideFlags: 0
@@ -137812,7 +137766,6 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -137824,6 +137777,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -137861,6 +137815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fdc5c9fe7507e44b244b4650a2447e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reflectCamera: {fileID: 0}
   enableFog: 0
   allowHDR: 0
   sun: {fileID: 0}
@@ -137978,6 +137933,7 @@ MonoBehaviour:
   cameraMotionCompensate: 1
   updateRate: 0.3
   downScaleFactor: 1
+  lowerRefrReflResFactor: 3
   downScale: 0
   _needsReset: 0
   enableReproject: 0

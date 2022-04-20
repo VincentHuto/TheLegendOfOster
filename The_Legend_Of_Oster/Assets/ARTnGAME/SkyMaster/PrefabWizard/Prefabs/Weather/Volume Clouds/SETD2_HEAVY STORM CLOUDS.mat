@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SETD2_HEAVY STORM CLOUDS
+  m_Shader: {fileID: 208, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Jitter:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: fd265ebf0afba2a4fa88c4f47f85e27f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondTex:
+        m_Texture: {fileID: 2800000, guid: 5e0c3993d7f506b45920659e7fd6332b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _AO: 0
+    - _Alpha: 0
+    - _BaseLight: 0.3207547
+    - _CloudCover: 0.5
+    - _CloudDensity: 1
+    - _CloudSharpness: 0.8
+    - _Cutoff: 0.9
+    - _EdgeFade: 1.2
+    - _EmissionLM: 0
+    - _HalfOverCutoff: 0
+    - _InvFade: 0.01
+    - _Occlusion: 0
+    - _Shininess: 0.7
+    - _Zparam1: 8
+    m_Colors:
+    - _Ambient: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudSpeed: {r: 0.001, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.95384616, g: 0.95384616, b: 0.95384616, a: 0.91764706}
+    - _EmisColor: {r: 0.20588237, g: 0.20588237, b: 0.20588237, a: 0.4117647}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SunDir: {r: 0, g: 1, b: 0, a: 0}
+    - _TintColor: {r: 0.375, g: 0.35818967, b: 0.35818967, a: 0.44313726}
+--- !u!1002 &2100001
+EditorExtensionImpl:
+  serializedVersion: 6

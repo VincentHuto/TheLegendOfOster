@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7505761555586504092
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SHADOWS_URP_7.3.1_IMAGE_FX_CLOUDS1
+  m_Shader: {fileID: 4800000, guid: 0d89c66fc4dadcb4e8ef21b90ed615cc, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap:
+        m_Texture: {fileID: 2800000, guid: 1c8481fcc3152ea4d8315a8bc2a0da51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudMap1:
+        m_Texture: {fileID: 2800000, guid: 2f72804083408ae41b57b46b545b3aca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InteractTexture:
+        m_Texture: {fileID: 2800000, guid: 861f1f6c92c07724cb5e3c3aa1f78525, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex1:
+        m_Texture: {fileID: 11760204, guid: b6d6f79c2d3ef3241a9948dd089967d1, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2:
+        m_Texture: {fileID: 11728776, guid: 4676a0d39df38b84cad914e1e3eadeda, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaintMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WeatherMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - mask:
+        m_Texture: {fileID: 2800000, guid: faded90e5949fdc4d93c4032ac8f52d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Thickness: 1.67
+    - _AlphaClip: 0
+    - _Altitude0: 1794
+    - _Altitude1: 3100
+    - _BackShade: 0.09
+    - _Blend: 0
+    - _BumpScale: 1
+    - _Coverage: -0.07
+    - _CoverageA: 0
+    - _CoverageOffset: 0.21
+    - _Cull: 2
+    - _CutHeight: 98
+    - _Cutoff: 0.465
+    - _Density: 0.0001
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FadeThreshold: 3
+    - _FarDist: 100000000
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _HorizonYAdjust: 1
+    - _Metallic: 0
+    - _NearZCutoff: 12.19
+    - _NoiseAmp1: 15
+    - _NoiseAmp2: 3.61
+    - _NoiseBias: -8
+    - _NoiseFreq1: 7.05
+    - _NoiseFreq2: 25
+    - _OcclusionStrength: 1
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _SampleCount0: 11
+    - _SampleCount1: 11
+    - _SampleCountL: 11
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _TranspOffset: 0
+    - _Transparency: 0.47
+    - _UndersideCurveFactor: 0.04
+    - _WeatherScale: 0
+    - _WeatherScale2: 1
+    - _WindSpeed: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _shadowMode: 1
+    - cutoff: 0.03
+    - timeDelay: 81111110
+    m_Colors:
+    - OffsetA: {r: 0, g: 0, b: 0, a: 0}
+    - TilingA: {r: 1, g: 1, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CoverageWindOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _EdgeFactors: {r: 0, g: 0.52, b: -1, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _InteractTextureAtr: {r: 0, g: -0.8, b: 3.5, a: 4.78}
+    - _InteractTextureOffset: {r: 0.1, g: 0, b: 0, a: 0}
+    - _InteractTexturePos: {r: 0, g: 0, b: 0, a: 0}
+    - _LocalLightPos: {r: 1111, g: 1082.6, b: 3139, a: 0}
+    - _Scroll1: {r: 1, g: 0, b: 0, a: 0}
+    - _Scroll2: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Velocity1: {r: 7, g: 0, b: 0, a: 0}
+    - _Velocity2: {r: 11, g: 0, b: 0, a: 2}
+    - _WindDirection: {r: 0, g: 0, b: 0, a: 0}
+    - _WindOffset: {r: 0, g: 0, b: 0, a: 0}

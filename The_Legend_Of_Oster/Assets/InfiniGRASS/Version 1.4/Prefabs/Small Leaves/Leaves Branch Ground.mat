@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Leaves Branch Ground
   m_Shader: {fileID: 4800000, guid: 0bf2fbdc14366694cb6734bd9b081ffe, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -75,12 +76,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaClip: 0
     - _BaseColorYShift: 1
     - _BaseLight: 0
     - _Blend: 0
-    - _BulgeScale: 0.2
+    - _BulgeScale: 0
     - _BulgeScale_copy: 0.1
     - _BulgeShape: 5
     - _BumpScale: 1
@@ -126,10 +128,11 @@ Material:
     - _ColorGlobal1: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _InteractAmpFreqRad: {r: 1, g: 1, b: 1, a: 1}
-    - _InteractPos: {r: 123.27, g: 0.73, b: -8.68, a: 0}
+    - _InteractPos: {r: 92.1, g: 30.5, b: -94.23, a: 0}
     - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
-    - _InteractSpeed: {r: 3e-45, g: -3e-45, b: 3e-45, a: 0}
+    - _InteractSpeed: {r: 1e-45, g: -1e-45, b: 1e-45, a: 0}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _TimeControl1: {r: 2, g: 0, b: 0.75, a: 0}
     - _WaveControl1: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
