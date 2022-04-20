@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: grass lwrp 1
+  m_Shader: {fileID: 4800000, guid: 49494e98e94ebda48b62bd4d1117ea90, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _METALLICSPECGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 2500
+  stringTagMap:
+    RenderType: TransparentCutout
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 62a80fc41af39fd4592c6995d13377b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowTexture:
+        m_Texture: {fileID: 2800000, guid: 5585ec5a213a7f743bf6080e2b3d8363, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 1
+    - _BaseColorYShift: 1
+    - _BaseLight: 0
+    - _Blend: 3
+    - _BulgeScale: 0.2
+    - _BulgeScale_copy: 1.2
+    - _BulgeShape: 5
+    - _BumpScale: 4.45
+    - _Cull: 0
+    - _Cutoff: 0.808
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FadeThreshold: 100
+    - _GlossMapScale: 0.23
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _InteractMaxYoffset: 1.5
+    - _Metallic: 0.23
+    - _OcclusionStrength: 0.171
+    - _QueueOffset: 0
+    - _RandYScale: 1
+    - _ReceiveShadows: 1
+    - _RippleScale: 0
+    - _SmoothMotionFactor: 105
+    - _Smoothness: 0.574
+    - _SmoothnessTextureChannel: 0
+    - _SnowOffset: 0.15
+    - _SpecularHighlights: 1
+    - _SpecularPower: 1
+    - _SrcBlend: 1
+    - _StopMotionThreshold: 10
+    - _Surface: 0
+    - _TintFrequency: 0.1
+    - _TintPower: 0
+    - _WaveXFactor: 1
+    - _WaveYFactor: 1
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ColorGlobal: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _EmissionColor: {r: 0.8301887, g: 0.55998576, b: 0.55998576, a: 1}
+    - _InteractPos: {r: 0, g: 0, b: 0, a: 1}
+    - _InteractSpeed: {r: 0, g: 0, b: 0, a: 1}
+    - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    - _TimeControl1: {r: 1, g: 1, b: 1, a: 100}
+    - _WaveControl1: {r: 1, g: 0.01, b: 0.001, a: 0.41}
+--- !u!114 &6429503826524919567
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1

@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: grass lwrp 2 OPAQUE Heli DEPTH 1 DISTANT FOREST 1
+  m_Shader: {fileID: 4800000, guid: 1f08ef16f99d3bd42bcbb27555cb1a97, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _METALLICSPECGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 9862eead2dfd2984c97116ecc9883ac4, type: 3}
+        m_Scale: {x: 0.8, y: 1.03}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 62a80fc41af39fd4592c6995d13377b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Burnramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InteractTexture:
+        m_Texture: {fileID: 2800000, guid: 8ff898b0b70398349998d5b0b427f060, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 9862eead2dfd2984c97116ecc9883ac4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShoreContourTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowTexture:
+        m_Texture: {fileID: 2800000, guid: 9fbc94ecee040cb4c8c0f42b89b02e85, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: 41e8b07bd5f650642a234c5a20002c64, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 1
+    - _BaseColorYShift: 1
+    - _BaseHeight: -8
+    - _BaseLight: 0
+    - _BillboardWidth: 1
+    - _Blend: 3
+    - _BulgeScale: 0.11
+    - _BulgeScale_copy: 0.9
+    - _BulgeShape: 0.71
+    - _BumpScale: 8.2
+    - _Burnfactor: -1
+    - _Cull: 0
+    - _Cutoff: 0.804
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FadeThreshold: 117.5
+    - _GlossMapScale: 0.21
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _InteractMaxYoffset: 0
+    - _Metallic: 0.53
+    - _NoiseAmplitude: 4.3
+    - _NoiseFreqX: 0.48
+    - _NoiseFreqZ: 1.1
+    - _NoiseOffsetY: 0.95
+    - _OcclusionStrength: 1
+    - _QueueOffset: 0
+    - _RandYScale: 1
+    - _ReceiveShadows: 1
+    - _RippleScale: 0
+    - _ShoreFadeFactor: 1
+    - _SmoothMotionFactor: 255
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SnowOffset: 0
+    - _SpecularFrontalPow: 0
+    - _SpecularHighlights: 1
+    - _SpecularPower: 270.3
+    - _SpecularPowerOffset: 111
+    - _SrcBlend: 1
+    - _StopMotionThreshold: 14
+    - _StopMotionThresholdHELI: 33
+    - _Surface: 0
+    - _TerrainScale: 2048
+    - _TintFrequency: 0.025
+    - _TintPower: -14.39
+    - _WaveXFactor: 0.26
+    - _WaveYFactor: 0.06
+    - _WorkflowMode: 1
+    - _XTiles: 1
+    - _YTiles: 1
+    - _ZWrite: 1
+    - _grassHeight: 6.26
+    - _respectHeight: 1
+    - _shapeOnlyHeight: 0
+    - _textureFeed: 1
+    - enableBillboard: 0
+    - enableSpriteSheet: 0
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0.9481132, b: 0.9481132, a: 1}
+    - _BurnCenter: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.3823528, g: 0.37374407, b: 0.07028536, a: 1}
+    - _ColorGlobal: {r: 0.8679245, g: 0.38405445, b: 0.1432894, a: 0.7529412}
+    - _DepthCameraPos: {r: 35.539215, g: 1000, b: 231.18208, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _InteractAmpFreqRad: {r: 5.56, g: 5.8, b: 3.91, a: 1}
+    - _InteractPos: {r: -257.68732, g: 458.96796, b: 16.603426, a: 0}
+    - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
+    - _InteractSpeed: {r: 4e-45, g: -3e-45, b: 3e-45, a: 0}
+    - _InteractTexturePos: {r: 0, g: 0, b: 0, a: 0}
+    - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 0.8509804}
+    - _SpecularBackColor: {r: 0.16981131, g: 0.028034883, b: 0.028034883, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SpecularFrontalColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TimeControl1: {r: 2, g: 0, b: 0.75, a: 0}
+    - _WaveControl1: {r: 1.21, g: 1.04, b: 0.001, a: 0.41}
+--- !u!114 &6429503826524919567
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1

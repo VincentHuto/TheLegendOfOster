@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GRASS_A SHADER 21 ANIME 2 LONG 2 WHEET
+  m_Shader: {fileID: 4800000, guid: 0bf2fbdc14366694cb6734bd9b081ffe, type: 3}
+  m_ShaderKeywords: _SPECULARHIGHLIGHTS_OFF
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 5458756b96641d346b9b746dad32c4dc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 863f98390ab39f44b9c21da2e5751d8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: 5458756b96641d346b9b746dad32c4dc, type: 3}
+        m_Scale: {x: 1, y: 0.981}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: bc2b645cf017c6d4cae26093ed3213fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: a0913fef1b36b3b46aa722b8560a8591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: b6e235f93a9df384fa3e54d3d5a041a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normals:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AO: 2.4
+    - _AlphaClip: 0
+    - _BaseColorYShift: 0
+    - _BaseLight: 0
+    - _Blend: 0
+    - _BulgeScale: 0.2
+    - _BulgeScale_copy: -1.36
+    - _BulgeShape: 8
+    - _BumpScale: 1
+    - _Cull: 0
+    - _Cutoff: 0.477
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FadeThreshold: 117.5
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GlowIntensity: 0.76
+    - _InteractMaxYoffset: 0
+    - _Metallic: 0.707
+    - _Occlusion: 7.5
+    - _OcclusionStrength: 0.812
+    - _QueueOffset: 0
+    - _RandYScale: 1
+    - _ReceiveShadows: 1
+    - _RippleScale: 0
+    - _ShadowStrength: 1
+    - _Shininess: 0.7
+    - _SmoothMotionFactor: 255
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SnowOffset: 1.08
+    - _SpecularHighlights: 0
+    - _SpecularPower: 0.7714286
+    - _SquashAmount: 1
+    - _SrcBlend: 1
+    - _StopMotionThreshold: 7
+    - _StopMotionThresholdHELI: 10
+    - _Strength: 0.16
+    - _Surface: 0
+    - _TintFrequency: 0.1
+    - _TintPower: 0
+    - _TranslucencyViewDependency: 0.7
+    - _WaveXFactor: 0.35
+    - _WaveYFactor: 0.18
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CameraPos: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.8235294, g: 0.41176456, b: 0.41176456, a: 1}
+    - _ColorGlobal: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 0.79607844}
+    - _ColorGlobal1: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorTrans: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 0.75735295, g: 0.41001523, b: 0.41001523, a: 0.9764706}
+    - _InteractAmpFreqRad: {r: 1, g: 1, b: 1, a: 1}
+    - _InteractPos: {r: 123.27, g: 0.73, b: -8.68, a: 0}
+    - _InteractPos1: {r: 175.60927, g: 6.609695, b: -17.998617, a: 0}
+    - _InteractSpeed: {r: 3e-45, g: 0, b: 3e-45, a: 0}
+    - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
+    - _Params1: {r: 11.86, g: 24.5, b: 19.6, a: 0}
+    - _Params2: {r: 9.72, g: 18.71, b: 9.89, a: 0}
+    - _Scale: {r: 1, g: 2.45, b: 0.5, a: 0}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 0.89411765}
+    - _TimeControl1: {r: 2, g: 0, b: 0.75, a: 0}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
+    - _WaveAndDistance: {r: 12, g: 3.6, b: 1, a: 1}
+    - _WaveControl1: {r: 1, g: 1, b: 0, a: 0.91}
+    - _WavingTint: {r: 0.7, g: 0.6, b: 0.5, a: 0}
