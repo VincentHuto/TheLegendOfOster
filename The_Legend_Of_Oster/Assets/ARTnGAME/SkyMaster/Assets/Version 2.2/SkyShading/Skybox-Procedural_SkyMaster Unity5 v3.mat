@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Skybox-Procedural_SkyMaster Unity5 v3
   m_Shader: {fileID: 4800000, guid: 3145e60ef3c3d6c47b9bff1289934a91, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,16 +28,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Bump_strenght: 0
     - HorizonY: -0.06
-    - Horizon_adj: 10.529456
+    - Horizon_adj: 265.5329
     - SunBlend: 66
     - White_cutoff: 6.2
-    - _Coloration: -0.174
+    - _Coloration: -0.1
     - fCameraHeight: 0
     - fCameraHeight2: 0
-    - fExposure: 0.2007219
+    - fExposure: 0.28750077
     - fInnerRadius: 10000
     - fInnerRadius2: 100000000
     - fKm4PI: 0.005026548
@@ -50,8 +52,8 @@ Material:
     - fScaleDepth: 0
     - fScaleOverScaleDepth: 0.06666667
     - flicker: 0
-    - g: -0.9959852
-    - g2: 0.9919865
+    - g: -0.9
+    - g2: 0.80999994
     m_Colors:
     - GroundColor: {r: 0, g: 0, b: 0, a: 1}
     - SunColor: {r: 1, g: 1, b: 1, a: 1}
@@ -59,6 +61,7 @@ Material:
     - _Obliqueness: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
     - v3CameraPos: {r: -62.67624, g: -10002, b: -107.306, a: 0}
-    - v3InvWavelength: {r: 82.984314, g: 129.15575, b: 392.22757, a: 0}
-    - v3LightDir: {r: 0.26788726, g: 0.92415357, b: 0.27235395, a: 0}
+    - v3InvWavelength: {r: 90.146065, g: 122.97513, b: 388.87473, a: 0}
+    - v3LightDir: {r: -0.34836552, g: 0.9230787, b: 0.16299424, a: 0}
     - v3LightDirMoon: {r: 0, g: 0, b: 1, a: 0}
+  m_BuildTextureStacks: []

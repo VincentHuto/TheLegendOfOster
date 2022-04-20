@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SkyMasterSkyMaterial
   m_Shader: {fileID: 4800000, guid: ebf6ad3f82dcbb84dae373a541499b31, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,9 +28,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Bump_strenght: 0
-    - _Coloration: -0.15
+    - _Coloration: -0.1
     - fCameraHeight: 0
     - fCameraHeight2: 0
     - fExposure: 0.28750077
@@ -37,19 +39,20 @@ Material:
     - fInnerRadius2: 100000000
     - fKm4PI: 0.005026548
     - fKmESun: 0.000664
-    - fKr4PI: 0.10694811
-    - fKrESun: 0.014127694
+    - fKr4PI: 0.044116244
+    - fKrESun: 0.005827694
     - fOuterRadius: 10250
     - fOuterRadius2: 105062500
     - fSamples: 0.02
     - fScale: 0.004
     - fScaleDepth: 0
-    - fScaleOverScaleDepth: 0.13333334
+    - fScaleOverScaleDepth: 0.06666667
     - g: -0.9
     - g2: 0.80999994
     m_Colors:
     - _TintColor: {r: 0.003921569, g: 0.003921569, b: 0.003921569, a: 1}
     - v3CameraPos: {r: -62.67624, g: -10002, b: -107.306, a: 0}
-    - v3InvWavelength: {r: 95.48271, g: 32.594856, b: 11.470337, a: 0}
-    - v3LightDir: {r: 0.7366875, g: 0.6265251, b: 0.25447568, a: 0}
+    - v3InvWavelength: {r: 90.146065, g: 122.97513, b: 388.87473, a: 0}
+    - v3LightDir: {r: -0.34836552, g: 0.9230787, b: 0.16299424, a: 0}
     - v3LightDirMoon: {r: 0.30021596, g: 0.35013768, b: 0.88728464, a: 0}
+  m_BuildTextureStacks: []
