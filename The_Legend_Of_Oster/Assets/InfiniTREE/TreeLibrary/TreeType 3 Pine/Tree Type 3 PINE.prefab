@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 400000}
+  m_Layer: 0
+  m_Name: Tree Type 3 PINE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 400002}
+  - component: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: PINE TREE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 400004}
+  m_Layer: 0
+  m_Name: LEAF_POOL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.881401, y: 0.6819935, z: -7.192192}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400002}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.2430172, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400004}
+  m_Father: {fileID: 400000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400002}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7564db5ea31de50469e4b9c14fdcbe4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Max_Health: 100
+  Chop: 0
+  max_fall_ammount: 80
+  no_shadows_on_dynamic: 0
+  Rm_shad_above_lvl: 5
+  no_leaf_shadows: 0
+  Rm_receive: 1
+  Rm_cast: 1
+  Range_leaf_scale: 0
+  Leaf_scale_range: {x: 0.5, y: 0.8}
+  fall_max_time: 4
+  fall_speed: 1
+  Rot_toward_normal: 0
+  Rot_speed: 5
+  direction_normal: {x: 0, y: 1, z: 0}
+  max_rot_time: 0.5
+  Hero: {fileID: 0}
+  Interaction_thres: 15
+  Interaction_offset: 5
+  Enable_LOD: 1
+  Grow_in_Editor: 0
+  InstaGrowLeaves: 0
+  Leaves_local_space: 1
+  is_grass: 0
+  StartRadi: 1.28
+  StartLength: 2.1
+  Length_scale: 1
+  Extend_scale: 1.15
+  Min_max_spread: {x: 1, y: 1}
+  Spread_Z_separate: 0
+  Min_max_spread_Z: {x: 1, y: 1}
+  Spread_Y_separate: 1
+  Min_max_spread_Y: {x: 345, y: 345}
+  Min_Max_Branching: {x: 2, y: 2}
+  Max_branches_per_level: 
+  Min_Max_Radi: {x: 0.2, y: 0.3}
+  lower_length_by: 0.8
+  lower_radi_by: 0.7
+  Grow_tree: 1
+  Start_tree_scale: 0.4
+  End_scale: 1
+  Grow_tree_speed: 0.6
+  Update_every: 0.02
+  BarkPrefab: BARK PINE
+  BarkPrefabOBJ: {fileID: 0}
+  LeafPrefabs:
+  - LEAF PINE
+  - LEAF PINE
+  BranchPrefabs:
+  - BRANCH PINE COLUMN
+  - BRANCH PINE
+  LeafPrefabsOBJ: []
+  BranchPrefabsOBJ: []
+  BranchID_per_level: 01000000010000000100000001000000
+  Grow_leaves_slow_factor: 5
+  Grow_speed: 1.25
+  Growth_start_div: 2
+  Growth_angle_div: 2
+  Leaf_start_div: 14
+  Smooth_leaf_growth: 1
+  Leaf_level_min_max: {x: 0, y: 8}
+  Leaves_per_branch: 0
+  Use_height: 0
+  Leaf_height_min_max: {x: 0, y: 4}
+  Leaf_dist_factor: 0.29
+  CreateForest: 1
+  Interactive_tree: 1
+  Max_tree_dist: 15
+  Grow_angles: 0
+  Branch_levels: 
+  scaleVectors: []
+  Registered_Brances: []
+  Start_Scales: []
+  Registered_Leaves: []
+  Registered_Leaves_Rot: []
+  Leaf_belongs_to_branch: 
+  Leaf_pool: {fileID: 100004}
+  Leaves: []
+  Leaves_scales: []
+  Height_levels: 6
+  Height_separation: 0.09
+  Height_reduce: 0.02
+  Level1Decline: 1.01
+  Reduce_angle_with_height: 1
+  Multithreaded: 1
+  Height_offset: {x: 0.1, y: 0, z: -0.1}
+  Decouple_from_bark: 0
+  Forest_holder: {fileID: 0}
+  Leaf_mat: {fileID: 2100000, guid: 72cbf7f6ebcf21d4c87cc3263911de02, type: 2}
+  Enable_wind: 1
+  Wind_freq: 0.4
+  Wind_strength: 0.002
+  batching_ended: 0
+  is_moving: 0
+  Health: 0
+  start_falling: 0
+  fall_ammount: 0
+  fall_ended: 0
+  passed_chop: 0
+  root_tree: {fileID: 0}
+  Grow_tree_ended: 0
+  Branch_grew: 
+  Grow_level: 0
+  growth_over: 0
+  Combiner: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
