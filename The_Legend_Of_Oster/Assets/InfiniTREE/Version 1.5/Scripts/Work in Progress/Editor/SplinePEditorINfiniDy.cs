@@ -167,17 +167,16 @@ namespace Artngame.INfiniDy {
 	
 
 	public void OnEnable(){
-
-            //SceneView.onSceneGUIDelegate -= OnScene;
-            //SceneView.onSceneGUIDelegate += OnScene;
-
-            SceneView.duringSceneGui -= OnScene;
-            SceneView.duringSceneGui += OnScene;
+	
+		SceneView.onSceneGUIDelegate -= OnScene;
+		SceneView.onSceneGUIDelegate += OnScene;
 
 
 
 
-            Overide_seg_detail = serializedObject.FindProperty ("Overide_seg_detail");
+
+
+			Overide_seg_detail= serializedObject.FindProperty ("Overide_seg_detail");
 			Add_mid_point= serializedObject.FindProperty ("Add_mid_point");
 			Add_in_Segment= serializedObject.FindProperty ("Add_in_Segment");
 			Node_toggle_dist = serializedObject.FindProperty ("Node_toggle_dist"); 

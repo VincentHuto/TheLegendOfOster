@@ -2,23 +2,69 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: INfiniTREE LEAF
-  m_Shader: {fileID: 4800000, guid: 18d68f0a2ab7a5a4b9a4f2b789db639c, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: -6465566751694194690, guid: a9eeed8afb1af6748a365e99655ce4c8, type: 3}
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _DISABLE_DECALS
+  - _DISABLE_SSR_TRANSPARENT
+  - _DOUBLESIDED_ON
+  - _ENABLE_FOG_ON_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    MotionVector: User
+    RenderType: Transparent
+  disabledShaderPasses:
+  - TransparentBackface
+  - MOTIONVECTORS
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - RayTracingPrepass
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_1AFBCB48:
+        m_Texture: {fileID: 2800000, guid: 476cae408a45d6542a502c68f4c130e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_1E99EE63:
+        m_Texture: {fileID: 2800000, guid: 62a80fc41af39fd4592c6995d13377b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_2C0D6D87:
+        m_Texture: {fileID: 2800000, guid: d9089543cca34ec4e96e6dfa4e6d610f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_2C8DCC4A:
+        m_Texture: {fileID: 2800000, guid: f1a2540f90a894f4bbd4ba5786cd8ac5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_2DE2466A:
+        m_Texture: {fileID: 2800000, guid: a7b529d68b155ee439c4c2108fa82427, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_64A5AE0F:
+        m_Texture: {fileID: 2800000, guid: 310b539e273b37340ac6ac78e2fd08d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_F33AF0A:
+        m_Texture: {fileID: 2800000, guid: a7b529d68b155ee439c4c2108fa82427, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_FC9FA058:
+        m_Texture: {fileID: 2800000, guid: deaa4f20614519247bf99b87e406e770, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,20 +117,70 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - PixelSnap: 0
+    - Vector1_1C5A84E6: 0.3
+    - Vector1_213E783A: 0.78
+    - Vector1_476044E3: 1
+    - Vector1_57E7318A: 0.3
+    - Vector1_A6014E39: 0.5
+    - Vector1_AFE63DDA: 0.3
+    - Vector1_E06F6D82: -0.29
+    - Vector1_E0EDB720: 0.3
+    - Vector1_E6670426: 0
+    - Vector1_F5FE43EA: 0.2
+    - _AddPrecomputedVelocity: 0
+    - _AlphaCutoffEnable: 1
+    - _AlphaDstBlend: 10
+    - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
     - _BaseColorYShift: 1
     - _BaseLight: 0
+    - _BlendMode: 0
     - _BulgeScale: 0.2
-    - _BulgeScale_copy: 2
-    - _BulgeShape: 2
+    - _BulgeScale_copy: 1.2
+    - _BulgeShape: 5
+    - _ConservativeDepthOffsetEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
     - _Cutoff: 0.66071427
+    - _DepthOffsetEnable: 0
+    - _DiffusionProfileHash: 0
+    - _DoubleSidedEnable: 1
+    - _DoubleSidedGIMode: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 10
     - _EmissionLM: 0
+    - _EnableBlendModePreserveSpecularLighting: 0
+    - _EnableFogOnTransparent: 1
     - _FadeThreshold: 100
-    - _InteractMaxYoffset: 5
+    - _InteractMaxYoffset: 1.5
     - _InvFade: 1
+    - _OpaqueCullMode: 2
     - _Parallax: 0.02
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _RandYScale: 1
+    - _RayTracing: 0
+    - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RefractionModel: 0
+    - _RenderQueueType: 4
+    - _RequireSplitLighting: 0
     - _RippleScale: 0
     - _ShadowIntensity: 0.39285713
     - _ShadowStrength: 1
@@ -92,31 +188,91 @@ Material:
     - _SmoothMotionFactor: 105
     - _SpecularPower: 1
     - _SquashAmount: 1
-    - _StopMotionThreshold: 4
+    - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 0
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _StopMotionThreshold: 10
+    - _SupportDecals: 0
+    - _SurfaceType: 1
     - _TintFrequency: 0.1
     - _TintPower: 0
     - _TranslucencyViewDependency: 0.7
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 1
+    - _UseShadowThreshold: 0
     - _WaveXFactor: 1
     - _WaveYFactor: 1
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestGBuffer: 3
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
     m_Colors:
+    - Color_69EFFC6A: {r: 1, g: 1, b: 1, a: 0}
+    - Color_7AA661C1: {r: 1, g: 1, b: 1, a: 0.98039216}
+    - Vector2_848566B3: {r: 6, g: 0, b: 0, a: 0}
+    - Vector2_890E1AA0: {r: 6, g: 1, b: 1, a: 0}
+    - Vector3_75434E40: {r: 0, g: 3.93, b: 0, a: 0}
+    - Vector3_FD90D4D3: {r: 111, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5514706, g: 0.1142372, b: 0.047540575, a: 1}
     - _ColorGlobal: {r: 1, g: 1, b: 1, a: 0}
+    - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
     - _Emission: {r: 0.33088237, g: 0.18369676, b: 0.22915114, a: 0}
-    - _InteractAmpFreqRad1: {r: -6.67, g: 5, b: 8.08, a: 1}
-    - _InteractAmpFreqRad2: {r: 5, g: 4, b: 10, a: 1}
-    - _InteractPos: {r: 63.222595, g: 31.209637, b: 108.855835, a: 0}
-    - _InteractPosC1: {r: 60.771797, g: 29.479637, b: 100.52015, a: 1}
-    - _InteractPosC2: {r: 58.077675, g: 31.059637, b: 117.7997, a: 1}
-    - _InteractSpeed: {r: 0.00026110568, g: 0.0000048376746, b: 0.000012548085, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _InteractPos: {r: 0, g: 0, b: 0, a: 1}
+    - _InteractSpeed: {r: 0, g: 0, b: 0, a: 1}
     - _OceanCenter: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _Scale: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 0.6724138, b: 0.6724138, a: 0}
-    - _TimeControl1: {r: 1, g: 1.12, b: 1, a: 1}
+    - _TimeControl1: {r: 1, g: 1, b: 1, a: 100}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
-    - _WaveControl1: {r: 1, g: 0.01, b: 0.001, a: 1}
+    - _WaveControl1: {r: 1, g: 0.01, b: 0.001, a: 0.41}
+  m_BuildTextureStacks: []
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &3105160314988311758
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 12
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
+--- !u!114 &5155642509769219690
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

@@ -175,14 +175,14 @@ Shader "InfiniGRASS/InfiniGrass Directional Wind ROOF" {
 //                	_BulgeScale_copy = 0;
 //                }
 //
-  float3 SpeedFac =  _InteractSpeed;  
+  float3 SpeedFac = float3(0,0,0);  //	SpeedFac =  _InteractSpeed;  
                 float distA =  distance(_InteractPos,o.posWorld)/ (_StopMotionThreshold*1);      
                   if( distance(_InteractPos,o.posWorld) < _StopMotionThreshold*1){ 
                // if( distance(_InteractPos.x,o.posWorld.x) < _StopMotionThreshold/2 ){    
                //      if( distance(_InteractPos.z,o.posWorld.z) < _StopMotionThreshold/2){                  
                 	//_BulgeScale = 0;
                 	//_BulgeScale_copy = 0;                	
-                	SpeedFac +=  _InteractSpeed *_WaveControl1.w;
+                	SpeedFac =  _InteractSpeed *_WaveControl1.w;
 //                		if( o.uv0.y > 0.2){
 //							o.posWorld.x += (_InteractSpeed.x*22+0.1)*cos(o.posWorld.x*_WaveControl1.x+_Time.y*_TimeControl1.x + o.posWorld.z*_WaveControl1.z)*0.1*sin(o.posWorld.z+_Time.y) + _WaveXFactor*((2+cos(o.posWorld.x/dist))*_OceanCenter.x/5) + _WaveYFactor*((3+sin(2*o.posWorld.z/dist))*_OceanCenter.z/5);
 //							o.posWorld.z += (_InteractSpeed.z+0.1)*sin(o.posWorld.x*_WaveControl1.x+_Time.y*_TimeControl1.x + o.posWorld.z*_WaveControl1.z)*0.1*cos(o.posWorld.z+_Time.y) + _WaveXFactor*((2+sin(o.posWorld.z/dist))*_OceanCenter.z/5) + _WaveYFactor*((3+cos(3*o.posWorld.x/dist))*_OceanCenter.x/6);
@@ -192,14 +192,8 @@ Shader "InfiniGRASS/InfiniGrass Directional Wind ROOF" {
                 	//_WaveYFactor = _WaveYFactor - (1-distA)*(1-distA)*SpeedFac.x;
                 	}
                 	if( o.uv0.y > 0.19){
-						_WaveXFactor = _WaveXFactor - (1-distA)*(1-distA)*SpeedFac.z*10;
-                		_WaveYFactor = _WaveYFactor - (1-distA)*(1-distA)*SpeedFac.x*10;
-
-						o.posWorld.x = o.posWorld.x - (1 - distA)*(1 - distA)*SpeedFac.x * 0.01;
-						o.posWorld.z = o.posWorld.z - (1 - distA)*(1 - distA)*SpeedFac.z * 0.01;
-
-						//o.posWorld.x = o.posWorld.x - pow((1 - distA),0.2)*_InteractMaxYoffset*(o.uv0.y - 0.5)*sin(o.posWorld.z + _Time.y)*SpeedFac.x*0.001; //v2.0.6
-						//o.posWorld.z = o.posWorld.z - pow((1 - distA), 0.2)*_InteractMaxYoffset*(o.uv0.y - 0.5)*sin(o.posWorld.z + _Time.y)*SpeedFac.z*0.001; //v2.0.6
+						_WaveXFactor = _WaveXFactor - (1-distA)*(1-distA)*SpeedFac.z*1;
+                		_WaveYFactor = _WaveYFactor - (1-distA)*(1-distA)*SpeedFac.x*1;
                 	}
                 	if( o.uv0.y > 0.5){
 						//o.posWorld.y = o.posWorld.y - (1-distA)*3*(o.uv0.y-0.5)*sin(o.posWorld.z+_Time.y) ;//+_BulgeScale*0.5*cos(o.posWorld.x*_WaveControl1.x+_Time.y*_TimeControl1.x + o.posWorld.z*_WaveControl1.z)*0.1*sin(o.posWorld.z+_Time.y) ;
@@ -539,9 +533,6 @@ float3 SpeedFac = float3(0,0,0);  //	SpeedFac =  _InteractSpeed;
                 	if( o.uv0.y > 0.19){
 						_WaveXFactor = _WaveXFactor - (1-distA)*(1-distA)*SpeedFac.z*1;
                 		_WaveYFactor = _WaveYFactor - (1-distA)*(1-distA)*SpeedFac.x*1;
-
-						o.posWorld.x = o.posWorld.x - (1 - distA)*(1 - distA)*SpeedFac.x * 0.01;
-						o.posWorld.z = o.posWorld.z - (1 - distA)*(1 - distA)*SpeedFac.z * 0.01;
                 	}
                 	if( o.uv0.y > 0.5){
 						o.posWorld.y = o.posWorld.y - (1-distA)*_InteractMaxYoffset*(o.uv0.y-0.5)*sin(o.posWorld.z+_Time.y) ;//+_BulgeScale*0.5*cos(o.posWorld.x*_WaveControl1.x+_Time.y*_TimeControl1.x + o.posWorld.z*_WaveControl1.z)*0.1*sin(o.posWorld.z+_Time.y) ;
@@ -1037,9 +1028,6 @@ float3 SpeedFac = float3(0,0,0);  //	SpeedFac =  _InteractSpeed;
                 	if( o.uv0.y > 0.19){
 						_WaveXFactor = _WaveXFactor - (1-distA)*(1-distA)*SpeedFac.z*1;
                 		_WaveYFactor = _WaveYFactor - (1-distA)*(1-distA)*SpeedFac.x*1;
-
-						o.posWorld.x = o.posWorld.x - (1 - distA)*(1 - distA)*SpeedFac.x * 0.01;
-						o.posWorld.z = o.posWorld.z - (1 - distA)*(1 - distA)*SpeedFac.z * 0.01;
                 	}
                 	if( o.uv0.y > 0.5){
 						o.posWorld.y = o.posWorld.y - (1-distA)*_InteractMaxYoffset*(o.uv0.y-0.5)*sin(o.posWorld.z+_Time.y) ;//+_BulgeScale*0.5*cos(o.posWorld.x*_WaveControl1.x+_Time.y*_TimeControl1.x + o.posWorld.z*_WaveControl1.z)*0.1*sin(o.posWorld.z+_Time.y) ;
