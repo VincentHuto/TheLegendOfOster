@@ -62,6 +62,7 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
             inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
             inputActions.PlayerActions.DPadDown.performed += i => d_Pad_Down = true;
+            inputActions.PlayerActions.DPadUp.performed += i => d_Pad_Up = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
             inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
@@ -177,6 +178,11 @@ public class InputHandler : MonoBehaviour
         else if (d_Pad_Down)
         {
             playerInventory.ChangeCurrentConsumable();
+
+        }
+        else if (d_Pad_Up)
+        {
+            playerInventory.ChangeCurrentSpell();
 
         }
 

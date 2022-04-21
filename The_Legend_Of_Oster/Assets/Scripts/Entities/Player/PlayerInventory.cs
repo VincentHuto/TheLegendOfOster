@@ -6,22 +6,28 @@ public class PlayerInventory : MonoBehaviour
 {
     WeaponSlotManager weaponSlotManager;
     QuickSlotsUI quickSlotsUI;
-    public SpellItem currentSpell;
 
     public WeaponItemStack rightWeapon, leftWeapon, unarmedWeapon;
     public WeaponItemStack[] weaponsInRightHandSlots = new WeaponItemStack[1];
     public WeaponItemStack[] weaponsInLeftHandSlots = new WeaponItemStack[1];
     public ConsumableItemStack currentConsumable,unarmedConsumable;
-    public ConsumableItemStack[] consumableInQuickSlots = new ConsumableItemStack[2];
+    public ConsumableItemStack[] consumableInQuickSlots = new ConsumableItemStack[3];
+
+    public SpellItemStack currentSpell, unarmedSpell;
+    public SpellItemStack[] SpellInQuickSlots = new SpellItemStack[3];
 
 
     public int currentRightWeaponIndex = 0;
     public int currentLeftWeaponIndex = 0;
     public int currentConsumableIndex = 0;
+    public int currentSpellIndex = 0;
+
+
 
     public List<WeaponItemStack> weaponsInventory;
     public List<KeyItemStack> keyItemsInventory;
     public List<CraftingItemStack> craftingItemInventory;
+    public List<SpellItemStack> spellInventory;
 
     private void Awake()
     {
@@ -38,6 +44,7 @@ public class PlayerInventory : MonoBehaviour
         weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
         weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
         quickSlotsUI.UpdateConsumableQuickSlotsUi(currentConsumable);
+        quickSlotsUI.UpdateSpellQuickSlotsUi(currentSpell);
 
 
     }
@@ -172,37 +179,57 @@ public class PlayerInventory : MonoBehaviour
             weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
         }
     }
-
     public void ChangeCurrentConsumable()
     {
         currentConsumableIndex = currentConsumableIndex + 1;
 
-        if (currentConsumableIndex == 0 && consumableInQuickSlots[0] != null)
-        {
-            currentConsumable = consumableInQuickSlots[currentConsumableIndex];
-            //   weaponSlotManager.LoadWeaponOnSlot(consumableInQuickSlots[currentConsumableIndex], true);
-        }
-        else if (currentConsumableIndex == 0 && consumableInQuickSlots[0] == null)
-        {
-            currentConsumableIndex = currentConsumableIndex + 1;
-        }
 
-        else if (currentConsumableIndex == 1 && consumableInQuickSlots[1] != null)
+        for(int i = 0; i< consumableInQuickSlots.Length; i++)
         {
-            currentConsumable = consumableInQuickSlots[currentConsumableIndex];
-            //  weaponSlotManager.LoadWeaponOnSlot(consumableInQuickSlots[currentConsumableIndex], true);
-        }
-        else if (currentConsumableIndex == 1 && consumableInQuickSlots[1] == null)
-        {
-            currentConsumableIndex = currentConsumableIndex + 1;
+
+            if (currentConsumableIndex == i && consumableInQuickSlots[i] != null)
+            {
+                currentConsumable = consumableInQuickSlots[currentConsumableIndex];
+            }
+            else if (currentConsumableIndex == i && consumableInQuickSlots[i] == null)
+            {
+                currentConsumableIndex = currentConsumableIndex + 1;
+            }
+
         }
 
         if (currentConsumableIndex > consumableInQuickSlots.Length - 1)
         {
             currentConsumableIndex = -1;
             currentConsumable = unarmedConsumable;
-            //  weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
         }
         quickSlotsUI.UpdateConsumableQuickSlotsUi(currentConsumable);
     }
+    public void ChangeCurrentSpell()
+    {
+        currentSpellIndex = currentSpellIndex + 1;
+
+
+        for (int i = 0; i < SpellInQuickSlots.Length; i++)
+        {
+
+            if (currentSpellIndex == i && SpellInQuickSlots[i] != null)
+            {
+                currentSpell = SpellInQuickSlots[currentSpellIndex];
+            }
+            else if (currentSpellIndex == i && SpellInQuickSlots[i] == null)
+            {
+                currentSpellIndex = currentSpellIndex + 1;
+            }
+
+        }
+
+        if (currentSpellIndex > SpellInQuickSlots.Length - 1)
+        {
+            currentSpellIndex = -1;
+            currentSpell = unarmedSpell;
+        }
+        quickSlotsUI.UpdateSpellQuickSlotsUi(currentSpell);
+    }
+
 }

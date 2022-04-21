@@ -155,11 +155,11 @@ public class PlayerAttacker : MonoBehaviour
     {
         if (weapon.isFaithCaster)
         {
-            if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
+            if (playerInventory.currentSpell != null && playerInventory.currentSpell.getSpell().isFaithSpell)
             {
-                if (playerStats.currentBreath >= playerInventory.currentSpell.breathCost)
+                if (playerStats.currentBreath >= ((SpellItem)playerInventory.currentSpell.getSpell()).breathCost)
                 {
-                    playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                    playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
                 }
                 else
                 {
@@ -194,11 +194,11 @@ public class PlayerAttacker : MonoBehaviour
     {
         if (weapon.isFaithCaster)
         {
-            if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
+            if (playerInventory.currentSpell != null && playerInventory.currentSpell.getSpell().isFaithSpell)
             {
-                if (playerStats.currentBreath >= playerInventory.currentSpell.breathCost)
+                if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
                 {
-                    playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                    playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
                 }
                 else
                 {
@@ -210,7 +210,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void SuccessfullyCastSpell()
     {
-        playerInventory.currentSpell.SuccessfullyCastSpell(animatorHandler, playerStats);
+        playerInventory.currentSpell.getSpell().SuccessfullyCastSpell(animatorHandler, playerStats);
     }
 
 

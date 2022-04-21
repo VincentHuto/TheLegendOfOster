@@ -6,55 +6,87 @@ using UnityEngine.UI;
 public class QuickSlotsUI : MonoBehaviour
 {
     public Image leftWeaponIcon, rightWeaponIcon;
+
+    public Image topSpellIcon;
+    public Text topSpellText;
     public Image bottomConsumableIcon;
     public Text bottomConsumableText;
 
     public void UpdateWeaponQuickSlotsUI(bool isLeft, WeaponItemStack weapon)
     {
-        if (isLeft == false)
+        if (weapon != null)
         {
-            if (weapon.itemType.itemIcon != null)
+            if (isLeft == false)
             {
-                rightWeaponIcon.sprite = weapon.itemType.itemIcon;
-                rightWeaponIcon.enabled = true;
+                if (weapon.itemType.itemIcon != null)
+                {
+                    rightWeaponIcon.sprite = weapon.itemType.itemIcon;
+                    rightWeaponIcon.enabled = true;
+                }
+                else
+                {
+                    rightWeaponIcon.sprite = null;
+                    rightWeaponIcon.enabled = false;
+                }
             }
             else
             {
-                rightWeaponIcon.sprite = null;
-                rightWeaponIcon.enabled = false;
-            }
-        }
-        else
-        {
-            if (weapon.itemType.itemIcon != null)
-            {
-                leftWeaponIcon.sprite = weapon.itemType.itemIcon;
-                leftWeaponIcon.enabled = true;
-            }
-            else
-            {
-                leftWeaponIcon.sprite = null;
-                leftWeaponIcon.enabled = false;
+                if (weapon.itemType.itemIcon != null)
+                {
+                    leftWeaponIcon.sprite = weapon.itemType.itemIcon;
+                    leftWeaponIcon.enabled = true;
+                }
+                else
+                {
+                    leftWeaponIcon.sprite = null;
+                    leftWeaponIcon.enabled = false;
+                }
             }
         }
     }
-
     public void UpdateConsumableQuickSlotsUi(ConsumableItemStack consumableItem)
     {
-        if (consumableItem.itemType.itemIcon != null)
+        if (consumableItem != null)
         {
-            bottomConsumableIcon.sprite = consumableItem.itemType.itemIcon;
-            bottomConsumableIcon.enabled = true;
+            if (consumableItem.itemType.itemIcon != null)
+            {
+                bottomConsumableIcon.sprite = consumableItem.itemType.itemIcon;
+                bottomConsumableIcon.enabled = true;
 
-            bottomConsumableText.text = consumableItem.name;
-            bottomConsumableText.enabled = true;
+                bottomConsumableText.text = consumableItem.name;
+                bottomConsumableText.enabled = true;
 
+            }
+            else
+            {
+                bottomConsumableIcon.sprite = null;
+                bottomConsumableIcon.enabled = false;
+                bottomConsumableText.enabled = false;
+            }
         }
-        else
+
+    }
+    public void UpdateSpellQuickSlotsUi(SpellItemStack spellItem)
+    {
+        if (spellItem != null)
         {
-            bottomConsumableIcon.sprite = null;
-            bottomConsumableIcon.enabled = false;
-            bottomConsumableText.enabled = false;
+
+            if (spellItem.itemType.itemIcon != null)
+            {
+                topSpellIcon.sprite = spellItem.itemType.itemIcon;
+                topSpellIcon.enabled = true;
+
+                topSpellText.text = spellItem.name;
+                topSpellText.enabled = true;
+
+            }
+            else
+            {
+                topSpellIcon.sprite = null;
+                topSpellIcon.enabled = false;
+                topSpellText.enabled = false;
+            }
         }
     }
+
 }
