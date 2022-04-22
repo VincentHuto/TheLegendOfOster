@@ -7,6 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Spells/Spell Item Stack")]
 public class SpellItemStack : ItemStack
 {
+   public bool isEmpty;
 
     public SpellItem getSpell()
     {

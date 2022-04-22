@@ -78,8 +78,18 @@ public class PlayerManager : CharacterManager
         inputHandler.d_Pad_Left = false;
         inputHandler.pickup_Input = false;
         inputHandler.inv_Input = false;
+
+
+
         isJumping = anim.GetBool("isJumping");
         anim.SetBool("isGrounded", isGrounded);
+
+
+        if(isJumping)
+        {
+            anim.SetBool("isGrounded", false);
+
+        }
 
         float delta = Time.fixedDeltaTime;
 

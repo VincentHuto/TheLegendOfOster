@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
     public ConsumableItemStack[] consumableInQuickSlots = new ConsumableItemStack[3];
 
     public SpellItemStack currentSpell, unarmedSpell;
-    public SpellItemStack[] SpellInQuickSlots = new SpellItemStack[3];
+    public SpellItemStack[] spellInQuickSlots = new SpellItemStack[3];
 
 
     public int currentRightWeaponIndex = 0;
@@ -40,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
         rightWeapon = weaponsInRightHandSlots[0];
         leftWeapon = weaponsInLeftHandSlots[0];
         currentConsumable = consumableInQuickSlots[0];
+        currentSpell = spellInQuickSlots[0];
 
         weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
         weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
@@ -210,21 +211,21 @@ public class PlayerInventory : MonoBehaviour
         currentSpellIndex = currentSpellIndex + 1;
 
 
-        for (int i = 0; i < SpellInQuickSlots.Length; i++)
+        for (int i = 0; i < spellInQuickSlots.Length; i++)
         {
 
-            if (currentSpellIndex == i && SpellInQuickSlots[i] != null)
+            if (currentSpellIndex == i && spellInQuickSlots[i] != null)
             {
-                currentSpell = SpellInQuickSlots[currentSpellIndex];
+                currentSpell = spellInQuickSlots[currentSpellIndex];
             }
-            else if (currentSpellIndex == i && SpellInQuickSlots[i] == null)
+            else if (currentSpellIndex == i && spellInQuickSlots[i] == null)
             {
                 currentSpellIndex = currentSpellIndex + 1;
             }
 
         }
 
-        if (currentSpellIndex > SpellInQuickSlots.Length - 1)
+        if (currentSpellIndex > spellInQuickSlots.Length - 1)
         {
             currentSpellIndex = -1;
             currentSpell = unarmedSpell;

@@ -18252,6 +18252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastAttack: 
+  failToUseAnimation: Shrug
 --- !u!1 &8063336740281552025
 GameObject:
   m_ObjectHideFlags: 0
@@ -20766,17 +20767,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25c1a4aeeac3d9f40927413e7a935efc, type: 2}
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
   weaponsInLeftHandSlots:
-  - {fileID: 11400000, guid: 25c1a4aeeac3d9f40927413e7a935efc, type: 2}
+  - {fileID: 11400000, guid: 6ed33b8c3ed18dc41acb939182579964, type: 2}
   - {fileID: 11400000, guid: 23c7577d11108f04e99b4276f54fa1aa, type: 2}
-  currentConsumable: {fileID: 11400000, guid: 00000489448149c44b4282b2f10c1f19, type: 2}
+  currentConsumable: {fileID: 0}
   unarmedConsumable: {fileID: 11400000, guid: 00000489448149c44b4282b2f10c1f19, type: 2}
   consumableInQuickSlots:
   - {fileID: 11400000, guid: 0d84486a01d87b54984ba126e253033c, type: 2}
   - {fileID: 11400000, guid: 5251dd7beb1188f4a8b8d9f9f933d13e, type: 2}
   - {fileID: 11400000, guid: 382e8bb13cc4d4645b3016019e622d4b, type: 2}
-  currentSpell: {fileID: 11400000, guid: cde15976c9dbdf34eb769f26eae899bf, type: 2}
+  currentSpell: {fileID: 0}
   unarmedSpell: {fileID: 11400000, guid: cde15976c9dbdf34eb769f26eae899bf, type: 2}
-  SpellInQuickSlots:
+  spellInQuickSlots:
   - {fileID: 11400000, guid: c49e670e5f1143e4c8c16c34ef011923, type: 2}
   - {fileID: 0}
   - {fileID: 0}
@@ -20786,7 +20787,7 @@ MonoBehaviour:
   currentSpellIndex: 0
   weaponsInventory:
   - {fileID: 11400000, guid: 0aa6cdebbea3a5344bf06e90442d0592, type: 2}
-  - {fileID: 11400000, guid: 6ed33b8c3ed18dc41acb939182579964, type: 2}
+  - {fileID: 11400000, guid: 0fc037aa142ca2d479b03101afba4d94, type: 2}
   keyItemsInventory: []
   craftingItemInventory: []
   spellInventory: []

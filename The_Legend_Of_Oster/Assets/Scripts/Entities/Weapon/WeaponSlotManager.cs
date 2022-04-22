@@ -108,16 +108,13 @@ public class WeaponSlotManager : MonoBehaviour
     }
     public void LoadLeftWeaponDamageCollider()
     {
+
         leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-       // WeaponItem leftWeapon = (WeaponItem)playerInventory.leftWeapon.itemType;
-     //   leftDamageCollider.currentWeaponDamage = leftWeapon.baseDamage;
         playerEffectsManager.leftWeaponFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
     }
     public void LoadRightWeaponDamageCollider()
     {
         rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-        //WeaponItem rightWeapon = (WeaponItem)playerInventory.rightWeapon.itemType;
-        //rightDamageCollider.currentWeaponDamage = rightWeapon.baseDamage;
         playerEffectsManager.rightWeaponFx = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponFX>();
 
     }

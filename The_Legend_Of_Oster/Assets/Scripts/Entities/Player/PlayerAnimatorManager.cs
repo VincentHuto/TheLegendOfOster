@@ -108,12 +108,12 @@ public class PlayerAnimatorManager : AnimatorManager
 
     public void EnableIsInvulnerable()
     {
-        anim.SetBool("IsInvulnerable", true);
+        anim.SetBool("isInvulnerable", true);
     }
 
     public void DisableIsInvulnerable()
     {
-        anim.SetBool("IsInvulnerable", false);
+        anim.SetBool("isInvulnerable", false);
 
     }
 

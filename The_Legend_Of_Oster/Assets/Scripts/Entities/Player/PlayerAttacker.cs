@@ -11,6 +11,7 @@ public class PlayerAttacker : MonoBehaviour
     WeaponSlotManager weaponSlotManager;
     PlayerStats playerStats;
     public string lastAttack;
+    public string failToUseAnimation;
 
     private void Awake()
     {
@@ -75,29 +76,32 @@ public class PlayerAttacker : MonoBehaviour
 
     public void HandleHeavyAttack(WeaponItemStack weapon, bool isLeft)
     {
-        if (weapon.itemType is WeaponItem)
+        if (weapon.itemType is WeaponItem weaponItem)
         {
-            WeaponItem weaponItem = (WeaponItem)weapon.itemType;
-
-            if (weapon != null && !weaponItem.isUnarmed)
+            if (weaponItem.isMeleeWeapon)
             {
-                if (playerStats.currentStamina > weaponItem.GetWeaponStaminaCost(true))
+                PerformLBMeleeAction();
+
+                if (weapon != null && !weaponItem.isUnarmed)
                 {
+                    if (playerStats.currentStamina > weaponItem.GetWeaponStaminaCost(true))
+                    {
 
-                    if (isLeft)
-                    {
-                        weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
-                        lastAttack = weaponItem.OH_Left_Heavy_Attack_1;
+                        if (isLeft)
+                        {
+                            weaponSlotManager.attackingWeapon = weaponItem;
+                            animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Heavy_Attack_1, true);
+                            lastAttack = weaponItem.OH_Left_Heavy_Attack_1;
+                        }
+                        else
+                        {
+                            weaponSlotManager.attackingWeapon = weaponItem;
+                            animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
+                            lastAttack = weaponItem.OH_Right_Heavy_Attack_1;
+                        }
                     }
-                    else
-                    {
-                        weaponSlotManager.attackingWeapon = weaponItem;
-                        animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Heavy_Attack_1, true);
-                        lastAttack = weaponItem.OH_Right_Heavy_Attack_1;
-                    }
+
                 }
-
             }
         }
     }
@@ -153,19 +157,30 @@ public class PlayerAttacker : MonoBehaviour
 
     private void PerformRBMagicAction(WeaponItem weapon)
     {
-        if (weapon.isFaithCaster)
+        if (playerInventory.currentSpell != null && !playerInventory.currentSpell.isEmpty)
         {
-            if (playerInventory.currentSpell != null && playerInventory.currentSpell.getSpell().isFaithSpell)
+            if (weapon.isFaithCaster)
             {
-                if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
+                if (playerInventory.currentSpell.getSpell().isFaithSpell)
                 {
-                    playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                    if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
+                    {
+                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
+                    }
                 }
                 else
                 {
-                    animatorHandler.PlayTargetAnimation("Shrug", true);
+                    animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
                 }
             }
+        }
+        else
+        {
+            animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
         }
     }
 
@@ -192,22 +207,35 @@ public class PlayerAttacker : MonoBehaviour
 
     private void PerformLBMagicAction(WeaponItem weapon)
     {
-        if (weapon.isFaithCaster)
+        if (playerInventory.currentSpell != null && !playerInventory.currentSpell.isEmpty)
         {
-            if (playerInventory.currentSpell != null && playerInventory.currentSpell.getSpell().isFaithSpell)
+            if (weapon.isFaithCaster)
             {
-                if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
+                if (playerInventory.currentSpell.getSpell().isFaithSpell)
                 {
-                    playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                    if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
+                    {
+                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
+                    }
                 }
                 else
                 {
-                    animatorHandler.PlayTargetAnimation("Shrug", true);
+                    animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
                 }
             }
         }
-    }
+        else
+        {
+            animatorHandler.PlayTargetAnimation(failToUseAnimation, false);
+        }
 
+
+
+    }
     private void SuccessfullyCastSpell()
     {
         playerInventory.currentSpell.getSpell().SuccessfullyCastSpell(animatorHandler, playerStats);

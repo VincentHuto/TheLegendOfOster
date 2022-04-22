@@ -10,7 +10,7 @@ public class HealingSpell : SpellItem
     {
         base.AttemptToCastSpell(animatorHandler, playerStats);
         GameObject instantiatedWarmUpSpellFX = Instantiate(spellWarmUpFX, animatorHandler.transform);
-        animatorHandler.PlayTargetAnimation(spellAnimation, true);
+        animatorHandler.PlayTargetAnimation(spellAnimation, false);
     }
 
     public override void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)

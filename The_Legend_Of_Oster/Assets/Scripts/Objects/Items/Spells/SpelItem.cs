@@ -22,6 +22,7 @@ public class SpellItem : Item
 
     public virtual void AttemptToCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
     {
+
     }
 
     public virtual void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
