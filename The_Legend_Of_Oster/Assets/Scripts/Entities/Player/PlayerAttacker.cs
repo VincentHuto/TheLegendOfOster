@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour
 {
+    CameraHandler cameraHandler;
     PlayerManager playerManager;
     PlayerInventory playerInventory;
     AnimatorManager animatorHandler;
@@ -15,6 +16,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Awake()
     {
+        cameraHandler = FindObjectOfType<CameraHandler>();
         playerStats = GetComponentInParent<PlayerStats>();
         playerManager = GetComponentInParent<PlayerManager>();
         playerInventory = GetComponentInParent<PlayerInventory>();
@@ -116,7 +118,7 @@ public class PlayerAttacker : MonoBehaviour
             || (((WeaponItem)playerInventory.rightWeapon.itemType)).isFaithCaster 
             || (((WeaponItem)playerInventory.rightWeapon.itemType)).isPyroCaster)
         {
-            PerformRBMagicAction((((WeaponItem)playerInventory.rightWeapon.itemType)));
+            PerformRBMagicAction((((WeaponItem)playerInventory.rightWeapon.itemType)),false);
         }
 
     }
@@ -131,7 +133,7 @@ public class PlayerAttacker : MonoBehaviour
             || (((WeaponItem)playerInventory.leftWeapon.itemType)).isFaithCaster
             || (((WeaponItem)playerInventory.leftWeapon.itemType)).isPyroCaster)
         {
-            PerformLBMagicAction((((WeaponItem)playerInventory.leftWeapon.itemType)));
+            PerformLBMagicAction((((WeaponItem)playerInventory.leftWeapon.itemType)),true);
         }
     }
     private void PerformRBMeleeAction()
@@ -155,7 +157,7 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
-    private void PerformRBMagicAction(WeaponItem weapon)
+    private void PerformRBMagicAction(WeaponItem weapon, bool isLeftHanded)
     {
         if (playerInventory.currentSpell != null && !playerInventory.currentSpell.isEmpty)
         {
@@ -165,7 +167,7 @@ public class PlayerAttacker : MonoBehaviour
                 {
                     if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
                     {
-                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager, isLeftHanded);
                     }
                     else
                     {
@@ -205,7 +207,7 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
-    private void PerformLBMagicAction(WeaponItem weapon)
+    private void PerformLBMagicAction(WeaponItem weapon, bool isLeftHanded)
     {
         if (playerInventory.currentSpell != null && !playerInventory.currentSpell.isEmpty)
         {
@@ -215,7 +217,7 @@ public class PlayerAttacker : MonoBehaviour
                 {
                     if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
                     {
-                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
+                        playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager, isLeftHanded);
                     }
                     else
                     {
@@ -238,7 +240,7 @@ public class PlayerAttacker : MonoBehaviour
     }
     private void SuccessfullyCastSpell()
     {
-        playerInventory.currentSpell.getSpell().SuccessfullyCastSpell(animatorHandler, playerStats);
+        playerInventory.currentSpell.getSpell().SuccessfullyCastSpell(animatorHandler, playerStats, cameraHandler, weaponSlotManager, playerManager.isUsingLeftHand);
     }
 
 

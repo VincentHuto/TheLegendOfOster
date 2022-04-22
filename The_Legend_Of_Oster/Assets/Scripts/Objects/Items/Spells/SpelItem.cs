@@ -20,12 +20,15 @@ public class SpellItem : Item
     [TextArea]
     public string spellDescription;
 
-    public virtual void AttemptToCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
+    public virtual void AttemptToCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats, WeaponSlotManager weaponSlotManager,
+            bool isLeftHanded)
     {
 
     }
 
-    public virtual void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
+    public virtual void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats, CameraHandler cameraHandler,
+            WeaponSlotManager weaponSlotManager,
+            bool isLeftHanded)
     {
         playerStats.TakeBreathDamage(breathCost);
 
