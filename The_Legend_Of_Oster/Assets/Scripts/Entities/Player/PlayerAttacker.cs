@@ -157,7 +157,7 @@ public class PlayerAttacker : MonoBehaviour
         {
             if (playerInventory.currentSpell != null && playerInventory.currentSpell.getSpell().isFaithSpell)
             {
-                if (playerStats.currentBreath >= ((SpellItem)playerInventory.currentSpell.getSpell()).breathCost)
+                if (playerStats.currentBreath >= playerInventory.currentSpell.getSpell().breathCost)
                 {
                     playerInventory.currentSpell.getSpell().AttemptToCastSpell(animatorHandler, playerStats);
                 }

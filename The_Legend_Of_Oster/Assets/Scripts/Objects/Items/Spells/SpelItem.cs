@@ -22,12 +22,10 @@ public class SpellItem : Item
 
     public virtual void AttemptToCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
     {
-        Debug.Log("You attempt to cast a spell!");
     }
 
     public virtual void SuccessfullyCastSpell(AnimatorManager animatorHandler, PlayerStats playerStats)
     {
-        Debug.Log("You successfully cast a spell!");
         playerStats.TakeBreathDamage(breathCost);
 
     }
