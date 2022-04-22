@@ -37,8 +37,6 @@ namespace Assets.Scripts.Objects.Items.Spells
             base.SuccessfullyCastSpell(animatorHandler, playerStats, cameraHandler, weaponSlotManager, isLeftHanded);
             GameObject instantiatedSpellFX = Instantiate(spellCastFX, weaponSlotManager.rightHandSlot.transform.position, cameraHandler.cameraPivotTransform.rotation);
             rigidBody = instantiatedSpellFX.GetComponent<Rigidbody>();
-            //spellDamageCollider = instantiatedSpellFX.GetComponent<SpellDamageCollider>();
-
             if (cameraHandler.currentLockOnTarget != null)
             {
                 instantiatedSpellFX.transform.LookAt(cameraHandler.currentLockOnTarget.transform);
