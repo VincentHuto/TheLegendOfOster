@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : NetworkBehaviour
 {
     public Transform lockOnTransform;
     public SpriteRenderer spriteRenderer;
