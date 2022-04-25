@@ -17983,8 +17983,6 @@ GameObject:
   - component: {fileID: 2926375790337094571}
   - component: {fileID: 2926375790337094570}
   - component: {fileID: 8063336740303308014}
-  - component: {fileID: 8743870824136491010}
-  - component: {fileID: 3870912788385852297}
   m_Layer: 11
   m_Name: Player Model
   m_TagString: Untagged
@@ -18256,39 +18254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastAttack: 
   failToUseAnimation: Shrug
---- !u!114 &8743870824136491010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8063336740193166529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: d994130f72504f74fa22ee317f407101
-  hasSpawned: 0
---- !u!114 &3870912788385852297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8063336740193166529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 1
-  animator: {fileID: 8063336740193166557}
 --- !u!1 &8063336740281552025
 GameObject:
   m_ObjectHideFlags: 0
@@ -20644,6 +20609,7 @@ GameObject:
   - component: {fileID: 236745743}
   - component: {fileID: 1573760865017203743}
   - component: {fileID: 8845277182990231859}
+  - component: {fileID: 341169724666304646}
   m_Layer: 11
   m_Name: Oster
   m_TagString: Player
@@ -20941,6 +20907,22 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &341169724666304646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419310352217347703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  animator: {fileID: 8063336740193166557}
 --- !u!1 &8510265992245652307
 GameObject:
   m_ObjectHideFlags: 0
