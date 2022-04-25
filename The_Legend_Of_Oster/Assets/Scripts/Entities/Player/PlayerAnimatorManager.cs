@@ -119,14 +119,18 @@ public class PlayerAnimatorManager : AnimatorManager
 
     private void OnAnimatorMove()
     {
-        if (playerManager.isInteracting == false)
-            return;
+        if (playerManager != null)
+        {
 
-        float delta = Time.deltaTime;
-        playerLocomotion.rigidbody.drag = 0;
-        Vector3 deltaPosition = anim.deltaPosition;
-        deltaPosition.y = 0;
-        Vector3 velocity = deltaPosition / delta;
-        playerLocomotion.rigidbody.velocity = velocity;
+            if (playerManager.isInteracting == false)
+                return;
+
+            float delta = Time.deltaTime;
+            playerLocomotion.rigidbody.drag = 0;
+            Vector3 deltaPosition = anim.deltaPosition;
+            deltaPosition.y = 0;
+            Vector3 velocity = deltaPosition / delta;
+            playerLocomotion.rigidbody.velocity = velocity;
+        }
     }
 }
