@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : NetworkBehaviour
+public class HealthBar : MonoBehaviour
 {
     public Slider slider;
 

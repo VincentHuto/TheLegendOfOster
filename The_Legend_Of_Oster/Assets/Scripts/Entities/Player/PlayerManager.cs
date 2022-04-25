@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PlayerManager : CharacterManager
 {
     InputHandler inputHandler;
-    Animator anim;        
+    Animator anim;
     PlayerStats playerStats;
     CameraHandler cameraHandler;
     PlayerLocomotion playerLocomotion;
@@ -17,6 +18,8 @@ public class PlayerManager : CharacterManager
     public bool isSprinting, isInteracting, isInAir, isGrounded,
         isJumping, canDoCombo, isUsingRightHand, isUsingLeftHand,
         isInvulnerable;
+
+
 
     private void Awake()
     {
@@ -31,73 +34,94 @@ public class PlayerManager : CharacterManager
         anim = GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         interactableUI = FindObjectOfType<InteractableUI>();
+
+        if (!isLocalPlayer)
+        {
+            cameraHandler.gameObject.SetActive(false);
+        }
+
     }
 
 
     void Update()
     {
         float delta = Time.deltaTime;
-        isInteracting = anim.GetBool("isInteracting");
-        canDoCombo = anim.GetBool("canDoCombo");
-        anim.SetBool("isInAir", isInAir);
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetBool("isJumping", isJumping);
-        isInvulnerable = anim.GetBool("isInvulnerable");
-        isUsingRightHand = anim.GetBool("isUsingRightHand");
-        isUsingLeftHand = anim.GetBool("isUsingLeftHand");
-        inputHandler.HandleAllInputs(delta);
-        playerLocomotion.HandleRollingAndSprinting(delta);
-        playerStats.RegenerateStamina();
-        CheckForInteractableObject();
+
+
+        if (isLocalPlayer)
+        {
+            isInteracting = anim.GetBool("isInteracting");
+            canDoCombo = anim.GetBool("canDoCombo");
+            anim.SetBool("isInAir", isInAir);
+            anim.SetBool("isGrounded", isGrounded);
+            anim.SetBool("isJumping", isJumping);
+            isInvulnerable = anim.GetBool("isInvulnerable");
+            isUsingRightHand = anim.GetBool("isUsingRightHand");
+            isUsingLeftHand = anim.GetBool("isUsingLeftHand");
+
+
+            inputHandler.HandleAllInputs(delta);
+            playerLocomotion.HandleRollingAndSprinting(delta);
+            playerStats.RegenerateStamina();
+            CheckForInteractableObject();
+          
+        }
         if (cameraHandler != null)
         {
             cameraHandler.FollowTarget(delta);
             cameraHandler.HandleCameraRotation();
         }
+
     }
 
     private void FixedUpdate()
     {
-        float delta = Time.fixedDeltaTime;
-        playerLocomotion.HandleMovement(delta);
-        playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-     
+        if (isLocalPlayer)
+        {
+            float delta = Time.fixedDeltaTime;
+            playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+        }
+
     }
 
     private void LateUpdate()
     {
-        //Makes sure the button only triggers once even if you accidently misclick or hold down the button
-        inputHandler.rollFlag = false;
-        inputHandler.rb_Input = false;
-        inputHandler.rt_Input = false;
-        inputHandler.lb_Input = false;
-        inputHandler.lt_Input = false;
-        inputHandler.d_Pad_Up = false;
-        inputHandler.d_Pad_Down = false;
-        inputHandler.d_Pad_Right = false;
-        inputHandler.d_Pad_Left = false;
-        inputHandler.pickup_Input = false;
-        inputHandler.inv_Input = false;
-
-
-
-        isJumping = anim.GetBool("isJumping");
-        anim.SetBool("isGrounded", isGrounded);
-
-
-        if(isJumping)
+        if (isLocalPlayer)
         {
-            anim.SetBool("isGrounded", false);
+            //Makes sure the button only triggers once even if you accidently misclick or hold down the button
+            inputHandler.rollFlag = false;
+            inputHandler.rb_Input = false;
+            inputHandler.rt_Input = false;
+            inputHandler.lb_Input = false;
+            inputHandler.lt_Input = false;
+            inputHandler.d_Pad_Up = false;
+            inputHandler.d_Pad_Down = false;
+            inputHandler.d_Pad_Right = false;
+            inputHandler.d_Pad_Left = false;
+            inputHandler.pickup_Input = false;
+            inputHandler.inv_Input = false;
 
-        }
-
-        float delta = Time.fixedDeltaTime;
 
 
+            isJumping = anim.GetBool("isJumping");
+            anim.SetBool("isGrounded", isGrounded);
 
-        if (isInAir)
-        {
-            playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+
+            if (isJumping)
+            {
+                anim.SetBool("isGrounded", false);
+
+            }
+
+            float delta = Time.fixedDeltaTime;
+
+
+
+            if (isInAir)
+            {
+                playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+            }
         }
     }
 
