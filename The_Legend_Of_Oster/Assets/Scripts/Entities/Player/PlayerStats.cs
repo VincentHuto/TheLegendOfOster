@@ -35,7 +35,6 @@ public class PlayerStats : CharacterStats
 
     void Start()
     {
-
         healthbar.SetMaxHealth(maxHealth);
         staminaBar.SetMaxStamina(maxStamina);
         breathBar.SetMaxBreath(maxBreath);

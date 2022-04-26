@@ -6,7 +6,7 @@ public class BreathBar : MonoBehaviour
 {
     public Slider slider;
 
-    private void Start()
+    private void Awake()
     {
         slider = GetComponent<Slider>();
     }

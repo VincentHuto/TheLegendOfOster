@@ -13349,7 +13349,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45918
+  m_Name: pb_Mesh45924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14674,6 +14674,7 @@ GameObject:
   - component: {fileID: 1330325300}
   - component: {fileID: 1330325304}
   - component: {fileID: 1330325306}
+  - component: {fileID: 1330325307}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -14693,7 +14694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetX: 0
+  offsetX: 400
   offsetY: 0
 --- !u!114 &1330325301
 MonoBehaviour:
@@ -14758,7 +14759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330325299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 343.18506, y: 40.809513, z: 697.0923}
+  m_LocalPosition: {x: 343.18506, y: 42.35, z: 697.0923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14780,7 +14781,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14826,6 +14827,18 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
+--- !u!114 &1330325307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330325299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f84591ce72545258ea98cb7518d8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445707275
 GameObject:
   m_ObjectHideFlags: 0

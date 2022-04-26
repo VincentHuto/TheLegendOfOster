@@ -54,6 +54,8 @@ public class PlayerLocomotion : MonoBehaviour
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
+        cameraObject = Camera.main.transform;
+
     }
 
     void Start()
@@ -63,7 +65,6 @@ public class PlayerLocomotion : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         inputHandler = GetComponent<InputHandler>();
         playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
-        cameraObject = Camera.main.transform;
         myTransform = transform;
         playerAnimatorManager.Initialize();
         playerManager.isGrounded = true;
@@ -72,6 +73,8 @@ public class PlayerLocomotion : MonoBehaviour
 
 
     }
+
+
     #region Movement
 
     private void HandleRotation(float delta)
