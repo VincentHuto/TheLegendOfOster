@@ -1,17 +1,41 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Interactable : NetworkBehaviour
 {
     public float radius = 0.6f;
     public string interactionText;
     public UIManager uIManager;
 
-    public void Awake()
+
+    public void Update()
+    {
+        RaycastHit hit;
+        if (Physics.SphereCast(transform.position, radius, transform.up, out hit))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {                    Debug.Log("FOUND PLAYER");
+
+                 uIManager = hit.collider.GetComponentInChildren<UIManager>();
+                if (uIManager != null)
+                {
+                    Debug.Log("FOUND UI");
+                }
+                else
+                {
+                    Debug.Log("LOST UI");
+
+                }
+            }
+        }
+    }
+
+/*    public void Awake()
     {
         uIManager = FindObjectOfType<UIManager>();
-    }
+    }*/
 
     private void OnDrawGizmosSelected()
     {
