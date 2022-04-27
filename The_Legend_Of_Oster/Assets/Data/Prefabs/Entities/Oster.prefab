@@ -18882,7 +18882,6 @@ GameObject:
   - component: {fileID: 8063336740690299839}
   - component: {fileID: 8063336740690299836}
   - component: {fileID: 8063336740690299837}
-  - component: {fileID: 8063336740690299810}
   m_Layer: 0
   m_Name: Player Stats
   m_TagString: Player
@@ -18973,40 +18972,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8063336740690299810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8063336740690299808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b5a718d57f85c4aa1006e7e31faaae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInventory: {fileID: 4960420367079767567}
-  equipmentWindowUI: {fileID: 8025528853533151347}
-  selectWindow: {fileID: 8063336739874249405}
-  hudWindow: {fileID: 8063336739514823047}
-  weaponInventoryWindow: {fileID: 8063336741119658934}
-  equipmentWindow: {fileID: 8063336740452625446}
-  keyItemInventoryWindow: {fileID: 8063336740180374004}
-  craftingItemInventoryWindow: {fileID: 7331305286802319335}
-  descriptionWindow: {fileID: 2158824187995146338}
-  blenderWindow: {fileID: 745553940677237427}
-  IsBlenderOpen: 0
-  rightHandSlot01Selected: 0
-  rightHandSlot02Selected: 0
-  leftHandSlot01Selected: 0
-  leftHandSlot02Selected: 0
-  weaponInventorySlotPrefab: {fileID: 8063336740768225581}
-  keyItemInventorySlotPrefab: {fileID: 8063336741183309813}
-  craftingInventorySlotPrefab: {fileID: 8063336739860888753}
-  recipeSlotPrefab: {fileID: 745553939570288410}
-  weaponInventorySlotsParent: {fileID: 749108776620688996}
-  keyItemInventorySlotsParent: {fileID: 8025528853631755209}
-  craftingItemInventorySlotsParent: {fileID: 8025528853701195953}
 --- !u!1 &8063336740744836228
 GameObject:
   m_ObjectHideFlags: 0
@@ -20610,6 +20575,7 @@ GameObject:
   - component: {fileID: 1573760865017203743}
   - component: {fileID: 8845277182990231859}
   - component: {fileID: 341169724666304646}
+  - component: {fileID: 6039816548206162795}
   m_Layer: 11
   m_Name: Oster
   m_TagString: Player
@@ -20923,6 +20889,40 @@ MonoBehaviour:
   syncInterval: 0.1
   clientAuthority: 1
   animator: {fileID: 8063336740193166557}
+--- !u!114 &6039816548206162795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419310352217347703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5a718d57f85c4aa1006e7e31faaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 4960420367079767567}
+  equipmentWindowUI: {fileID: 8025528853533151347}
+  selectWindow: {fileID: 8063336739874249405}
+  hudWindow: {fileID: 8063336739514823047}
+  weaponInventoryWindow: {fileID: 8063336741119658934}
+  equipmentWindow: {fileID: 8063336740452625446}
+  keyItemInventoryWindow: {fileID: 8063336740180374004}
+  craftingItemInventoryWindow: {fileID: 7331305286802319335}
+  descriptionWindow: {fileID: 2158824187995146338}
+  blenderWindow: {fileID: 745553940677237427}
+  IsBlenderOpen: 0
+  rightHandSlot01Selected: 0
+  rightHandSlot02Selected: 0
+  leftHandSlot01Selected: 0
+  leftHandSlot02Selected: 0
+  weaponInventorySlotPrefab: {fileID: 8063336740768225581}
+  keyItemInventorySlotPrefab: {fileID: 8063336741183309813}
+  craftingInventorySlotPrefab: {fileID: 8063336739860888753}
+  recipeSlotPrefab: {fileID: 745553939570288410}
+  weaponInventorySlotsParent: {fileID: 749108776620688996}
+  keyItemInventorySlotsParent: {fileID: 8025528853631755209}
+  craftingItemInventorySlotsParent: {fileID: 8025528853701195953}
 --- !u!1 &8510265992245652307
 GameObject:
   m_ObjectHideFlags: 0

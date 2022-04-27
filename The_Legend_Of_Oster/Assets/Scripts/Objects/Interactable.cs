@@ -16,9 +16,10 @@ public class Interactable : NetworkBehaviour
         if (Physics.SphereCast(transform.position, radius, transform.up, out hit))
         {
             if (hit.collider.CompareTag("Player"))
-            {                    Debug.Log("FOUND PLAYER");
+            {
+                Debug.Log("FOUND PLAYER");
 
-                 uIManager = hit.collider.GetComponentInChildren<UIManager>();
+                uIManager = hit.collider.GetComponentInParent<UIManager>();
                 if (uIManager != null)
                 {
                     Debug.Log("FOUND UI");
@@ -32,10 +33,10 @@ public class Interactable : NetworkBehaviour
         }
     }
 
-/*    public void Awake()
-    {
-        uIManager = FindObjectOfType<UIManager>();
-    }*/
+    /*    public void Awake()
+        {
+            uIManager = FindObjectOfType<UIManager>();
+        }*/
 
     private void OnDrawGizmosSelected()
     {
@@ -46,7 +47,7 @@ public class Interactable : NetworkBehaviour
     public virtual void Interact(PlayerManager playerManager)
     {
         //Called when player interacts
-      //  Debug.Log("You interacted with an object");
+        //  Debug.Log("You interacted with an object");
 
     }
 
