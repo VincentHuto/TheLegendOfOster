@@ -16,18 +16,20 @@ public class PlayerInventory : MonoBehaviour
     public SpellItemStack currentSpell, unarmedSpell;
     public SpellItemStack[] spellInQuickSlots = new SpellItemStack[3];
 
-
     public int currentRightWeaponIndex = 0;
     public int currentLeftWeaponIndex = 0;
     public int currentConsumableIndex = 0;
     public int currentSpellIndex = 0;
 
-
-
     public List<WeaponItemStack> weaponsInventory;
     public List<KeyItemStack> keyItemsInventory;
     public List<CraftingItemStack> craftingItemInventory;
     public List<SpellItemStack> spellInventory;
+
+    [Header("Current Equipment")]
+    public HelmetEquipment currentHelmetEquipment;
+
+
 
     private void Awake()
     {
