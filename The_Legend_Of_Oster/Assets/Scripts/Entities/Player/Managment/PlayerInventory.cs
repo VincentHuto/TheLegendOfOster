@@ -28,6 +28,7 @@ public class PlayerInventory : MonoBehaviour
 
     [Header("Current Equipment")]
     public HelmetEquipment currentHelmetEquipment;
+    public TorsoEquipment currentTorsoEquipment;
 
 
 

@@ -9,41 +9,75 @@ public class PlayerEquipmentManager : MonoBehaviour
 
     [Header("Equipment Model Changers")]
     HelmetModelChanger helmetModelChanger;
-    //CHEST EQUIPMENT
+    TorsoModelChanger torsoModelChanger;
+
+
     //LEG EQUIPMENT
     //HAND EQUIPMENT
 
-   // public BlockingCollider blockingCollider;
+    [Header("Default Naked Models")]
+    public GameObject nakedHeadModel;
+    public GameObject nakedTorsoModel;
+
+
+    // public BlockingCollider blockingCollider;
 
     private void Awake()
     {
         inputHandler = GetComponentInParent<InputHandler>();
         playerInventory = GetComponentInParent<PlayerInventory>();
         helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
+        torsoModelChanger = GetComponentInChildren<TorsoModelChanger>();
     }
 
     private void Start()
     {
-        helmetModelChanger.UnEquipAllHelmetModels();
-        helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
+        EquipAllEquipmentModelsOnStart();
     }
 
-  /*  public void OpenBlockingCollider()
+    private void EquipAllEquipmentModelsOnStart()
     {
-        if (inputHandler.twoHandFlag)
+        helmetModelChanger.UnEquipAllHelmetModels();
+
+        if (playerInventory.currentHelmetEquipment != null)
         {
-            blockingCollider.SetColliderDamageAbsorption(playerInventory.rightWeapon);
+            nakedHeadModel.SetActive(false);
+            helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
         }
         else
         {
-            blockingCollider.SetColliderDamageAbsorption(playerInventory.leftWeapon);
+            nakedHeadModel.SetActive(true);
         }
 
-        blockingCollider.EnableBlockingCollider();
+        torsoModelChanger.UnEquipAllTorsoModels();
+
+        if (playerInventory.currentTorsoEquipment != null)
+        {
+            nakedTorsoModel.SetActive(false);
+            torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
+        }
+        else
+        {
+            nakedTorsoModel.SetActive(true);
+        }
     }
 
-    public void CloseBlockingCollider()
-    {
-        blockingCollider.DisableBlockingCollider();
-    }*/
+    /*  public void OpenBlockingCollider()
+      {
+          if (inputHandler.twoHandFlag)
+          {
+              blockingCollider.SetColliderDamageAbsorption(playerInventory.rightWeapon);
+          }
+          else
+          {
+              blockingCollider.SetColliderDamageAbsorption(playerInventory.leftWeapon);
+          }
+
+          blockingCollider.EnableBlockingCollider();
+      }
+
+      public void CloseBlockingCollider()
+      {
+          blockingCollider.DisableBlockingCollider();
+      }*/
 }
