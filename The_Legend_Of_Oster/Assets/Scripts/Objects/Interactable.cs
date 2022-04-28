@@ -17,16 +17,13 @@ public class Interactable : NetworkBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.Log("FOUND PLAYER");
 
                 uIManager = hit.collider.GetComponentInParent<UIManager>();
                 if (uIManager != null)
                 {
-                    Debug.Log("FOUND UI");
                 }
                 else
                 {
-                    Debug.Log("LOST UI");
 
                 }
             }
