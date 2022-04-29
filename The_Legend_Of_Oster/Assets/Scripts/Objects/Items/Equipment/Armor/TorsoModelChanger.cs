@@ -3,42 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    public class TorsoModelChanger : MonoBehaviour
+public class TorsoModelChanger : MonoBehaviour
+{
+    public List<GameObject> torsoModels;
+
+
+
+    private void Awake()
     {
-        public List<GameObject> torsoModels;
+        GetAllTorsoModels();
+    }
 
-        private void Awake()
+    public GameObject attachedBone;
+
+    private void Update()
+    {
+        int childrenGameObjects = transform.childCount;
+
+        for (int i = 0; i < childrenGameObjects; i++)
         {
-            GetAllTorsoModels();
+            transform.GetChild(i).transform.parent = attachedBone.transform;
         }
+    }
 
-        private void GetAllTorsoModels()
+    private void GetAllTorsoModels()
+    {
+        int childrenGameObjects = transform.childCount;
+
+        for (int i = 0; i < childrenGameObjects; i++)
         {
-            int childrenGameObjects = transform.childCount;
-
-            for (int i = 0; i < childrenGameObjects; i++)
-            {
-                torsoModels.Add(transform.GetChild(i).gameObject);
-            }
+            torsoModels.Add(transform.GetChild(i).gameObject);
         }
+    }
 
-        public void UnEquipAllTorsoModels()
+    public void UnEquipAllTorsoModels()
+    {
+        foreach (GameObject torsoModel in torsoModels)
         {
-            foreach (GameObject helmetModel in torsoModels)
-            {
-                helmetModel.SetActive(false);
-            }
+            torsoModel.SetActive(false);
         }
+    }
 
-        public void EquipTorsoModelByName(string torsoName)
+    public void EquipTorsoModelByName(string torsoName)
+    {
+        for (int i = 0; i < torsoModels.Count; i++)
         {
-            for (int i = 0; i < torsoModels.Count; i++)
+            if (torsoModels[i].name == torsoName)
             {
-                if (torsoModels[i].name == torsoName)
-                {
-                    torsoModels[i].SetActive(true);
-                }
+                torsoModels[i].SetActive(true);
             }
         }
     }
+}
 

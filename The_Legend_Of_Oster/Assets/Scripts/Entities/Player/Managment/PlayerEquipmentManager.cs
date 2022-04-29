@@ -41,7 +41,16 @@ public class PlayerEquipmentManager : MonoBehaviour
 
         if (playerInventory.currentHelmetEquipment != null)
         {
-            nakedHeadModel.SetActive(false);
+            if (playerInventory.currentHelmetEquipment.hidesBody)
+            {
+                nakedHeadModel.SetActive(false);
+            }
+            else
+            {
+                nakedHeadModel.SetActive(true);
+
+            }
+
             helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
         }
         else
@@ -53,7 +62,15 @@ public class PlayerEquipmentManager : MonoBehaviour
 
         if (playerInventory.currentTorsoEquipment != null)
         {
-            nakedTorsoModel.SetActive(false);
+            if (playerInventory.currentTorsoEquipment.hidesBody)
+            {
+                nakedTorsoModel.SetActive(false);
+            }
+            else
+            {
+                nakedTorsoModel.SetActive(true);
+
+            }
             torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
         }
         else
