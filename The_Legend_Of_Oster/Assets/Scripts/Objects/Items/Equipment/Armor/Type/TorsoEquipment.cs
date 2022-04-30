@@ -7,5 +7,9 @@ using UnityEngine;
 public class TorsoEquipment : EquipmentItem
 {
     public string torsoModelName;
+    public string upperLeftArmModelName;
+    public string upperRightArmModelName;
+    //LEFT ELBOW PAD
+    //RIGHT ELBOW PAD
 }
 

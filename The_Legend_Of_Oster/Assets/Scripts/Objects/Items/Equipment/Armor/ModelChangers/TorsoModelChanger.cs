@@ -6,6 +6,7 @@ using UnityEngine;
 public class TorsoModelChanger : MonoBehaviour
 {
     public List<GameObject> torsoModels;
+    public GameObject attachedBone;
 
 
 
@@ -13,16 +14,13 @@ public class TorsoModelChanger : MonoBehaviour
     {
         GetAllTorsoModels();
     }
-
-    public GameObject attachedBone;
-
     private void Update()
     {
         int childrenGameObjects = transform.childCount;
 
         for (int i = 0; i < childrenGameObjects; i++)
         {
-            transform.GetChild(i).transform.parent = attachedBone.transform;
+            transform.GetChild(i).transform.transform.SetParent(attachedBone.transform);
         }
     }
 

@@ -10493,7 +10493,6 @@ MonoBehaviour:
   - {fileID: 5903397566023598726, guid: 9f8f465fb8ffc8c478cf42243659b82d, type: 3}
   - {fileID: 5903397566023598726, guid: b26c12792784add4ba7a79e7b45707c3, type: 3}
   - {fileID: 5903397566023598726, guid: 8ec5f52c1d302e14dafc66c20b0d1a0a, type: 3}
-  - {fileID: 4290502980712638493}
   attachedBone: {fileID: 2314847043559212149}
 --- !u!1 &4286620443489820291
 GameObject:
@@ -18845,8 +18844,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c2518356aa93943aa7f5c3007a199b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nakedHeadModel: {fileID: 4290502980712638493}
-  nakedTorsoModel: {fileID: 982475593218040018}
+  nakedHead: {fileID: 4290502980712638493}
+  nakedTorso: {fileID: 982475593218040018}
+  nakedUpperLeftArm: {fileID: 6555150685320928719}
+  nakedUpperRightArm: {fileID: 4933126622894747868}
+  nakedLowerLeftArm: {fileID: 7755426302016776642}
+  nakedLowerRightArm: {fileID: 5380334871273079777}
+  nakedLeftHand: {fileID: 1472954960103674187}
+  nakedRightHand: {fileID: 2528649485490412385}
+  nakedHipModel: {fileID: 154647121769219063}
+  nakedLeftLeg: {fileID: 6729914769154486352}
+  nakedRightLeg: {fileID: 2036677487147948486}
 --- !u!1 &8063336740281552025
 GameObject:
   m_ObjectHideFlags: 0
@@ -21359,6 +21367,8 @@ MonoBehaviour:
   spellInventory: []
   currentHelmetEquipment: {fileID: 11400000, guid: 2565703131345fd4e988adb835f6cf43, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: a3f67232cac2c7247b50bf13ab438570, type: 2}
+  currentLegEquipment: {fileID: 0}
+  currentHandEquipment: {fileID: 0}
 --- !u!114 &4960420367079767565
 MonoBehaviour:
   m_ObjectHideFlags: 0

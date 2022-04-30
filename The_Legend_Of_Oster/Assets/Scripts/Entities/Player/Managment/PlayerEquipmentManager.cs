@@ -8,16 +8,37 @@ public class PlayerEquipmentManager : MonoBehaviour
     PlayerInventory playerInventory;
 
     [Header("Equipment Model Changers")]
+    //Head Equipment
     HelmetModelChanger helmetModelChanger;
+    //Torso Equipment
     TorsoModelChanger torsoModelChanger;
-
+    UpperLeftArmModelChanger upperLeftArmModelChanger;
+    UpperRightArmModelChanger upperRightArmModelChanger;
+    //Leg Equipment
+    HipModelChanger hipModelChanger;
+    LeftLegModelChanger leftLegModelChanger;
+    RightLegModelChanger rightLegModelChanger;
+    //Hand Equipment
+    LowerLeftArmModelChanger lowerLeftArmModelChanger;
+    LowerRightArmModelChanger lowerRightArmModelChanger;
+    LeftHandModelChanger leftHandModelChanger;
+    RightHandModelChanger rightHandModelChanger;
 
     //LEG EQUIPMENT
     //HAND EQUIPMENT
 
     [Header("Default Naked Models")]
-    public GameObject nakedHeadModel;
-    public GameObject nakedTorsoModel;
+    public GameObject nakedHead;
+    public GameObject nakedTorso;
+    public GameObject nakedUpperLeftArm;
+    public GameObject nakedUpperRightArm;
+    public GameObject nakedLowerLeftArm;
+    public GameObject nakedLowerRightArm;
+    public GameObject nakedLeftHand;
+    public GameObject nakedRightHand;
+    public GameObject nakedHipModel;
+    public GameObject nakedLeftLeg;
+    public GameObject nakedRightLeg;
 
 
     // public BlockingCollider blockingCollider;
@@ -28,6 +49,15 @@ public class PlayerEquipmentManager : MonoBehaviour
         playerInventory = GetComponentInParent<PlayerInventory>();
         helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
         torsoModelChanger = GetComponentInChildren<TorsoModelChanger>();
+        hipModelChanger = GetComponentInChildren<HipModelChanger>();
+        leftLegModelChanger = GetComponentInChildren<LeftLegModelChanger>();
+        rightLegModelChanger = GetComponentInChildren<RightLegModelChanger>();
+        upperLeftArmModelChanger = GetComponentInChildren<UpperLeftArmModelChanger>();
+        upperRightArmModelChanger = GetComponentInChildren<UpperRightArmModelChanger>();
+        lowerLeftArmModelChanger = GetComponentInChildren<LowerLeftArmModelChanger>();
+        lowerRightArmModelChanger = GetComponentInChildren<LowerRightArmModelChanger>();
+        leftHandModelChanger = GetComponentInChildren<LeftHandModelChanger>();
+        rightHandModelChanger = GetComponentInChildren<RightHandModelChanger>();
     }
 
     private void Start()
@@ -35,66 +65,89 @@ public class PlayerEquipmentManager : MonoBehaviour
         EquipAllEquipmentModelsOnStart();
     }
 
+    /*     if (playerInventory.currentHelmetEquipment.hidesBody)
+                {
+                    nakedHeadModel.SetActive(false);
+                }
+                else
+    {
+        nakedHeadModel.SetActive(true);
+
+    }*/
+
     private void EquipAllEquipmentModelsOnStart()
     {
+        //HELMET EQUIPMENT
         helmetModelChanger.UnEquipAllHelmetModels();
 
         if (playerInventory.currentHelmetEquipment != null)
         {
-            if (playerInventory.currentHelmetEquipment.hidesBody)
-            {
-                nakedHeadModel.SetActive(false);
-            }
-            else
-            {
-                nakedHeadModel.SetActive(true);
-
-            }
-
+            nakedHead.SetActive(!playerInventory.currentHelmetEquipment.hidesBody);
             helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
         }
         else
         {
-            nakedHeadModel.SetActive(true);
+            nakedHead.SetActive(true);
         }
 
+        //TORSO EQUIPMENT
         torsoModelChanger.UnEquipAllTorsoModels();
+        //upperLeftArmModelChanger.UnEquipAllModels();
+        //upperRightArmModelChanger.UnEquipAllModels();
 
         if (playerInventory.currentTorsoEquipment != null)
         {
-            if (playerInventory.currentTorsoEquipment.hidesBody)
-            {
-                nakedTorsoModel.SetActive(false);
-            }
-            else
-            {
-                nakedTorsoModel.SetActive(true);
-
-            }
+            nakedTorso.SetActive(!playerInventory.currentTorsoEquipment.hidesBody);
             torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
+            //upperLeftArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
+            //upperRightArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);
         }
         else
         {
-            nakedTorsoModel.SetActive(true);
+            nakedTorso.SetActive(true);
+            nakedUpperLeftArm.SetActive(true);
+            nakedUpperRightArm.SetActive(true);
+        }
+
+        //LEG EQUIPMENT
+        hipModelChanger.UnEquipAllHipModels();
+        leftLegModelChanger.UnEquipAllLegModels();
+        rightLegModelChanger.UnEquipAllLegModels();
+
+        if (playerInventory.currentLegEquipment != null)
+        {
+            hipModelChanger.EquipHipModelByName(playerInventory.currentLegEquipment.hipModelName);
+            leftLegModelChanger.EquipLegModelByName(playerInventory.currentLegEquipment.leftLegName);
+            rightLegModelChanger.EquipLegModelByName(playerInventory.currentLegEquipment.rightLegName);
+        }
+        else
+        {
+            nakedHipModel.SetActive(true);
+            nakedLeftLeg.SetActive(true);
+            nakedRightLeg.SetActive(true);
+        }
+
+        //HAND EQUIPMENT
+        lowerLeftArmModelChanger.UnEquipAllModels();
+        lowerRightArmModelChanger.UnEquipAllModels();
+        leftHandModelChanger.UnEquipAllModels();
+        rightHandModelChanger.UnEquipAllModels();
+
+        if (playerInventory.currentHandEquipment != null)
+        {
+            lowerLeftArmModelChanger.EquipModelByName(playerInventory.currentHandEquipment.lowerLeftArmModelName);
+            lowerRightArmModelChanger.EquipModelByName(playerInventory.currentHandEquipment.lowerRightArmModelName);
+            leftHandModelChanger.EquipModelByName(playerInventory.currentHandEquipment.leftHandModelName);
+            rightHandModelChanger.EquipModelByName(playerInventory.currentHandEquipment.rightHandModelName);
+        }
+        else
+        {
+            nakedLowerLeftArm.SetActive(true);
+            nakedLowerRightArm.SetActive(true);
+            nakedLeftHand.SetActive(true);
+            nakedRightHand.SetActive(true);
         }
     }
 
-    /*  public void OpenBlockingCollider()
-      {
-          if (inputHandler.twoHandFlag)
-          {
-              blockingCollider.SetColliderDamageAbsorption(playerInventory.rightWeapon);
-          }
-          else
-          {
-              blockingCollider.SetColliderDamageAbsorption(playerInventory.leftWeapon);
-          }
 
-          blockingCollider.EnableBlockingCollider();
-      }
-
-      public void CloseBlockingCollider()
-      {
-          blockingCollider.DisableBlockingCollider();
-      }*/
 }

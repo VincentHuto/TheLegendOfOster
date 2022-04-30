@@ -5,9 +5,6 @@ using UnityEngine;
 public class HelmetModelChanger : MonoBehaviour
 {
     public List<GameObject> helmetModels;
-
-
-
     public GameObject attachedBone;
 
     private void Update()
