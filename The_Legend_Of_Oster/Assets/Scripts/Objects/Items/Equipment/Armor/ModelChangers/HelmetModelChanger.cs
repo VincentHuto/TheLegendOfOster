@@ -7,7 +7,7 @@ public class HelmetModelChanger : MonoBehaviour
     public List<GameObject> helmetModels;
     public GameObject attachedBone;
 
-    private void Update()
+ /*   private void Update()
     {
         int childrenGameObjects = transform.childCount;
 
@@ -15,7 +15,7 @@ public class HelmetModelChanger : MonoBehaviour
         {
             transform.GetChild(i).transform.parent = attachedBone.transform;
         }
-    }
+    }*/
 
     private void Awake()
     {

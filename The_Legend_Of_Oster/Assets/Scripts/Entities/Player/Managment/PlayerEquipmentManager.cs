@@ -65,16 +65,6 @@ public class PlayerEquipmentManager : MonoBehaviour
         EquipAllEquipmentModelsOnStart();
     }
 
-    /*     if (playerInventory.currentHelmetEquipment.hidesBody)
-                {
-                    nakedHeadModel.SetActive(false);
-                }
-                else
-    {
-        nakedHeadModel.SetActive(true);
-
-    }*/
-
     private void EquipAllEquipmentModelsOnStart()
     {
         //HELMET EQUIPMENT
@@ -92,15 +82,15 @@ public class PlayerEquipmentManager : MonoBehaviour
 
         //TORSO EQUIPMENT
         torsoModelChanger.UnEquipAllTorsoModels();
-        //upperLeftArmModelChanger.UnEquipAllModels();
-        //upperRightArmModelChanger.UnEquipAllModels();
+        upperLeftArmModelChanger.UnEquipAllModels();
+        upperRightArmModelChanger.UnEquipAllModels();
 
         if (playerInventory.currentTorsoEquipment != null)
         {
             nakedTorso.SetActive(!playerInventory.currentTorsoEquipment.hidesBody);
             torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
-            //upperLeftArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
-            //upperRightArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);
+            upperLeftArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
+            upperRightArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);
         }
         else
         {
@@ -116,6 +106,11 @@ public class PlayerEquipmentManager : MonoBehaviour
 
         if (playerInventory.currentLegEquipment != null)
         {
+            nakedHipModel.SetActive(!playerInventory.currentLegEquipment.hidesBody);
+            nakedLeftLeg.SetActive(!playerInventory.currentLegEquipment.hidesBody);
+            nakedRightLeg.SetActive(!playerInventory.currentLegEquipment.hidesBody);
+
+
             hipModelChanger.EquipHipModelByName(playerInventory.currentLegEquipment.hipModelName);
             leftLegModelChanger.EquipLegModelByName(playerInventory.currentLegEquipment.leftLegName);
             rightLegModelChanger.EquipLegModelByName(playerInventory.currentLegEquipment.rightLegName);
@@ -135,6 +130,11 @@ public class PlayerEquipmentManager : MonoBehaviour
 
         if (playerInventory.currentHandEquipment != null)
         {
+            nakedLowerLeftArm.SetActive(!playerInventory.currentHandEquipment.hidesBody);
+            nakedLowerRightArm.SetActive(!playerInventory.currentHandEquipment.hidesBody);
+            nakedLeftHand.SetActive(!playerInventory.currentHandEquipment.hidesBody);
+            nakedRightHand.SetActive(!playerInventory.currentHandEquipment.hidesBody);
+
             lowerLeftArmModelChanger.EquipModelByName(playerInventory.currentHandEquipment.lowerLeftArmModelName);
             lowerRightArmModelChanger.EquipModelByName(playerInventory.currentHandEquipment.lowerRightArmModelName);
             leftHandModelChanger.EquipModelByName(playerInventory.currentHandEquipment.leftHandModelName);
