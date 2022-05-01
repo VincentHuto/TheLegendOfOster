@@ -187,6 +187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1490575909}
     m_Modifications:
+    - target: {fileID: 1621399830504453743, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
+      propertyPath: sceneId
+      value: 666943944
+      objectReference: {fileID: 0}
     - target: {fileID: 5051271350864930120, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
       propertyPath: m_Name
       value: Thunder Berry Bush (4)
@@ -259,6 +263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 883258986}
     m_Modifications:
+    - target: {fileID: 1291673083115285943, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
+      propertyPath: sceneId
+      value: 1484913043
+      objectReference: {fileID: 0}
     - target: {fileID: 6813586274768559129, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -378,6 +386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1490575909}
     m_Modifications:
+    - target: {fileID: 1621399830504453743, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
+      propertyPath: sceneId
+      value: 611968433
+      objectReference: {fileID: 0}
     - target: {fileID: 5051271350864930120, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
       propertyPath: m_Name
       value: Thunder Berry Bush (3)
@@ -495,6 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 671836069}
   - component: {fileID: 671836068}
+  - component: {fileID: 671836070}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -577,8 +590,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &671836070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671836067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &681931305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -634,6 +667,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9056450132395992441, guid: 347eff1c6c71efe41a9427ea5e34d9b4, type: 3}
+      propertyPath: sceneId
+      value: 601247098
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347eff1c6c71efe41a9427ea5e34d9b4, type: 3}
 --- !u!1001 &748805118
@@ -643,6 +680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1490575909}
     m_Modifications:
+    - target: {fileID: 1621399830504453743, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
+      propertyPath: sceneId
+      value: 3340193492
+      objectReference: {fileID: 0}
     - target: {fileID: 5051271350864930120, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
       propertyPath: m_Name
       value: Thunder Berry Bush (1)
@@ -700,6 +741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 883258986}
     m_Modifications:
+    - target: {fileID: 1291673083115285943, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
+      propertyPath: sceneId
+      value: 182135582
+      objectReference: {fileID: 0}
     - target: {fileID: 6813586274768559129, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -762,6 +807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1854387944}
     m_Modifications:
+    - target: {fileID: 4166696821273556058, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
+      propertyPath: sceneId
+      value: 2147066979
+      objectReference: {fileID: 0}
     - target: {fileID: 8077962756500864402, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -880,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Energetic Mint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5621310803623510746, guid: c221c7aa64e1e9444994e4aee19443a6, type: 3}
+      propertyPath: sceneId
+      value: 1927434436
+      objectReference: {fileID: 0}
     - target: {fileID: 5860638498428300471, guid: c221c7aa64e1e9444994e4aee19443a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -907,6 +960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7192194723029912065, guid: fd136f76aff35b64091a0ef59a46807f, type: 3}
+      propertyPath: sceneId
+      value: 2671123620
+      objectReference: {fileID: 0}
     - target: {fileID: 9216423158384994503, guid: fd136f76aff35b64091a0ef59a46807f, type: 3}
       propertyPath: m_Name
       value: Weapon (1)
@@ -991,7 +1048,7 @@ Transform:
   - {fileID: 776275063}
   - {fileID: 1198670320}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &984580040 stripped
 Transform:
@@ -1205,7 +1262,7 @@ Transform:
   - {fileID: 863662440}
   - {fileID: 1387440395}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1198670319
 PrefabInstance:
@@ -1214,6 +1271,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 883258986}
     m_Modifications:
+    - target: {fileID: 1291673083115285943, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
+      propertyPath: sceneId
+      value: 2218346360
+      objectReference: {fileID: 0}
     - target: {fileID: 6813586274768559129, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1391,6 +1452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Energetic Mint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5621310803623510746, guid: c221c7aa64e1e9444994e4aee19443a6, type: 3}
+      propertyPath: sceneId
+      value: 357135775
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c221c7aa64e1e9444994e4aee19443a6, type: 3}
 --- !u!4 &1387440395 stripped
@@ -1436,7 +1501,7 @@ Transform:
   - {fileID: 1769154019}
   - {fileID: 347860150}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1575519054
 PrefabInstance:
@@ -1445,6 +1510,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 963673459713948729, guid: eb15494c3fc99fe45896615526f62482, type: 3}
+      propertyPath: sceneId
+      value: 305525870
+      objectReference: {fileID: 0}
     - target: {fileID: 2839999495720786808, guid: eb15494c3fc99fe45896615526f62482, type: 3}
       propertyPath: m_Name
       value: Blender
@@ -1550,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9056450132395992441, guid: 347eff1c6c71efe41a9427ea5e34d9b4, type: 3}
+      propertyPath: sceneId
+      value: 2792601291
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347eff1c6c71efe41a9427ea5e34d9b4, type: 3}
 --- !u!1001 &1727401625
@@ -1624,6 +1697,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 91cec9410552e2d4a9a6a9fff892d04d, type: 2}
+    - target: {fileID: 4166696821273556058, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
+      propertyPath: sceneId
+      value: 510350305
+      objectReference: {fileID: 0}
     - target: {fileID: 8077962756500864402, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1724,7 +1801,7 @@ Transform:
   - {fileID: 1308874256}
   - {fileID: 984580040}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1931779649
 PrefabInstance:
@@ -1733,6 +1810,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1854387944}
     m_Modifications:
+    - target: {fileID: 4166696821273556058, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
+      propertyPath: sceneId
+      value: 1713683067
+      objectReference: {fileID: 0}
     - target: {fileID: 8077962756500864402, guid: 2d184eb7b8896e042aa6f560e32b34d7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1799,6 +1880,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1490575909}
     m_Modifications:
+    - target: {fileID: 1621399830504453743, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
+      propertyPath: sceneId
+      value: 2517112716
+      objectReference: {fileID: 0}
     - target: {fileID: 5051271350864930120, guid: c381a8f537c9d4e4bb1063a4b0410859, type: 3}
       propertyPath: m_Name
       value: Thunder Berry Bush (2)
@@ -1856,6 +1941,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 883258986}
     m_Modifications:
+    - target: {fileID: 1291673083115285943, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
+      propertyPath: sceneId
+      value: 5375539
+      objectReference: {fileID: 0}
     - target: {fileID: 6813586274768559129, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1918,6 +2007,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7192194723029912065, guid: fd136f76aff35b64091a0ef59a46807f, type: 3}
+      propertyPath: sceneId
+      value: 2492910365
+      objectReference: {fileID: 0}
     - target: {fileID: 9216423158384994503, guid: fd136f76aff35b64091a0ef59a46807f, type: 3}
       propertyPath: m_Name
       value: Weapon
@@ -2032,6 +2125,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 883258986}
     m_Modifications:
+    - target: {fileID: 1291673083115285943, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
+      propertyPath: sceneId
+      value: 1661574296
+      objectReference: {fileID: 0}
     - target: {fileID: 6813586274768559129, guid: fc7b3d166a6e3f14f9113e72b821fbc4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2089,6 +2186,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 236745743, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: sceneId
+      value: 3154503767
+      objectReference: {fileID: 0}
+    - target: {fileID: 417641769, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417641769, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417641769, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 749108777017625151, guid: d994130f72504f74fa22ee317f407101, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2113,6 +2226,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2422169110446754117, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422169110446754117, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422169110446754117, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4942837441613442280, guid: d994130f72504f74fa22ee317f407101, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2122,6 +2247,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4942837441613442280, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854037114770, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854037114770, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854037114770, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854095132106, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854095132106, guid: d994130f72504f74fa22ee317f407101, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025528854095132106, guid: d994130f72504f74fa22ee317f407101, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -2206,9 +2355,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 417577702790412047, guid: bef82852a2406e142ab8d832b305f161, type: 3}
+      propertyPath: sceneId
+      value: 3109215043
+      objectReference: {fileID: 0}
     - target: {fileID: 2305882114637391188, guid: bef82852a2406e142ab8d832b305f161, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2305882114637391188, guid: bef82852a2406e142ab8d832b305f161, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2253,14 +2406,6 @@ PrefabInstance:
     - target: {fileID: 3119854607691628526, guid: bef82852a2406e142ab8d832b305f161, type: 3}
       propertyPath: m_Name
       value: Base Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805893379042707827, guid: bef82852a2406e142ab8d832b305f161, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805893379042707827, guid: bef82852a2406e142ab8d832b305f161, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef82852a2406e142ab8d832b305f161, type: 3}

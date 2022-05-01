@@ -8,8 +8,6 @@ public class PlayerAnimatorManager : AnimatorManager
     InputHandler inputHandler;
     PlayerLocomotion playerLocomotion;
     int vertical, horizontal;
-    public bool canRotate;
-
     public void Initialize()
     {
         playerManager = GetComponentInParent<PlayerManager>();

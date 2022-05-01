@@ -10,6 +10,7 @@ public class EnemyAnimatorManager : AnimatorManager
     {
         anim = GetComponent<Animator>();
         enemyManager = GetComponentInParent<EnemyManager>();
+    
     }
 
     private void OnAnimatorMove()

@@ -88,6 +88,9 @@ public class PlayerEquipmentManager : MonoBehaviour
         if (playerInventory.currentTorsoEquipment != null)
         {
             nakedTorso.SetActive(!playerInventory.currentTorsoEquipment.hidesBody);
+            nakedUpperLeftArm.SetActive(!playerInventory.currentTorsoEquipment.hidesBody);
+            nakedUpperRightArm.SetActive(!playerInventory.currentTorsoEquipment.hidesBody);
+
             torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
             upperLeftArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
             upperRightArmModelChanger.EquipModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);

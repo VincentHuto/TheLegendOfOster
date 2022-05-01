@@ -163,7 +163,6 @@ public class InputHandler : MonoBehaviour
         }
 
     }
-
     private void HandleQuickSlotInput()
     {
 
@@ -225,6 +224,7 @@ public class InputHandler : MonoBehaviour
             if (cameraHandler.nearestLockOnTarget != null)
             {
                 cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
                 lockOnFlag = true;
             }
         }
@@ -232,6 +232,7 @@ public class InputHandler : MonoBehaviour
         {
             lockOnInput = false;
             lockOnFlag = false;
+            cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
             cameraHandler.ClearLockOnTargets();
         }
 
@@ -241,7 +242,9 @@ public class InputHandler : MonoBehaviour
             cameraHandler.HandleLockOn();
             if (cameraHandler.leftLockTarget != null)
             {
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
                 cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
             }
         }
 
@@ -251,7 +254,9 @@ public class InputHandler : MonoBehaviour
             cameraHandler.HandleLockOn();
             if (cameraHandler.rightLockTarget != null)
             {
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
                 cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(true);
             }
         }
 

@@ -20,6 +20,7 @@ public class EnemyManager : CharacterManager
     [SerializeField]
     public float rotationSpeed = 15;
     public float maxAttackRange = 1.5f;
+    public float maximumAggroRadius = 1.5f;
 
     [Header("Enemy Flags")]
     public bool isInAir, isGrounded;
@@ -187,8 +188,6 @@ public class EnemyManager : CharacterManager
             }
         }
     }
-
-
     private void HandleStateMachine()
     {
         if(currentState != null)
@@ -218,12 +217,10 @@ public class EnemyManager : CharacterManager
             AttackTarget();
         }*/
     }
-
     private void SwitchToNextState(State nextState)
     {
         currentState = nextState;
     }
-
     private void HandleRecoveryTimer()
     {
         if (currentRecoveryTime > 0)
