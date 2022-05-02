@@ -25,7 +25,6 @@ public class EnemyManager : CharacterManager
     [Header("Enemy Flags")]
     public bool isInAir, isGrounded;
     int vertical, horizontal;
-    public bool canRotate;
 
     public Vector3 moveDirection, normalVector, targetPosition;
 
@@ -65,6 +64,9 @@ public class EnemyManager : CharacterManager
     public float minimumDetectionAngle = -50;
     public float currentRecoveryTime = 0;
 
+    [Header("A.I Combat Settings")]
+    public bool allowAIToPerformCombos;
+    public float comboLikelyHood;
     public void Initialize()
     {
         vertical = Animator.StringToHash("Vertical");
@@ -95,6 +97,7 @@ public class EnemyManager : CharacterManager
         HandleRecoveryTimer();
         isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
         isRotatingWithRootMotion = enemyAnimationManager.anim.GetBool("isRotatingWithRootMotion");
+        canDoCombo = enemyAnimationManager.anim.GetBool("canDoCombo");
 
     }
 

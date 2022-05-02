@@ -13,6 +13,12 @@ public class CharacterManager : NetworkBehaviour
 
     [Header("Movement Flags")]
     public bool isRotatingWithRootMotion;
+    public bool canRotate;
+
+    [Header("Combat Flags")]
+    public bool canDoCombo;
+
+   
 
 
 

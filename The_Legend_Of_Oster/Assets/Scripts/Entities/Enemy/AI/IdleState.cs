@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public PursueTargetState pursueTarget;
+    public PursueTargetState pursueTargetState;
+
     public LayerMask detectionLayer;
 
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        #region Handle Enemy Target Detection
         Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
-
         for (int i = 0; i < colliders.Length; i++)
         {
             CharacterStats characterStats = colliders[i].transform.GetComponentInParent<CharacterStats>();
-
 
             if (characterStats != null)
             {
@@ -26,17 +26,21 @@ public class IdleState : State
                 if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
                 {
                     enemyManager.currentTarget = characterStats;
-                    return pursueTarget;
                 }
             }
         }
-        if(enemyManager.currentTarget != null)
+        #endregion
+
+        #region Handle Switching To Next State
+        if (enemyManager.currentTarget != null)
         {
-            return pursueTarget;
+            return pursueTargetState;
         }
         else
         {
             return this;
         }
+        #endregion
+
     }
 }

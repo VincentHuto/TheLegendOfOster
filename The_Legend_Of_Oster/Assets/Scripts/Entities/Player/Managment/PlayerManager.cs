@@ -16,7 +16,7 @@ public class PlayerManager : CharacterManager
 
     [Header("Player Flags")]
     public bool isSprinting, isInteracting, isInAir, isGrounded,
-        isJumping, canDoCombo, isUsingRightHand, isUsingLeftHand,
+        isJumping, isUsingRightHand, isUsingLeftHand,
         isInvulnerable;
 
 

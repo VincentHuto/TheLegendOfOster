@@ -6223,6 +6223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eeaa273843872a4e86c97a619395e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 3245527837358386620}
 --- !u!1 &2992110616147100362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,6 +6500,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 25415703808116529}
   pendingCriticalDamage: 0
   isRotatingWithRootMotion: 0
+  canRotate: 0
+  canDoCombo: 0
   currentState: {fileID: 3245527836101546939}
   currentTarget: {fileID: 0}
   isPreformingAction: 0
@@ -6510,7 +6513,6 @@ MonoBehaviour:
   maximumAggroRadius: 1.5
   isInAir: 0
   isGrounded: 0
-  canRotate: 0
   moveDirection: {x: 0, y: 0, z: 0}
   normalVector: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
@@ -6533,6 +6535,8 @@ MonoBehaviour:
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
   currentRecoveryTime: 0
+  allowAIToPerformCombos: 0
+  comboLikelyHood: 0
 --- !u!114 &4680915474992536468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6708,7 +6712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1139e6bfbac27b64cb62482cc158db19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursueTarget: {fileID: 3245527836581284540}
+  pursueTargetState: {fileID: 3245527836581284540}
   detectionLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -6757,6 +6761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 3245527837358386620}
+  rotateTowardsTargetState: {fileID: 4223371075758786034}
 --- !u!1 &3245527837331246582
 GameObject:
   m_ObjectHideFlags: 0
@@ -6801,11 +6806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dcc25b175d3f54abdcaec6882c26bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateTowardsTargetState: {fileID: 4223371075758786034}
   combatStanceState: {fileID: 3245527837358386620}
-  enemyAttacks:
-  - {fileID: 11400000, guid: 3e82742f80031c04492f1b9a09f03ab6, type: 2}
-  - {fileID: 11400000, guid: b65d963e9b624fe4284c28e5c0af2030, type: 2}
+  pursueTargetState: {fileID: 3245527836581284540}
   currentAttack: {fileID: 0}
+  hasPerformedAttack: 0
 --- !u!1 &3245527837358386618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6851,6 +6856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: {fileID: 3245527837331246584}
+  enemyAttacks: []
   pursueTargetState: {fileID: 3245527836581284540}
 --- !u!1 &3306123468034589995
 GameObject:

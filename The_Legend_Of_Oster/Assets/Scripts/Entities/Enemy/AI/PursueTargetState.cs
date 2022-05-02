@@ -4,14 +4,21 @@ using UnityEngine;
 public class PursueTargetState : State
 {
     public CombatStanceState combatStanceState;
+    public RotateTowardsTargetState rotateTowardsTargetState;
 
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
-        if (enemyStats.isDead)
-        {
-            return this;
-        }
+        Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
+        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+        float viewableAngle = Vector3.SignedAngle(targetDirection, enemyManager.transform.forward, Vector3.up);
 
+        HandleRotateTowardsTarget(enemyManager);
+
+        if (viewableAngle > 65 || viewableAngle < -65)
+            return rotateTowardsTargetState;
+
+        if (enemyManager.isInteracting)
+            return this;
 
         if (enemyManager.isPreformingAction)
         {
@@ -19,20 +26,12 @@ public class PursueTargetState : State
             return this;
         }
 
-        Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
-        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
-        float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
-
-        if (distanceFromTarget > enemyManager.maxAttackRange)
+        if (distanceFromTarget > enemyManager.maximumAggroRadius)
         {
             enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
         }
 
-        HandleRotateTowardsTarget(enemyManager);
-        enemyManager.navmeshAgent.transform.localPosition = Vector3.zero;
-        enemyManager.navmeshAgent.transform.localRotation = Quaternion.identity;
-
-        if (distanceFromTarget <= enemyManager.maxAttackRange)
+        if (distanceFromTarget <= enemyManager.maximumAggroRadius)
         {
             return combatStanceState;
         }
@@ -57,7 +56,7 @@ public class PursueTargetState : State
             }
 
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            enemyManager.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyManager.rotationSpeed / Time.deltaTime);
+            enemyManager.transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, enemyManager.rotationSpeed / Time.deltaTime);
         }
         //Rotate with pathfinding (navmesh)
         else
@@ -68,8 +67,7 @@ public class PursueTargetState : State
             enemyManager.navmeshAgent.enabled = true;
             enemyManager.navmeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
             enemyManager.enemyRigidBody.velocity = targetVelocity;
-            enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navmeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
+            enemyManager.transform.rotation = Quaternion.Lerp(enemyManager.transform.rotation, enemyManager.navmeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
         }
     }
 }
-
