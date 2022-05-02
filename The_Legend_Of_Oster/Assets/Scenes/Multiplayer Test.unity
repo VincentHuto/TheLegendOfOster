@@ -13349,7 +13349,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45994
+  m_Name: pb_Mesh46302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13614,7 +13614,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45874
+  m_Name: pb_Mesh46182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14125,6 +14125,26 @@ PrefabInstance:
     - target: {fileID: 3119854607691628526, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
       propertyPath: m_Name
       value: Combat Ready (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245527837358386620, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: enemyAttacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245527837358386620, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: enemyAttacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e82742f80031c04492f1b9a09f03ab6, type: 2}
+    - target: {fileID: 3245527837358386620, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: enemyAttacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b65d963e9b624fe4284c28e5c0af2030, type: 2}
+    - target: {fileID: 4680915474992536469, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: fallingSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680915474992536469, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: gravityIntensity
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 4805893379042707827, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
       propertyPath: m_AnchorMax.x

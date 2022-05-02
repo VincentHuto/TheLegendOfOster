@@ -9,12 +9,13 @@ public class RotateTowardsTargetState : State
 
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
-        Debug.Log("TRY TO PIVOT");
         enemyAnimatorManager.anim.SetFloat("Vertical", 0);
         enemyAnimatorManager.anim.SetFloat("Horizontal", 0);
 
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
         float viewableAngle = Vector3.SignedAngle(targetDirection, enemyManager.transform.forward, Vector3.up);
+        Debug.DrawRay(targetDirection, enemyManager.transform.forward,Color.red, 20000f);
+        Debug.Log("Viewable Angle: " + viewableAngle);
 
         if (enemyManager.isInteracting)
             return this; //When we enter the state we will still be interacting from the attack animation so we pause here until it has finished
