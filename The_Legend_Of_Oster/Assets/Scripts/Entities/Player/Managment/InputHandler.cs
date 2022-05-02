@@ -232,7 +232,10 @@ public class InputHandler : MonoBehaviour
         {
             lockOnInput = false;
             lockOnFlag = false;
-            cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
+            if(cameraHandler.currentLockOnTarget != null)
+            {
+                cameraHandler.currentLockOnTarget.spriteRenderer.gameObject.SetActive(false);
+            }
             cameraHandler.ClearLockOnTargets();
         }
 

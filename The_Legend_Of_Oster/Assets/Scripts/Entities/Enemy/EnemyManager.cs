@@ -94,6 +94,7 @@ public class EnemyManager : CharacterManager
     {
         HandleRecoveryTimer();
         isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
+        isRotatingWithRootMotion = enemyAnimationManager.anim.GetBool("isRotatingWithRootMotion");
 
     }
 

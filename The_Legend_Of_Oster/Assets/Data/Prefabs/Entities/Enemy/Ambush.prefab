@@ -6179,6 +6179,50 @@ Transform:
   m_Father: {fileID: 2399489649112682713}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2978151108846621944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4306039880536411936}
+  - component: {fileID: 4223371075758786034}
+  m_Layer: 13
+  m_Name: Rotate Towards Target State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4306039880536411936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978151108846621944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3245527835905767286}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4223371075758786034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978151108846621944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eeaa273843872a4e86c97a619395e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2992110616147100362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6259,7 +6303,7 @@ GameObject:
   - component: {fileID: 1420636321292024299}
   - component: {fileID: 417577702790412047}
   m_Layer: 13
-  m_Name: Base Enemy
+  m_Name: Ambush
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6454,6 +6498,7 @@ MonoBehaviour:
   lockOnTransform: {fileID: 978082218151447639}
   spriteRenderer: {fileID: 25415703808116529}
   pendingCriticalDamage: 0
+  isRotatingWithRootMotion: 0
   currentState: {fileID: 608113519302994236}
   currentTarget: {fileID: 0}
   isPreformingAction: 0
@@ -6462,6 +6507,7 @@ MonoBehaviour:
   isInteracting: 0
   rotationSpeed: 15
   maxAttackRange: 1.5
+  maximumAggroRadius: 1.5
   isInAir: 0
   isGrounded: 0
   canRotate: 0
@@ -6614,6 +6660,7 @@ Transform:
   - {fileID: 3245527837358386621}
   - {fileID: 3245527837331246585}
   - {fileID: 608113519302994237}
+  - {fileID: 4306039880536411936}
   m_Father: {fileID: 2305882114637391188}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10110,6 +10157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4505766587827189813}
+  canRotate: 0
 --- !u!114 &4505766587827189814
 MonoBehaviour:
   m_ObjectHideFlags: 0

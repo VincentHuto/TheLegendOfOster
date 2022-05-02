@@ -11,6 +11,9 @@ public class CharacterManager : NetworkBehaviour
 
     public int pendingCriticalDamage;
 
+    [Header("Movement Flags")]
+    public bool isRotatingWithRootMotion;
+
 
 
 }
