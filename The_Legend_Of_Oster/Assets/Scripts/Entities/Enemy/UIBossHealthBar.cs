@@ -40,6 +40,7 @@ public class UIBossHealthBar : MonoBehaviour
         slider.value = maxHealth;
     }
 
+
     public void SetBossCurrentHealth(float currentHealth)
     {
         slider.value = currentHealth;

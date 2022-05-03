@@ -337,6 +337,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SendChat"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb27a795-2c82-4451-a257-9a81f4c4d82d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -702,6 +711,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""X"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5672b01-0617-4ba9-bf53-d2c3bd75b4a6"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SendChat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -731,6 +751,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_LockOnTargetLeft = m_PlayerActions.FindAction("LockOnTargetLeft", throwIfNotFound: true);
         m_PlayerActions_LockOnTargetRight = m_PlayerActions.FindAction("LockOnTargetRight", throwIfNotFound: true);
         m_PlayerActions_X = m_PlayerActions.FindAction("X", throwIfNotFound: true);
+        m_PlayerActions_SendChat = m_PlayerActions.FindAction("SendChat", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -848,6 +869,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_LockOnTargetLeft;
     private readonly InputAction m_PlayerActions_LockOnTargetRight;
     private readonly InputAction m_PlayerActions_X;
+    private readonly InputAction m_PlayerActions_SendChat;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -869,6 +891,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @LockOnTargetLeft => m_Wrapper.m_PlayerActions_LockOnTargetLeft;
         public InputAction @LockOnTargetRight => m_Wrapper.m_PlayerActions_LockOnTargetRight;
         public InputAction @X => m_Wrapper.m_PlayerActions_X;
+        public InputAction @SendChat => m_Wrapper.m_PlayerActions_SendChat;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -929,6 +952,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @X.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
                 @X.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
                 @X.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnX;
+                @SendChat.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
+                @SendChat.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
+                @SendChat.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -984,6 +1010,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @X.started += instance.OnX;
                 @X.performed += instance.OnX;
                 @X.canceled += instance.OnX;
+                @SendChat.started += instance.OnSendChat;
+                @SendChat.performed += instance.OnSendChat;
+                @SendChat.canceled += instance.OnSendChat;
             }
         }
     }
@@ -1012,5 +1041,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLockOnTargetLeft(InputAction.CallbackContext context);
         void OnLockOnTargetRight(InputAction.CallbackContext context);
         void OnX(InputAction.CallbackContext context);
+        void OnSendChat(InputAction.CallbackContext context);
     }
 }

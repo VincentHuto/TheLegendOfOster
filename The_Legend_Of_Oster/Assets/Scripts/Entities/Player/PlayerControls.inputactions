@@ -315,6 +315,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SendChat",
+                    "type": "Button",
+                    "id": "bb27a795-2c82-4451-a257-9a81f4c4d82d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -678,6 +687,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5672b01-0617-4ba9-bf53-d2c3bd75b4a6",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SendChat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

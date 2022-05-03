@@ -28,6 +28,7 @@ public class EnemyStats : CharacterStats
 
     void Start()
     {
+        //No need for tiny bar for boss
         if (!isBoss)
         {
             enemyHealthBar.SetMaxHealth(maxHealth);
