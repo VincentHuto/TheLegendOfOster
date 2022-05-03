@@ -22196,11 +22196,14 @@ MonoBehaviour:
   right_Stick_Right_Input: 0
   right_Stick_Left_Input: 0
   x_Input: 0
+  toggle_chat_Input: 0
+  send_chat_Input: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
   invFlag: 0
   lockOnFlag: 0
+  chatBehavior: {fileID: 6732020839971614760}
 --- !u!114 &4960420367079767561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22487,6 +22490,7 @@ MonoBehaviour:
   chatUI: {fileID: 5690199659756256504}
   chatText: {fileID: 3553241116290177087}
   inputField: {fileID: 1386396982956570643}
+  inputHandler: {fileID: 4960420367079767560}
 --- !u!1 &8419490951620234767
 GameObject:
   m_ObjectHideFlags: 0

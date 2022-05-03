@@ -346,6 +346,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toggle Chat Area"",
+                    ""type"": ""Button"",
+                    ""id"": ""c679c11b-cbdb-4eda-a4fa-b2bfe105d682"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -722,6 +731,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""SendChat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc235fbc-f01e-465e-8795-3621493c86fb"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Chat Area"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c8e8534-ab78-4287-af43-9b8b4837e36e"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Chat Area"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -752,6 +783,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_LockOnTargetRight = m_PlayerActions.FindAction("LockOnTargetRight", throwIfNotFound: true);
         m_PlayerActions_X = m_PlayerActions.FindAction("X", throwIfNotFound: true);
         m_PlayerActions_SendChat = m_PlayerActions.FindAction("SendChat", throwIfNotFound: true);
+        m_PlayerActions_ToggleChatArea = m_PlayerActions.FindAction("Toggle Chat Area", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -870,6 +902,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_LockOnTargetRight;
     private readonly InputAction m_PlayerActions_X;
     private readonly InputAction m_PlayerActions_SendChat;
+    private readonly InputAction m_PlayerActions_ToggleChatArea;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -892,6 +925,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @LockOnTargetRight => m_Wrapper.m_PlayerActions_LockOnTargetRight;
         public InputAction @X => m_Wrapper.m_PlayerActions_X;
         public InputAction @SendChat => m_Wrapper.m_PlayerActions_SendChat;
+        public InputAction @ToggleChatArea => m_Wrapper.m_PlayerActions_ToggleChatArea;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -955,6 +989,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SendChat.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
                 @SendChat.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
                 @SendChat.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSendChat;
+                @ToggleChatArea.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleChatArea;
+                @ToggleChatArea.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleChatArea;
+                @ToggleChatArea.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleChatArea;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1013,6 +1050,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SendChat.started += instance.OnSendChat;
                 @SendChat.performed += instance.OnSendChat;
                 @SendChat.canceled += instance.OnSendChat;
+                @ToggleChatArea.started += instance.OnToggleChatArea;
+                @ToggleChatArea.performed += instance.OnToggleChatArea;
+                @ToggleChatArea.canceled += instance.OnToggleChatArea;
             }
         }
     }
@@ -1042,5 +1082,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLockOnTargetRight(InputAction.CallbackContext context);
         void OnX(InputAction.CallbackContext context);
         void OnSendChat(InputAction.CallbackContext context);
+        void OnToggleChatArea(InputAction.CallbackContext context);
     }
 }

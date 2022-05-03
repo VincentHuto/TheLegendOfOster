@@ -8,15 +8,36 @@ public class ChatBehavior : NetworkBehaviour
     [SerializeField] private GameObject chatUI = null;
     [SerializeField] private TMP_Text chatText = null;
     [SerializeField] private TMP_InputField inputField = null;
+    [SerializeField] public InputHandler inputHandler;
 
-    private static event Action<string> OnMessage;
+   private static event Action<string> OnMessage;
 
+
+
+    private void Update()
+    {
+        if (inputField.isFocused)
+        {
+            inputHandler.inputActions.Disable();
+        }
+        else
+        {
+            inputHandler.inputActions.Enable();
+        }
+    }
+
+    public void ToggleWindow()
+    {
+        chatUI.gameObject.SetActive(!chatUI.active);
+    }
 
     public override void OnStartAuthority()
     {
         chatUI.SetActive(true);
 
         OnMessage += HandleNewMessage;
+        chatUI.SetActive(false);
+
     }
 
     [ClientCallback]
@@ -36,7 +57,7 @@ public class ChatBehavior : NetworkBehaviour
     public void Send(TMP_InputField tMP_InputField)
     {
 
-        if (!Input.GetKeyDown(KeyCode.Return)) { return; }
+        if (!inputHandler.send_chat_Input) { return; }
 
         string message = tMP_InputField.text ;
         if (string.IsNullOrWhiteSpace(message)) { return; }
@@ -58,4 +79,6 @@ public class ChatBehavior : NetworkBehaviour
     {
         OnMessage?.Invoke($"\n{message}");
     }
+
+   
 }

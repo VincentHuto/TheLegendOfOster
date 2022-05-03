@@ -9,11 +9,11 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_Input, b_Input, rb_Input, rt_Input, lb_Input, lt_Input,
         d_Pad_Up, d_Pad_Down, d_Pad_Left, d_Pad_Right, pickup_Input, inv_Input,
-        lockOnInput, right_Stick_Right_Input, right_Stick_Left_Input, x_Input;
+        lockOnInput, right_Stick_Right_Input, right_Stick_Left_Input, x_Input,toggle_chat_Input, send_chat_Input;
 
     public bool rollFlag, sprintFlag, comboFlag, invFlag, lockOnFlag;
 
-    PlayerControls inputActions;
+    public PlayerControls inputActions;
     PlayerLocomotion playerLocomotion;
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
@@ -24,6 +24,7 @@ public class InputHandler : MonoBehaviour
     AnimatorManager animatorManager;
     UIManager uIManager;
     CameraHandler cameraHandler;
+    ChatBehavior chatBehavior;
 
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -32,6 +33,8 @@ public class InputHandler : MonoBehaviour
     public void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
+        chatBehavior = GetComponent<ChatBehavior>();
+
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerAttacker = GetComponentInChildren<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
@@ -64,6 +67,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.DPadDown.performed += i => d_Pad_Down = true;
             inputActions.PlayerActions.DPadUp.performed += i => d_Pad_Up = true;
             inputActions.PlayerActions.Interact.performed += i => pickup_Input = true;
+            inputActions.PlayerActions.ToggleChatArea.performed += i => toggle_chat_Input = true;
+            inputActions.PlayerActions.SendChat.performed += i => send_chat_Input = true;
             inputActions.PlayerActions.Inventory.performed += i => inv_Input = true;
             inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             inputActions.PlayerActions.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
@@ -87,6 +92,11 @@ public class InputHandler : MonoBehaviour
         HandleInventoryInput();
         HandleLockOnInput();
         HandleUseConsumableInput();
+        if (toggle_chat_Input)
+        {
+            chatBehavior.ToggleWindow();
+            toggle_chat_Input = false;
+        }
 
     }
 

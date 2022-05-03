@@ -324,6 +324,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Chat Area",
+                    "type": "Button",
+                    "id": "c679c11b-cbdb-4eda-a4fa-b2bfe105d682",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -698,6 +707,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SendChat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc235fbc-f01e-465e-8795-3621493c86fb",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Chat Area",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c8e8534-ab78-4287-af43-9b8b4837e36e",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Chat Area",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
