@@ -14,7 +14,7 @@ public class TorsoModelChanger : MonoBehaviour
     {
         GetAllTorsoModels();
     }
-/*    private void Update()
+    private void Update()
     {
         int childrenGameObjects = transform.childCount;
 
@@ -22,7 +22,7 @@ public class TorsoModelChanger : MonoBehaviour
         {
             transform.GetChild(i).transform.transform.SetParent(attachedBone.transform);
         }
-    }*/
+    }
 
     private void GetAllTorsoModels()
     {

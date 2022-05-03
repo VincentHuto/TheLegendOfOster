@@ -7,26 +7,31 @@ public class EnemyStats : CharacterStats
 
     EnemyAnimatorManager anim;
     public UIEnemyHealthBar enemyHealthBar;
+    EnemyBossManager enemyBossManager;
+
+    public int soulsAwardedOnDeath = 50;
+    public bool isBoss;
+
     private void Awake()
     {
         anim = GetComponentInChildren<EnemyAnimatorManager>();
-    }
-
-    void Start()
-    {
         maxHealth = SetMaxHealthFromLevel();
         maxStamina = SetMaxStaminaFromLevel();
         maxBreath = SetMaxBreathFromLevel();
         currentHealth = maxHealth;
-        enemyHealthBar.SetMaxHealth(maxHealth);
         currentStamina = maxStamina;
         currentBreath = maxBreath;
+        enemyBossManager = GetComponent<EnemyBossManager>();
+
+
     }
 
-    private void LateUpdate()
+    void Start()
     {
-  
-
+        if (!isBoss)
+        {
+            enemyHealthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     private float SetMaxHealthFromLevel()
@@ -52,6 +57,17 @@ public class EnemyStats : CharacterStats
     {
         base.TakeDamage(damage);
 
+
+        if (!isBoss)
+        {
+            enemyHealthBar.SetHealth(currentHealth);
+        }
+        else if (isBoss && enemyBossManager != null)
+        {
+            enemyBossManager.UpdateBossHealthBar(currentHealth);
+        }
+
+
         enemyHealthBar.SetHealth(currentHealth);
 
         anim.PlayTargetAnimation("Damage_1", true);
@@ -61,4 +77,5 @@ public class EnemyStats : CharacterStats
             anim.PlayTargetAnimation("Death_1", true);
         }
     }
+
 }

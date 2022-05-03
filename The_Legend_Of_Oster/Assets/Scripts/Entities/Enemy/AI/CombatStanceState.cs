@@ -35,7 +35,7 @@ public class CombatStanceState : State
         if (!randomDestinationSet)
         {
             randomDestinationSet = true;
-           // DecideCirclingAction(enemyAnimatorManager);
+            DecideCirclingAction(enemyAnimatorManager);
             //Decide Circle Action
         }
 
@@ -83,7 +83,7 @@ public class CombatStanceState : State
             enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navmeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
         }
     }
-/*
+
     private void DecideCirclingAction(EnemyAnimatorManager enemyAnimatorManager)
     {
         WalkAroundTarget(enemyAnimatorManager);
@@ -112,8 +112,8 @@ public class CombatStanceState : State
         }
 
     }
-*/
-    private void s(EnemyManager enemyManager)
+
+    private void GetNewAttack(EnemyManager enemyManager)
     {
         Vector3 targetsDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);

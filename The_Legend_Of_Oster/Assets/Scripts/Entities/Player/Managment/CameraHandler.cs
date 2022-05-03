@@ -162,38 +162,42 @@ public class CameraHandler : MonoBehaviour
 
         for (int k = 0; k < availableTargets.Count; k++)
         {
-            float distanceFromTarget = Vector3.Distance(targetTransform.position, availableTargets[k].transform.position);
-
-            if (distanceFromTarget < shortestDistance)
+            if(targetTransform != null)
             {
-                shortestDistance = distanceFromTarget;
-                nearestLockOnTarget = availableTargets[k];
-            }
+                float distanceFromTarget = Vector3.Distance(targetTransform.position, availableTargets[k].transform.position);
 
-            if (inputHandler.lockOnFlag)
-            {
-                //Vector3 relativeEnemyPosition = currentLockOnTarget.transform.InverseTransformPoint(availableTargets[k].transform.position);
-                //var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
-                //var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
-                Vector3 relativeEnemyPosition = inputHandler.transform.InverseTransformPoint(availableTargets[k].transform.position);
-                var distanceFromLeftTarget = relativeEnemyPosition.x;
-                var distanceFromRightTarget = relativeEnemyPosition.x;
-
-                if (relativeEnemyPosition.x <= 0.00 && distanceFromLeftTarget > shortestDistanceOfLeftTarget
-                    && availableTargets[k] != currentLockOnTarget)
+                if (distanceFromTarget < shortestDistance)
                 {
-                    shortestDistanceOfLeftTarget = distanceFromLeftTarget;
-                    leftLockTarget = availableTargets[k];
+                    shortestDistance = distanceFromTarget;
+                    nearestLockOnTarget = availableTargets[k];
                 }
 
-                else if (relativeEnemyPosition.x >= 0.00 && distanceFromRightTarget < shortestDistanceOfRightTarget
-                    && availableTargets[k] != currentLockOnTarget)
+                if (inputHandler.lockOnFlag)
                 {
-                    shortestDistanceOfRightTarget = distanceFromRightTarget;
-                    rightLockTarget = availableTargets[k];
+                    //Vector3 relativeEnemyPosition = currentLockOnTarget.transform.InverseTransformPoint(availableTargets[k].transform.position);
+                    //var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
+                    //var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
+                    Vector3 relativeEnemyPosition = inputHandler.transform.InverseTransformPoint(availableTargets[k].transform.position);
+                    var distanceFromLeftTarget = relativeEnemyPosition.x;
+                    var distanceFromRightTarget = relativeEnemyPosition.x;
+
+                    if (relativeEnemyPosition.x <= 0.00 && distanceFromLeftTarget > shortestDistanceOfLeftTarget
+                        && availableTargets[k] != currentLockOnTarget)
+                    {
+                        shortestDistanceOfLeftTarget = distanceFromLeftTarget;
+                        leftLockTarget = availableTargets[k];
+                    }
+
+                    else if (relativeEnemyPosition.x >= 0.00 && distanceFromRightTarget < shortestDistanceOfRightTarget
+                        && availableTargets[k] != currentLockOnTarget)
+                    {
+                        shortestDistanceOfRightTarget = distanceFromRightTarget;
+                        rightLockTarget = availableTargets[k];
+                    }
                 }
             }
         }
+           
     }
 
     public void ClearLockOnTargets()
