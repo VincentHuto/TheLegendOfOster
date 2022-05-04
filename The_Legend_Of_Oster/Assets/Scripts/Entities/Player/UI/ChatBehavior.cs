@@ -28,7 +28,7 @@ public class ChatBehavior : NetworkBehaviour
 
     public void ToggleWindow()
     {
-        chatUI.gameObject.SetActive(!chatUI.active);
+        chatUI.gameObject.SetActive(!chatUI.activeSelf);
     }
 
     public override void OnStartAuthority()
