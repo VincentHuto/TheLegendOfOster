@@ -111,22 +111,22 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8310995236554433200}
-    m_Position: {x: 440, y: 60, z: 0}
+    m_Position: {x: 500, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7794718351611492611}
-    m_Position: {x: 430, y: -140, z: 0}
+    m_Position: {x: 500, y: -400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1134611076444872703}
-    m_Position: {x: 430, y: -350, z: 0}
+    m_Position: {x: 490, y: -470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4225478440637905062}
-    m_Position: {x: 170, y: -140, z: 0}
+    m_Position: {x: 140, y: -340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2289780371502610564}
-    m_Position: {x: 170, y: -90, z: 0}
+    m_Position: {x: 140, y: -290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6090949294708542117}
-    m_Position: {x: 170, y: -190, z: 0}
+    m_Position: {x: 140, y: -390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2903551887021051182}
     m_Position: {x: 310, y: 210, z: 0}
@@ -138,10 +138,10 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2277192234389069249}
-    m_Position: {x: 740, y: 60, z: 0}
+    m_Position: {x: 820, y: -230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1311918715615390980}
-    m_Position: {x: 740, y: 110, z: 0}
+    m_Position: {x: 810, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5576205967659616514}
     m_Position: {x: 540, y: 210, z: 0}
@@ -150,25 +150,25 @@ AnimatorStateMachine:
     m_Position: {x: 550, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4392960168566775888}
-    m_Position: {x: 550, y: 310, z: 0}
+    m_Position: {x: 570, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2956904776187148987}
-    m_Position: {x: 780, y: -190, z: 0}
+    m_Position: {x: 820, y: -390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7746125506021492375}
-    m_Position: {x: 780, y: -140, z: 0}
+    m_Position: {x: 820, y: -340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4271647604099871989}
-    m_Position: {x: 780, y: -80, z: 0}
+    m_Position: {x: 820, y: -280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 718017919601628126}
-    m_Position: {x: 90, y: 310, z: 0}
+    m_Position: {x: 140, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3801458612057357}
-    m_Position: {x: 90, y: 210, z: 0}
+    m_Position: {x: 140, y: -240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2097194638572300911}
-    m_Position: {x: 90, y: 260, z: 0}
+    m_Position: {x: 140, y: -190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -298,7 +298,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Right_Light_Attack_2
+  m_Name: OH_Right_Light_Attack_02
   m_Speed: 1.75
   m_CycleOffset: 0
   m_Transitions:
@@ -525,7 +525,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Left_Light_Attack_1
+  m_Name: OH_Left_Light_Attack_01
   m_Speed: 1.75
   m_CycleOffset: 0
   m_Transitions:
@@ -661,7 +661,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Left_Heavy_Attack_1
+  m_Name: OH_Left_Heavy_Attack_01
   m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
@@ -850,7 +850,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Right_Light_Attack_1
+  m_Name: OH_Right_Light_Attack_01
   m_Speed: 1.75
   m_CycleOffset: 0
   m_Transitions:
@@ -1143,7 +1143,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Right_Heavy_Attack_1
+  m_Name: OH_Right_Heavy_Attack_01
   m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
@@ -1223,7 +1223,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OH_Left_Light_Attack_2
+  m_Name: OH_Left_Light_Attack_02
   m_Speed: 1.75
   m_CycleOffset: 0
   m_Transitions:
