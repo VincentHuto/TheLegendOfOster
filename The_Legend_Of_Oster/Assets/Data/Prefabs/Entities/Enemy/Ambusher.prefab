@@ -6367,6 +6367,8 @@ MonoBehaviour:
   currentBreath: 150
   isDead: 0
   enemyHealthBar: {fileID: 4805893378206371457}
+  soulsAwardedOnDeath: 50
+  isBoss: 0
 --- !u!114 &2558494552542568326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6806,7 +6808,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 3245527837358386620}
-  enemyAttacks: []
+  enemyAttacks:
+  - {fileID: 11400000, guid: 3e82742f80031c04492f1b9a09f03ab6, type: 2}
+  - {fileID: 11400000, guid: b65d963e9b624fe4284c28e5c0af2030, type: 2}
   currentAttack: {fileID: 0}
 --- !u!1 &3245527837358386618
 GameObject:
@@ -10139,7 +10143,7 @@ Animator:
   m_GameObject: {fileID: 9120027113036604862}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 729d36a154612c7478e9f259c187fa0f, type: 3}
-  m_Controller: {fileID: 9100000, guid: ae957871465dbc14b98674b0f442f2b0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2e90cbdce31376c4e9f045ecba4e69d1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

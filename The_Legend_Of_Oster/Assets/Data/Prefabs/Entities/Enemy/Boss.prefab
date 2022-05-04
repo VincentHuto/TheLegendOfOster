@@ -6461,8 +6461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a469e5a3bf0e3ca4ea19010be97cf8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   level: 10
   maxHealth: 100
   currentHealth: 100
@@ -6471,7 +6469,6 @@ MonoBehaviour:
   maxBreath: 150
   currentBreath: 150
   isDead: 0
-  healthBar: {fileID: 8037798552101375589}
   enemyHealthBar: {fileID: 4805893378206371457}
   soulsAwardedOnDeath: 50
   isBoss: 1
@@ -6929,7 +6926,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 3245527837358386620}
-  enemyAttacks: []
+  enemyAttacks:
+  - {fileID: 11400000, guid: 3e82742f80031c04492f1b9a09f03ab6, type: 2}
+  - {fileID: 11400000, guid: b65d963e9b624fe4284c28e5c0af2030, type: 2}
   currentAttack: {fileID: 0}
 --- !u!1 &3245527837358386618
 GameObject:
@@ -10615,7 +10614,7 @@ Animator:
   m_GameObject: {fileID: 9120027113036604862}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 729d36a154612c7478e9f259c187fa0f, type: 3}
-  m_Controller: {fileID: 9100000, guid: ae957871465dbc14b98674b0f442f2b0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2e90cbdce31376c4e9f045ecba4e69d1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

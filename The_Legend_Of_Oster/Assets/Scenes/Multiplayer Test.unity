@@ -13349,7 +13349,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45908
+  m_Name: pb_Mesh313078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19323,7 +19323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46066
+  m_Name: pb_Mesh313236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19882,7 +19882,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 8419310352217347703, guid: d994130f72504f74fa22ee317f407101, type: 3}
+  playerPrefab: {fileID: 8419310352217347703, guid: de472fd6ddf20224f9b0965abc1416c1, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -22074,6 +22074,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat Ready (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3245527837331246584, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: enemyAttacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245527837331246584, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
+      propertyPath: enemyAttacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e82742f80031c04492f1b9a09f03ab6, type: 2}
     - target: {fileID: 4805893379042707827, guid: fa29f6e0f1d28a14c9bc308102777038, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
