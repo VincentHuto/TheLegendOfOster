@@ -36,11 +36,11 @@ public class PlayerAttacker : MonoBehaviour
                 animatorHandler.anim.SetBool("canDoCombo", false);
                 if (lastAttack == weaponItem.OH_Right_Light_Attack_1)
                 {
-                    animatorHandler.PlayTargetAnimation("OH_Right_Light_Attack_2", true);
+                    animatorHandler.PlayTargetAnimation(weaponItem.OH_Right_Light_Attack_2, true);
                 }
                 if (lastAttack == weaponItem.OH_Left_Light_Attack_1)
                 {
-                    animatorHandler.PlayTargetAnimation("OH_Left_Light_Attack_2", true);
+                    animatorHandler.PlayTargetAnimation(weaponItem.OH_Left_Light_Attack_2, true);
                 }
             }
         }
