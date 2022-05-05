@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DapperDino.Mirror.Tutorials.Lobby
-{
+
     public class PlayerSpawnPoint : MonoBehaviour
     {
         private void Awake() => PlayerSpawnSystem.AddSpawnPoint(transform);
@@ -15,4 +14,3 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             Gizmos.DrawLine(transform.position, transform.position + transform.forward * 2);
         }
     }
-}

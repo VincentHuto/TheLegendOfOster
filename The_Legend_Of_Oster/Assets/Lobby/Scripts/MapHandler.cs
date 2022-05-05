@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     public class MapHandler
     {
         private readonly IReadOnlyCollection<string> maps;
@@ -41,4 +40,3 @@ namespace DapperDino.Tutorials.Lobby
 
         private void ResetMaps() => remainingMaps = maps.ToList();
     }
-}

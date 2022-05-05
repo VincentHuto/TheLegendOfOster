@@ -1,9 +1,7 @@
-﻿using DapperDino.Tutorials.Lobby.Inputs;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     public class InputManager : MonoBehaviour
     {
         private static readonly IDictionary<string, int> mapStates = new Dictionary<string, int>();
@@ -58,4 +56,3 @@ namespace DapperDino.Tutorials.Lobby
             Controls.asset.FindActionMap(mapName).Enable();
         }
     }
-}

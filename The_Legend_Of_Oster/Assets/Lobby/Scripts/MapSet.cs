@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     [CreateAssetMenu(fileName = "New Map Set", menuName = "Rounds/Map Set")]
     public class MapSet : ScriptableObject
     {
@@ -12,4 +11,3 @@ namespace DapperDino.Tutorials.Lobby
 
         public IReadOnlyCollection<string> Maps => maps.AsReadOnly();
     }
-}

@@ -1,8 +1,7 @@
 ﻿using Mirror;
 using UnityEngine;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     public class PlayerMovementController : NetworkBehaviour
     {
         [SerializeField] private float movementSpeed = 5f;
@@ -40,4 +39,3 @@ namespace DapperDino.Tutorials.Lobby
             controller.Move(movement * movementSpeed * Time.deltaTime);
         }
     }
-}

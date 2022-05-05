@@ -1,10 +1,8 @@
 ﻿using Cinemachine;
-using DapperDino.Tutorials.Lobby.Inputs;
 using Mirror;
 using UnityEngine;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     public class PlayerCameraController : NetworkBehaviour
     {
         [Header("Camera")]
@@ -53,4 +51,3 @@ namespace DapperDino.Tutorials.Lobby
             playerTransform.Rotate(0f, lookAxis.x * cameraVelocity.x * deltaTime, 0f);
         }
     }
-}

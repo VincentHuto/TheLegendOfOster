@@ -6,8 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace DapperDino.Tutorials.Lobby.Inputs
-{
+
     public class @Controls : IInputActionCollection, IDisposable
     {
         public InputActionAsset asset { get; }
@@ -231,4 +230,3 @@ namespace DapperDino.Tutorials.Lobby.Inputs
             void OnMove(InputAction.CallbackContext context);
         }
     }
-}

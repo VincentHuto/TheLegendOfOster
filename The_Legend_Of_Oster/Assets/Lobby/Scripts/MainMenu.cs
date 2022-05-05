@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-namespace DapperDino.Mirror.Tutorials.Lobby
-{
     public class MainMenu : MonoBehaviour
     {
         [SerializeField] private NetworkManagerLobby networkManager = null;
@@ -16,4 +14,3 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             landingPagePanel.SetActive(false);
         }
     }
-}

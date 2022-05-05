@@ -1,10 +1,8 @@
-﻿using DapperDino.Mirror.Tutorials.Lobby;
-using Mirror;
+﻿using Mirror;
 using System.Linq;
 using UnityEngine;
 
-namespace DapperDino.Tutorials.Lobby
-{
+
     public class RoundSystem : NetworkBehaviour
     {
         [SerializeField] private Animator animator = null;
@@ -76,4 +74,4 @@ namespace DapperDino.Tutorials.Lobby
 
         #endregion
     }
-}
+

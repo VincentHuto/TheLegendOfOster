@@ -2,8 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DapperDino.Mirror.Tutorials.Lobby
-{
+
     public class PlayerNameInput : MonoBehaviour
     {
         [Header("UI")]
@@ -39,4 +38,3 @@ namespace DapperDino.Mirror.Tutorials.Lobby
             PlayerPrefs.SetString(PlayerPrefsNameKey, DisplayName);
         }
     }
-}
