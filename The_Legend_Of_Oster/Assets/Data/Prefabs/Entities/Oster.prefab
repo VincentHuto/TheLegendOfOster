@@ -22116,6 +22116,7 @@ GameObject:
   - component: {fileID: 8845277182990231859}
   - component: {fileID: 341169724666304646}
   - component: {fileID: 6732020839971614760}
+  - component: {fileID: 29093359481697080}
   m_Layer: 11
   m_Name: Oster
   m_TagString: Player
@@ -22490,6 +22491,20 @@ MonoBehaviour:
   chatText: {fileID: 3553241116290177087}
   inputField: {fileID: 1386396982956570643}
   inputHandler: {fileID: 4960420367079767560}
+--- !u!114 &29093359481697080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419310352217347703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c9f80bb0c0b14ab534d523db3bf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!1 &8419490951620234767
 GameObject:
   m_ObjectHideFlags: 0
